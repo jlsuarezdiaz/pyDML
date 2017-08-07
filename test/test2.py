@@ -7,7 +7,8 @@ from sklearn.datasets import(
 from numpy.testing import assert_array_almost_equal
 from sklearn import neighbors
 
-from utils import read_ARFF
+from utils import(
+    read_ARFF, kfold_tester_supervised_knn)
 
 from dml import(
     NCA,LDA,RCA,PCA,kNN)
@@ -20,24 +21,18 @@ from dml import(
 #y=data['target']
 
 #X,y,m = read_ARFF("./data/sonar.arff",-1)
-#X,y,m = read_ARFF("./data/wdbc.arff",0)
-X,y,m = read_ARFF("./data/spambase-460.arff",-1)
+X,y,m = read_ARFF("./data/wdbc.arff",0)
+#X,y,m = read_ARFF("./data/spambase-460.arff",-1)
 
 n,d = X.shape
 
 print "Data dimensions: ", n, d
 
-#dml = NCA(max_iter=10)
+dml = NCA(max_iter=10,num_dims=10)
 #dml = LDA(thres = 0.95)
 #dml = RCA()
-dml = PCA(thres = 0.95)
+dml = PCA()
 
-dml.fit(X,y)
+m = kfold_tester_supervised_knn(X,y,k = 5, n_neigh = 3, dml = dml)
 
-knn = kNN(n_neighbors=3,dml_algorithm=dml)
-knn.fit(X,y)
-
-print "Before learning metric kNN score [Train]: ", knn.score_orig()
-print "After learning metric kNN score [Train]: ", knn.score()
-
-
+print m
