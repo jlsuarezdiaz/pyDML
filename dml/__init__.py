@@ -5,3 +5,5 @@ from .knn import kNN
 from .lda import LDA
 from .rca import RCA
 from .pca import PCA
+from .lmnn import LMNN
+from .lsi import LSI

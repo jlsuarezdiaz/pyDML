@@ -5,6 +5,7 @@ Functions to test a DML algorithm with cross validation.
 
 from __future__ import absolute_import
 import numpy as np
+import pandas as pd
 
 import warnings
 from six.moves import xrange
@@ -48,5 +49,13 @@ def kfold_tester_supervised_knn(X,y,k,n_neigh,dml):
 #        print "Train - Test [DML]:", knn.score(X_test,y_test)
 
     m[k,:] = np.mean(m[0:(k-1),:],axis = 0)
+
+    rownames = []
+    for i in range(k):
+        rownames.append("FOLD "+str(i+1))
+
+    rownames.append("MEAN")
+    colnames = ["Train [ORIG]", "Test [ORIG]", "Train [DML]", "Test [DML]"]
+    m = pd.DataFrame(data = m, index = rownames, columns = colnames)
 
     return m
