@@ -7,10 +7,11 @@ from sklearn.datasets import(
 from numpy.testing import assert_array_almost_equal
 from sklearn import neighbors
 
-from utils import read_ARFF
+from utils import(
+    read_ARFF, kfold_multitester_supervised_knn)
 
 from dml import(
-    NCA,LDA,RCA,PCA,ANMM,kNN)
+    NCA,LDA,RCA,PCA,LMNN,ANMM,kNN)
 
 
 #data=load_iris()
@@ -27,18 +28,13 @@ n,d = X.shape
 
 print "Data dimensions: ", n, d
 
-#dml = NCA(max_iter=10)
-#dml = LDA(thres = 0.95)
-#dml = RCA()
-#dml = PCA(thres = 0.95)
-dml = ANMM()
+#nca = NCA(max_iter=10,num_dims=10)
+lda = LDA(thres = 0.95)
+#rca = RCA()
+pca = PCA(thres = 0.95)
+lmnn = LMNN()
+anmm = ANMM(n_friends = 1,n_enemies = 1)
 
-dml.fit(X,y)
+results = kfold_multitester_supervised_knn(X,y,k = 5, n_neigh = 3, dmls = [lda,pca,lmnn,anmm])
 
-#knn = kNN(n_neighbors=3,dml_algorithm=dml)
-#knn.fit(X,y)
-#
-#print "Before learning metric kNN score [Train]: ", knn.score_orig()
-#print "After learning metric kNN score [Train]: ", knn.score()
-
-
+print results

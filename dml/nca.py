@@ -27,6 +27,27 @@ class NCA(DML_Algorithm):
     def transformer(self):
         return self.L_
 
+    def fit(self,X,y):
+        n,d = X.shape
+
+        num_dims = self.num_dims
+        if num_dims is None:
+            num_dims = d
+
+        L = self.initial_transform
+        if L is None:
+            np.zeros([num_dims,d])
+            np.fill_diagonal(A, 1./(np.maximum(X.max(axis=0 )-X.min(axis=0),1e-16)))
+
+        grad_scale = 2*self.learning_rate
+
+        for it in xrange(self.max_iter):
+            x=0 #####
+
+
+
+
+
     def _fit(self,X,y):
         X, y = check_X_y(X,y) # Consistency check
         n, d = X.shape

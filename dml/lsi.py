@@ -25,12 +25,12 @@ class LSI(DML_Algorithm):
 
 
     def fit(X,side):
-    """
-        X: data
-        side: side information. A list of sets of pairs of indices. Options:
-            - side = [S,D], where S is the set of indices of similar data and D is the set of indices of dissimilar data.
-            - side = [S], where S is the set of indices of similar data. The set D will be the complement of S.
-    """
+        """
+            X: data
+            side: side information. A list of sets of pairs of indices. Options:
+                - side = [S,D], where S is the set of indices of similar data and D is the set of indices of dissimilar data.
+                - side = [S], where S is the set of indices of similar data. The set D will be the complement of S.
+        """
 
         if len(side) == 1:
             S = side[0]
@@ -41,7 +41,7 @@ class LSI(DML_Algorithm):
 
         grad = self._compute_gradient(X,D)
 
-        while
+        #while
 
 
 
