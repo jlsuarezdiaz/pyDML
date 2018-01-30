@@ -16,7 +16,7 @@ from sklearn.model_selection import(
 from dml import(
     kNN, MultiDML_kNN)
 
-def kfold_tester_supervised_knn(X,y,k,n_neigh,dml):
+def kfold_tester_supervised_knn(X,y,k,n_neigh,dml,verbose=False):
     """
     X: data
     y: labels
@@ -29,6 +29,8 @@ def kfold_tester_supervised_knn(X,y,k,n_neigh,dml):
     m = np.empty([k+1,4])
 
     for i, [train_index, test_index] in enumerate(skf.split(X,y)):
+        if verbose: print("** FOLD ",i)
+        
         X_train, X_test = X[train_index], X[test_index]
         y_train, y_test = y[train_index], y[test_index]
 
@@ -42,14 +44,9 @@ def kfold_tester_supervised_knn(X,y,k,n_neigh,dml):
         m[i,2] = knn.score()
         m[i,3] = knn.score(X_test,y_test)
 
-#        print "FOLD ", i
-#
-#        print "Train - Train [ORIG]:", knn.score_orig()
-#        print "Train - Test [ORIG]:", knn.score_orig(X_test,y_test)
-#        print "Train - Train [DML]:", knn.score()
-#        print "Train - Test [DML]:", knn.score(X_test,y_test)
 
-    m[k,:] = np.mean(m[0:(k-1),:],axis = 0)
+
+    m[k,:] = np.mean(m[0:k,:],axis = 0) #!!!
 
     rownames = []
     for i in range(k):
@@ -61,7 +58,7 @@ def kfold_tester_supervised_knn(X,y,k,n_neigh,dml):
 
     return m
 
-def kfold_multitester_supervised_knn(X,y,k,n_neigh,dmls):
+def kfold_multitester_supervised_knn(X,y,k,n_neigh,dmls,verbose=False):
     """
     X: data
     y: labels
@@ -75,6 +72,8 @@ def kfold_multitester_supervised_knn(X,y,k,n_neigh,dmls):
     m = np.empty([k+1,2*dmls_size])
 
     for i, [train_index, test_index] in enumerate(skf.split(X,y)):
+        if verbose: print("** FOLD ",i)
+        
         X_train, X_test = X[train_index], X[test_index]
         y_train, y_test = y[train_index], y[test_index]
 
@@ -87,7 +86,7 @@ def kfold_multitester_supervised_knn(X,y,k,n_neigh,dmls):
         
 
 
-    m[k,:] = np.mean(m[0:(k-1),:],axis = 0)
+    m[k,:] = np.mean(m[0:k,:],axis = 0) #!!!!
 
     rownames = []
     for i in range(k):

@@ -13,6 +13,7 @@ from sklearn import neighbors
 import pandas as pd
 from sklearn.model_selection import LeaveOneOut
 from .dml_algorithm import DML_Algorithm
+from six.moves import xrange
 
 class MultiDML_kNN:
     def __init__(self,n_neighbors,dmls = None):

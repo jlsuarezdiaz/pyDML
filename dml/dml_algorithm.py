@@ -7,6 +7,7 @@ Abstract class representing a Distance Metric Learning algorithm.
 from numpy.linalg import inv, cholesky
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.utils.validation import check_array
+from .dml_utils import metric_to_linear
 
 class DML_Algorithm(BaseEstimator,TransformerMixin):
 
@@ -37,7 +38,12 @@ class DML_Algorithm(BaseEstimator,TransformerMixin):
         -------
         L : (d x d) matrix
         """
-        return inv(cholesky(self.metric()))
+        try:
+            L = inv(cholesky(self.metric()))
+            return L
+        except:
+            L = metric_to_linear(self.metric())
+            return L
     
     def transform(self, X=None):
         """Applies the metric transformation.
