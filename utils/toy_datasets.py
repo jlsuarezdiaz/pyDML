@@ -19,9 +19,24 @@ from sklearn.datasets import(
 
 def toy_plot(X,y):
     f, ax = plt.subplots(figsize=(12,9))
+    
     plt.axis('equal')
-    return plt.scatter(X[:,0],X[:,1],c=y,cmap="rainbow")
-
+    plt.scatter(X[:,0],X[:,1],c=y,cmap="rainbow",label=y)
+   
+    #cmap = plt.get_cmap('rainbow')
+    #cc = np.unique(y)
+    #cn = len(cc)
+    #for i,c in enumerate(cc):
+    #    print(i,c)
+    #    ind = np.where(y == c)[0]
+    #    print(ind)
+    #    XX = X[ind]
+    #    print(cmap(i/(cn+1)))
+    #    ax.scatter(XX[:,0],XX[:,1],c=cmap(i/(cn+1)),label=c)
+    #plt.legend()
+    
+    plt.show()
+    return plt
 
 def circular_toy_dataset(rads = [1,2], samples = [200,200], noise = [0.2,0.2], seed = None):
     if seed is not None:

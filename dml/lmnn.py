@@ -124,7 +124,7 @@ class LMNN(DML_Algorithm):
 
         self.M_ = self.M0_
 
-        if self.M_ is None or self.L_ == "euclidean":
+        if self.M_ is None or self.M_ == "euclidean":
             self.M_= np.zeros([self.nd_,self.d_])
             np.fill_diagonal(self.M_,1.0) #Euclidean distance 
         elif self.M_ == "scale":

@@ -29,10 +29,10 @@ class LDA(DML_Algorithm):
             num_dims: Number of dimensions for transformed data (ignored if num_dims > num_classes or thres specified)
             thres: Fraction of variability to keep. Data dimension will be reduced until the lowest dimension that keeps 'thres' explained variance.
         """
-        if not num_dims is None and not thres is None:
-            warnings.warn("Arguments 'num_dims' and 'thres' are mutually exclusive."
-                          "Argument 'num_dims' will be ignored. Using 'thres'.")
-            num_dims = None
+        #if not num_dims is None and not thres is None:
+        #    warnings.warn("Arguments 'num_dims' and 'thres' are mutually exclusive."
+        #                  "Argument 'num_dims' will be ignored. Using 'thres'.")
+        #    num_dims = None
 
         self.num_dims = num_dims
         self.thres = thres

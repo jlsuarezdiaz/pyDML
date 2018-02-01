@@ -43,11 +43,16 @@ class ANMM(DML_Algorithm):
 
         S,C = self._compute_matrices(X,het_neighs,hom_neighs)
 
+        Id =  np.zeros([self.d_,self.d_])
+        np.fill_diagonal(Id,1.0)
+        #print(self._compute_average_margin(Id,S,C))
+
         # Eigenvalues and eigenvectors of S - C
         self.eig_vals_, self.eig_vecs_ = eig(S-C)
-
+        vecs_orig = self.eig_vecs_.copy()
+        
         # Reordering
-        self.eig_pairs_ = [(np.abs(self.eig_vals_[i]), self.eig_vecs_[:,i]) for i in xrange(self.eig_vals_.size)]
+        self.eig_pairs_ = [(np.abs(self.eig_vals_[i]), vecs_orig[:,i]) for i in xrange(self.eig_vals_.size)]
         self.eig_pairs_ = sorted(self.eig_pairs_, key = lambda k: k[0], reverse=True)
 
         for i, p in enumerate(self.eig_pairs_):
@@ -55,9 +60,16 @@ class ANMM(DML_Algorithm):
             self.eig_vecs_[i,:] = p[1]
 
         self.L_ = self.eig_vecs_[:num_dims,:]
-
+        #print(self._compute_average_margin(self.L_,S,C))
 
         return self
+    
+    def transformer(self):
+        return self.L_
+    
+    
+    def _compute_average_margin(self,L,S,C):
+        return np.trace(L.dot(S-C).dot(L.T))
 
 
     def _compute_heterogeneous_neighborhood(self,X,y):
@@ -108,8 +120,7 @@ class ANMM(DML_Algorithm):
         return S,C
 
 
-    def transformer(self):
-        return self.L_
+    
 
         
 
