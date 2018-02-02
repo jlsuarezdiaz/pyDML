@@ -22,16 +22,19 @@ seed=28
 #X,y = toy_datasets.balls_toy_dataset(seed=seed)
 #X,y = toy_datasets.single_toy_dataset(seed=seed)
 
-X = np.array([[3,1],[4,2],[3,4],[5,4],[-1,1],[1,2],[2,2],[3,3]])
-y = np.array([1,1,1,1,-1,-1,-1,-1])
+#X = np.array([[3,1],[4,2],[3,4],[5,4],[-1,1],[1,2],[2,2],[3,3]])
+#y = np.array([1,1,1,1,-1,-1,-1,-1])
+
+X = np.array([[0,0],[0,1],[1.1,0],[2,0]])
+y = np.array([1,1,-1,-1])
 
 toy_datasets.toy_plot(X,y)
 
-nca = NCA(max_iter=100, learning_rate = 0.1, initial_transform = "scale", descent_method = "BGD")
-lda = LDA(thres = 0.546)
+nca = NCA(max_iter=10000, learning_rate = 0.1, initial_transform = "scale", descent_method = "BGD")
+lda = LDA(thres = 0.95)
 #rca = RCA()
-pca = PCA(thres = 0.5)
-lmnn = LMNN(max_iter=100,learning_rate = "adaptive",eta0=0.001, k = 1, mu = 0.5)
+pca = PCA(thres = 0.95)
+lmnn = LMNN(max_iter=100000,learning_rate = "adaptive",eta0=0.001, k = 1, mu = 0.5,tol=0,prec=0)
 anmm = ANMM(num_dims = 1, n_friends = 1,n_enemies = 1)
 lsi = LSI(supervised=True, err = 1e-10, itproj_err = 1e-10)
 

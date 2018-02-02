@@ -96,8 +96,8 @@ def wine_data():
 #X,y = digits_red_data()
 #X,y = sonar_data()
 #X,y = wdbc_data()
-X,y = spambase_data()
-#X,y = wine_data()
+#X,y = spambase_data()
+X,y = wine_data()
 
 X = normalize(X,axis=0,norm='max')
 
@@ -111,7 +111,7 @@ nca = NCA(max_iter=500, learning_rate = "adaptive",eta0=0.001, initial_transform
 lda = LDA(thres = 0.8)
 #rca = RCA()
 pca = PCA()
-lmnn = LMNN(max_iter=1000,learning_rate = "adaptive", eta0 = 0.001, k = 5, mu = 0.5,soft_comp_interval = 10)
+lmnn = LMNN(max_iter=1000,learning_rate = "adaptive", eta0 = 0.001, k = 5, mu = 0.5,soft_comp_interval = 10,tol=0)
 anmm = ANMM(num_dims = 40,n_friends = 3,n_enemies = 1)
 itml = ITML(max_iter=100000,gamma=np.inf, low_perc = 5, up_perc = 95)
 
