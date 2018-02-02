@@ -31,7 +31,7 @@ nca = NCA(max_iter=100, learning_rate = 0.1, initial_transform = "scale", descen
 lda = LDA(thres = 0.546)
 #rca = RCA()
 pca = PCA(thres = 0.5)
-lmnn = LMNN(max_iter=100,learning_rate = "adaptive",eta0=0.001, k = 4, mu = 0.5)
+lmnn = LMNN(max_iter=100,learning_rate = "adaptive",eta0=0.001, k = 1, mu = 0.5)
 anmm = ANMM(num_dims = 1, n_friends = 1,n_enemies = 1)
 lsi = LSI(supervised=True, err = 1e-10, itproj_err = 1e-10)
 

@@ -73,6 +73,7 @@ class LMNN(DML_Algorithm):
         while self.num_its_ < self.max_it_ and  (Mprev is None or np.max(np.abs(M-Mprev)) > self.tol_) and np.max(np.abs(G)) > self.eps_:
             if self.num_its_ % self.soft_comp_interval_ == 0:
                 impostors = self._impostors(X,y,target_neighbors)
+                print(impostors)
                 N_down = self._compute_N_triplets(n,target_neighbors,impostors)
                 N_up |= N_down # Union
             else:
@@ -179,11 +180,14 @@ class LMNN(DML_Algorithm):
             #Lxi = Lx[i].reshape(1,-1) # Convert single row to matrix
             #dists = pairwise_distances(Lxi,Lx[inds])
             dists = self._pairwise_metric_distances(X[i,:],X[inds,:])
-            
-            margin = 1+np.amax(dists[0:target_len])
+            #print(dists)
+            margin = (1+np.amax(dists[0:target_len]))*(1+np.amax(dists[0:target_len]))
 
             for l in xrange(len(out_inds)):
                 ldist = dists[target_len+l]
+                print(i,X[i],target_len+l,X[target_len+l],ldist,margin)
+                import time
+                time.sleep(1)
                 if ldist < margin:
                     impostors_i.append(out_inds[l])
 

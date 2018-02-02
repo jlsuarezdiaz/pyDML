@@ -17,7 +17,7 @@ from utils import(
     read_ARFF, kfold_multitester_supervised_knn)
 
 from dml import(
-    NCA,LDA,RCA,PCA,LMNN,ANMM,LSI,kNN)
+    NCA,LDA,RCA,PCA,LMNN,ANMM,LSI,ITML,kNN)
 
 np.random.seed(28)
 
@@ -92,11 +92,11 @@ def wine_data():
 
 
 #X,y = iris_data()
-X,y = digits_data()
+#X,y = digits_data()
 #X,y = digits_red_data()
 #X,y = sonar_data()
 #X,y = wdbc_data()
-#X,y = spambase_data()
+X,y = spambase_data()
 #X,y = wine_data()
 
 X = normalize(X,axis=0,norm='max')
@@ -113,12 +113,14 @@ lda = LDA(thres = 0.8)
 pca = PCA()
 lmnn = LMNN(max_iter=1000,learning_rate = "adaptive", eta0 = 0.001, k = 5, mu = 0.5,soft_comp_interval = 10)
 anmm = ANMM(num_dims = 40,n_friends = 3,n_enemies = 1)
-#anmms = [ANMM(num_dims = i,n_friends = 5, n_enemies = 1) for i in range(30,35)]
+itml = ITML(max_iter=100000,gamma=np.inf, low_perc = 5, up_perc = 95)
 
 lsi = LSI(supervised=True, err = 1e-10, itproj_err = 1e-10)
 
-dmls = [lda,pca,anmm]
+dmls = [lmnn]
 #dmls = [nca,lda,pca,anmm]
+
+
 results = kfold_multitester_supervised_knn(X,y,k = 5, n_neigh = 3, dmls = dmls, verbose = True)
 
 print(results)
