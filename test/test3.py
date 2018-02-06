@@ -91,13 +91,13 @@ def wine_data():
 
 
 
-#X,y = iris_data()
+X,y = iris_data()
 #X,y = digits_data()
 #X,y = digits_red_data()
 #X,y = sonar_data()
 #X,y = wdbc_data()
 #X,y = spambase_data()
-X,y = wine_data()
+#X,y = wine_data()
 
 X = normalize(X,axis=0,norm='max')
 
@@ -107,17 +107,17 @@ n,d = X.shape
 
 print("Data dimensions: ", n, d)
 
-nca = NCA(max_iter=500, learning_rate = "adaptive",eta0=0.001, initial_transform = "scale", descent_method = "BGD")
+nca = NCA(max_iter=500, learning_rate = "adaptive",eta0=0.1, initial_transform = "scale", descent_method = "BGD")
 lda = LDA(thres = 0.8)
 #rca = RCA()
 pca = PCA()
-lmnn = LMNN(max_iter=1000,learning_rate = "adaptive", eta0 = 0.001, k = 5, mu = 0.5,soft_comp_interval = 10,tol=0)
+lmnn = LMNN(max_iter=1000,learning_rate = "adaptive", eta0 = 0.001, k = 5, mu = 0.5,soft_comp_interval = 10,tol=1e-15,prec=1e-10)
 anmm = ANMM(num_dims = 40,n_friends = 3,n_enemies = 1)
 itml = ITML(max_iter=100000,gamma=np.inf, low_perc = 5, up_perc = 95)
 
 lsi = LSI(supervised=True, err = 1e-10, itproj_err = 1e-10)
 
-dmls = [lmnn]
+dmls = [nca]
 #dmls = [nca,lda,pca,anmm]
 
 

@@ -20,10 +20,10 @@ from .dml_algorithm import DML_Algorithm
 
 class LMNN(DML_Algorithm):
 
-    def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_transform = None, max_iter = 100, prec = 1e-3,
+    def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_metric = None, max_iter = 100, prec = 1e-3,
                 tol = 1e-6, k = 3, mu = 0.5, soft_comp_interval= 1, learn_inc = 1.01, learn_dec = 0.5):
         self.num_dims_ = num_dims
-        self.M0_ = initial_transform
+        self.M0_ = initial_metric
         self.max_it_ = max_iter
         self.eta0_ = eta0
         self.eta_ = eta0
@@ -67,15 +67,15 @@ class LMNN(DML_Algorithm):
         Mprev = None
         err_prev =  err = np.inf
         
-        self.initial_error_ = self._compute_error(self.mu_,M,X,y,target_neighbors,self._impostors(X,y,target_neighbors
-                                                                                                  ))
+        self.initial_error_ = self._compute_error(self.mu_,M,X,y,target_neighbors,self._impostors(X,y,target_neighbors))
+        
         #while not self._stop_criterion():
         while self.num_its_ < self.max_it_ and  (Mprev is None or np.max(np.abs(M-Mprev)) > self.tol_) and np.max(np.abs(G)) > self.eps_:
             if self.num_its_ % self.soft_comp_interval_ == 0:
                 impostors = self._impostors(X,y,target_neighbors)
                 #print(impostors)
                 N_down = self._compute_N_triplets(n,target_neighbors,impostors)
-                print(N_down)
+                #print(N_down)
                 #import time; time.sleep(1)
                 N_up |= N_down # Union
             else:
@@ -86,12 +86,12 @@ class LMNN(DML_Algorithm):
 
             grad_imp = self._compute_imposter_gradient(X,outers,N_down,N_old)
             G += grad_imp
-            print(G)
+            #print(G)
             
             M -= self.eta_*G
             self.M_ = M = SDProject(M)
-            print(M)
-            import time; time.sleep(0.01)
+            #print(M)
+            
             
             N_old = N_down
             self.num_its_+=1
@@ -208,7 +208,8 @@ class LMNN(DML_Algorithm):
         for j in xrange(n):
             xj = X[j,:].reshape(1,-1)
             xij = xi - xj
-            dists[j] = xij.dot(self.M_).dot(xij.T)
+            #print(xij.dot(self.M_).dot(xij.T))
+            dists[j] = xij.dot(self.M_).dot(xij.T).astype('float')
         return dists
 
     def _compute_error(self,mu,M,X,y,target_neighbors,impostors):
@@ -223,7 +224,6 @@ class LMNN(DML_Algorithm):
                     if(i_err > 0):
                         imposter_err += i_err 
                     #print(metric_sq_distance(M,X[i,:],X[j,:]),"  ",metric_sq_distance(M,X[i,:],X[l,:]))
-                    
         return (1-mu)*non_imposter_err + mu*imposter_err
 
 
@@ -245,7 +245,7 @@ class LMNN(DML_Algorithm):
             outers_i = calc_outers_i(X,outers,i)
             for j in target_neighbors[i,:]:
                 grad += outers_i[j]
-        print(grad)
+        #print(grad)
         return (1-self.mu_)*grad
 
 

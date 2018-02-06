@@ -39,7 +39,7 @@ class DML_Algorithm(BaseEstimator,TransformerMixin):
         L : (d x d) matrix
         """
         try:
-            L = inv(cholesky(self.metric()))
+            L = cholesky(self.metric())
             return L
         except:
             L = metric_to_linear(self.metric())

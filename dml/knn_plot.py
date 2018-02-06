@@ -18,7 +18,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from .dml_utils import metric_to_linear
 
 def classifier_plot(X,y,clf, fitted=False, f=None, ax=None, title = None, subtitle=None, xrange=None, yrange=None,
-                    xlabel=None, ylabel=None, grid_step=[0.1,0.1], label_legend=True, legend_loc="lower right",
+                    xlabel=None, ylabel=None, grid_split=[400,400], grid_step=[0.1,0.1], label_legend=True, legend_loc="lower right",
                     cmap=None, label_colors=None, plot_points=True, plot_regions=True,
                     region_intensity=0.4,legend_plot_points=True, legend_plot_regions=True,**fig_kw):
     
@@ -37,8 +37,10 @@ def classifier_plot(X,y,clf, fitted=False, f=None, ax=None, title = None, subtit
         y_min, y_max = yrange[0], yrange[1]
         
     # Grid
-    xx, yy = np.meshgrid(np.arange(x_min,x_max,grid_step[0]), np.arange(y_min, y_max,grid_step[1]))
-    
+    if not grid_split:
+        xx, yy = np.meshgrid(np.arange(x_min,x_max,grid_step[0]), np.arange(y_min, y_max,grid_step[1]))
+    else:
+        xx, yy = np.meshgrid(np.linspace(x_min,x_max,grid_split[0]),np.linspace(y_min,y_max,grid_split[1]))
     # Plot
     if f is None or ax is None:
         f, ax = plt.subplots(sharex='col',sharey='row',**fig_kw)   
@@ -103,7 +105,7 @@ def classifier_plot(X,y,clf, fitted=False, f=None, ax=None, title = None, subtit
 
 def knn_plot(X,y,k=1,knn_clf = None, fitted = False, metric=None, transformer=None, dml=None, dml_fitted=False,
              f = None, ax = None, title = None, subtitle=None, xrange = None, yrange = None, 
-             xlabel = None, ylabel = None, grid_step = [0.1,0.1], label_legend = True, legend_loc="lower right",
+             xlabel = None, ylabel = None, grid_split=[400,400], grid_step = [0.1,0.1], label_legend = True, legend_loc="lower right",
              cmap=None, label_colors=None, plot_points = True, plot_regions = True,
              region_intensity = 0.4,legend_plot_points=True, legend_plot_regions=True,**fig_kw):
     # Fitting distance metrics
@@ -132,11 +134,11 @@ def knn_plot(X,y,k=1,knn_clf = None, fitted = False, metric=None, transformer=No
         f, ax = plt.subplots(sharex='col',sharey='row',**fig_kw)
     
     return classifier_plot(X,y,knn_clf,True,f,ax,title,subtitle,xrange,yrange,xlabel,ylabel,
-                           grid_step,label_legend,legend_loc,cmap,label_colors,plot_points,
+                           grid_split, grid_step,label_legend,legend_loc,cmap,label_colors,plot_points,
                            plot_regions,region_intensity,legend_plot_points,legend_plot_regions)
         
 def knn_multiplot(X,y,nrow=None,ncol=None,ks=None, clfs=None, fitted = False, metrics=None, transformers=None, dmls=None, dml_fitted=False,
-                  title = None, subtitles = None, xlabels=None, ylabels=None, grid_step=[0.1,0.1,],
+                  title = None, subtitles = None, xlabels=None, ylabels=None, grid_split = [400,400], grid_step=[0.1,0.1,],
                   label_legend=True, legend_loc="lower right",cmap=None, label_colors=None,plot_points=True,plot_regions=True, region_intensity=0.4,
                   legend_plot_points=True, legend_plot_regions=True,**fig_kw):
     
@@ -161,7 +163,8 @@ def knn_multiplot(X,y,nrow=None,ncol=None,ks=None, clfs=None, fitted = False, me
             
             ix0, ix1 = i // ncol, i % ncol
             ax = axarr[ix0,ix1]
-            knn_plot(X,y,k,clf,fitted,metric,transformer,dml,dml_fitted,f,ax,title,subtitle,None,None,None,None,grid_step,label_legend,legend_loc,
+            knn_plot(X,y,k,clf,fitted,metric,transformer,dml,dml_fitted,f,ax,title,subtitle,
+                     None,None,None,None,grid_split,grid_step,label_legend,legend_loc,
                      cmap,label_colors,plot_points,plot_regions,region_intensity,legend_plot_points,legend_plot_regions)
     
     return f

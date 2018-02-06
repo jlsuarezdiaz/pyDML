@@ -33,7 +33,7 @@ class NCA(DML_Algorithm):
     """
 
     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_transform = None, max_iter = 100, prec = 1e-3, 
-                tol = 1e-3, descent_method = "SGD", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5):
+                tol = 1e-6, descent_method = "SGD", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5):
         self.num_dims_ = num_dims
         self.L0_ = initial_transform
         self.max_it_ = max_iter
@@ -79,15 +79,15 @@ class NCA(DML_Algorithm):
             self.L_= np.zeros([self.nd_,self.d_])
             np.fill_diagonal(self.L_, 1./(np.maximum(X.max(axis=0 )-X.min(axis=0),1e-16))) #Scaled eculidean distance
 
-        self.initial_softmax_ = self._compute_expected_success(self.L_,X,y)
-
+        self.initial_softmax_ = self._compute_expected_success(self.L_,X,y)/len(y)
+        print("Initial: ", self.initial_softmax_)
         if self.method_ == "SGD": # Stochastic Gradient Descent
             self._SGD_fit(X,y)
             
         elif self.method_ == "BGD": # Batch Gradient Desent
             self._BGD_fit(X,y)
         
-        self.final_softmax_ = self._compute_expected_success(self.L_,X,y)
+        self.final_softmax_ = self._compute_expected_success(self.L_,X,y)/len(y)
         return self
 
     def _SGD_fit(self,X,y):
@@ -187,6 +187,7 @@ class NCA(DML_Algorithm):
         while not self._stop_criterion(L,X,y,grad): #Stop criterion updates L
             grad = np.zeros([d,d])
             Lx = L.dot(X.T).T
+            #print("Lx: ",Lx)
             for i,yi in enumerate(y):
 
                 # Calc p_ij (softmax)
@@ -195,6 +196,7 @@ class NCA(DML_Algorithm):
                 Lxi = Lx[i]
                 dists_i = -np.diag((Lxi-Lx).dot((Lxi-Lx).T))
                 dists_i[i] = -np.inf
+                #print("Dists: ",dists_i)
                 i_max = np.argmax(dists_i)
                 c = dists_i[i_max]
                 
@@ -211,12 +213,12 @@ class NCA(DML_Algorithm):
                         
                 softmax[i] = 0
                 softmax/=softmax.sum()
-                
+                #print(i,"-Softmax: ",softmax)
 
                 #Calc p_i
                 yi_mask = np.where(y == yi)
                 p_i = softmax[yi_mask].sum()
-
+                #print(i,"-p_i",p_i)
                 #Gradient computing
                 sum_p = sum_m = 0.0
                 outers_i = calc_outers_i(X,outers,i)
@@ -226,14 +228,17 @@ class NCA(DML_Algorithm):
                     sum_p += s
                     if(yi == y[k]):
                         sum_m -= s
-
-                grad += p_i*sum_p - sum_m
-
+                #print(i,"-s_i: ",p_i*sum_p + sum_m)
+                grad += p_i*sum_p + sum_m
+                
                 #print "Iteration ", self.num_its_, " Item ", i
-
+            #print("Pregrad: ",grad)
             grad = 2*L.dot(grad)
             L+= self.eta_*grad
             
+            #print("Grad: ",grad)
+            print("Expected: ",self._compute_expected_success(L,X,y)/len(y))
+            #import time; time.sleep(1000)
             if self.adaptive_:
                 succ = self._compute_expected_success(L,X,y)
                 #print(succ)
@@ -249,7 +254,7 @@ class NCA(DML_Algorithm):
 
         self.L_ = L
 
-       
+      
 
         return self
 
@@ -322,7 +327,7 @@ class NCA(DML_Algorithm):
 
             success += p_i
 
-        return success/y.size  # Normalized between 0 and 1
+        return success  # Normalized between 0 and 1
 """
     @staticmethod
     def _start_handler():
