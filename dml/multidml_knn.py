@@ -14,6 +14,7 @@ import pandas as pd
 from sklearn.model_selection import LeaveOneOut
 from .dml_algorithm import DML_Algorithm
 from six.moves import xrange
+import time
 
 class MultiDML_kNN:
     def __init__(self,n_neighbors,dmls = None):
@@ -34,27 +35,36 @@ class MultiDML_kNN:
     def add(self,dmls):    
         if isinstance(dmls, list):
             for dml in dmls:
-                self.knns_.append(neighbors.KNeighborsClassifier(n_neighbors))
+                self.knns_.append(neighbors.KNeighborsClassifier(self.nn_))
            
             self.dmls_.append(dmls)
         else:
             self.dmls_.append(dmls)
-            self.knns_.append(neighbors.KNeighborsClassifier(n_neighbors))
+            self.knns_.append(neighbors.KNeighborsClassifier(self.nn_))
 
     def fit(self,X,y):
         self.X_ = X
         self.y_ = y
         self.num_labels_ = len(set(y))
+        self.elapsed_ = []
 
         for i,dml in enumerate(self.dmls_):
             transf = X
             if dml is not None:
+                start = time.time()
                 dml.fit(X,y)
+                end = time.time()
                 transf = dml.transform(X)
+                self.elapsed_.append(end - start)
+            else:
+                self.elapsed_.append(0.0)
 
             self.knns_[i].fit(transf,y)
 
         return self
+    
+    def elapsed(self):
+        return self.elapsed_
 
     def _predict(self,dml=None,knn=None,X=None):
         trans = X
@@ -98,7 +108,7 @@ class MultiDML_kNN:
 
         for train_index, test_index in loo.split(X):
             X_train, X_test = X[train_index], X[test_index]
-            y_train, y_test = self.y_[train_index], self.y_[test_index]
+            y_train  = self.y_[train_index]
 
             knnloo = neighbors.KNeighborsClassifier(self.nn_)
             knnloo.fit(X_train,y_train)

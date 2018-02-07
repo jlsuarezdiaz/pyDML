@@ -8,14 +8,11 @@ Created on Thu Feb  1 17:19:12 2018
 
 from __future__ import print_function, absolute_import
 import numpy as np
-import warnings
-from collections import Counter
-from six.moves import xrange
-from sklearn.metrics import pairwise_distances
-from sklearn.utils.validation import check_X_y, check_array
 
-from numpy.linalg import(
-    inv,eig,norm)
+from six.moves import xrange
+from sklearn.utils.validation import check_X_y
+
+from numpy.linalg import norm
 
 from .dml_algorithm import DML_Algorithm
 
@@ -36,10 +33,8 @@ class ITML(DML_Algorithm):
         return self.M_
     
     def fit(self,X,y):
-        """
-        If supervised=True, y is the data labels.
-        Else, y = S is the set of similar data.
-        """
+        X, y = check_X_y(X,y)
+        self.X_, self.y_ = X, y
         
         # Initialize parameters
         n, d = X.shape
@@ -122,6 +117,7 @@ class ITML(DML_Algorithm):
             #print("P:      ",wtw)
             #import time
             #time.sleep(1)
+            
             # Matrix update
             M += (beta*M.dot(v).dot(v.T).dot(M))
            
@@ -181,6 +177,6 @@ class ITML(DML_Algorithm):
         hist, edges = np.histogram(dists,100)
         l = edges[np.floor(a).astype(int)]
         u = edges[np.floor(b).astype(int)]
-        print(edges[0],l,u,edges[100])
+        #print(edges[0],l,u,edges[100])
         
         return l, u

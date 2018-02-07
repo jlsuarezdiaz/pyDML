@@ -9,14 +9,11 @@ A DML that obtains a metric that maximizes the distance between the nearest frie
 
 from __future__ import print_function, absolute_import
 import numpy as np
-import warnings
-from collections import Counter
 from six.moves import xrange
 from sklearn.metrics import pairwise_distances
-from sklearn.utils.validation import check_X_y, check_array
+from sklearn.utils.validation import check_X_y
 
-from numpy.linalg import(
-    inv,eig,norm)
+from numpy.linalg import eig
 
 from .dml_algorithm import DML_Algorithm
 
@@ -28,6 +25,9 @@ class ANMM(DML_Algorithm):
         self.n_en_ = n_enemies
 
     def fit(self,X,y):
+        X, y = check_X_y(X,y)
+        self.X_, self.y_ = X, y
+        
         self.distance_matrix_ = pairwise_distances(X = X, n_jobs = -1)
         self.n_,self.d_ = X.shape
 
@@ -40,12 +40,10 @@ class ANMM(DML_Algorithm):
         else:
             num_dims = self.num_dims_
 
-
         S,C = self._compute_matrices(X,het_neighs,hom_neighs)
 
         Id =  np.zeros([self.d_,self.d_])
         np.fill_diagonal(Id,1.0)
-        #print(self._compute_average_margin(Id,S,C))
 
         # Eigenvalues and eigenvectors of S - C
         self.eig_vals_, self.eig_vecs_ = eig(S-C)
@@ -60,7 +58,6 @@ class ANMM(DML_Algorithm):
             self.eig_vecs_[i,:] = p[1]
 
         self.L_ = self.eig_vecs_[:num_dims,:]
-        #print(self._compute_average_margin(self.L_,S,C))
 
         return self
     
@@ -111,9 +108,7 @@ class ANMM(DML_Algorithm):
                 S += np.outer(x-X[het_neighs[i,j],:],x-X[het_neighs[i,j],:])
             for j in xrange(self.n_fr_):
                 C += np.outer(x-X[hom_neighs[i,j],:],x-X[hom_neighs[i,j],:])
-            #S += np.sum(np.outer(x-X[het_neighs[i,:],:],x-X[het_neighs[i,:],:]),axis = 1) ###
-            #C += np.sum(np.outer(x-X[hom_neighs[i,:],:],x-X[hom_neighs[i,:],:]),axis = 1)
-
+        
         S /= self.n_en_
         C /= self.n_fr_
 

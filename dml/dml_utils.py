@@ -26,6 +26,7 @@ def metric_to_linear(M):
 def SDProject(M):
     eigvals, eigvecs = np.linalg.eig(M)
     eigvals = eigvals.astype(float) #Remove residual imaginary part
+    eigvecs = eigvecs.astype(float)
     eigvals[eigvals<0.0]=0.0 # MEJORAR ESTO
     diag_sdp = np.diag(eigvals)
     return eigvecs.dot(diag_sdp).dot(eigvecs.T)

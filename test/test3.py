@@ -1,15 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import unittest
 import numpy as np
 import pandas as pd
 from six.moves import xrange
-from sklearn.metrics import pairwise_distances
 from sklearn.datasets import(
-    load_iris, load_digits, load_diabetes)
-from numpy.testing import assert_array_almost_equal
-from sklearn import neighbors
+    load_iris, load_digits)
+
 
 from sklearn.preprocessing import normalize
 
@@ -91,13 +88,13 @@ def wine_data():
 
 
 
-X,y = iris_data()
+#X,y = iris_data()
 #X,y = digits_data()
 #X,y = digits_red_data()
 #X,y = sonar_data()
 #X,y = wdbc_data()
 #X,y = spambase_data()
-#X,y = wine_data()
+X,y = wine_data()
 
 X = normalize(X,axis=0,norm='max')
 
@@ -107,20 +104,22 @@ n,d = X.shape
 
 print("Data dimensions: ", n, d)
 
-nca = NCA(max_iter=500, learning_rate = "adaptive",eta0=0.1, initial_transform = "scale", descent_method = "BGD")
+#nca = NCA(max_iter=100, learning_rate = "adaptive",eta0=0.1, initial_transform = "scale", descent_method = "BGD")
 lda = LDA(thres = 0.8)
 #rca = RCA()
-pca = PCA()
-lmnn = LMNN(max_iter=1000,learning_rate = "adaptive", eta0 = 0.001, k = 5, mu = 0.5,soft_comp_interval = 10,tol=1e-15,prec=1e-10)
-anmm = ANMM(num_dims = 40,n_friends = 3,n_enemies = 1)
-itml = ITML(max_iter=100000,gamma=np.inf, low_perc = 5, up_perc = 95)
-
+pca = PCA(thres=0.95)
+lmnn = LMNN(max_iter=300,learning_rate = "adaptive", eta0 = 0.001, k = 5, mu = 0.5,soft_comp_interval = 1,tol=1e-15,prec=1e-10,eta_thres=1e-15)
+anmm = ANMM(num_dims = 10,n_friends = 5,n_enemies = 3)
+itml = ITML(max_iter=10000,gamma=1.0, low_perc = 10, up_perc = 90)
+nca_bgd = NCA(max_iter=100, learning_rate = "adaptive", eta0=0.3, descent_method = "BGD")
+nca_sgd = NCA(max_iter=100, learning_rate = "adaptive", eta0=0.3, descent_method = "SGD",tol=1e-12,prec=1e-12)
 lsi = LSI(supervised=True, err = 1e-10, itproj_err = 1e-10)
 
-dmls = [nca]
-#dmls = [nca,lda,pca,anmm]
-
+dmls = [itml,pca,lda,anmm,lsi,nca_bgd,nca_sgd,lmnn]
+#dmls = [pca,lda,anmm,lsi]
 
 results = kfold_multitester_supervised_knn(X,y,k = 5, n_neigh = 3, dmls = dmls, verbose = True)
 
-print(results)
+print(results['time'])
+print(results['train'])
+print(results['test'])

@@ -8,10 +8,9 @@ Principal Component Analysis (NCA)
 
 from __future__ import absolute_import
 import numpy as np
-from six.moves import xrange
-from sklearn.utils.validation import check_X_y
+
+from sklearn.utils.validation import check_array
 from sklearn.decomposition import PCA as skPCA
-import time
 
 
 
@@ -23,41 +22,32 @@ class PCA(DML_Algorithm):
             num_dims: Number of dimensions for transformed data (ignored if num_dims > num_classes or thres specified)
             thres: Fraction of variability to keep. Data dimension will be reduced until the lowest dimension that keeps 'thres' explained variance.
         """
-        #if not num_dims is None and not thres is None:
-        #    warnings.warn("Arguments 'num_dims' and 'thres' are mutually exclusive."
-        #                  "Argument 'num_dims' will be ignored. Using 'thres'.")
-        #    num_dims = None
 
-        self.num_dims = num_dims
-        self.thres = thres
+        self.num_dims_ = num_dims
+        self.thres_ = thres
         if thres is not None:
-            self.skpca = skPCA(n_components=thres) # Thres ignores num_dims
+            if thres == 1.0:
+                self.skpca_ = skPCA()
+            else:
+                self.skpca_ = skPCA(n_components=thres) # Thres ignores num_dims
         else:
-            self.skpca = skPCA(n_components=num_dims)
+            self.skpca_ = skPCA(n_components=num_dims)
 
     def transformer(self):
         return self.L_
 
 
     def fit(self,X,y=None):
+        X = check_array(X)
         self.X_ = X
         self.n_, self.d_ = X.shape
 
-        self.skpca.fit(X)   
-        self.explained_variance_ = self.skpca.explained_variance_ratio_
+        self.skpca_.fit(X)   
+        self.explained_variance_ = self.skpca_.explained_variance_ratio_
         self.acum_variance_ = np.cumsum(self.explained_variance_)
 
-        #if self.thres is None and self.num_dims is None:
-        #    self.num_dims = self.d_
-        #elif not self.thres is None:
-        #    for i, v in enumerate(self.acum_variance):
-        #        if v >= self.thres:
-        #            self.num_dims = i+1
-        #            break
-
-
-        #self.L_ = self.skpca.components_[:self.num_dims,:]
-        self.L_ = self.skpca.components_
+        
+        self.L_ = self.skpca_.components_
 
         return self 
 
@@ -65,6 +55,6 @@ class PCA(DML_Algorithm):
         if X is None:
             X = self.X_
 
-        Xcent=X-self.skpca.mean_
+        Xcent=X-self.skpca_.mean_
 
         return DML_Algorithm.transform(self,Xcent)

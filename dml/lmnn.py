@@ -9,11 +9,9 @@ A DML that obtains a metric with target neighbors as near as possible and impost
 
 from __future__ import print_function, absolute_import
 import numpy as np
-import warnings
-from collections import Counter
 from six.moves import xrange
 from sklearn.metrics import pairwise_distances
-from sklearn.utils.validation import check_X_y, check_array
+from sklearn.utils.validation import check_X_y
 
 from .dml_utils import SDProject, calc_outers, calc_outers_i, metric_sq_distance
 from .dml_algorithm import DML_Algorithm
@@ -21,7 +19,7 @@ from .dml_algorithm import DML_Algorithm
 class LMNN(DML_Algorithm):
 
     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_metric = None, max_iter = 100, prec = 1e-3,
-                tol = 1e-6, k = 3, mu = 0.5, soft_comp_interval= 1, learn_inc = 1.01, learn_dec = 0.5):
+                tol = 1e-6, k = 3, mu = 0.5, soft_comp_interval= 1, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14):
         self.num_dims_ = num_dims
         self.M0_ = initial_metric
         self.max_it_ = max_iter
@@ -36,6 +34,7 @@ class LMNN(DML_Algorithm):
         self.soft_comp_interval_ = soft_comp_interval
         self.l_inc_ = learn_inc
         self.l_dec_ = learn_dec
+        self.etamin_ = eta_thres
         
         # Metadata
         self.num_its_ = None
@@ -43,7 +42,9 @@ class LMNN(DML_Algorithm):
         self.final_error_ = None
         
     def metadata(self):
-        return {'num_iters':self.num_its_,'initial_error':self.initial_error_,'final_error':self.final_error_}
+        return {'num_iters':self.num_its_,
+                'initial_error':self.initial_error_,
+                'final_error':self.final_error_}
 
     def metric(self):
         return self.M_
@@ -65,58 +66,71 @@ class LMNN(DML_Algorithm):
         M = self.M_
         G = self._compute_not_imposter_gradient(X,target_neighbors,outers)
         Mprev = None
-        err_prev =  err = np.inf
-        
-        self.initial_error_ = self._compute_error(self.mu_,M,X,y,target_neighbors,self._impostors(X,y,target_neighbors))
-        
-        #while not self._stop_criterion():
-        while self.num_its_ < self.max_it_ and  (Mprev is None or np.max(np.abs(M-Mprev)) > self.tol_) and np.max(np.abs(G)) > self.eps_:
-            if self.num_its_ % self.soft_comp_interval_ == 0:
-                impostors = self._impostors(X,y,target_neighbors)
-                #print(impostors)
-                N_down = self._compute_N_triplets(n,target_neighbors,impostors)
-                #print(N_down)
-                #import time; time.sleep(1)
-                N_up |= N_down # Union
-            else:
-                N_down = N_down & N_up # intersection
-                
-            Mprev = M.copy()
-            err_prev = err
 
-            grad_imp = self._compute_imposter_gradient(X,outers,N_down,N_old)
-            G += grad_imp
-            #print(G)
-            
-            M -= self.eta_*G
-            self.M_ = M = SDProject(M)
-            #print(M)
-            
-            
-            N_old = N_down
-            self.num_its_+=1
-            
-            #if self.num_its_ == 1: 
-            #    err = self._compute_error(self.mu_,M,X,y,target_neighbors,impostors)
-            #    self.initial_error_ = err
-            #print("ERR: ",self._compute_error(self.mu_,M,X,y,target_neighbors,impostors))
-            #print("ETA: ",self.eta_)
-            #print("GRD: ",np.max(np.abs(G)))
-            #if Mprev is not None:
-            #    print("CCH: ",np.max(np.abs(M-Mprev)))
+        
+        impostors = self._impostors(M,X,y,target_neighbors)
+        self.initial_error_ = self._compute_error(self.mu_,M,X,y,target_neighbors,impostors)
+        err_prev =  err = self.initial_error_
+        
+        stop = False
+        
+        while not stop:    
+            if self.num_its_ % self.soft_comp_interval_ == 0:
+                N_down_new = self._compute_N_triplets(n,target_neighbors,impostors)
+                N_up_new = N_up | N_down # Union
+            else:
+                N_down_new = N_down & N_up # intersection
                 
-            if self.adaptive_: # TODO En el primer paso el error puede subir drásticamente. Controlar si el error es muy grande y no actualizar matriz
-                err = self._compute_error(self.mu_,M,X,y,target_neighbors,impostors)
+            Mprev = M
+            
+            # Gradient update
+            grad_imp = self._compute_imposter_gradient(X,outers,N_down_new,N_old)
+            Gnew = G + grad_imp
+            
+            # Gradient step
+            Mnew = M - self.eta_*Gnew
+            Mnew = SDProject(Mnew)
+            
+            
+            imp_new = None
+            update=True  
+            
+            # Adaptive update
+            if self.adaptive_ and (self.num_its_+1) % self.soft_comp_interval_ == 0:
+                imp_new = self._impostors(Mnew,X,y,target_neighbors)
+                err = self._compute_error(self.mu_,Mnew,X,y,target_neighbors,imp_new)
                 if err < err_prev:
                     self.eta_ *= self.l_inc_
                 else:
                     self.eta_ *= self.l_dec_
-            #if(err > err_prev):
-            #    break
+                    update=False
+                    if self.eta_ < self.etamin_:
+                        stop=True
+                        
+            # Update and stop conditions
+            if update:
+                self.M_ = M = Mnew
+                G = Gnew
+                N_down = N_down_new
+                N_up = N_up_new
+                N_old = N_down 
+                impostors = imp_new
+                if impostors is None and (self.num_its_+1) % self.soft_comp_interval_ == 0:
+                    impostors = self._impostors(M,X,y,target_neighbors)
+                
+                tol_norm = np.max(np.abs(M-Mprev)) 
+                grad_norm = np.max(np.abs(G))
+                if tol_norm < self.tol_ or grad_norm < self.eps_:
+                    stop=True
+                err_prev = err
+                
+                
+            self.num_its_+=1
+            if self.num_its_ == self.max_it_:
+                stop=True
             
-
         self.M_ = M
-        self.final_error_ = self._compute_error(self.mu_,M,X,y,target_neighbors,self._impostors(X,y,target_neighbors))
+        self.final_error_ = self._compute_error(self.mu_,M,X,y,target_neighbors,self._impostors(M,X,y,target_neighbors))
         return self
 
 
@@ -138,15 +152,10 @@ class LMNN(DML_Algorithm):
             np.fill_diagonal(self.M_, 1./(np.maximum(X.max(axis=0 )-X.min(axis=0),1e-16))) #Scaled eculidean distance
 
         
-
+        X, y = check_X_y(X,y)
         self.X_ = X
         self.y_ = y
 
-    def _stop_criterion(self):
-
-        it_crit = self.num_its_ >= self.max_it_
-
-        return it_crit
 
     def _target_neighbors(self,X,y):
         """
@@ -169,31 +178,21 @@ class LMNN(DML_Algorithm):
         return target_neighbors
 
 
-    def _impostors(self,X,y,target_neighbors):
-        
-        #Lx = self.transform()
-        
+    def _impostors(self,M,X,y,target_neighbors):
         impostors = []
         for i, yi in enumerate(y):
             out_inds, = np.where(y != yi)
             target_inds = target_neighbors[i,:]
-            #print(target_inds, out_inds)
             inds = np.concatenate([target_inds,out_inds])
             target_len = len(target_inds)
             impostors_i = []
             
-            #Lxi = Lx[i].reshape(1,-1) # Convert single row to matrix
-            #dists = pairwise_distances(Lxi,Lx[inds])
-            dists = self._pairwise_metric_distances(X[i,:],X[inds,:])
-            #print(dists)
-            target_limit = np.sqrt(np.amax(dists[0:target_len]))
-            margin = (1+target_limit)*(1+target_limit)
+            dists = self._pairwise_metric_distances(X[i,:],X[inds,:],M)
+            target_limit = np.amax(dists[0:target_len])
+            margin = (1+target_limit)
 
             for l in xrange(len(out_inds)):
                 ldist = dists[target_len+l]
-                #print(i,X[i],inds[target_len+l],X[inds[target_len+l]],ldist,margin)
-                #import time
-                #time.sleep(1)
                 if ldist < margin:
                     impostors_i.append(out_inds[l])
 
@@ -201,15 +200,14 @@ class LMNN(DML_Algorithm):
 
         return impostors
 
-    def _pairwise_metric_distances(self,xi,X):
+    def _pairwise_metric_distances(self,xi,X,M):
         n,d = X.shape
         xi = xi.reshape(1,-1)
         dists = np.empty([n],dtype=float)
         for j in xrange(n):
             xj = X[j,:].reshape(1,-1)
             xij = xi - xj
-            #print(xij.dot(self.M_).dot(xij.T))
-            dists[j] = xij.dot(self.M_).dot(xij.T).astype('float')
+            dists[j] = xij.dot(M).dot(xij.T).astype('float')
         return dists
 
     def _compute_error(self,mu,M,X,y,target_neighbors,impostors):
@@ -223,7 +221,7 @@ class LMNN(DML_Algorithm):
                     i_err = (1 + metric_sq_distance(M,X[i,:],X[j,:]) - metric_sq_distance(M,X[i,:],X[l,:]))
                     if(i_err > 0):
                         imposter_err += i_err 
-                    #print(metric_sq_distance(M,X[i,:],X[j,:]),"  ",metric_sq_distance(M,X[i,:],X[l,:]))
+                        
         return (1-mu)*non_imposter_err + mu*imposter_err
 
 
@@ -245,7 +243,6 @@ class LMNN(DML_Algorithm):
             outers_i = calc_outers_i(X,outers,i)
             for j in target_neighbors[i,:]:
                 grad += outers_i[j]
-        #print(grad)
         return (1-self.mu_)*grad
 
 

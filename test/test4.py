@@ -18,7 +18,7 @@ seed=28
 #X,y = toy_datasets.digits_toy_dataset(dims=[0,1],numbers=[7,8])
 #X,y = toy_datasets.circular_toy_dataset(rads=[1,2,3],samples=[200,200,200],noise=[0.4,0.4,0.4],seed=seed)
 #X,y = toy_datasets.hiperplane_toy_dataset(seed=seed)
-X,y = toy_datasets.iris2d_toy_dataset()
+#X,y = toy_datasets.iris2d_toy_dataset()
 #X,y = toy_datasets.balls_toy_dataset(seed=seed)
 #X,y = toy_datasets.single_toy_dataset(seed=seed)
 
@@ -27,22 +27,22 @@ X,y = toy_datasets.iris2d_toy_dataset()
 
 sq22 = np.sqrt(2)/2
 L = np.array([[sq22, -sq22],[sq22, sq22]])
-#X = np.array([[0,0],[0,1],[2,0],[3,0]])
-#y = np.array(["A","A","B","B"])
-#X = X.dot(L.T) + np.array([2,2])
+X = np.array([[0,0],[0,1],[2,0],[3,0]])
+y = np.array(["A","A","B","B"])
+X = X.dot(L.T) + np.array([2,2])
 
 #toy_datasets.toy_plot(X,y)
 knn_plot(X,y,k=1,figsize=(15,8))
 
-nca = NCA(max_iter=10000, learning_rate = 0.1, descent_method = "BGD", tol=0)
+nca = NCA(max_iter=10000, learning_rate = "adaptive",eta0=0.1, descent_method = "BGD", tol=1e-3)
 lda = LDA(thres = 0.95)
 #rca = RCA()
 pca = PCA(thres = 0.95)
-lmnn = LMNN(max_iter=100000,learning_rate = "adaptive",eta0=0.001, k = 1, mu = 0.5,tol=1e-15,prec=1e-15)
+lmnn = LMNN(max_iter=1000,learning_rate = "adaptive",eta0=0.01, k = 1, mu = 0.5,tol=1e-15,prec=1e-15)
 anmm = ANMM(num_dims = 1, n_friends = 1,n_enemies = 1)
 lsi = LSI(supervised=True, err = 1e-10, itproj_err = 1e-10)
 
-alg = nca
+alg = lmnn
 
 alg.fit(X,y)
 Xn = alg.transform(X) 

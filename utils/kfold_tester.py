@@ -7,7 +7,7 @@ from __future__ import absolute_import
 import numpy as np
 import pandas as pd
 
-import warnings
+import time
 from six.moves import xrange
 
 from sklearn.model_selection import(
@@ -69,7 +69,7 @@ def kfold_multitester_supervised_knn(X,y,k,n_neigh,dmls,verbose=False):
     skf = StratifiedKFold(n_splits = k,shuffle = True)
 
     dmls_size = len(dmls)+1
-    m = np.empty([k+1,2*dmls_size])
+    m = np.empty([k+1,3*dmls_size])
 
     for i, [train_index, test_index] in enumerate(skf.split(X,y)):
         if verbose: print("** FOLD ",i)
@@ -79,10 +79,12 @@ def kfold_multitester_supervised_knn(X,y,k,n_neigh,dmls,verbose=False):
 
 
         mknn = MultiDML_kNN(n_neighbors = n_neigh, dmls = dmls)
+        
         mknn.fit(X_train, y_train)
-
-        m[i,:dmls_size] = mknn.score_all()
-        m[i,dmls_size:] = mknn.score_all(X_test,y_test)
+        
+        m[i,:dmls_size] = mknn.elapsed()
+        m[i,dmls_size:(2*dmls_size)] = mknn.score_all()
+        m[i,(2*dmls_size):(3*dmls_size)] = mknn.score_all(X_test,y_test)
         
 
 
@@ -95,10 +97,15 @@ def kfold_multitester_supervised_knn(X,y,k,n_neigh,dmls,verbose=False):
     rownames.append("MEAN")
 
     dml_names = mknn.dmls_string()
+    colnamestime = [s + " [TIME]" for s in dml_names]
     colnamestrain = [s + " [TRAIN]" for s in dml_names]
     colnamestest = [s + " [TEST]" for s in dml_names]
-    colnames = colnamestrain + colnamestest
+    #colnames = colnamestime + colnamestrain + colnamestest
 
-    m = pd.DataFrame(data = m, index = rownames, columns = colnames)
+    #m = pd.DataFrame(data = m, index = rownames, columns = colnames)
+    res = {}
+    res['time'] = pd.DataFrame(m[:,:dmls_size],columns = colnamestime, index = rownames)
+    res['train'] = pd.DataFrame(m[:,dmls_size:(2*dmls_size)],columns = colnamestrain, index = rownames)
+    res['test'] = pd.DataFrame(m[:,(2*dmls_size):(3*dmls_size)],columns = colnamestest, index = rownames)
 
-    return m
+    return res
