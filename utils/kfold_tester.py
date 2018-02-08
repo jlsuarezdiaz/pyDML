@@ -16,7 +16,7 @@ from sklearn.model_selection import(
 from dml import(
     kNN, MultiDML_kNN)
 
-def kfold_tester_supervised_knn(X,y,k,n_neigh,dml,verbose=False):
+def kfold_tester_supervised_knn(X,y,k,n_neigh,dml,verbose=False,seed=None):
     """
     X: data
     y: labels
@@ -24,6 +24,7 @@ def kfold_tester_supervised_knn(X,y,k,n_neigh,dml,verbose=False):
     n_neigh: k for nearest neighbors
     dml: DML algorithm
     """
+    np.random.seed(seed)
     skf = StratifiedKFold(n_splits = k,shuffle = True)
 
     m = np.empty([k+1,4])
@@ -34,6 +35,7 @@ def kfold_tester_supervised_knn(X,y,k,n_neigh,dml,verbose=False):
         X_train, X_test = X[train_index], X[test_index]
         y_train, y_test = y[train_index], y[test_index]
 
+        np.random.seed(seed)
         dml.fit(X_train, y_train)
 
         knn = kNN(n_neighbors = n_neigh, dml_algorithm= dml)
@@ -58,7 +60,7 @@ def kfold_tester_supervised_knn(X,y,k,n_neigh,dml,verbose=False):
 
     return m
 
-def kfold_multitester_supervised_knn(X,y,k,n_neigh,dmls,verbose=False):
+def kfold_multitester_supervised_knn(X,y,k,n_neigh,dmls,verbose=False,seed=None):
     """
     X: data
     y: labels
@@ -66,6 +68,7 @@ def kfold_multitester_supervised_knn(X,y,k,n_neigh,dmls,verbose=False):
     n_neigh: k for nearest neighbors
     dmls: DML algorithms list
     """
+    np.random.seed(seed)
     skf = StratifiedKFold(n_splits = k,shuffle = True)
 
     dmls_size = len(dmls)+1
@@ -78,8 +81,8 @@ def kfold_multitester_supervised_knn(X,y,k,n_neigh,dmls,verbose=False):
         y_train, y_test = y[train_index], y[test_index]
 
 
-        mknn = MultiDML_kNN(n_neighbors = n_neigh, dmls = dmls)
-        
+        mknn = MultiDML_kNN(n_neighbors = n_neigh, dmls = dmls, verbose = verbose)
+
         mknn.fit(X_train, y_train)
         
         m[i,:dmls_size] = mknn.elapsed()

@@ -192,7 +192,7 @@ class NCA(DML_Algorithm):
         
         stop = False
         
-        while not stop: #Stop criterion updates L
+        while not stop:
             grad = np.zeros([d,d])
             Lx = L.dot(X.T).T
             

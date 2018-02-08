@@ -17,30 +17,32 @@ from six.moves import xrange
 import time
 
 class MultiDML_kNN:
-    def __init__(self,n_neighbors,dmls = None):
+    def __init__(self,n_neighbors,dmls = None, verbose = False,**knn_args):
         self.nn_ = n_neighbors
-        self.knns_ = [neighbors.KNeighborsClassifier(n_neighbors)] # EUC
+        self.knn_args_ = knn_args
+        self.knns_ = [neighbors.KNeighborsClassifier(n_neighbors,**knn_args)] # EUC
+        self.verbose_ = verbose
         self.dmls_ = [None]
         
         if dmls is not None:
             if isinstance(dmls, list):
                 for dml in dmls:
-                    self.knns_.append(neighbors.KNeighborsClassifier(n_neighbors))
+                    self.knns_.append(neighbors.KNeighborsClassifier(n_neighbors,**knn_args))
                
                 self.dmls_ += dmls
             else:
                 self.dmls_ = [None,dmls]
-                self.knns_.append(neighbors.KNeighborsClassifier(n_neighbors))
+                self.knns_.append(neighbors.KNeighborsClassifier(n_neighbors,**knn_args))
 
     def add(self,dmls):    
         if isinstance(dmls, list):
             for dml in dmls:
-                self.knns_.append(neighbors.KNeighborsClassifier(self.nn_))
+                self.knns_.append(neighbors.KNeighborsClassifier(self.nn_,**self.knn_args_))
            
             self.dmls_.append(dmls)
         else:
             self.dmls_.append(dmls)
-            self.knns_.append(neighbors.KNeighborsClassifier(self.nn_))
+            self.knns_.append(neighbors.KNeighborsClassifier(self.nn_,**self.knn_args_))
 
     def fit(self,X,y):
         self.X_ = X
@@ -51,6 +53,8 @@ class MultiDML_kNN:
         for i,dml in enumerate(self.dmls_):
             transf = X
             if dml is not None:
+                if self.verbose_:
+                    print("* Training DML ",type(dml).__name__,"...")
                 start = time.time()
                 dml.fit(X,y)
                 end = time.time()
@@ -104,7 +108,7 @@ class MultiDML_kNN:
 
     def _loo_pred(self,X):
         loo = LeaveOneOut()
-        preds = np.empty([self.y_.size],dtype=int)
+        preds = np.empty([self.y_.size],dtype=self.y_.dtype)
 
         for train_index, test_index in loo.split(X):
             X_train, X_test = X[train_index], X[test_index]
