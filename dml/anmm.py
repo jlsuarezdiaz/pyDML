@@ -87,9 +87,10 @@ class ANMM(DML_Algorithm):
         hom_neighs = np.empty([self.n_,self.n_fr_],dtype=int)
         for i, x in enumerate(X):
             cur_class = y[i] ### Para no contar el propio indice de forma eficiente (mejorar)
-            y[i]+=1 ###
-            mask = np.flatnonzero(y == cur_class)
-            y[i]-=1 ###
+            #y[i]+=1 ###
+            #mask = np.flatnonzero(y == cur_class)
+            #y[i]-=1 ###
+            mask=np.concatenate([np.flatnonzero(y[:i]==cur_class),(i+1)+np.flatnonzero(y[i+1:]==cur_class)])
 
             friend_dists = [(m,self.distance_matrix_[i,m]) for m in mask]
             friend_dists = sorted(friend_dists, key = lambda k: k[1])

@@ -116,11 +116,11 @@ lmnn = LMNN(max_iter=300,learning_rate = "adaptive", eta0 = 0.001, k = 5, mu = 0
 anmm = ANMM(num_dims = 10,n_friends = 5,n_enemies = 3)
 itml = ITML(max_iter=10000,gamma=1.0, low_perc = 10, up_perc = 90)
 nca_bgd = NCA(max_iter=100, learning_rate = "adaptive", eta0=0.3, descent_method = "BGD")
-nca_sgd = NCA(max_iter=300, learning_rate = "adaptive", eta0=0.3, descent_method = "SGD",tol=1e-15,prec=1e-15)
+nca_sgd = NCA(num_dims=2,max_iter=300, learning_rate = "adaptive", eta0=0.3, descent_method = "SGD",tol=1e-15,prec=1e-15)
 lsi = LSI(supervised=True, err = 1e-10, itproj_err = 1e-10)
 
 #dmls = [itml,pca,lda,anmm,lsi,nca_bgd,nca_sgd,lmnn]
-dmls = [lda,pca,anmm,lsi,itml]
+dmls = [nca_sgd,anmm]
 
 results = kfold_multitester_supervised_knn(X,y,k = 5, n_neigh = 3, dmls = dmls, verbose = True,seed = 28)
 

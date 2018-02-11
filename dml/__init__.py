@@ -10,4 +10,5 @@ from .lsi import LSI
 from .anmm import ANMM
 from .itml import ITML
 from .multidml_knn import MultiDML_kNN
-from .knn_plot import knn_plot, classifier_plot, knn_multiplot
+from .knn_plot import *
+from .tune import *

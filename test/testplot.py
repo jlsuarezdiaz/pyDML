@@ -7,15 +7,17 @@ Created on Sat Feb  3 17:43:34 2018
 """
 
 from utils import(
-        read_ARFF, kfold_multitester_supervised_knn, toy_datasets)
+        read_ARFF, kfold_multitester_supervised_knn, toy_datasets,datasets)
 
 from dml import(
-    NCA,LDA,RCA,PCA,LMNN,ANMM,LSI,kNN, knn_plot, classifier_plot, knn_multiplot)
+    NCA,LDA,RCA,PCA,LMNN,ANMM,LSI,kNN, knn_plot, classifier_plot, classifier_pairplots, knn_pairplots, knn_multiplot)
 
 from sklearn.datasets import load_digits
 from sklearn import svm
+from sklearn.neighbors import KNeighborsClassifier
 
 import numpy as np
+import pandas as pd
 
 seed=28
 np.random.seed(seed)
@@ -84,3 +86,20 @@ anmm = ANMM(num_dims = 2, n_friends = 1,n_enemies = 1)
 f = knn_multiplot(X,y,nrow=2,ncol=2,ks=[1,1,11,11],dmls=[lda,anmm,lda,anmm],title="Comparación de DMLS",subtitles=["k=1, LDA", "k=1, ANMM", "k=11, LDA", "k=11, ANMM"],
               cmap="gist_rainbow",plot_points=True,figsize=(20,16))
 
+X,y = digits_data()
+lda = LDA(num_dims = 5)
+anmm = ANMM(num_dims=5)
+X = anmm.fit_transform(X,y)
+#knn = KNeighborsClassifier()
+#f1 = classifier_pairplots(X,y,knn,sections="zeros",cmap="gist_rainbow",figsize=(25,25))
+#f2 = classifier_pairplots(X,y,knn,sections="mean",cmap="gist_rainbow",figsize=(25,25))
+#f1.savefig("./a.png")
+#f2.savefig("./b.png")
+knn_pairplots(X,y,k=3,dml=lda,cmap="gist_rainbow",figsize=(25,25))
+
+X, y = datasets.iris()
+iris_labels = ['Setosa' if yi == 0 else 'Versicolor' if yi == 1 else 'Virginica' for yi in y]
+X = pd.DataFrame(X,columns=['Sepal Length','Sepal Width','Petal Length','Petal Width'])
+svmc = svm.SVC()
+classifier_pairplots(X,iris_labels,svmc,cmap="gist_rainbow",figsize=(20,20))
+#classifier_pairplots(X,iris_labels,svmc,xattrs=['Sepal Length','Sepal Width'],yattrs=['Petal Length','Petal Width'],cmap="gist_rainbow",figsize=(20,20))
