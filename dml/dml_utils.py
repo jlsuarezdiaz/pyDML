@@ -83,3 +83,12 @@ def matpack(v,n,m):
     for i in xrange(m):
         A[:,i] = v[(i*n):(i+1)*n,0]
     return A
+
+# Pairwise distance for two datasets given their dot products
+def pairwise_sq_distances_from_dot(K):
+    n, m = K.shape
+    dists = np.empty([n,m])
+    for i in xrange(n):
+        for j in xrange(m):
+            dists[i,j] = K[i,i]+K[j,j]-2*K[i,j]
+    return dists

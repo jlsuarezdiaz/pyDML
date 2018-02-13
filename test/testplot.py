@@ -78,7 +78,7 @@ classifier_plot(X,y,svmc,label_colors=['red','blue'],figsize=(15,8))
 
 X, y = digits_data()
 selected = np.where(np.isin(y,[0,1,3,4,6,9]))[0]
-#X, y = X[selected,:], y[selected]
+X, y = X[selected,:], y[selected]
 lda = LDA(num_dims = 2)
 knn_plot(X,y,k=3,dml=lda,cmap="gist_rainbow",figsize=(15,8))
 

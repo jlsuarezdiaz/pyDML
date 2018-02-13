@@ -176,8 +176,8 @@ def knn_multiplot(X,y,nrow=None,ncol=None,ks=None, clfs=None,attrs=None, section
     # Axes array plot
     if nrow is None or ncol is None:
         ncol=2
-        nrow = (len(param_list)+1)/2
-        
+        nrow = (len(param_list)+1)//2
+
     f, axarr = plt.subplots(nrow,ncol,**fig_kw)
     
     if param_list is not None:
@@ -190,7 +190,12 @@ def knn_multiplot(X,y,nrow=None,ncol=None,ks=None, clfs=None,attrs=None, section
             subtitle = subtitles[i] if subtitles is not None else None
             
             ix0, ix1 = i // ncol, i % ncol
-            ax = axarr[ix0,ix1]
+            if nrow == 1:
+                ax=axarr[ix1]
+            elif ncol == 1:
+                ax=axarr[ix0]
+            else:
+                ax = axarr[ix0,ix1]
             knn_plot(X,y,k,attrs,sections,clf,fitted,metric,transformer,dml,dml_fitted,f,ax,title,subtitle,
                      None,None,None,None,grid_split,grid_step,label_legend,legend_loc,
                      cmap,label_colors,plot_points,plot_regions,region_intensity,legend_plot_points,legend_plot_regions,legend_on_axis)
