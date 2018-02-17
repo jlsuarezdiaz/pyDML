@@ -69,12 +69,14 @@ if(Xn.shape[1] < 2):
     for i in range(Xn.shape[0]):
         X2[i,:] = [Xn[i,0],0.0]
     Xn = X2
-knn_plot(Xn,y,k=3,cmap="gist_rainbow",region_intensity=0.4,legend_plot_points=True,figsize=(15,8))
+ 
+#knn_plot(Xn,y,k=3,cmap="gist_rainbow",region_intensity=0.4,legend_plot_points=True,figsize=(15,8))
 
 svmc = svm.SVC()
 X = np.array([[3,1],[4,2],[3,4],[5,4],[-1,1],[1,2],[2,2],[3,3]])
 y = np.array(['OK','OK','OK','OK','ERR','ERR','ERR','ERR'])
-classifier_plot(X,y,svmc,label_colors=['red','blue'],figsize=(15,8))
+
+#classifier_plot(X,y,svmc,label_colors=['red','blue'],figsize=(15,8))
 
 X, y = digits_data()
 selected = np.where(np.isin(y,[0,1,3,4,6,9]))[0]
@@ -83,8 +85,9 @@ lda = LDA(num_dims = 2)
 knn_plot(X,y,k=3,dml=lda,cmap="gist_rainbow",figsize=(15,8))
 
 anmm = ANMM(num_dims = 2, n_friends = 1,n_enemies = 1)
-f = knn_multiplot(X,y,nrow=2,ncol=2,ks=[1,1,11,11],dmls=[lda,anmm,lda,anmm],title="Comparación de DMLS",subtitles=["k=1, LDA", "k=1, ANMM", "k=11, LDA", "k=11, ANMM"],
-              cmap="gist_rainbow",plot_points=True,figsize=(20,16))
+
+#f = knn_multiplot(X,y,nrow=2,ncol=2,ks=[1,1,11,11],dmls=[lda,anmm,lda,anmm],title="Comparación de DMLS",subtitles=["k=1, LDA", "k=1, ANMM", "k=11, LDA", "k=11, ANMM"],
+#              cmap="gist_rainbow",plot_points=True,figsize=(20,16))
 
 X,y = digits_data()
 lda = LDA(num_dims = 5)
@@ -95,11 +98,18 @@ X = anmm.fit_transform(X,y)
 #f2 = classifier_pairplots(X,y,knn,sections="mean",cmap="gist_rainbow",figsize=(25,25))
 #f1.savefig("./a.png")
 #f2.savefig("./b.png")
-knn_pairplots(X,y,k=3,dml=lda,cmap="gist_rainbow",figsize=(25,25))
+
+#knn_pairplots(X,y,k=3,dml=lda,cmap="gist_rainbow",figsize=(25,25))
 
 X, y = datasets.iris()
 iris_labels = ['Setosa' if yi == 0 else 'Versicolor' if yi == 1 else 'Virginica' for yi in y]
 X = pd.DataFrame(X,columns=['Sepal Length','Sepal Width','Petal Length','Petal Width'])
 svmc = svm.SVC()
-classifier_pairplots(X,iris_labels,svmc,cmap="gist_rainbow",figsize=(20,20))
+
+#classifier_pairplots(X,iris_labels,svmc,cmap="gist_rainbow",figsize=(20,20))
 #classifier_pairplots(X,iris_labels,svmc,xattrs=['Sepal Length','Sepal Width'],yattrs=['Petal Length','Petal Width'],cmap="gist_rainbow",figsize=(20,20))
+
+X=np.array([[0.0,0.1],[0.5,0.1],[-0.5,-0.1],[1.0,0.2],[-1.0,-0.1],[0.1,1.0],[-0.1,-1.0]])
+y=np.array([0,0,0,0,0,1,2])
+lmnn = LMNN(max_iter=1000,learning_rate = "adaptive",eta0=1.0, k = 1, mu = 0.5,tol=1e-15,prec=1e-15)
+knn_multiplot(X,y,2,2,ks=[1,1,1],dmls=[None,lmnn,lmnn],transforms=[True,True,False],title="LMNN",subtitles=["Original","Transformados","Región LMNN+KNN"],cmap="rainbow",figsize=(20,20))

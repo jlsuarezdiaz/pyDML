@@ -31,8 +31,26 @@ class LSI(DML_Algorithm):
         self.err_ = err
         self.supv_ = supervised
         
+        # Metadata
+        self.iterative_projections_conv_exp_ = None
+        self.initial_objective_ = None
+        self.initial_constraint_ = None
+        self.final_objective_ = None
+        self.final_constraint_ = None
+        self.projection_iterations_avg_ = None
+        self.num_its_ = None
+        
     def metric(self):
         return self.M_
+    
+    def metadata(self):
+        return {'initial_objective':self.initial_objective_,
+                'initial_constraint':self.initial_constraint_,
+                'final_objective':self.final_objective_,
+                'final_constraint':self.final_constraint_,
+                'iterative_projections_conv_exp':self.iterative_projections_conv_exp_,
+                'projection_iterations_avg': self.projection_iterations_avg_,
+                'num_its':self.num_its_}
         
     def fit(self,X,side):
         """
@@ -73,12 +91,15 @@ class LSI(DML_Algorithm):
             M = np.zeros([d,d])
             np.fill_diagonal(M, 1./(np.maximum(X.max(axis=0 )-X.min(axis=0),1e-16))) #Scaled eculidean distance
         
+        outers = calc_outers(X)
+        
         W = np.zeros([d,d])
         for i in xrange(N):
+            outers_i = calc_outers_i(X,outers,i)
             for j in xrange(i+1,N):
                 if S[i,j]:
-                    d_ij = X[i,:]-X[j,:]
-                    W += (d_ij.T.dot(d_ij))
+                    #d_ij = X[i,:]-X[j,:]
+                    W += 2*(outers_i[j])
                 
         w = unroll(W)
         t = w.T.dot(unroll(M))/100
@@ -87,7 +108,11 @@ class LSI(DML_Algorithm):
         w1 = w/nw
         t1 = t/nw
         
-        outers = calc_outers(X)
+        #Metadata
+        self.initial_objective_ = LSI.fD(X,D,M,N,d)
+        self.initial_constraint_ = LSI.fS(X,S,M,N,d)
+        self.projection_iterations_avg_ = 0
+        self.iterative_projections_conv_exp_ = 0
         
         num_its = 0
         max_iter = self.max_it_
@@ -109,6 +134,10 @@ class LSI(DML_Algorithm):
             projection_iters = 0
             satisfy = False
             
+            #print("g(M) = ",LSI.fD(X,D,M,N,d))
+            #print("f(M) = ",LSI.fS(X,D,M,N,d))
+            #print("t = ",t)
+            
             while projection_iters < max_projit and not satisfy:
                 M1 = M  ## TODO copy (?)
                 
@@ -120,37 +149,45 @@ class LSI(DML_Algorithm):
                     x = x1 + (t1-w1.T.dot(x1))*w1
                     M = matpack(x,d,d)
                     
-                #fDC1 = w.T.dot(x)
+                #fDC1 = w.T.dot(x) After this projection, w.T.dot(X)=t
                 
                 #M2 = M ## TODO copy (?)
-                
                 
                 # Second constraint
                 M = (M + M.T)/2.0
                 M = SDProject(M).astype(float)
                 
                 fDC2 = w.T.dot(unroll(M))
-                
                 #M3 = M
                 
                 err2 = (fDC2-t)/t
+
                 projection_iters+=1
                 satisfy = (err2 <= itproj_err)
+                #print("P: ",fDC2,err2,t)
+                #fs=LSI.fS(X,S,M,N,d);print(fDC2,fs,t,fDC2/fs)
                 
-                
+            self.projection_iterations_avg_ += projection_iters
+        
             # Gradient ascent
             obj_previous = LSI.fD(X,D,M_last,N,d)
             obj = LSI.fD(X,D,M,N,d)
-            
+            #print(obj,obj_previous)
+            #print(M)
+            #print(M_last)
+            #print("SAT: ",satisfy)
             if (obj > obj_previous or num_its == 0) and satisfy:
                 # Projection successful and improves objective function. Increase learning rate.
                 # Take gradient step
                 eta *= 1.05
-                M_last = M
+                M_last = M.copy()
                 #grad2 = fS1(X,S,M,N,d,outers) # CONSTANT
                 grad1 = LSI.fD1(X,D,M,N,d,outers)
-                G = grad1 #LSI.grad_projection(grad1,grad2,d)
-                M += eta*M
+                G = grad1#LSI.grad_projection(grad1,grad2,d)
+                M += eta*G
+                
+                self.iterative_projections_conv_exp_ += 1
+                #print("[OK]")
                 
             else:
                 # Projection failed or objective function not improved. Shrink learning rate and take last M
@@ -162,9 +199,17 @@ class LSI(DML_Algorithm):
             
             if num_its == max_iter or delta < err:
                 done = True
+            
+            
                 
-                
-        self.M_ = M
+        self.M_ = M/t
+        
+        #Metadata
+        self.final_objective_ = LSI.fD(X,D,self.M_,N,d)
+        self.final_constraint_ = LSI.fS(X,S,self.M_,N,d)
+        self.num_its_ = num_its
+        self.iterative_projections_conv_exp_ /= num_its
+        self.projection_iterations_avg_ /= num_its
         return self
     
     
@@ -194,13 +239,14 @@ class LSI(DML_Algorithm):
         
     def fD1(X, D, M, N, d, outers):
         g_sum = np.zeros([d,d],dtype=float)
-        
+        #d_sum = 0.0
         for i in xrange(N):
             outers_i = calc_outers_i(X,outers,i)
             for j in xrange(N):
                 if D[i,j]:
-                    xij = X[i,:]-X[j,:]
+                    xij = (X[i,:]-X[j,:]).reshape(1,-1)
                     d_ij = sqrt(xij.dot(M).dot(xij.T))
+                    #d_sum += d_ij
                     g_sum += outers_i[j]/d_ij
         return 0.5*g_sum
     

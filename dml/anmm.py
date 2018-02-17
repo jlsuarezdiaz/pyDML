@@ -25,6 +25,16 @@ class ANMM(DML_Algorithm):
         self.num_dims_ = num_dims
         self.n_fr_ = n_friends
         self.n_en_ = n_enemies
+        
+        # Metadata
+        self.acum_eig_ = None
+        self.nd_ = None
+        
+    def transformer(self):
+        return self.L_
+    
+    def metadata(self):
+        return {'acum_eig':self.acum_eig_, 'num_dims':self.nd_}
 
     def fit(self,X,y):
         X, y = check_X_y(X,y)
@@ -39,7 +49,7 @@ class ANMM(DML_Algorithm):
         if self.num_dims_ is None:
             num_dims = self.d_
         else:
-            num_dims = self.num_dims_
+            num_dims = min(self.num_dims_,self.d_)
 
         S,C = self._compute_matrices(X,het_neighs,hom_neighs)
 
@@ -61,10 +71,13 @@ class ANMM(DML_Algorithm):
 
         self.L_ = self.eig_vecs_[:num_dims,:]
         #print(self._compute_average_margin(self.L_,S,C))
+        
+        self.nd_ = num_dims
+        self.acum_eigvals_ = np.cumsum(self.eig_vals_)
+        self.acum_eig_ = self.acum_eigvals_[num_dims-1]/self.acum_eigvals_[-1]
+        
         return self
     
-    def transformer(self):
-        return self.L_
     
     
     def _compute_average_margin(self,L,S,C):

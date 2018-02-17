@@ -79,7 +79,6 @@ class NCA(DML_Algorithm):
     def _SGD_fit(self,X,y):
         # Initialize parameters
         outers = calc_outers(X)
-        
         n,d= self.n_, self.d_
 
         L = self.L_
@@ -93,9 +92,9 @@ class NCA(DML_Algorithm):
         
         stop = False
         
+        
         while not stop:
             X, y, outers = self._shuffle(X,y,outers)            
-            
             
             for i,yi in enumerate(y):
                 grad = np.zeros([d,d])
@@ -111,7 +110,6 @@ class NCA(DML_Algorithm):
                 i_max = np.argmax(dists_i)
                 c = dists_i[i_max]
                 
-                
                 softmax = np.empty([n],dtype=float)
                 for j in xrange(n):
                     if j != i:
@@ -124,7 +122,6 @@ class NCA(DML_Algorithm):
                         
                 softmax[i] = 0
                 softmax/=softmax.sum()
-                
 
                 #Calc p_i
                 yi_mask = np.where(y == yi)
@@ -134,6 +131,8 @@ class NCA(DML_Algorithm):
                 sum_p = sum_m = 0.0
                 outers_i = calc_outers_i(X,outers,i)
 
+                #sum_p = (softmax*outers_i.T).T.sum(axis=0)
+                #sum_m = -(softmax[yi_mask]*outers_i[yi_mask].T).T.sum(axis=0)
                 for k in xrange(n):
                     s = softmax[k]*outers_i[k]
                     sum_p += s
@@ -143,8 +142,6 @@ class NCA(DML_Algorithm):
                 grad += p_i*sum_p + sum_m
                 grad = 2*L.dot(grad)
                 L+= self.eta_*grad
-                
-            
                 
             
             succ = self._compute_expected_success(L,X,y)
@@ -169,9 +166,9 @@ class NCA(DML_Algorithm):
                 stop=True
             if stop:
                 break
-
+            
         self.L_ = L
-
+        
         return self
         
     def _BGD_fit(self,X,y):
@@ -280,7 +277,11 @@ class NCA(DML_Algorithm):
         X = X[rnd,:]
         y = y[rnd]
         if outers is not None:
-            outers = outers[rnd,:][:,rnd]
+            for i in xrange(len(y)):
+                outers[:,i]=outers[rnd,i]
+            for i in xrange(len(y)):
+                outers[i,:]=outers[i,rnd]
+            #outers = outers[rnd,:][:,rnd]
         else:
             outers = None
 

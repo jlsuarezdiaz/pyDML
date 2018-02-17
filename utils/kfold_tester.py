@@ -75,7 +75,7 @@ def kfold_multitester_supervised_knn(X,y,k,n_neigh,dmls,verbose=False,seed=None)
     m = np.empty([k+1,3*dmls_size])
 
     for i, [train_index, test_index] in enumerate(skf.split(X,y)):
-        if verbose: print("** FOLD ",i)
+        if verbose: print("** FOLD ",i+1)
         
         X_train, X_test = X[train_index], X[test_index]
         y_train, y_test = y[train_index], y[test_index]

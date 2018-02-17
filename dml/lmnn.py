@@ -16,6 +16,7 @@ from sklearn.utils.validation import check_X_y
 from .dml_utils import SDProject, calc_outers, calc_outers_i, metric_sq_distance
 from .dml_algorithm import DML_Algorithm
 
+
 class LMNN(DML_Algorithm):
 
     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_metric = None, max_iter = 100, prec = 1e-3,
@@ -90,8 +91,6 @@ class LMNN(DML_Algorithm):
             # Gradient step
             Mnew = M - self.eta_*Gnew
             Mnew = SDProject(Mnew)
-            
-            
             imp_new = None
             update=True  
             
@@ -114,8 +113,9 @@ class LMNN(DML_Algorithm):
                 N_down = N_down_new
                 N_up = N_up_new
                 N_old = N_down 
-                impostors = imp_new
-                if impostors is None and (self.num_its_+1) % self.soft_comp_interval_ == 0:
+                if imp_new is not None:
+                    impostors=imp_new
+                if imp_new is None and (self.num_its_+1) % self.soft_comp_interval_ == 0:
                     impostors = self._impostors(M,X,y,target_neighbors)
                 
                 tol_norm = np.max(np.abs(M-Mprev)) 
@@ -124,11 +124,10 @@ class LMNN(DML_Algorithm):
                     stop=True
                 err_prev = err
                 
-                
             self.num_its_+=1
             if self.num_its_ == self.max_it_:
                 stop=True
-            
+
         self.M_ = M
         self.final_error_ = self._compute_error(self.mu_,M,X,y,target_neighbors,self._impostors(M,X,y,target_neighbors))
         return self
@@ -188,11 +187,11 @@ class LMNN(DML_Algorithm):
             impostors_i = []
             
             dists = self._pairwise_metric_distances(X[i,:],X[inds,:],M)
-            target_limit = np.amax(dists[0:target_len])
+            target_limit = np.amax(dists[0,0:target_len])
             margin = (1+target_limit)
-
+            
             for l in xrange(len(out_inds)):
-                ldist = dists[target_len+l]
+                ldist = dists[0,target_len+l]
                 if ldist < margin:
                     impostors_i.append(out_inds[l])
 
@@ -201,14 +200,19 @@ class LMNN(DML_Algorithm):
         return impostors
 
     def _pairwise_metric_distances(self,xi,X,M):
-        n,d = X.shape
-        xi = xi.reshape(1,-1)
-        dists = np.empty([n],dtype=float)
-        for j in xrange(n):
-            xj = X[j,:].reshape(1,-1)
-            xij = xi - xj
-            dists[j] = xij.dot(M).dot(xij.T).astype('float')
-        return dists
+        return pairwise_distances(xi.reshape(1,-1),X,metric=LMNN._distance,M=M)
+        #n,d = X.shape
+        #xi = xi.reshape(1,-1)
+        #dists = np.empty([n],dtype=float)
+        #for j in xrange(n):
+        #    xj = X[j,:].reshape(1,-1)
+        #    xij = xi - xj
+        #    dists[j] = xij.dot(M).dot(xij.T).astype('float')
+        #return dists
+        
+    def _distance(x,y,M):
+        xy=(x-y).reshape(1,-1)
+        return xy.dot(M).dot(xy.T)
 
     def _compute_error(self,mu,M,X,y,target_neighbors,impostors):
         n,d = X.shape
@@ -243,6 +247,7 @@ class LMNN(DML_Algorithm):
             outers_i = calc_outers_i(X,outers,i)
             for j in target_neighbors[i,:]:
                 grad += outers_i[j]
+                
         return (1-self.mu_)*grad
 
 

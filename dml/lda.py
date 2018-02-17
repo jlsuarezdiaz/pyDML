@@ -27,9 +27,16 @@ class LDA(DML_Algorithm):
         self.num_dims = num_dims
         self.thres = thres
         self.sklda = skLDA(n_components=num_dims) 
+        
+        #Metadata
+        self.nd_ = None
+        self.acum_eig_ = None
 
     def transformer(self):
         return self.L_
+    
+    def metadata(self):
+        return {'num_dims':self.nd_, 'acum_eig':self.acum_eig_}
 
 
     def fit(self,X,y):
@@ -49,9 +56,12 @@ class LDA(DML_Algorithm):
                 if v >= self.thres:
                     self.num_dims = i+1
                     break
-
+        self.num_dims = min(self.num_dims,len(self.explained_variance))
 
         self.L_ = self.sklda.scalings_.T[:self.num_dims,:]
+        
+        self.nd_ = self.num_dims
+        self.acum_eig_ = self.acum_variance[self.num_dims-1]/self.acum_variance[-1]
 
         return self
 

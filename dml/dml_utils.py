@@ -20,7 +20,7 @@ def metric_to_linear(M):
     eigvals = eigvals.astype(float) #Remove residual imaginary part
     eigvals[eigvals<0.0]=0.0 # MEJORAR ESTO (no debería hacer falta, pero está bien para errores de precisión)
     sqrt_diag = np.sqrt(eigvals)
-    return eigvecs.dot(np.diag(sqrt_diag))
+    return eigvecs.dot(np.diag(sqrt_diag)).T
 
 # Semidefinite projection
 def SDProject(M):

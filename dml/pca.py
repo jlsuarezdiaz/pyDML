@@ -32,10 +32,16 @@ class PCA(DML_Algorithm):
                 self.skpca_ = skPCA(n_components=thres) # Thres ignores num_dims
         else:
             self.skpca_ = skPCA(n_components=num_dims)
+            
+        self.nd_ = None
+        self.acum_eig_ = None
+        
 
     def transformer(self):
         return self.L_
 
+    def metadata(self):
+        return {'num_dims':self.nd_,'acum_eig':self.acum_eig_}
 
     def fit(self,X,y=None):
         X = check_array(X)
@@ -48,6 +54,8 @@ class PCA(DML_Algorithm):
 
         
         self.L_ = self.skpca_.components_
+        self.nd_ = self.L_.shape[0]
+        self.acum_eig_ = self.acum_variance_[self.nd_-1]
 
         return self 
 

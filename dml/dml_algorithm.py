@@ -26,8 +26,12 @@ class DML_Algorithm(BaseEstimator,TransformerMixin):
         -------
         M : (d x d) matrix
         """
-        L = self.transformer()
-        return L.T.dot(L)
+        if hasattr(self,'M_'):
+            return self.M_
+        else:
+            L = self.transformer()
+            self.M_ = L.T.dot(L)
+            return self.M_
 
     def transformer(self):
         """Computes the transformation matrix from the Mahalanobis matrix.
@@ -38,11 +42,17 @@ class DML_Algorithm(BaseEstimator,TransformerMixin):
         -------
         L : (d x d) matrix
         """
-        try:
-            L = cholesky(self.metric())
-            return L
-        except:
-            L = metric_to_linear(self.metric())
+        
+        if hasattr(self,'L_'):
+            return self.L_
+        else:
+            try:
+                L = cholesky(self.metric()).T
+                return L
+            except:
+                L = metric_to_linear(self.metric())
+                return L
+            self.L_ = L
             return L
     
     def transform(self, X=None):
@@ -64,3 +74,6 @@ class DML_Algorithm(BaseEstimator,TransformerMixin):
             X = check_array(X, accept_sparse=True)
         L = self.transformer()
         return X.dot(L.T)
+    
+    def metadata(self):
+        return {}

@@ -19,7 +19,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from sklearn.preprocessing import LabelEncoder
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.utils.validation import check_X_y
-
+from sklearn.pipeline import Pipeline
 
 
 from .dml_utils import metric_to_linear
@@ -37,13 +37,16 @@ def classifier_plot(X,y,clf,attrs=None, sections="mean",fitted=False, f=None, ax
         clf.fit(X,y)
     
     # Plot boundaries
+    margin_x = 0.1*(X[attrs[0]].max()-X[attrs[0]].min())
+    margin_y = 0.1*(X[attrs[1]].max()-X[attrs[1]].min())
+    margin = max(margin_x,margin_y)
     if xrange is None:
-        x_min, x_max = X[attrs[0]].min() - 1, X[attrs[0]].max() + 1
+        x_min, x_max = X[attrs[0]].min() - margin, X[attrs[0]].max() + margin
     else:
         x_min, x_max = xrange[0], xrange[1]
         
     if yrange is None:
-        y_min, y_max = X[attrs[1]].min() - 1, X[attrs[1]].max() + 1
+        y_min, y_max = X[attrs[1]].min() - margin, X[attrs[1]].max() + margin
     else:
         y_min, y_max = yrange[0], yrange[1]
         
@@ -131,7 +134,7 @@ def classifier_plot(X,y,clf,attrs=None, sections="mean",fitted=False, f=None, ax
         
     return f
 
-def knn_plot(X,y,k=1,attrs=None,sections="mean",knn_clf = None, fitted = False, metric=None, transformer=None, dml=None, dml_fitted=False,
+def knn_plot(X,y,k=1,attrs=None,sections="mean",knn_clf = None, fitted = False, metric=None, transformer=None, dml=None, dml_fitted=False,transform=True,
              f = None, ax = None, title = None, subtitle=None, xrange = None, yrange = None, 
              xlabel = None, ylabel = None, grid_split=[400,400], grid_step = [0.1,0.1], label_legend = True, legend_loc="lower right",
              cmap=None, label_colors=None, plot_points = True, plot_regions = True,
@@ -141,8 +144,10 @@ def knn_plot(X,y,k=1,attrs=None,sections="mean",knn_clf = None, fitted = False, 
         if dml_fitted:
             X = dml.transform(X)
         else:
-            X = dml.fit_transform(X,y)
-    elif transformer is not None:
+            if transform: # If transform, dataset will be transformed in the plot
+                X = dml.fit_transform(X,y)
+            # If not transform, the plotted dataset will be the original and the classifier regions will include the dml mapping (done in knn_clf initialization)            
+    elif transformer is not None: # TODO add transform option to transformer and metric
         X = X.dot(transformer.T)
     elif metric is not None:
         transformer = metric_to_linear(metric)
@@ -153,6 +158,8 @@ def knn_plot(X,y,k=1,attrs=None,sections="mean",knn_clf = None, fitted = False, 
     if knn_clf is None:
         fitted = False
         knn_clf = KNeighborsClassifier(n_neighbors=k)
+        if not transform:
+            knn_clf = Pipeline([('dml',dml),('knn',knn_clf)])
         
     if not fitted:
         knn_clf.fit(X,y)
@@ -165,13 +172,13 @@ def knn_plot(X,y,k=1,attrs=None,sections="mean",knn_clf = None, fitted = False, 
                            grid_split, grid_step,label_legend,legend_loc,cmap,label_colors,plot_points,
                            plot_regions,region_intensity,legend_plot_points,legend_plot_regions,legend_on_axis)
         
-def knn_multiplot(X,y,nrow=None,ncol=None,ks=None, clfs=None,attrs=None, sections="mean",fitted = False, metrics=None, transformers=None, dmls=None, dml_fitted=False,
+def knn_multiplot(X,y,nrow=None,ncol=None,ks=None, clfs=None,attrs=None, sections="mean",fitted = False, metrics=None, transformers=None, dmls=None, dml_fitted=False,transforms=None,
                   title = None, subtitles = None, xlabels=None, ylabels=None, grid_split = [400,400], grid_step=[0.1,0.1,],
                   label_legend=True, legend_loc="center right",cmap=None, label_colors=None,plot_points=True,plot_regions=True, region_intensity=0.4,
                   legend_plot_points=True, legend_plot_regions=True,legend_on_axis=False,**fig_kw):
     
     # Look for not None parameter between ks, knn_clfs, metrics, transformers and dmls
-    param_list = ks if ks is not None else clfs if clfs is not None else metrics if metrics is not None else transformers if transformers is not None else dmls if dmls is not None else None
+    param_list = ks if ks is not None else clfs if clfs is not None else metrics if metrics is not None else transformers if transformers is not None else dmls if dmls is not None else transforms if transforms is not None else None
     
     # Axes array plot
     if nrow is None or ncol is None:
@@ -188,6 +195,7 @@ def knn_multiplot(X,y,nrow=None,ncol=None,ks=None, clfs=None,attrs=None, section
             transformer = transformers[i] if transformers is not None else None
             dml = dmls[i] if dmls is not None else None
             subtitle = subtitles[i] if subtitles is not None else None
+            transform = transforms[i] if transforms is not None else None
             
             ix0, ix1 = i // ncol, i % ncol
             if nrow == 1:
@@ -196,7 +204,7 @@ def knn_multiplot(X,y,nrow=None,ncol=None,ks=None, clfs=None,attrs=None, section
                 ax=axarr[ix0]
             else:
                 ax = axarr[ix0,ix1]
-            knn_plot(X,y,k,attrs,sections,clf,fitted,metric,transformer,dml,dml_fitted,f,ax,title,subtitle,
+            knn_plot(X,y,k,attrs,sections,clf,fitted,metric,transformer,dml,dml_fitted,transform,f,ax,title,subtitle,
                      None,None,None,None,grid_split,grid_step,label_legend,legend_loc,
                      cmap,label_colors,plot_points,plot_regions,region_intensity,legend_plot_points,legend_plot_regions,legend_on_axis)
     
