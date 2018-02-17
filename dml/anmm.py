@@ -16,7 +16,7 @@ from sklearn.utils.validation import check_X_y, check_array
 
 from numpy.linalg import eig
 
-from .dml_algorithm import DML_Algorithm
+from .dml_algorithm import DML_Algorithm, KernelDML_Algorithm
 from .dml_utils import pairwise_sq_distances_from_dot
 
 class ANMM(DML_Algorithm):
@@ -132,7 +132,7 @@ class ANMM(DML_Algorithm):
 
 
 
-class KANMM(DML_Algorithm):
+class KANMM(KernelDML_Algorithm):
     
     def __init__(self, num_dims = None, n_friends = 3, n_enemies = 1, kernel = "linear", 
                  gamma=None, degree=3, coef0=1, kernel_params=None):
@@ -146,19 +146,7 @@ class KANMM(DML_Algorithm):
         self.coef0_ = coef0
         self.kernel_params_ = kernel_params
         
-    def _get_kernel(self,X,Y=None):
-        if callable(self.kernel_):
-            params = self.kernel_params or {}
-        else:
-            params = {'gamma':self.gamma_,
-                      'degree':self.degree_,
-                      'coef0':self.coef0_}
-            
-        return pairwise_kernels(X,Y,metric=self.kernel_,filter_params=True,**params)
     
-    @property
-    def _pairwise(self):
-        return self.kernel_ == "precomputed"
 
     def fit(self,X,y):
         X, y = check_X_y(X,y)
@@ -178,7 +166,7 @@ class KANMM(DML_Algorithm):
             num_dims = self.num_dims_
 
         S,C = self._compute_matrices(K,het_neighs,hom_neighs)
-        print(S,C)
+        #print(S,C)
         #Id =  np.zeros([self.n_,self.n_])
         #np.fill_diagonal(Id,1.0)
         #print(self._compute_average_margin(Id,S,C))
@@ -201,17 +189,7 @@ class KANMM(DML_Algorithm):
     
     def transformer(self):
         return self.L_
-    
-    def transform(self,X=None):
-        if X is None:
-            X=self.X_
-        else:
-            X=check_array(X,accept_sparse=True)
-            
-        L=self.transformer()
-        K=self._get_kernel(X,self.X_)
-        return K.dot(L.T)
-    
+       
     
     def _compute_average_margin(self,L,S,C):
         return np.trace(L.dot(S-C).dot(L.T))
