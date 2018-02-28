@@ -31,14 +31,17 @@ def SDProject(M):
     diag_sdp = np.diag(eigvals)
     return eigvecs.dot(diag_sdp).dot(eigvecs.T)
 
-def calc_outers(X):
+def calc_outers(X, Y=None):
     n,d = X.shape
+    if Y is None:
+        Y = X
+    m, e = Y.shape
     try:
         outers = np.empty([n,n,d,d],dtype=float)
 
         for i in xrange(n):
-            for j in xrange(n):
-                outers[i,j] = np.outer(X[i,:]-X[j,:],X[i,:]-X[j,:])
+            for j in xrange(m):
+                outers[i,j] = np.outer(X[i,:]-Y[j,:],X[i,:]-Y[j,:])
 
     except:
         warnings.warn("Memory is not enough to calculate all outer products at once. "
@@ -47,7 +50,7 @@ def calc_outers(X):
 
     return outers
 
-def calc_outers_i(X,outers,i):
+def calc_outers_i(X,outers,i,Y=None):
     """
         When enough memory is available, outers all calculated with calc_outers function at once.
         Else, outers will be calculted partially using this method.
@@ -56,9 +59,13 @@ def calc_outers_i(X,outers,i):
         return outers[i,:]
     else:
         n,d = X.shape
+        if Y is None:
+            Y=X
+        m, e = Y.shape
         outers_i = np.empty([n,d,d],dtype=float)
-        for j in xrange(n):
-            outers_i[j] = np.outer(X[i,:]-X[j,:],X[i,:]-X[j,:])
+        
+        for j in xrange(m):
+            outers_i[j] = np.outer(X[i,:]-Y[j,:],X[i,:]-Y[j,:])
         return outers_i
     
 def metric_sq_distance(M,x,y):

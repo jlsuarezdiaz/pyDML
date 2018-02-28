@@ -102,7 +102,7 @@ class LSI(DML_Algorithm):
                     W += 2*(outers_i[j])
                 
         w = unroll(W)
-        t = w.T.dot(unroll(M))/100
+        t = w.T.dot(unroll(M))*100
         
         nw = norm(w)
         w1 = w/nw

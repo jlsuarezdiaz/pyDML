@@ -19,7 +19,7 @@ from .dml_algorithm import DML_Algorithm
 class NCA(DML_Algorithm):
 
 
-    def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_transform = None, max_iter = 100, prec = 1e-3, 
+    def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.01, initial_transform = None, max_iter = 100, prec = 1e-3, 
                 tol = 1e-3, descent_method = "SGD", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5):
         self.num_dims_ = num_dims
         self.L0_ = initial_transform
@@ -40,7 +40,7 @@ class NCA(DML_Algorithm):
         self.final_softmax_ = None
         
     def metadata(self):
-        return {'num_iters':self.num_its_,'initial_softmax':self.initial_softmax_,'final_softmax':self.final_softmax_}
+        return {'num_iters':self.num_its_,'initial_expectance':self.initial_softmax_,'final_expectance':self.final_softmax_}
 
     def transformer(self):
         return self.L_
@@ -317,7 +317,7 @@ class NCA(DML_Algorithm):
 
             success += p_i
 
-        return success  # Normalized between 0 and 1
+        return success  
 
 
 

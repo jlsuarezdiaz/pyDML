@@ -13,7 +13,7 @@ from utils import(
     read_ARFF, kfold_multitester_supervised_knn, datasets)
 
 from dml import(
-    NCA,LDA,RCA,PCA,LMNN,ANMM,LSI,ITML,kNN,KANMM)
+    NCA,LDA,RCA,PCA,LMNN,ANMM,LSI,ITML,kNN,KANMM,KDA, DMLMJ, NCMML,NCMC)
 
 np.random.seed(28)
 
@@ -103,6 +103,7 @@ X,y = datasets.sonar()
 #X,y = datasets.wdbc()
 #X,y = datasets.spambase()
 #X,y = datasets.digits(numbers=[0,1,3,4,6,9])
+#X,y = datasets.digits()
 
 X = normalize(X,axis=0,norm='max')
 
@@ -121,9 +122,14 @@ nca_bgd = NCA(max_iter=100, learning_rate = "adaptive", eta0=0.3, descent_method
 nca_sgd = NCA(max_iter=300, learning_rate = "adaptive", eta0=0.3, descent_method = "SGD",tol=1e-15,prec=1e-15)
 lsi = LSI(supervised=True, err = 1e-10, itproj_err = 1e-2,max_proj_iter=20000)
 kanmm = KANMM(num_dims=10,kernel='cosine',n_friends=5,n_enemies=3)
-
+kda = KDA(kernel='rbf')
+dmlmj = DMLMJ(num_dims=10,n_neighbors=5,alpha=0.01)
+ncmml_sgd = NCMML(max_iter=300, learning_rate="adaptive", eta0=0.3, descent_method="SGD", tol=1e-15,prec=1e-15)
+ncmml_bgd = NCMML(max_iter=300, learning_rate="adaptive", eta0=0.3, descent_method="BGD")
+ncmc_sgd = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.3,descent_method="SGD",centroids_num=1,tol=1e-15,prec=1e-15)
+ncmc_bgd = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.3,descent_method="BGD",centroids_num=1,tol=1e-15,prec=1e-15)
 #dmls = [itml,pca,lda,anmm,lsi,nca_bgd,nca_sgd,lmnn]
-dmls = [pca,lda,anmm,kanmm]
+dmls = [ncmc_bgd,ncmml_bgd]
 
 results = kfold_multitester_supervised_knn(X,y,k = 5, n_neigh = 3, dmls = dmls, verbose = True,seed = 28)
 
