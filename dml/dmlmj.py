@@ -51,16 +51,19 @@ class DMLMJ(DML_Algorithm):
             num_dims = min(self.num_dims_,self.d_)
 
         S,D = DMLMJ._compute_matrices(X,het_neighs,hom_neighs)
+                
         
         # Regularization
         I = np.eye(self.d_)
-        S = (1-self.alpha_)*S+self.alpha_*I
-        D = (1-self.alpha_)*D+self.alpha_*I
+        if np.abs(np.linalg.det(S) < 1e-10):
+            S = (1-self.alpha_)*S+self.alpha_*I
+        if np.abs(np.linalg.det(D) < 1e-10):
+            D = (1-self.alpha_)*D+self.alpha_*I
 
         
         # Eigenvalues and eigenvectors of S-1D
         self.eig_vals_, self.eig_vecs_ = eigh(D,S)
-        vecs_orig = self.eig_vecs_/np.apply_along_axis(np.linalg.norm,0,self.eig_vecs_)
+        vecs_orig = self.eig_vecs_.copy() #/np.apply_along_axis(np.linalg.norm,0,self.eig_vecs_)
         # Reordering
         self.eig_pairs_ = [(np.abs(self.eig_vals_[i]), vecs_orig[:,i]) for i in xrange(self.eig_vals_.size)]
         self.eig_pairs_ = sorted(self.eig_pairs_, key = lambda k: k[0]+1/k[0], reverse=True)
@@ -118,6 +121,7 @@ class DMLMJ(DML_Algorithm):
                 D += np.outer(x-X[het_neighs[i,j],:],x-X[het_neighs[i,j],:])
         
         dsize = n*k
+        
         S /= dsize
         D /= dsize
 

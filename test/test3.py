@@ -97,6 +97,7 @@ def wine_data():
     
 #X,y = datasets.iris()
 X,y = datasets.sonar()
+#X,y = datasets.balance()
 #X,y = datasets.letters()
 #X,y = datasets.wine()
 #X,y = datasets.isolet('train')
@@ -123,15 +124,15 @@ nca_sgd = NCA(max_iter=300, learning_rate = "adaptive", eta0=0.3, descent_method
 lsi = LSI(supervised=True, err = 1e-10, itproj_err = 1e-2,max_proj_iter=20000)
 kanmm = KANMM(num_dims=10,kernel='cosine',n_friends=5,n_enemies=3)
 kda = KDA(kernel='rbf')
-dmlmj = DMLMJ(num_dims=10,n_neighbors=5,alpha=0.01)
+dmlmj = DMLMJ(num_dims=3,n_neighbors=5,alpha=0.001)
 ncmml_sgd = NCMML(max_iter=300, learning_rate="adaptive", eta0=0.3, descent_method="SGD", tol=1e-15,prec=1e-15)
 ncmml_bgd = NCMML(max_iter=300, learning_rate="adaptive", eta0=0.3, descent_method="BGD")
 ncmc_sgd = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.3,descent_method="SGD",centroids_num=1,tol=1e-15,prec=1e-15)
 ncmc_bgd = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.3,descent_method="BGD",centroids_num=1,tol=1e-15,prec=1e-15)
 #dmls = [itml,pca,lda,anmm,lsi,nca_bgd,nca_sgd,lmnn]
-dmls = [ncmc_bgd,ncmml_bgd]
+dmls = [dmlmj]
 
-results = kfold_multitester_supervised_knn(X,y,k = 5, n_neigh = 3, dmls = dmls, verbose = True,seed = 28)
+results = kfold_multitester_supervised_knn(X,y,k = 10, n_neigh = 3, dmls = dmls, verbose = True,seed = 28)
 
 print(results['time'])
 print(results['train'])

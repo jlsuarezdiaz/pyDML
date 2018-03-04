@@ -105,6 +105,12 @@ def isolet(subset = "train"):
     y = data.iloc[:,-1].values
     
     return X, y
+
+def balance():
+    data = pd.read_csv("./data/balance-scale.data",header=None)
+    X = data.iloc[:,1:].values
+    y = data.iloc[:,0].values
+    return X, y
     
 
 
