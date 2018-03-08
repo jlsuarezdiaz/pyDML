@@ -10,7 +10,7 @@ from utils import(
         read_ARFF, kfold_multitester_supervised_knn, toy_datasets, datasets)
 
 from dml import(
-    NCA,LDA,RCA,PCA,LMNN,ANMM,LSI,kNN, knn_plot, knn_multiplot, ITML, KANMM,KDA, DMLMJ, NCMML, NCMC)
+    NCA,LDA,RCA,PCA,LMNN,ANMM,LSI,kNN, knn_plot, knn_multiplot, ITML, KANMM,KDA, DMLMJ, KDMLMJ, NCMML, NCMC, KLMNN)
 
 import numpy as np
 
@@ -27,9 +27,9 @@ np.random.seed(seed)
 #X,y = toy_datasets.balls_toy_dataset(seed=seed)
 #X,y = toy_datasets.single_toy_dataset(seed=seed)
 
-X, y = datasets.balance()
-mms = MinMaxScaler()
-X = mms.fit_transform(X)
+#X, y = datasets.balance()
+#mms = MinMaxScaler()
+#X = mms.fit_transform(X)
 
 #X = np.array([[3,1],[4,2],[3,4],[5,4],[-1,1],[1,2],[2,2],[3,3]])
 #y = np.array([1,1,1,1,-1,-1,-1,-1])
@@ -43,8 +43,8 @@ X = mms.fit_transform(X)
 #sq22 = np.sqrt(2)/2
 #L = np.array([[-sq22, sq22],[sq22, sq22]])
 
-#X = np.array([[0,0],[0,1],[2,0],[3,0]])
-#y = np.array(["A","A","B","B"])
+X = np.array([[0,0],[0,1],[2,0],[3,0]])
+y = np.array(["A","A","B","B"])
 #X = X.dot(L.T) #+ np.array([2,2])
 
 
@@ -58,23 +58,26 @@ X = mms.fit_transform(X)
 
 #K = np.array([[20.11, -3.02],[70.22,0.63]])
 #X = X.dot(K.T)
-#knn_plot(X,y,k=3,figsize=(15,8),cmap="gist_rainbow")
+knn_plot(X,y,k=1,figsize=(15,8),cmap="gist_rainbow")
 
 nca = NCA(max_iter=10000, learning_rate = "adaptive",eta0=0.1, descent_method = "BGD", tol=1e-3)
 lda = LDA()
 #rca = RCA()
 pca = PCA(thres = 0.95)
 lmnn = LMNN(max_iter=1000,learning_rate = "adaptive",eta0=1.0, k = 1, mu = 0.5,tol=1e-15,prec=1e-15)
+lmnn_sgd = LMNN(max_iter=300,learning_rate = "adaptive", eta0 = 0.001, k = 1, mu = 0.5,soft_comp_interval = 1,tol=1e-15,prec=1e-10,eta_thres=1e-15,solver="SGD")
+klmnn = KLMNN(max_iter=100,learning_rate = "adaptive", eta0 = 0.001, k=1, mu = 0.5, tol=1e-15, prec=1e-15,eta_thres=1e-15,kernel='rbf',target_selection="kernel")#,initial_metric=np.array([[0,0],[0,1.0],[0.5,0.0],[0,0]]).T)
 anmm = ANMM(num_dims = 2, n_friends = 1,n_enemies = 1)
 kanmm = KANMM(num_dims = 2, kernel='linear',n_friends = 1, n_enemies=1)
 lsi = LSI(supervised=True, err = 1e-10, itproj_err = 1e-3)
-kda = KDA(kernel='rbf',degree=2)
+kda = KDA(kernel='linear',degree=2,coef0=0)
 dmlmj = DMLMJ(num_dims=3,n_neighbors=5,alpha=0.001)
+kdmlmj = KDMLMJ(num_dims=2,n_neighbors=5,alpha=0.001,kernel='rbf')
 ncmml = NCMML(max_iter=300, learning_rate="adaptive", eta0=0.3, descent_method="SGD", tol=1e-15,prec=1e-15)
 ncmc = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.01,descent_method="SGD",centroids_num=2,tol=1e-15,prec=1e-15)
 itml = ITML()
 
-alg = dmlmj
+alg = klmnn
 
 #alg.fit(X,y)
 #Xn = alg.transform(X) 
@@ -85,8 +88,8 @@ alg = dmlmj
 #    Xn = X2
 
 #toy_datasets.toy_plot(Xn,y)
-knn_plot(X,y,k=5,figsize=(15,8),cmap="gist_rainbow",transform=False,dml=alg)
-#knn_plot(X,y,k=5,figsize=(15,8),cmap="gist_rainbow",dml=alg)
+knn_plot(X,y,k=1,figsize=(15,8),cmap="gist_rainbow",transform=False,dml=alg)
+knn_plot(X,y,k=1,figsize=(15,8),cmap="gist_rainbow",dml=alg)
 #knn_multiplot(X,y,ks=[1,1],dmls=[lmnn,anmm],figsize=(15,8),cmap="rainbow")
 
 #results = kfold_multitester_supervised_knn(X,y,k = 3, n_neigh = 1, dmls = [dmlmj], verbose = True,seed = 28)

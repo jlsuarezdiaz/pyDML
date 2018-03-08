@@ -7,13 +7,13 @@ from six.moves import xrange
 from sklearn.datasets import(load_iris, load_digits)
 
 
-from sklearn.preprocessing import normalize
+from sklearn.preprocessing import normalize, MinMaxScaler
 
 from utils import(
     read_ARFF, kfold_multitester_supervised_knn, datasets)
 
 from dml import(
-    NCA,LDA,RCA,PCA,LMNN,ANMM,LSI,ITML,kNN,KANMM,KDA, DMLMJ, NCMML,NCMC)
+    NCA,LDA,RCA,PCA,LMNN, KLMNN, ANMM,LSI,ITML,kNN,KANMM,KDA, DMLMJ, KDMLMJ, NCMML,NCMC)
 
 np.random.seed(28)
 
@@ -106,7 +106,9 @@ X,y = datasets.sonar()
 #X,y = datasets.digits(numbers=[0,1,3,4,6,9])
 #X,y = datasets.digits()
 
-X = normalize(X,axis=0,norm='max')
+#X = normalize(X,axis=0,norm='max')
+mms = MinMaxScaler()
+X = mms.fit_transform(X)
 
 n,d = X.shape
 
@@ -117,6 +119,8 @@ lda = LDA(thres=0.8)
 #rca = RCA()
 pca = PCA(thres=0.95)
 lmnn = LMNN(max_iter=300,learning_rate = "adaptive", eta0 = 0.001, k = 5, mu = 0.5,soft_comp_interval = 1,tol=1e-15,prec=1e-10,eta_thres=1e-15)
+lmnn_sgd = LMNN(num_dims=20,max_iter=300,learning_rate = "adaptive", eta0 = 0.001, k = 5, mu = 0.5,soft_comp_interval = 1,tol=1e-15,prec=1e-10,eta_thres=1e-15,solver="SGD")
+klmnn = KLMNN(max_iter=100,learning_rate = "adaptive", eta0 = 0.001, k=5, mu = 0.5, tol=1e-15, prec=1e-15,eta_thres=1e-15,kernel='rbf',target_selection="kernel")
 anmm = ANMM(num_dims = 10,n_friends = 5,n_enemies = 3)
 itml = ITML(max_iter=10000,gamma=1.0, low_perc = 5, up_perc = 95)
 nca_bgd = NCA(max_iter=100, learning_rate = "adaptive", eta0=0.3, descent_method = "BGD")
@@ -124,15 +128,16 @@ nca_sgd = NCA(max_iter=300, learning_rate = "adaptive", eta0=0.3, descent_method
 lsi = LSI(supervised=True, err = 1e-10, itproj_err = 1e-2,max_proj_iter=20000)
 kanmm = KANMM(num_dims=10,kernel='cosine',n_friends=5,n_enemies=3)
 kda = KDA(kernel='rbf')
-dmlmj = DMLMJ(num_dims=3,n_neighbors=5,alpha=0.001)
+dmlmj = DMLMJ(num_dims=20,n_neighbors=5,alpha=0.001)
+kdmlmj = KDMLMJ(num_dims=20,n_neighbors=5,alpha=0.001,kernel='rbf')
 ncmml_sgd = NCMML(max_iter=300, learning_rate="adaptive", eta0=0.3, descent_method="SGD", tol=1e-15,prec=1e-15)
 ncmml_bgd = NCMML(max_iter=300, learning_rate="adaptive", eta0=0.3, descent_method="BGD")
 ncmc_sgd = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.3,descent_method="SGD",centroids_num=1,tol=1e-15,prec=1e-15)
 ncmc_bgd = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.3,descent_method="BGD",centroids_num=1,tol=1e-15,prec=1e-15)
 #dmls = [itml,pca,lda,anmm,lsi,nca_bgd,nca_sgd,lmnn]
-dmls = [dmlmj]
+dmls = [klmnn]
 
-results = kfold_multitester_supervised_knn(X,y,k = 10, n_neigh = 3, dmls = dmls, verbose = True,seed = 28)
+results = kfold_multitester_supervised_knn(X,y,k = 5, n_neigh = 5, dmls = dmls, verbose = True,seed = 28)
 
 print(results['time'])
 print(results['train'])

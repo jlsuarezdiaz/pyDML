@@ -5,11 +5,11 @@ from .knn import kNN
 from .lda import LDA
 from .rca import RCA
 from .pca import PCA
-from .lmnn import LMNN
+from .lmnn import LMNN, KLMNN
 from .lsi import LSI
 from .anmm import ANMM, KANMM
 from .itml import ITML
-from .dmlmj import DMLMJ
+from .dmlmj import DMLMJ, KDMLMJ
 from .ncmml import NCMML
 from .ncmc import NCMC
 from .kda import KDA
