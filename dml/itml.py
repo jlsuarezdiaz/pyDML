@@ -54,7 +54,7 @@ class ITML(DML_Algorithm):
             np.fill_diagonal(M, 1./(np.maximum(X.max(axis=0 )-X.min(axis=0),1e-16))) #Scaled eculidean distance
         
         if u is None or l is None:
-            [u,l] = ITML._compute_distance_extremes(X,self.low_perc_,self.up_perc_,M)
+            [l,u] = ITML._compute_distance_extremes(X,self.low_perc_,self.up_perc_,M)
             
         if num_constraints is None:
             k = len(np.unique(y))
@@ -62,7 +62,7 @@ class ITML(DML_Algorithm):
             
         # Obtain constraints matrix
         C = ITML._get_constraints_y(y,num_constraints,l,u)
-        
+       
         # Remove too similar vectors from constraints
         valid = np.empty([num_constraints],dtype=bool)
         for k in xrange(num_constraints):
@@ -178,5 +178,5 @@ class ITML(DML_Algorithm):
         l = edges[np.floor(a).astype(int)]
         u = edges[np.floor(b).astype(int)]
         #print(edges[0],l,u,edges[100])
-        
+    
         return l, u

@@ -43,10 +43,11 @@ np.random.seed(seed)
 #sq22 = np.sqrt(2)/2
 #L = np.array([[-sq22, sq22],[sq22, sq22]])
 
-X = np.array([[0,0],[0,1],[2,0],[3,0]])
-y = np.array(["A","A","B","B"])
+#X = np.array([[0,0],[0,1],[2,0],[3,0]])
+#y = np.array(["A","A","B","B"])
 #X = X.dot(L.T) #+ np.array([2,2])
 
+X, y = datasets.iris()
 
 #X=np.array([[0.0,0.1],[0.5,0.1],[-0.5,-0.1],[1.0,0.2],[-1.0,-0.1],[0.1,1.0],[-0.1,-1.0]])
 #y=np.array([0,0,0,0,0,1,2])
@@ -75,11 +76,11 @@ dmlmj = DMLMJ(num_dims=3,n_neighbors=5,alpha=0.001)
 kdmlmj = KDMLMJ(num_dims=2,n_neighbors=5,alpha=0.001,kernel='rbf')
 ncmml = NCMML(max_iter=300, learning_rate="adaptive", eta0=0.3, descent_method="SGD", tol=1e-15,prec=1e-15)
 ncmc = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.01,descent_method="SGD",centroids_num=2,tol=1e-15,prec=1e-15)
-itml = ITML()
+itml = ITML(gamma=1.0)
 
-alg = klmnn
+alg = itml
 
-#alg.fit(X,y)
+alg.fit(X,y)
 #Xn = alg.transform(X) 
 #if(Xn.shape[1] < 2):
 #    X2 = np.empty([Xn.shape[0],2])
@@ -88,8 +89,8 @@ alg = klmnn
 #    Xn = X2
 
 #toy_datasets.toy_plot(Xn,y)
-knn_plot(X,y,k=1,figsize=(15,8),cmap="gist_rainbow",transform=False,dml=alg)
-knn_plot(X,y,k=1,figsize=(15,8),cmap="gist_rainbow",dml=alg)
+#knn_plot(X,y,k=1,figsize=(15,8),cmap="gist_rainbow",transform=False,dml=alg)
+#knn_plot(X,y,k=1,figsize=(15,8),cmap="gist_rainbow",dml=alg)
 #knn_multiplot(X,y,ks=[1,1],dmls=[lmnn,anmm],figsize=(15,8),cmap="rainbow")
 
 #results = kfold_multitester_supervised_knn(X,y,k = 3, n_neigh = 1, dmls = [dmlmj], verbose = True,seed = 28)

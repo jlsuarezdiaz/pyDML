@@ -549,8 +549,7 @@ class KLMNN(KernelDML_Algorithm):
             if self.adaptive_:
                 impostors = self._euc_impostors(Lkx,y,target_neighbors)
                 err = self._compute_euc_error(self.mu_,Lkx,y,target_neighbors,impostors)
-                print("ERR: ",err)
-                print("- ETA: ",self.eta_)
+                
                 if err < err_prev:
                     self.eta_ *= self.l_inc_                    
                 else:
@@ -658,9 +657,9 @@ class KLMNN(KernelDML_Algorithm):
         return (1-mu)*non_imposter_err + mu*imposter_err
     
     
+    ## Deprecated
     def _shuffle(X,y,K,target_neighbors,Lkx):
         rnd = np.random.permutation(len(y))
-        print(rnd)
         invrnd = np.empty([len(y)],dtype=int)
         for i, p in enumerate(rnd):
             invrnd[p]=i
