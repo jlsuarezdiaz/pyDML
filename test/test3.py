@@ -13,7 +13,7 @@ from utils import(
     read_ARFF, kfold_multitester_supervised_knn, datasets)
 
 from dml import(
-    NCA,LDA,RCA,PCA,LMNN, KLMNN, ANMM,LSI,ITML,kNN,KANMM,KDA, DMLMJ, KDMLMJ, NCMML,NCMC)
+    NCA,LDA,PCA,LMNN, KLMNN, ANMM,LSI,ITML,kNN,KANMM,KDA, DMLMJ, KDMLMJ, NCMML,NCMC, DML_eig)
 
 np.random.seed(28)
 
@@ -96,10 +96,10 @@ def wine_data():
 #X,y = wine_data()
     
 #X,y = datasets.iris()
-X,y = datasets.sonar()
+#X,y = datasets.sonar()
 #X,y = datasets.balance()
 #X,y = datasets.letters()
-#X,y = datasets.wine()
+X,y = datasets.wine()
 #X,y = datasets.isolet('train')
 #X,y = datasets.wdbc()
 #X,y = datasets.spambase()
@@ -134,8 +134,10 @@ ncmml_sgd = NCMML(max_iter=300, learning_rate="adaptive", eta0=0.3, descent_meth
 ncmml_bgd = NCMML(max_iter=300, learning_rate="adaptive", eta0=0.3, descent_method="BGD")
 ncmc_sgd = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.3,descent_method="SGD",centroids_num=1,tol=1e-15,prec=1e-15)
 ncmc_bgd = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.3,descent_method="BGD",centroids_num=1,tol=1e-15,prec=1e-15)
+dml_eig = DML_eig()
+
 #dmls = [itml,pca,lda,anmm,lsi,nca_bgd,nca_sgd,lmnn]
-dmls = [itml]
+dmls = [dml_eig]
 
 results = kfold_multitester_supervised_knn(X,y,k = 5, n_neigh = 1, dmls = dmls, verbose = True,seed = 28)
 

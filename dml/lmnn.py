@@ -12,6 +12,7 @@ import numpy as np
 from six.moves import xrange
 from sklearn.metrics import pairwise_distances
 from sklearn.utils.validation import check_X_y
+from sklearn.base import BaseEstimator, ClassifierMixin
 
 from .dml_utils import SDProject, calc_outers, calc_outers_i, metric_sq_distance, pairwise_sq_distances_from_dot
 from .dml_algorithm import DML_Algorithm, KernelDML_Algorithm
@@ -678,3 +679,49 @@ class KLMNN(KernelDML_Algorithm):
         Lkx = Lkx[rnd,:]
 
         return X,y, K, target_neighbors, Lkx, Kt
+    
+"""    
+class LMNN_Energy(BaseEstimator, ClassifierMixin):
+    def __init__(self, k = 3, mu = 0.5):
+        self.k_ = k
+        self.mu_ = mu
+        
+    def fit(self,X,y):
+        X, y = check_X_y(X,y)
+        self.X_, self.y_ = X, y
+        self.target_neighbors = self._target_neighbors(X,y,self.k_)
+        
+    def predict(self,X=None):
+        if X is None:
+            X = self.X_
+    
+    def _target_neighbors(X,y,k,Xt=None,yt=None):
+        ""
+        Calculate target neighbors from test data to train data
+        ""
+        n,d = X.shape
+        
+        if Xt is None or yt is None:
+            Xt = X
+            yt = y
+
+        unique_labels = np.unique(y)
+        target_neighbors = np.empty([n,k],dtype=int)
+
+        for label in unique_labels:
+            inds, = np.where(y == label)
+            inds_t = np.where(yt == label)
+            dists = pairwise_distances(X[inds],Xt[inds_t])
+
+            np.fill_diagonal(dists, np.inf)
+            target_inds = np.argsort(dists)[..., :self.k_]
+            target_neighbors[inds] = inds[target_inds]
+
+        return target_neighbors
+    
+    
+    
+    def _distance(x,y,M):
+        xy=(x-y).reshape(1,-1)
+        return xy.dot(M).dot(xy.T)
+"""

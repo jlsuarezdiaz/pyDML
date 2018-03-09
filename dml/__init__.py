@@ -3,7 +3,6 @@ from __future__ import absolute_import
 from .nca import NCA
 from .knn import kNN
 from .lda import LDA
-from .rca import RCA
 from .pca import PCA
 from .lmnn import LMNN, KLMNN
 from .lsi import LSI
@@ -13,6 +12,7 @@ from .dmlmj import DMLMJ, KDMLMJ
 from .ncmml import NCMML
 from .ncmc import NCMC
 from .kda import KDA
+from .dml_eig import DML_eig
 from .multidml_knn import MultiDML_kNN
 from .knn_plot import *
 from .tune import *

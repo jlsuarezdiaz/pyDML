@@ -10,7 +10,7 @@ from utils import(
         read_ARFF, kfold_multitester_supervised_knn, toy_datasets, datasets)
 
 from dml import(
-    NCA,LDA,RCA,PCA,LMNN,ANMM,LSI,kNN, knn_plot, knn_multiplot, ITML, KANMM,KDA, DMLMJ, KDMLMJ, NCMML, NCMC, KLMNN)
+    NCA,LDA,PCA,LMNN,ANMM,LSI,kNN, knn_plot, knn_multiplot, ITML, KANMM,KDA, DMLMJ, KDMLMJ, NCMML, NCMC, KLMNN, DML_eig)
 
 import numpy as np
 
@@ -23,7 +23,7 @@ np.random.seed(seed)
 #X,y = datasets.digits(numbers=[0,1,3,4,6,9])
 #X,y = toy_datasets.circular_toy_dataset(rads=[1,2,3],samples=[200,200,200],noise=[0.2,0.2,0.2],seed=seed)
 #X,y = toy_datasets.hiperplane_toy_dataset(seed=seed)
-#X,y = toy_datasets.iris2d_toy_dataset()
+X,y = toy_datasets.iris2d_toy_dataset()
 #X,y = toy_datasets.balls_toy_dataset(seed=seed)
 #X,y = toy_datasets.single_toy_dataset(seed=seed)
 
@@ -47,7 +47,7 @@ np.random.seed(seed)
 #y = np.array(["A","A","B","B"])
 #X = X.dot(L.T) #+ np.array([2,2])
 
-X, y = datasets.iris()
+#X, y = datasets.iris()
 
 #X=np.array([[0.0,0.1],[0.5,0.1],[-0.5,-0.1],[1.0,0.2],[-1.0,-0.1],[0.1,1.0],[-0.1,-1.0]])
 #y=np.array([0,0,0,0,0,1,2])
@@ -77,10 +77,11 @@ kdmlmj = KDMLMJ(num_dims=2,n_neighbors=5,alpha=0.001,kernel='rbf')
 ncmml = NCMML(max_iter=300, learning_rate="adaptive", eta0=0.3, descent_method="SGD", tol=1e-15,prec=1e-15)
 ncmc = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.01,descent_method="SGD",centroids_num=2,tol=1e-15,prec=1e-15)
 itml = ITML(gamma=1.0)
+dml_eig = DML_eig()
 
-alg = itml
+alg = dml_eig
 
-alg.fit(X,y)
+#alg.fit(X,y)
 #Xn = alg.transform(X) 
 #if(Xn.shape[1] < 2):
 #    X2 = np.empty([Xn.shape[0],2])
@@ -89,8 +90,8 @@ alg.fit(X,y)
 #    Xn = X2
 
 #toy_datasets.toy_plot(Xn,y)
-#knn_plot(X,y,k=1,figsize=(15,8),cmap="gist_rainbow",transform=False,dml=alg)
-#knn_plot(X,y,k=1,figsize=(15,8),cmap="gist_rainbow",dml=alg)
+knn_plot(X,y,k=1,figsize=(15,8),cmap="gist_rainbow",transform=False,dml=alg)
+knn_plot(X,y,k=1,figsize=(15,8),cmap="gist_rainbow",dml=alg)
 #knn_multiplot(X,y,ks=[1,1],dmls=[lmnn,anmm],figsize=(15,8),cmap="rainbow")
 
 #results = kfold_multitester_supervised_knn(X,y,k = 3, n_neigh = 1, dmls = [dmlmj], verbose = True,seed = 28)
