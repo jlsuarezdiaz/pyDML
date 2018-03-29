@@ -95,13 +95,13 @@ def wine_data():
 #X,y = spambase_data()
 #X,y = wine_data()
     
-X,y = datasets.iris()
+#X,y = datasets.iris()
 #X,y = datasets.sonar()
 #X,y = datasets.balance()
 #X,y = datasets.letters()
 #X,y = datasets.wine()
 #X,y = datasets.isolet('train')
-#X,y = datasets.wdbc()
+X,y = datasets.wdbc()
 #X,y = datasets.spambase()
 #X,y = datasets.digits(numbers=[0,1,3,4,6,9])
 #X,y = datasets.digits()
@@ -135,10 +135,10 @@ ncmml_bgd = NCMML(max_iter=300, learning_rate="adaptive", eta0=0.3, descent_meth
 ncmc_sgd = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.3,descent_method="SGD",centroids_num=1,tol=1e-15,prec=1e-15)
 ncmc_bgd = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.3,descent_method="BGD",centroids_num=1,tol=1e-15,prec=1e-15)
 dml_eig = DML_eig()
-mcml = MCML(eta0=0.3)
+mcml = MCML(eta0=0.01)
 ldml = LDML(b=0.1,learning_rate='adaptive')
 #dmls = [itml,pca,lda,anmm,lsi,nca_bgd,nca_sgd,lmnn]
-dmls = [ldml]
+dmls = [mcml]
 
 results = kfold_multitester_supervised_knn(X,y,k = 5, n_neigh = 1, dmls = dmls, verbose = True,seed = 28)
 

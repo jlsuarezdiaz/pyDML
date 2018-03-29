@@ -17,8 +17,8 @@ from .dml_algorithm import DML_Algorithm
 class MCML(DML_Algorithm):
 
 
-    def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.01, initial_metric = None, max_iter = 100, prec = 1e-3, 
-                tol = 1e-3, descent_method = "SDP", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5):
+    def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_metric = None, max_iter = 100, prec = 1e-6, 
+                tol = 1e-6, descent_method = "SDP", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5):
         self.num_dims_ = num_dims
         self.initial_ = initial_metric
         self.max_it_ = max_iter
@@ -89,27 +89,50 @@ class MCML(DML_Algorithm):
         while not stop:
             grad = np.zeros([d,d])
             
+            #for i, yi in enumerate(y):
+            #    outers_i = calc_outers_i(X,outers,i)
+            #    softmax = np.empty([n],dtype=float)
+            #    softmax_sum = 0.0
+            #    for k in xrange(n):
+            #        if i != k:
+            #            xik = (X[i]-X[k]).reshape(1,-1)
+            #            pik = np.exp(-xik.dot(M).dot(xik.T))
+                        
+            #            softmax_sum += pik
+            #            softmax[k] = pik
+                    #else:
+                    #    softmax[k] = 0.0
+                 
+            #    softmax /= softmax_sum[0,0]
+                        
+            #    for j, yj in enumerate(y):
+            #        p0 = 1.0 if yi == yj else 0.0
+            #        grad += (p0 - softmax[j])*outers_i[j]
+            
             for i, yi in enumerate(y):
                 outers_i = calc_outers_i(X,outers,i)
-                softmax = np.empty([n],dtype=float)
+                #softmax = np.empty([n],dtype=float)
                 softmax_sum = 0.0
+                softout_sum = np.zeros([d,d])
                 for k in xrange(n):
                     if i != k:
                         xik = (X[i]-X[k]).reshape(1,-1)
                         pik = np.exp(-xik.dot(M).dot(xik.T))
-                        
                         softmax_sum += pik
-                        softmax[k] = pik
-                    #else:
-                    #    softmax[k] = 0.0
-                 
-                softmax /= softmax_sum[0,0]
+                        softout_sum += pik*outers_i[k]
                         
-                for j, yj in enumerate(y):
-                    p0 = 1.0 if yi == yj else 0.0
-                    grad += (p0 - softmax[j])*outers_i[j]
+                    const_grad = softout_sum / softmax_sum
                     
+                const_count = 0
+                for j, yj in enumerate(y):
+                    if yi == yj:
+                        grad += outers_i[j]
+                        const_count+=1
+                        
+                grad -= const_count*const_grad
+                
             Mprev = M   
+            #print("M");print(M);print("G");print(grad);input()
             M = M - self.eta_*grad
             M = SDProject(M)    
             
@@ -145,14 +168,16 @@ class MCML(DML_Algorithm):
         slog = 0.0
         for i, yi in enumerate(y):
             sexp = 0.0
+            nexp = 0
             for j, yj in enumerate(y):
                 if j != i:
                     xij = (X[i]-X[j]).reshape(1,-1)
                     dij = xij.dot(M).dot(xij.T)
                     if yi == yj:
                         sdij += dij
-                    sexp += np.exp(dij)
-            slog += np.log(sexp)
+                        nexp += 1
+                    sexp += np.exp(-dij)
+            slog += nexp*np.log(sexp)
         return sdij + slog
                     
 
