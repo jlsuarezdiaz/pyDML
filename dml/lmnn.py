@@ -18,7 +18,7 @@ from .dml_utils import SDProject, calc_outers, calc_outers_i, metric_sq_distance
 from .dml_algorithm import DML_Algorithm, KernelDML_Algorithm
 
 
-class LMNN(DML_Algorithm):
+class LMNN(DML_Algorithm, ClassifierMixin):
 
     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_metric = None, max_iter = 100, prec = 1e-3,
                 tol = 1e-6, k = 3, mu = 0.5, soft_comp_interval= 1, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14, solver = "SDP"):
@@ -60,7 +60,7 @@ class LMNN(DML_Algorithm):
         return self
 
     def _SDP_fit(self,X,y):
-        self._set_initial_parameters(X,y)
+        X, y = self._set_initial_parameters(X,y)
         n,d = X.shape
 
         self.num_its_ = 0
@@ -71,7 +71,7 @@ class LMNN(DML_Algorithm):
         N_old = set()      #Exact set of last iteration
 
         outers = calc_outers(X)
-        target_neighbors = self._target_neighbors(X,y)
+        self.target_neighbors_ = target_neighbors = self._target_neighbors(X,y)
 
         M = self.M_
         G = self._compute_not_imposter_gradient(X,target_neighbors,outers)
@@ -143,6 +143,7 @@ class LMNN(DML_Algorithm):
     def _SGD_fit(self,X,y):
         # Initializing parameters
         X, y = check_X_y(X,y)
+        self.X_, self.y_ = X,y
         n, d = X.shape
         self.n_, self.d_ = n,d
         
@@ -168,7 +169,7 @@ class LMNN(DML_Algorithm):
         self.eta_ = self.eta0_
         
         outers = calc_outers(X)
-        target_neighbors = self._target_neighbors(X,y)
+        self.target_neighbors_ = target_neighbors = self._target_neighbors(X,y)
     
         L = self.L_
 
@@ -231,6 +232,54 @@ class LMNN(DML_Algorithm):
         self.final_error_ = self._compute_euc_error(self.mu_,Lx,y,target_neighbors,self._euc_impostors(X,y,target_neighbors))
             
 
+    def predict(self,X=None):
+        if X is None:
+            X = self.X_
+        Xtr, ytr = self.X_, self.y_
+        M = self.metric()
+        
+        y = np.empty([X.shape[0]],dtype=ytr.dtype)
+        classes = np.unique(ytr)
+        
+        for t, xt in enumerate(X):
+            emin = np.inf
+            argmin = None
+            for c in classes:
+                target_energy = 0.0
+                imposter_energy = 0.0
+                self_imposter_energy = 0.0
+                
+                target = self._test_target_neighbors(xt,c)
+                
+                for j in target:
+                    djt = LMNN._distance(Xtr[j,:],xt,M)
+                    target_energy += djt
+                    target_margin = 1+djt
+                    for l, xl in enumerate(Xtr):  
+                        dtl = LMNN._distance(xl,xt,M)
+                
+                        if ytr[l] != c and dtl < target_margin:
+                            imposter_energy += (target_margin - dtl)
+                
+                for i, xi in enumerate(Xtr):
+                    dit = LMNN._distance(xi,xt,M)
+                    for j in self.target_neighbors_[i]:
+                        margin = 1 + LMNN._distance(xi,Xtr[j,:],M)
+                        if ytr[i] != c and dit < margin:
+                            self_imposter_energy += (margin - dit)
+                            
+                energy = (1-self.mu_)*target_energy + self.mu_*(imposter_energy + self_imposter_energy)
+                
+                if energy < emin:
+                    emin = energy
+                    argmin = c
+                
+            y[t] = argmin
+                    
+        return y
+                        
+                
+
     def _set_initial_parameters(self,X,y):
         self.n_, self.d_ = X.shape
         if self.num_dims_ is not None:
@@ -251,6 +300,7 @@ class LMNN(DML_Algorithm):
         X, y = check_X_y(X,y)
         self.X_ = X
         self.y_ = y
+        return X, y
 
 
     def _target_neighbors(self,X,y):
@@ -272,6 +322,13 @@ class LMNN(DML_Algorithm):
             target_neighbors[inds] = inds[target_inds]
 
         return target_neighbors
+    
+    def _test_target_neighbors(self,xtest,ytest):
+        Xtr, ytr = self.X_, self.y_
+        
+        inds, = np.where(ytr == ytest)
+        dists = pairwise_distances(xtest.reshape(1,-1),Xtr[inds])[0]
+        return np.argsort(dists)[...,:self.k_]
 
 
     def _impostors(self,M,X,y,target_neighbors):

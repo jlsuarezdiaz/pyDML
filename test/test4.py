@@ -10,7 +10,7 @@ from utils import(
         read_ARFF, kfold_multitester_supervised_knn, toy_datasets, datasets)
 
 from dml import(
-    NCA,LDA,PCA,LMNN,ANMM,LSI,kNN, knn_plot, knn_multiplot, ITML, KANMM,KDA, DMLMJ, KDMLMJ, NCMML, NCMC, KLMNN, DML_eig)
+    NCA,LDA,PCA,LMNN,ANMM,LSI,kNN, knn_plot, knn_multiplot, classifier_plot, ITML, KANMM,KDA, DMLMJ, KDMLMJ, NCMML, NCMC, KLMNN, DML_eig, MCML, LDML)
 
 import numpy as np
 
@@ -23,7 +23,7 @@ np.random.seed(seed)
 #X,y = datasets.digits(numbers=[0,1,3,4,6,9])
 #X,y = toy_datasets.circular_toy_dataset(rads=[1,2,3],samples=[200,200,200],noise=[0.2,0.2,0.2],seed=seed)
 #X,y = toy_datasets.hiperplane_toy_dataset(seed=seed)
-X,y = toy_datasets.iris2d_toy_dataset()
+#X,y = toy_datasets.iris2d_toy_dataset()
 #X,y = toy_datasets.balls_toy_dataset(seed=seed)
 #X,y = toy_datasets.single_toy_dataset(seed=seed)
 
@@ -49,8 +49,8 @@ X,y = toy_datasets.iris2d_toy_dataset()
 
 #X, y = datasets.iris()
 
-#X=np.array([[0.0,0.1],[0.5,0.1],[-0.5,-0.1],[1.0,0.2],[-1.0,-0.1],[0.1,1.0],[-0.1,-1.0]])
-#y=np.array([0,0,0,0,0,1,2])
+X=np.array([[0.0,0.1],[0.5,0.1],[-0.5,-0.1],[1.0,0.2],[-1.0,-0.1],[0.1,1.0],[-0.1,-1.0]])
+y=np.array([0,0,0,0,0,1,2])
 
 #X=np.array([[0.0,1],[1,0.0]])
 #y=np.array([0,1])
@@ -65,7 +65,7 @@ nca = NCA(max_iter=10000, learning_rate = "adaptive",eta0=0.1, descent_method = 
 lda = LDA()
 #rca = RCA()
 pca = PCA(thres = 0.95)
-lmnn = LMNN(max_iter=1000,learning_rate = "adaptive",eta0=1.0, k = 1, mu = 0.5,tol=1e-15,prec=1e-15)
+lmnn = LMNN(max_iter=1000,learning_rate = "adaptive",eta0=1.0, k = 5, mu = 0.5,tol=1e-15,prec=1e-15)
 lmnn_sgd = LMNN(max_iter=300,learning_rate = "adaptive", eta0 = 0.001, k = 1, mu = 0.5,soft_comp_interval = 1,tol=1e-15,prec=1e-10,eta_thres=1e-15,solver="SGD")
 klmnn = KLMNN(max_iter=100,learning_rate = "adaptive", eta0 = 0.001, k=1, mu = 0.5, tol=1e-15, prec=1e-15,eta_thres=1e-15,kernel='rbf',target_selection="kernel")#,initial_metric=np.array([[0,0],[0,1.0],[0.5,0.0],[0,0]]).T)
 anmm = ANMM(num_dims = 2, n_friends = 1,n_enemies = 1)
@@ -78,8 +78,10 @@ ncmml = NCMML(max_iter=300, learning_rate="adaptive", eta0=0.3, descent_method="
 ncmc = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.01,descent_method="SGD",centroids_num=2,tol=1e-15,prec=1e-15)
 itml = ITML(gamma=1.0)
 dml_eig = DML_eig()
+mcml = MCML()
+ldml = LDML(learning_rate='adaptive')
 
-alg = dml_eig
+alg = ldml
 
 #alg.fit(X,y)
 #Xn = alg.transform(X) 
@@ -94,6 +96,7 @@ knn_plot(X,y,k=1,figsize=(15,8),cmap="gist_rainbow",transform=False,dml=alg)
 knn_plot(X,y,k=1,figsize=(15,8),cmap="gist_rainbow",dml=alg)
 #knn_multiplot(X,y,ks=[1,1],dmls=[lmnn,anmm],figsize=(15,8),cmap="rainbow")
 
+#classifier_plot(X,y,lmnn,figsize=(15,8),cmap="gist_rainbow")
 #results = kfold_multitester_supervised_knn(X,y,k = 3, n_neigh = 1, dmls = [dmlmj], verbose = True,seed = 28)
 
 #print(results['time'])

@@ -4,7 +4,7 @@ Distance Metric Algorithm.
 Abstract class representing a Distance Metric Learning algorithm.
 """
 
-from numpy.linalg import inv, cholesky
+from numpy.linalg import cholesky
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.utils.validation import check_array
 from sklearn.metrics.pairwise import pairwise_kernels
@@ -30,9 +30,12 @@ class DML_Algorithm(BaseEstimator,TransformerMixin):
         if hasattr(self,'M_'):
             return self.M_
         else:
-            L = self.transformer()
-            self.M_ = L.T.dot(L)
-            return self.M_
+            if hasattr(self,'L_'):
+                L = self.transformer()
+                self.M_ = L.T.dot(L)
+                return self.M_
+            else:
+                raise NameError("Metric was not defined. Algorithm was not fitted.")
 
     def transformer(self):
         """Computes the transformation matrix from the Mahalanobis matrix.
@@ -47,14 +50,17 @@ class DML_Algorithm(BaseEstimator,TransformerMixin):
         if hasattr(self,'L_'):
             return self.L_
         else:
-            try:
-                L = cholesky(self.metric()).T
+            if hasattr(self,'M_'):
+                try:
+                    L = cholesky(self.metric()).T
+                    return L
+                except:
+                    L = metric_to_linear(self.metric())
+                    return L
+                self.L_ = L
                 return L
-            except:
-                L = metric_to_linear(self.metric())
-                return L
-            self.L_ = L
-            return L
+            else:
+                raise NameError("Transformer was not defined. Algorithm was not fitted.")
     
     def transform(self, X=None):
         """Applies the metric transformation.
