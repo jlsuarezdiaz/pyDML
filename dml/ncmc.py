@@ -115,9 +115,9 @@ class NCMC(DML_Algorithm):
         
         
         while not stop:
-            X, y, outers = NCMC._shuffle(X,y,outers)            
-            
-            for i,yi in enumerate(y):
+            #X, y, outers = NCMC._shuffle(X,y,outers)            
+            rnd = np.random.permutation(len(y))
+            for i in rnd:
                
                 Lxi = L.dot(X[i,:].T).T
                 Lm = L.dot(centroids.T).T
@@ -134,7 +134,7 @@ class NCMC(DML_Algorithm):
                 outers_i = calc_outers_i(X,outers,i,centroids)
                 for c in xrange(classes):
                     for k in xrange(cn[c]):
-                        mask = softmax[cs[c]+k]/(softmax[cs[c]:cs[c+1]].sum()) if yi == c else 0.0
+                        mask = softmax[cs[c]+k]/(softmax[cs[c]:cs[c+1]].sum()) if y[i] == c else 0.0
                         grad_sum += (softmax[cs[c]+k]-mask)*outers_i[cs[c]+k]
                 grad = L.dot(grad_sum)
                 L += self.eta_*grad   

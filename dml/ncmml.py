@@ -105,9 +105,9 @@ class NCMML(DML_Algorithm):
         
         
         while not stop:
-            X, y, outers = NCMML._shuffle(X,y,outers)            
-            
-            for i,yi in enumerate(y):
+            #X, y, outers = NCMML._shuffle(X,y,outers)            
+            rnd = np.random.permutation(len(y))
+            for i in rnd:
                
                 Lxi = L.dot(X[i,:].T).T
                 Lmu = L.dot(centroids.T).T
@@ -120,7 +120,7 @@ class NCMML(DML_Algorithm):
                 grad_sum = 0.0
                 outers_i = calc_outers_i(X,outers,i,centroids)
                 for c in xrange(classes):
-                    mask = 1 if yi == c else 0
+                    mask = 1 if y[i] == c else 0
                     grad_sum += (softmax[c]-mask)*outers_i[c]
                     
                 grad = L.dot(grad_sum)

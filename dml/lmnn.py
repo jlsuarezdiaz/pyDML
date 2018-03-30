@@ -181,9 +181,9 @@ class LMNN(DML_Algorithm, ClassifierMixin):
         stop = False
         
         while not stop:    
-            X, y, outers, target_neighbors, Lx = LMNN._shuffle(X,y,outers,target_neighbors,Lx)
-            for i, yi in enumerate(y):
-                
+            #X, y, outers, target_neighbors, Lx = LMNN._shuffle(X,y,outers,target_neighbors,Lx)
+            rnd = np.random.permutation(len(y))
+            for i in rnd:
                 non_imp_grad = np.zeros([d,d])
                 imp_grad = np.zeros([d,d])
                 outers_i = calc_outers_i(X,outers,i)
@@ -193,8 +193,8 @@ class LMNN(DML_Algorithm, ClassifierMixin):
                     oij = outers_i[j]
                     non_imp_grad += outers_i[j]
                     
-                    for l, yl in enumerate(y):
-                        if yi != yl and margin > np.inner(Lx[i]-Lx[l],Lx[i]-Lx[l]):
+                    for l in rnd:
+                        if y[i] != y[l] and margin > np.inner(Lx[i]-Lx[l],Lx[i]-Lx[l]):
                             imp_grad += (oij - outers_i[l])
                             
                 grad = (1-self.mu_)*non_imp_grad + self.mu_*imp_grad

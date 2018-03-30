@@ -94,9 +94,9 @@ class NCA(DML_Algorithm):
         
         
         while not stop:
-            X, y, outers = self._shuffle(X,y,outers)            
-            
-            for i,yi in enumerate(y):
+            #X, y, outers = self._shuffle(X,y,outers)            
+            rnd = np.random.permutation(len(y))
+            for i in rnd:
                 grad = np.zeros([d,d])
                 Lx = L.dot(X.T).T
                 
@@ -124,7 +124,7 @@ class NCA(DML_Algorithm):
                 softmax/=softmax.sum()
 
                 #Calc p_i
-                yi_mask = np.where(y == yi)
+                yi_mask = np.where(y == y[i])
                 p_i = softmax[yi_mask].sum()
                 
                 #Gradient computing
@@ -136,7 +136,7 @@ class NCA(DML_Algorithm):
                 for k in xrange(n):
                     s = softmax[k]*outers_i[k]
                     sum_p += s
-                    if(yi == y[k]):
+                    if(y[i] == y[k]):
                         sum_m -= s
                 
                 grad += p_i*sum_p + sum_m
