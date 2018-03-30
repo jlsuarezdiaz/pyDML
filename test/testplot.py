@@ -10,11 +10,11 @@ from utils import(
         read_ARFF, kfold_multitester_supervised_knn, toy_datasets,datasets)
 
 from dml import(
-    NCA,LDA,RCA,PCA,LMNN,ANMM,LSI,kNN, knn_plot, classifier_plot, classifier_pairplots, knn_pairplots, knn_multiplot)
+    NCA,LDA,PCA,LMNN,ANMM,LSI, NCMML,kNN, knn_plot, dml_plot, classifier_plot, classifier_pairplots, knn_pairplots, dml_pairplots, dml_multiplot)
 
 from sklearn.datasets import load_digits
 from sklearn import svm
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.neighbors import KNeighborsClassifier, NearestCentroid
 
 import numpy as np
 import pandas as pd
@@ -86,7 +86,7 @@ knn_plot(X,y,k=3,dml=lda,cmap="gist_rainbow",figsize=(15,8))
 
 anmm = ANMM(num_dims = 2, n_friends = 1,n_enemies = 1)
 
-#f = knn_multiplot(X,y,nrow=2,ncol=2,ks=[1,1,11,11],dmls=[lda,anmm,lda,anmm],title="Comparación de DMLS",subtitles=["k=1, LDA", "k=1, ANMM", "k=11, LDA", "k=11, ANMM"],
+#f = dml_multiplot(X,y,nrow=2,ncol=2,ks=[1,1,11,11],dmls=[lda,anmm,lda,anmm],title="Comparación de DMLS",subtitles=["k=1, LDA", "k=1, ANMM", "k=11, LDA", "k=11, ANMM"],
 #              cmap="gist_rainbow",plot_points=True,figsize=(20,16))
 
 X,y = digits_data()
@@ -112,4 +112,15 @@ svmc = svm.SVC()
 X=np.array([[0.0,0.1],[0.5,0.1],[-0.5,-0.1],[1.0,0.2],[-1.0,-0.1],[0.1,1.0],[-0.1,1.0],[0.1,-1.0],[-0.1,-1.0]])
 y=np.array([0,0,0,0,0,1,1,2,2])
 lmnn = LMNN(max_iter=1000,learning_rate = "adaptive",eta0=1.0, k = 1, mu = 0.5,tol=1e-15,prec=1e-15)
-knn_multiplot(X,y,2,2,ks=[1,1,1],dmls=[None,lmnn,lmnn],transforms=[True,True,False],title="LMNN",subtitles=["Original","Transformados","Región LMNN+KNN"],cmap="rainbow",figsize=(20,20))
+dml_multiplot(X,y,2,2,ks=[1,1,1],dmls=[None,lmnn,lmnn],transforms=[True,True,False],title="LMNN",subtitles=["Original","Transformados","Región LMNN+KNN"],cmap="rainbow",figsize=(20,20))
+
+knn_plot(X,y,k=1,cmap="gist_rainbow",figsize=(15,8))
+knn_plot(X,y,k=1,cmap="gist_rainbow",figsize=(15,8),transformer=np.array([[0.0, 0.0],[0.0,3.0]]),transform=False)
+
+X,y = datasets.iris()
+X=X[:,[0,2]]
+dml=NCMML()
+clf=NearestCentroid()
+dml_plot(X,y,clf,cmap="gist_rainbow",figsize=(15,8))
+dml_plot(X,y,dml=dml,clf=clf,cmap="gist_rainbow",figsize=(15,8))
+#dml_pairplots(X,y,dml=dml,clf=clf,cmap="gist_rainbow",figsize=(15,8))

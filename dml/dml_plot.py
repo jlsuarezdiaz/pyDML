@@ -23,6 +23,7 @@ from sklearn.pipeline import Pipeline
 
 
 from .dml_utils import metric_to_linear
+from .base import Metric, Transformer
 
 def classifier_plot(X,y,clf,attrs=None, sections="mean",fitted=False, f=None, ax=None, title = None, subtitle=None, xrange=None, yrange=None,
                     xlabel=None, ylabel=None, grid_split=[400,400], grid_step=[0.1,0.1], label_legend=True, legend_loc="lower right",
@@ -134,11 +135,54 @@ def classifier_plot(X,y,clf,attrs=None, sections="mean",fitted=False, f=None, ax
         
     return f
 
+def dml_plot(X,y,clf,attrs=None,sections="mean", fitted = False, metric=None, transformer=None, dml=None, dml_fitted=False,transform=True,
+             f = None, ax = None, title = None, subtitle=None, xrange = None, yrange = None, 
+             xlabel = None, ylabel = None, grid_split=[400,400], grid_step = [0.1,0.1], label_legend = True, legend_loc="lower right",
+             cmap=None, label_colors=None, plot_points = True, plot_regions = True,
+             region_intensity = 0.4,legend_plot_points=True, legend_plot_regions=True,legend_on_axis=True,**fig_kw):
+    # Fitting distance metrics
+    if dml is None:
+        if transformer is not None:
+            dml = Transformer(transformer)
+        elif metric is not None:
+            dml = Metric(metric)
+    
+    if dml is not None:
+        if dml_fitted:
+            X = dml.transform(X)
+        else:
+            if transform: # If transform, dataset will be transformed in the plot
+                X = dml.fit_transform(X,y)
+            # If not transform, the plotted dataset will be the original and the classifier regions will include the dml mapping (done in knn_clf initialization)            
+    
+    
+    # Fiting classifier
+    if not transform:
+        clf = Pipeline([('dml',dml),('clf',clf)])
+        
+    if not fitted:
+        clf.fit(X,y)
+        
+    
+    if f is None or ax is None:  
+        f, ax = plt.subplots(sharex='col',sharey='row',**fig_kw)
+    
+    return classifier_plot(X,y,clf,attrs,sections,True,f,ax,title,subtitle,xrange,yrange,xlabel,ylabel,
+                           grid_split, grid_step,label_legend,legend_loc,cmap,label_colors,plot_points,
+                           plot_regions,region_intensity,legend_plot_points,legend_plot_regions,legend_on_axis)
+    
 def knn_plot(X,y,k=1,attrs=None,sections="mean",knn_clf = None, fitted = False, metric=None, transformer=None, dml=None, dml_fitted=False,transform=True,
              f = None, ax = None, title = None, subtitle=None, xrange = None, yrange = None, 
              xlabel = None, ylabel = None, grid_split=[400,400], grid_step = [0.1,0.1], label_legend = True, legend_loc="lower right",
              cmap=None, label_colors=None, plot_points = True, plot_regions = True,
              region_intensity = 0.4,legend_plot_points=True, legend_plot_regions=True,legend_on_axis=True,**fig_kw):
+    
+    if dml is None:
+        if transformer is not None:
+            dml = Transformer(transformer)
+        elif metric is not None:
+            dml = Metric(metric)
+    
     # Fitting distance metrics
     if dml is not None:
         if dml_fitted:
@@ -147,12 +191,7 @@ def knn_plot(X,y,k=1,attrs=None,sections="mean",knn_clf = None, fitted = False, 
             if transform: # If transform, dataset will be transformed in the plot
                 X = dml.fit_transform(X,y)
             # If not transform, the plotted dataset will be the original and the classifier regions will include the dml mapping (done in knn_clf initialization)            
-    elif transformer is not None: # TODO add transform option to transformer and metric
-        X = X.dot(transformer.T)
-    elif metric is not None:
-        transformer = metric_to_linear(metric)
-        X = X.dot(transformer.T)
-    
+
     
     # Fiting classifier
     if knn_clf is None:
@@ -171,8 +210,9 @@ def knn_plot(X,y,k=1,attrs=None,sections="mean",knn_clf = None, fitted = False, 
     return classifier_plot(X,y,knn_clf,attrs,sections,True,f,ax,title,subtitle,xrange,yrange,xlabel,ylabel,
                            grid_split, grid_step,label_legend,legend_loc,cmap,label_colors,plot_points,
                            plot_regions,region_intensity,legend_plot_points,legend_plot_regions,legend_on_axis)
+
         
-def knn_multiplot(X,y,nrow=None,ncol=None,ks=None, clfs=None,attrs=None, sections="mean",fitted = False, metrics=None, transformers=None, dmls=None, dml_fitted=False,transforms=None,
+def dml_multiplot(X,y,nrow=None,ncol=None,ks=None, clfs=None,attrs=None, sections="mean",fitted = False, metrics=None, transformers=None, dmls=None, dml_fitted=False,transforms=None,
                   title = None, subtitles = None, xlabels=None, ylabels=None, grid_split = [400,400], grid_step=[0.1,0.1,],
                   label_legend=True, legend_loc="center right",cmap=None, label_colors=None,plot_points=True,plot_regions=True, region_intensity=0.4,
                   legend_plot_points=True, legend_plot_regions=True,legend_on_axis=False,**fig_kw):
@@ -261,6 +301,31 @@ def classifier_pairplots(X,y,clf,attrs=None,xattrs=None,yattrs=None,diag="hist",
                 else:
                     raise ValueError("Please provide a valid value for 'diag' parameter")
     return f
+
+def dml_pairplots(X,y,clf,attrs=None,xattrs=None,yattrs=None,diag="hist",sections="mean",fitted=False, metric=None,transformer=None,
+                   dml=None,dml_fitted=False,title=None,grid_split=[400,400], grid_step=[0.1,0.1],
+                   label_legend=True, legend_loc="center right", cmap=None,label_colors=None,plot_points=True,
+                   plot_regions=True,region_intensity=0.4,legend_plot_points=True,legend_plot_regions=True,legend_on_axis=False,**fig_kw):
+     
+    # Fitting distance metrics
+    if dml is None:
+        if transformer is not None:
+            dml = Transformer(transformer)
+        elif metric is not None:
+            dml = Metric(metric)
+            
+    if dml is not None:
+        if dml_fitted:
+            X = dml.transform(X)
+        else:
+            X = dml.fit_transform(X,y) 
+        
+    if not fitted:
+        clf.fit(X,y)
+        
+    return classifier_pairplots(X,y,clf,attrs,xattrs,yattrs,diag,sections,True,title,grid_split,grid_step,label_legend,legend_loc,
+                                cmap,label_colors,plot_points,plot_regions,region_intensity,legend_plot_points,legend_plot_regions,
+                                legend_on_axis,**fig_kw)
     
 def knn_pairplots(X,y,k=1,attrs=None,xattrs=None,yattrs=None,diag="hist",sections="mean",knn_clf=None,fitted=False, metric=None,transformer=None,
                    dml=None,dml_fitted=False,title=None,grid_split=[400,400], grid_step=[0.1,0.1],
@@ -268,16 +333,17 @@ def knn_pairplots(X,y,k=1,attrs=None,xattrs=None,yattrs=None,diag="hist",section
                    plot_regions=True,region_intensity=0.4,legend_plot_points=True,legend_plot_regions=True,legend_on_axis=False,**fig_kw):
      
     # Fitting distance metrics
+    if dml is None:
+        if transformer is not None:
+            dml = Transformer(transformer)
+        elif metric is not None:
+            dml = Metric(metric)
+            
     if dml is not None:
         if dml_fitted:
             X = dml.transform(X)
         else:
             X = dml.fit_transform(X,y)
-    elif transformer is not None:
-        X = X.dot(transformer.T)
-    elif metric is not None:
-        transformer = metric_to_linear(metric)
-        X = X.dot(transformer.T)
     
     
     # Fiting classifier

@@ -10,7 +10,7 @@ from utils import(
         read_ARFF, kfold_multitester_supervised_knn, toy_datasets, datasets)
 
 from dml import(
-    NCA,LDA,PCA,LMNN,ANMM,LSI,kNN, knn_plot, knn_multiplot, classifier_plot, ITML, KANMM,KDA, DMLMJ, KDMLMJ, NCMML, NCMC, KLMNN, DML_eig, MCML, LDML)
+    NCA,LDA,PCA,LMNN,ANMM,LSI,kNN, knn_plot, dml_multiplot, classifier_plot, ITML, KANMM,KDA, DMLMJ, KDMLMJ, NCMML, NCMC, KLMNN, DML_eig, MCML, LDML)
 
 import numpy as np
 
@@ -94,7 +94,7 @@ alg = mcml
 #toy_datasets.toy_plot(Xn,y)
 knn_plot(X,y,k=1,figsize=(15,8),cmap="gist_rainbow",transform=False,dml=alg)
 knn_plot(X,y,k=1,figsize=(15,8),cmap="gist_rainbow",dml=alg)
-#knn_multiplot(X,y,ks=[1,1],dmls=[lmnn,anmm],figsize=(15,8),cmap="rainbow")
+#dml_multiplot(X,y,ks=[1,1],dmls=[lmnn,anmm],figsize=(15,8),cmap="rainbow")
 
 #classifier_plot(X,y,lmnn,figsize=(15,8),cmap="gist_rainbow")
 #results = kfold_multitester_supervised_knn(X,y,k = 3, n_neigh = 1, dmls = [dmlmj], verbose = True,seed = 28)
