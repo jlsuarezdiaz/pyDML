@@ -17,5 +17,5 @@ from .mcml import MCML
 from .ldml import LDML
 from .multidml_knn import MultiDML_kNN
 from .dml_plot import *
-from .base import Metric, Transformer
+from .base import Metric, Transformer, Euclidean
 from .tune import *

@@ -1,0 +1,24 @@
+@relation  iris
+@attribute SepalLength real[4.3,7.9]
+@attribute SepalWidth real[2.0,4.4]
+@attribute PetalLength real[1.0,6.9]
+@attribute PetalWidth real[0.1,2.5]
+@attribute Class{Iris-setosa,Iris-versicolor,Iris-virginica}
+@inputs SepalLength,SepalWidth,PetalLength,PetalWidth
+@outputs Class
+@data
+5.1, 3.4, 1.5, 0.2, Iris-setosa
+5.0, 3.3, 1.4, 0.2, Iris-setosa
+5.1, 3.8, 1.9, 0.4, Iris-setosa
+4.9, 3.1, 1.5, 0.1, Iris-setosa
+4.4, 3.0, 1.3, 0.2, Iris-setosa
+6.6, 3.0, 4.4, 1.4, Iris-versicolor
+6.0, 2.2, 4.0, 1.0, Iris-versicolor
+5.6, 2.9, 3.6, 1.3, Iris-versicolor
+6.1, 2.9, 4.7, 1.4, Iris-versicolor
+5.9, 3.2, 4.8, 1.8, Iris-versicolor
+7.4, 2.8, 6.1, 1.9, Iris-virginica
+6.1, 3.0, 4.9, 1.8, Iris-virginica
+6.4, 2.8, 5.6, 2.2, Iris-virginica
+6.4, 2.7, 5.3, 1.9, Iris-virginica
+7.7, 2.6, 6.9, 2.3, Iris-virginica

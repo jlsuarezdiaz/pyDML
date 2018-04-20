@@ -1,0 +1,33 @@
+@relation  hepatitis
+@attribute Age numeric
+@attribute Sex numeric
+@attribute Steroid numeric
+@attribute Antivirals numeric
+@attribute Fatigue numeric
+@attribute Malaise numeric
+@attribute Anorexia numeric
+@attribute LiverBig numeric
+@attribute LiverFirm numeric
+@attribute SpleenPalpable numeric
+@attribute Spiders numeric
+@attribute Ascites numeric
+@attribute Varices numeric
+@attribute Bilirubin numeric
+@attribute AlkPhosphate numeric
+@attribute Sgot numeric
+@attribute AlbuMin numeric
+@attribute ProTime numeric
+@attribute Histology numeric
+@attribute Class {1,2}
+
+
+@data
+59, 1, 1, 2, 1, 1, 2, 2, 1, 1, 1, 2, 2, 1.5, 107, 157, 3.6, 38, 2, 1
+38, 1, 1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 0.4, 243, 49, 3.8, 90, 2, 1
+33, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1.0, 46, 90, 4.4, 60, 1, 2
+27, 1, 1, 2, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2.4, 168, 227, 3.0, 66, 2, 2
+51, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 1.0, 78, 58, 4.6, 52, 1, 2
+49, 1, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 0.8, 103, 43, 3.5, 66, 1, 2
+56, 1, 1, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 0.7, 71, 18, 4.4, 100, 1, 2
+20, 1, 1, 2, 1, 1, 1, 2, 2, 2, 1, 1, 2, 1.0, 160, 118, 2.9, 23, 2, 2
+22, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 0.9, 48, 20, 4.2, 64, 1, 2

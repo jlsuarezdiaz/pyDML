@@ -10,6 +10,8 @@ import numpy as np
 from scipy.io.arff import loadarff
 import warnings
 from six.moves import xrange
+import arff
+import pandas as pd
 
 def _data_to_matrix(data, label_col):
     col_size = len(data[0])
@@ -62,3 +64,13 @@ def read_ARFF(file, label_col = None):
 
     return X,y,m
 
+def read_ARFF2(file, label_col = None):
+    data = arff.load(open(file,'r'))
+    
+    data = pd.DataFrame(data['data'])
+    
+    X=data
+    y=None
+    X,y =_data_to_matrix(X,label_col)
+
+    return X,y

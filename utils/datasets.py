@@ -10,7 +10,8 @@ import numpy as np
 import pandas as pd
 from sklearn.datasets import load_iris, load_digits
 from six.moves import xrange
-from .arff_reader import read_ARFF
+from .arff_reader import read_ARFF, read_ARFF2
+
 import os.path
 
 def iris():
@@ -112,5 +113,16 @@ def balance():
     y = data.iloc[:,0].values
     return X, y
     
-
-
+def dobcsv10(setname):
+    partitions = []
+    for i in range(10):
+        k=i+1
+        train_name = "./data/10-fold/"+setname+"/"+setname+"-10dobscv-"+str(k)+"tra.dat.arff"
+        test_name = "./data/10-fold/"+setname+"/"+setname+"-10dobscv-"+str(k)+"tst.dat.arff"
+        
+        Xtra, ytra, _ = read_ARFF(train_name,-1)
+        Xtst, ytst, _ = read_ARFF(test_name,-1)
+        
+        partitions.append((Xtra,ytra,Xtst,ytst))
+        
+    return partitions

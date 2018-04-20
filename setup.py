@@ -84,6 +84,8 @@ setup(
           'Funding': 'https://github.com/jlsuarezdiaz/pyDML',
           'Say Thanks!': 'mailto:jlsuarezdiaz@correo.ugr.es',
           'Source': 'https://github.com/jlsuarezdiaz/pyDML',
-      }
+      },
+              
+      ext_modules = cythonize(["dml/*.pyx"],language="c++")
       
 )
