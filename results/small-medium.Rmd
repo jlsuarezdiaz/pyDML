@@ -1,0 +1,33 @@
+---
+title: "small-medium"
+author: "Juan Luis Suárez Díaz"
+header-includes:
+  - \usepackage{booktabs}
+date: "26 de abril de 2018"
+output: pdf_document
+---
+
+
+\resizebox{\textwidth}{!}{%
+\input{"./small-medium-test-3nn.tex"}
+}
+
+\resizebox{\textwidth}{!}{%
+\input{"./small-medium-test-5nn.tex"}
+}
+
+\resizebox{\textwidth}{!}{%
+\input{"./small-medium-test-7nn.tex"}
+}
+
+\resizebox{\textwidth}{!}{%
+\input{"./small-medium-train-3nn.tex"}
+}
+
+\resizebox{\textwidth}{!}{%
+\input{"./small-medium-train-5nn.tex"}
+}
+
+\resizebox{\textwidth}{!}{%
+\input{"./small-medium-train-7nn.tex"}
+}

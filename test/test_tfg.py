@@ -6,6 +6,7 @@ Created on Thu Apr 19 12:09:22 2018
 @author: jlsuarezdiaz
 """
 
+import sys
 import numpy as np
 import pandas as pd
 from utils import datasets as ds
@@ -15,7 +16,14 @@ from dml import( kNN, PCA, LDA, NCA, LMNN, KLMNN, LSI, ANMM, KANMM,
 
 from sklearn.preprocessing import MinMaxScaler
 
-np.random.seed(28)
+"""
+def bold_max(data):
+    is_max = data == data.max()
+    return['font-width: bold' if v else '' for v in is_max]
+"""
+
+seed=28
+np.random.seed(seed)
 
 datasets = ['appendicitis',
             'balance',
@@ -26,7 +34,7 @@ datasets = ['appendicitis',
             'hepatitis',
             'ionosphere',
             'iris',
-            'led7digit',
+            #'led7digit',
             'letter',
             'magic',
             'monk-2',
@@ -58,17 +66,21 @@ small = ['appendicitis',
          'hepatitis',
          'ionosphere',
          'iris',
-         'led7digit',
+         #'led7digit',
          'monk-2',
          'newthyroid',
          'sonar',
-         'wine']
+         'wine'
+         ]
 
-medium = ['movement_libras',
+medium = [
+          'movement_libras',
+          'pima',
           'vehicle',
           'vowel',
           'wdbc',
-          'wisconsin']
+          'wisconsin'
+          ]
 
 large = ['banana',
          'letter',
@@ -125,6 +137,9 @@ names_basic = {3: [type(dml).__name__ for dml in dml_basic[3]],
                7: [type(dml).__name__ for dml in dml_basic[7]]}
 
 
+
+###### SMALL + MEDIUM
+"""
 results = {}
 
 rownames = ["FOLD "+str(i+1) for i in range(10)]
@@ -156,13 +171,19 @@ for d in small+medium:
             
             for j, dml in enumerate(dml_basic[k]):
                 print("**** DML ",type(dml).__name__)
+                np.random.seed(seed)
                 # Learning DML
-                knn = kNN(k,dml)
-                dml.fit(xtr,ytr)
-                knn.fit(xtr,ytr)
+                try:
+                    knn = kNN(k,dml)
+                    dml.fit(xtr,ytr)
+                    knn.fit(xtr,ytr)
                 
-                results[d]['train'][k][i,j] = knn.score()
-                results[d]['test'][k][i,j] = knn.score(xtst,ytst)
+                    results[d]['train'][k][i,j] = knn.score()
+                    results[d]['test'][k][i,j] = knn.score(xtst,ytst)
+                except:
+                    print("Error en el DML:", sys.exc_info()[0])
+                    results[d]['train'][k][i,j] = np.nan
+                    results[d]['test'][k][i,j] = np.nan
                 
                 #print(results[d]['train'][k][i,j])
                 #print(results[d]['test'][k][i,j])
@@ -174,3 +195,39 @@ for d in small+medium:
         
         results[d]['train'][k] = pd.DataFrame(results[d]['train'][k],columns=names_basic[k],index=rownames+["MEAN"])
         results[d]['test'][k] = pd.DataFrame(results[d]['test'][k],columns=names_basic[k],index=rownames+["MEAN"])
+        
+        results[d]['train'][k].to_csv('./results/'+str(d)+'-'+str(k)+'nn-train.csv')
+        results[d]['test'][k].to_csv('./results/'+str(d)+'-'+str(k)+'nn-test.csv')
+        
+        print("RESULTS: ",d,"k = ",k," [TRAIN] ")
+        print(results[d]['train'][k])
+        print("RESULTS: ",d,"k = ",k," [TEST] ")
+        print(results[d]['test'][k])
+"""
+##########
+"""
+final_results = {}
+for k in [3,5,7]:
+    final_results[k] = {}
+    final_results[k]['train'] = np.empty([len(small+medium), len(dml_basic[k])])
+    final_results[k]['test'] = np.empty([len(small+medium), len(dml_basic[k])])
+    
+    final_results[k]['train'] = pd.DataFrame(final_results[k]['train'],index = small+medium, columns=names_basic[k])
+    final_results[k]['test'] = pd.DataFrame(final_results[k]['test'],index = small+medium, columns=names_basic[k])
+    
+    for d in small+medium:
+        train_d = pd.read_csv('./results/'+str(d)+'-'+str(k)+'nn-train.csv',index_col=0)
+        test_d = pd.read_csv('./results/'+str(d)+'-'+str(k)+'nn-test.csv',index_col=0)
+        
+        final_results[k]['train'].loc[d] = train_d.loc['MEAN']
+        final_results[k]['test'].loc[d] = test_d.loc['MEAN']
+        
+    final_results[k]['train'].style.applymap(bold_max)
+    final_results[k]['test'].style.applymap(bold_max)
+    final_results[k]['train'].to_csv('./results/small-medium-train-'+str(k)+'nn.csv')
+    final_results[k]['test'].to_csv('./results/small-medium-test-'+str(k)+'nn.csv')
+    final_results[k]['train'].to_latex('./results/small-medium-train-'+str(k)+'nn.tex')
+    final_results[k]['test'].to_latex('./results/small-medium-test-'+str(k)+'nn.tex')     
+"""
+
+###########################3
