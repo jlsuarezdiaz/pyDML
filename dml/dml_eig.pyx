@@ -20,7 +20,7 @@ from .dml_utils import calc_outers, calc_outers_i
 
 class DML_eig(DML_Algorithm):
     
-    def __init__(self,mu=1e-4,tol=1e-6,eps=1e-10,max_it=25):
+    def __init__(self,mu=1e-4,tol=1e-5,eps=1e-10,max_it=25):
         """
             mu: smoothing parameter
             beta: regularization parameter
@@ -147,6 +147,9 @@ class DML_eig(DML_Algorithm):
         self.X_, self.y_ = X,y
         
         S, D = DML_eig.label_to_similarity_set(y)
+        #ns, nd = S.shape[0], D.shape[0]
+        
+        S, D = DML_eig.similarity_set_to_iterable(S,D)
         
         mu = self.mu_
         #beta = self.beta_
@@ -155,7 +158,7 @@ class DML_eig(DML_Algorithm):
         eps = self.eps_
         #linesearch = self.linesearch_
         
-        ns, nd = S.shape[0], D.shape[0]
+        
         n, d = X.shape
         
         M = np.zeros([d,d])
@@ -163,13 +166,18 @@ class DML_eig(DML_Algorithm):
         
         outers = calc_outers(X)
         Xs = np.zeros([d,d])
-        for [i,j] in S:
-            Xs += calc_outers_i(X,outers,i)[j]
+        #for [i,j] in S:
+        for i in S:
+            outers_i = calc_outers_i(X,outers,i)
+            for j in S[i]:
+                Xs += outers_i[j]
+            #Xs += calc_outers_i(X,outers,i)[j]
         vals, U = eigh(Xs)
         if np.linalg.det(Xs) < eps:
             I = np.eye(d)
             Xs += 1e-5*I
-            
+        
+        vals[vals < eps] = eps
         Xs_invsqrt = inv(U.dot(np.diag(np.sqrt(vals))).dot(U.T))
         
         stop=False
@@ -179,22 +187,31 @@ class DML_eig(DML_Algorithm):
             grad_sum = 0.0
             grad = np.zeros([d,d])
             
-            for [i,j] in D:
-                Xtau = calc_outers_i(X,outers,i)[j]
-                XT = Xs_invsqrt.dot(Xtau).dot(Xs_invsqrt)
-                inner = np.inner(XT.reshape(1,-1),M.reshape(1,-1))
-                soft = np.exp(-inner/mu)
-                grad += soft*XT
-                grad_sum += soft
-                if its==0:
-                    self.initial_error_ = -mu*np.log(grad_sum)
+            #for [i,j] in D:
+            for i in D:
+                outers_i = calc_outers_i(X,outers,i)
+                for j in D[i]:
+                    Xtau = outers_i[j]#calc_outers_i(X,outers,i)[j]
+                    XT = Xs_invsqrt.dot(Xtau).dot(Xs_invsqrt)
+                    inner = np.inner(XT.reshape(1,-1),M.reshape(1,-1))
+                    soft = np.exp(-inner/mu)
+                    grad += soft*XT
+                    grad_sum += soft
+                    if its==0:
+                        self.initial_error_ = -mu*np.log(grad_sum)
                 
             grad /= grad_sum
             
             _, V = sl.eigh(grad,eigvals=(grad.shape[0]-1,grad.shape[0]-1))
             Z = V.dot(V.T)
             alphat = 1/(its+1)
+            Mprev = M
             M = (1-alphat)*M+alphat*Z
+            
+            tol_norm = np.max(np.abs(M-Mprev)) 
+            
+            if tol_norm < tol:
+                stop=True
             
             its+=1
             if its==max_it:
@@ -217,6 +234,25 @@ class DML_eig(DML_Algorithm):
                 else:
                     D.append([i,j])
         return np.array(S),np.array(D)
+    
+    def similarity_set_to_iterable(S,D):
+        # For more efficiency
+        dS = {}
+        dD = {}
+        
+        for [i,j] in S:
+            if i in dS:
+                dS[i].append(j)
+            else:
+                dS[i] = []
+                
+        for i,j in D:
+            if i in dD:
+                dD[i].append(j)
+            else:
+                dD[i] = []
+                
+        return dS, dD
     
     def SODW(x,a,b,w):
         nn = len(a)

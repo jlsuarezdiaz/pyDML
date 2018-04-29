@@ -68,6 +68,14 @@ def calc_outers_i(X,outers,i,Y=None):
             outers_i[j] = np.outer(X[i,:]-Y[j,:],X[i,:]-Y[j,:])
         return outers_i
     
+def calc_outers_ij(X,outers_i,i,j,Y=None):
+    if outers_i is not None:
+        return outers_i[j]
+    else:
+        if Y is None:
+            Y=X
+        return np.outer(X[i,:]-Y[j,:],X[i,:]-Y[j,:])
+    
 def metric_sq_distance(M,x,y):
     """
         M: metric matrix

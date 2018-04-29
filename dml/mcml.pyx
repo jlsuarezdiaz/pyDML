@@ -17,8 +17,8 @@ from .dml_algorithm import DML_Algorithm
 class MCML(DML_Algorithm):
 
 
-    def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_metric = None, max_iter = 50, prec = 1e-6, 
-                tol = 1e-6, descent_method = "SDP", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5):
+    def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.3, initial_metric = None, max_iter = 20, prec = 0.01, 
+                tol = 0.01, descent_method = "SDP", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5):
         self.num_dims_ = num_dims
         self.initial_ = initial_metric
         self.max_it_ = max_iter
@@ -121,18 +121,28 @@ class MCML(DML_Algorithm):
                         softmax_sum += pik
                         softout_sum += pik*outers_i[k]
                         
-                    const_grad = softout_sum / softmax_sum
+                    if softmax_sum > 1e-16:
+                        const_grad = softout_sum / softmax_sum
+                    else:
+                        const_grad = softout_sum
+                        stop = True
                     
+                
                 const_count = 0
                 for j, yj in enumerate(y):
                     if yi == yj:
                         grad += outers_i[j]
                         const_count+=1
                         
+                        
                 grad -= const_count*const_grad
+            
+            if stop:
+                grad = np.zeros([d,d])
                 
             Mprev = M   
             #print("M");print(M);print("G");print(grad);input()
+            
             M = M - self.eta_*grad
             M = SDProject(M)    
             
@@ -151,6 +161,7 @@ class MCML(DML_Algorithm):
             
             grad_norm = np.max(np.abs(grad))
             tol_norm = np.max(np.abs(M-Mprev)) 
+            
             if grad_norm < self.eps_ or tol_norm < self.tol_:
                 stop=True
 

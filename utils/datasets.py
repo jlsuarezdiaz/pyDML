@@ -9,6 +9,7 @@ Created on Thu Feb  8 12:28:34 2018
 import numpy as np
 import pandas as pd
 from sklearn.datasets import load_iris, load_digits
+from sklearn.model_selection import StratifiedKFold
 from six.moves import xrange
 from .arff_reader import read_ARFF, read_ARFF2
 
@@ -113,8 +114,9 @@ def balance():
     y = data.iloc[:,0].values
     return X, y
     
-def dobcsv10(setname):
+def dobscv10(setname):
     partitions = []
+
     for i in range(10):
         k=i+1
         train_name = "./data/10-fold/"+setname+"/"+setname+"-10dobscv-"+str(k)+"tra.dat.arff"
@@ -125,4 +127,37 @@ def dobcsv10(setname):
         
         partitions.append((Xtra,ytra,Xtst,ytst))
         
-    return partitions
+    n = Xtra.shape[0]+Xtst.shape[0]
+    d = Xtra.shape[1]    
+        
+    return partitions, (n,d)
+
+def reduced_dobscv10(setname,part=10):  
+    partitions = []
+    np.random.seed(28)
+    skf = StratifiedKFold(10,True,28)
+    if setname == 'digits':
+        Xt, yt = digits()
+    elif setname == 'spambase':
+        Xt, yt = spambase()
+    elif part==1:
+        return dobscv10(setname)
+    else:
+        k=np.random.randint(1,11)
+        #train_name = "./data/10-fold/"+setname+"/"+setname+"-10dobscv-"+str(k)+"tra.dat.arff"
+        test_name = "./data/"+str(part)+"-fold/"+setname+"/"+setname+"-"+str(part)+"dobscv-"+str(k)+"tst.dat.arff"
+        
+        #Xtra, ytra, _ = read_ARFF(train_name,-1)
+        Xt, yt, _ = read_ARFF(test_name,-1)
+        
+        if setname == 'page-blocks': # Minoritary class is not large enough for 10-fold partitions
+            Xt = Xt[yt != 2]
+            yt = yt[yt != 2]
+        
+    for train, test in skf.split(Xt,yt):
+        Xtra, ytra = Xt[train], yt[train]
+        Xtst, ytst = Xt[test], yt[test]
+    
+        partitions.append((Xtra,ytra,Xtst,ytst))
+        
+    return partitions, Xt.shape

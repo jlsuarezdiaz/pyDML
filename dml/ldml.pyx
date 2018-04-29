@@ -17,7 +17,7 @@ from .dml_algorithm import DML_Algorithm
 class LDML(DML_Algorithm):
 
 
-    def __init__(self, num_dims = None, b=1e-3, learning_rate = "adaptive", eta0 = 0.01, initial_metric = None, max_iter = 50, prec = 1e-3, 
+    def __init__(self, num_dims = None, b=1e-3, learning_rate = "adaptive", eta0 = 0.3, initial_metric = None, max_iter = 10, prec = 1e-3, 
                 tol = 1e-3, descent_method = "SDP", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5):
         self.num_dims_ = num_dims
         self.initial_ = initial_metric
@@ -119,6 +119,7 @@ class LDML(DML_Algorithm):
             
             grad_norm = np.max(np.abs(grad))
             tol_norm = np.max(np.abs(M-Mprev)) 
+            
             if grad_norm < self.eps_ or tol_norm < self.tol_:
                 stop=True
 
