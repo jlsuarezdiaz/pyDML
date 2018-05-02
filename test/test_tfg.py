@@ -275,7 +275,7 @@ large4 = [('phoneme',5),
           ('thyroid',5),
           ('magic',10)]
 
-for d, f in large1:
+for d, f in large4:
     
     print("* DATASET ", d)
     
