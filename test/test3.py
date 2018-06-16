@@ -120,7 +120,7 @@ lda = LDA()
 pca = PCA(thres=0.95)
 lmnn = LMNN(max_iter=300,learning_rate = "adaptive", eta0 = 0.3, k = 5, mu = 0.5,soft_comp_interval = 1,tol=1e-8,prec=1e-8,eta_thres=1e-15)
 lmnn_sgd = LMNN(num_dims=20,max_iter=300,learning_rate = "adaptive", eta0 = 0.001, k = 5, mu = 0.5,soft_comp_interval = 1,tol=1e-15,prec=1e-10,eta_thres=1e-15,solver="SGD")
-klmnn = KLMNN(max_iter=100,learning_rate = "adaptive", eta0 = 0.001, k=5, mu = 0.5, tol=1e-15, prec=1e-15,eta_thres=1e-15,kernel='rbf',target_selection="kernel")
+klmnn = KLMNN(max_iter=100,learning_rate = "adaptive", eta0 = 0.3, k=5, mu = 0.5, tol=1e-15, prec=1e-15,eta_thres=1e-15,kernel='rbf',target_selection="kernel")
 anmm = ANMM(num_dims = 10,n_friends = 5,n_enemies = 5)
 itml = ITML(max_iter=100000,gamma=1.0, low_perc = 5, up_perc = 95)
 nca_bgd = NCA(max_iter=100, learning_rate = "adaptive", eta0=0.3, descent_method = "BGD")
@@ -138,7 +138,7 @@ dml_eig = DML_eig(max_it=25)
 mcml = MCML(eta0=0.01)
 ldml = LDML(b=0.001,learning_rate='adaptive')
 #dmls = [itml,pca,lda,anmm,lsi,nca_bgd,nca_sgd,lmnn]
-dmls = [lmnn]
+dmls = [klmnn]
 
 results = kfold_multitester_supervised_knn(X,y,k = 5, n_neigh = 1, dmls = dmls, verbose = True,seed = 28)
 

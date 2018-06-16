@@ -3,12 +3,12 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "language": "c++", 
-        "name": "dml.lmnn", 
+        "language": "c++",
+        "name": "dml.lmnn",
         "sources": [
             "dml/lmnn.pyx"
         ]
-    }, 
+    },
     "module_name": "dml.lmnn"
 }
 END: Cython Metadata */
@@ -1800,10 +1800,7 @@ static PyObject *__pyx_float_0_3;
 static PyObject *__pyx_float_0_5;
 static PyObject *__pyx_float_1_0;
 static PyObject *__pyx_float_1_01;
-static PyObject *__pyx_float_1eneg_3;
-static PyObject *__pyx_float_1eneg_6;
 static PyObject *__pyx_float_1eneg_8;
-static PyObject *__pyx_float_0_001;
 static PyObject *__pyx_float_1eneg_14;
 static PyObject *__pyx_float_1eneg_16;
 static PyObject *__pyx_int_0;
@@ -16766,9 +16763,9 @@ static PyObject *__pyx_pf_3dml_4lmnn_4LMNN_36_shuffle(CYTHON_UNUSED PyObject *__
 /* "dml/lmnn.pyx":487
  * class KLMNN(KernelDML_Algorithm):
  * 
- *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_metric = None, max_iter = 100, prec = 1e-3,             # <<<<<<<<<<<<<<
- *                 tol = 1e-6, k = 3, mu = 0.5, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14,
- *                 kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="original"):
+ *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.3, initial_metric = None, max_iter = 100, prec = 1e-8,             # <<<<<<<<<<<<<<
+ *                 tol = 1e-8, k = 3, mu = 0.5, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14,
+ *                 kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="kernel"):
  */
 
 /* Python wrapper */
@@ -16802,11 +16799,11 @@ static PyObject *__pyx_pw_3dml_4lmnn_5KLMNN_1__init__(PyObject *__pyx_self, PyOb
     PyObject* values[19] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     values[1] = ((PyObject *)((PyObject *)Py_None));
     values[2] = ((PyObject *)((PyObject*)__pyx_n_s_adaptive));
-    values[3] = ((PyObject *)((PyObject*)__pyx_float_0_001));
+    values[3] = ((PyObject *)((PyObject*)__pyx_float_0_3));
     values[4] = ((PyObject *)((PyObject *)Py_None));
     values[5] = ((PyObject *)((PyObject *)__pyx_int_100));
-    values[6] = ((PyObject *)((PyObject*)__pyx_float_1eneg_3));
-    values[7] = ((PyObject *)((PyObject*)__pyx_float_1eneg_6));
+    values[6] = ((PyObject *)((PyObject*)__pyx_float_1eneg_8));
+    values[7] = ((PyObject *)((PyObject*)__pyx_float_1eneg_8));
     values[8] = ((PyObject *)((PyObject *)__pyx_int_3));
     values[9] = ((PyObject *)((PyObject*)__pyx_float_0_5));
     values[10] = ((PyObject *)((PyObject*)__pyx_float_1_01));
@@ -16815,9 +16812,9 @@ static PyObject *__pyx_pw_3dml_4lmnn_5KLMNN_1__init__(PyObject *__pyx_self, PyOb
     values[13] = ((PyObject *)((PyObject*)__pyx_n_s_linear));
 
     /* "dml/lmnn.pyx":489
- *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_metric = None, max_iter = 100, prec = 1e-3,
- *                 tol = 1e-6, k = 3, mu = 0.5, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14,
- *                 kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="original"):             # <<<<<<<<<<<<<<
+ *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.3, initial_metric = None, max_iter = 100, prec = 1e-8,
+ *                 tol = 1e-8, k = 3, mu = 0.5, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14,
+ *                 kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="kernel"):             # <<<<<<<<<<<<<<
  * 
  *         self.num_dims_ = num_dims
  */
@@ -16825,7 +16822,7 @@ static PyObject *__pyx_pw_3dml_4lmnn_5KLMNN_1__init__(PyObject *__pyx_self, PyOb
     values[15] = ((PyObject *)((PyObject *)__pyx_int_3));
     values[16] = ((PyObject *)((PyObject *)__pyx_int_1));
     values[17] = ((PyObject *)((PyObject *)Py_None));
-    values[18] = ((PyObject *)((PyObject*)__pyx_n_s_original));
+    values[18] = ((PyObject *)((PyObject*)__pyx_n_s_kernel));
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
@@ -17064,9 +17061,9 @@ static PyObject *__pyx_pw_3dml_4lmnn_5KLMNN_1__init__(PyObject *__pyx_self, PyOb
   /* "dml/lmnn.pyx":487
  * class KLMNN(KernelDML_Algorithm):
  * 
- *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_metric = None, max_iter = 100, prec = 1e-3,             # <<<<<<<<<<<<<<
- *                 tol = 1e-6, k = 3, mu = 0.5, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14,
- *                 kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="original"):
+ *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.3, initial_metric = None, max_iter = 100, prec = 1e-8,             # <<<<<<<<<<<<<<
+ *                 tol = 1e-8, k = 3, mu = 0.5, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14,
+ *                 kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="kernel"):
  */
 
   /* function exit code */
@@ -17082,7 +17079,7 @@ static PyObject *__pyx_pf_3dml_4lmnn_5KLMNN___init__(CYTHON_UNUSED PyObject *__p
   __Pyx_RefNannySetupContext("__init__", 0);
 
   /* "dml/lmnn.pyx":491
- *                 kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="original"):
+ *                 kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="kernel"):
  * 
  *         self.num_dims_ = num_dims             # <<<<<<<<<<<<<<
  *         self.M0_ = initial_metric
@@ -17296,9 +17293,9 @@ static PyObject *__pyx_pf_3dml_4lmnn_5KLMNN___init__(CYTHON_UNUSED PyObject *__p
   /* "dml/lmnn.pyx":487
  * class KLMNN(KernelDML_Algorithm):
  * 
- *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_metric = None, max_iter = 100, prec = 1e-3,             # <<<<<<<<<<<<<<
- *                 tol = 1e-6, k = 3, mu = 0.5, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14,
- *                 kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="original"):
+ *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.3, initial_metric = None, max_iter = 100, prec = 1e-8,             # <<<<<<<<<<<<<<
+ *                 tol = 1e-8, k = 3, mu = 0.5, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14,
+ *                 kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="kernel"):
  */
 
   /* function exit code */
@@ -25430,15 +25427,15 @@ static int __Pyx_InitCachedConstants(void) {
   /* "dml/lmnn.pyx":487
  * class KLMNN(KernelDML_Algorithm):
  * 
- *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_metric = None, max_iter = 100, prec = 1e-3,             # <<<<<<<<<<<<<<
- *                 tol = 1e-6, k = 3, mu = 0.5, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14,
- *                 kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="original"):
+ *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.3, initial_metric = None, max_iter = 100, prec = 1e-8,             # <<<<<<<<<<<<<<
+ *                 tol = 1e-8, k = 3, mu = 0.5, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14,
+ *                 kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="kernel"):
  */
   __pyx_tuple__102 = PyTuple_Pack(19, __pyx_n_s_self, __pyx_n_s_num_dims, __pyx_n_s_learning_rate, __pyx_n_s_eta0, __pyx_n_s_initial_metric, __pyx_n_s_max_iter, __pyx_n_s_prec, __pyx_n_s_tol, __pyx_n_s_k, __pyx_n_s_mu, __pyx_n_s_learn_inc, __pyx_n_s_learn_dec, __pyx_n_s_eta_thres, __pyx_n_s_kernel, __pyx_n_s_gamma, __pyx_n_s_degree, __pyx_n_s_coef0, __pyx_n_s_kernel_params, __pyx_n_s_target_selection); if (unlikely(!__pyx_tuple__102)) __PYX_ERR(0, 487, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__102);
   __Pyx_GIVEREF(__pyx_tuple__102);
   __pyx_codeobj__103 = (PyObject*)__Pyx_PyCode_New(19, 0, 19, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__102, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_dml_lmnn_pyx, __pyx_n_s_init, 487, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__103)) __PYX_ERR(0, 487, __pyx_L1_error)
-  __pyx_tuple__104 = PyTuple_Pack(18, ((PyObject *)Py_None), ((PyObject*)__pyx_n_s_adaptive), ((PyObject*)__pyx_float_0_001), ((PyObject *)Py_None), ((PyObject *)__pyx_int_100), ((PyObject*)__pyx_float_1eneg_3), ((PyObject*)__pyx_float_1eneg_6), ((PyObject *)__pyx_int_3), ((PyObject*)__pyx_float_0_5), ((PyObject*)__pyx_float_1_01), ((PyObject*)__pyx_float_0_5), ((PyObject*)__pyx_float_1eneg_14), ((PyObject*)__pyx_n_s_linear), ((PyObject *)Py_None), ((PyObject *)__pyx_int_3), ((PyObject *)__pyx_int_1), ((PyObject *)Py_None), ((PyObject*)__pyx_n_s_original)); if (unlikely(!__pyx_tuple__104)) __PYX_ERR(0, 487, __pyx_L1_error)
+  __pyx_tuple__104 = PyTuple_Pack(18, ((PyObject *)Py_None), ((PyObject*)__pyx_n_s_adaptive), ((PyObject*)__pyx_float_0_3), ((PyObject *)Py_None), ((PyObject *)__pyx_int_100), ((PyObject*)__pyx_float_1eneg_8), ((PyObject*)__pyx_float_1eneg_8), ((PyObject *)__pyx_int_3), ((PyObject*)__pyx_float_0_5), ((PyObject*)__pyx_float_1_01), ((PyObject*)__pyx_float_0_5), ((PyObject*)__pyx_float_1eneg_14), ((PyObject*)__pyx_n_s_linear), ((PyObject *)Py_None), ((PyObject *)__pyx_int_3), ((PyObject *)__pyx_int_1), ((PyObject *)Py_None), ((PyObject*)__pyx_n_s_kernel)); if (unlikely(!__pyx_tuple__104)) __PYX_ERR(0, 487, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__104);
   __Pyx_GIVEREF(__pyx_tuple__104);
 
@@ -25552,10 +25549,7 @@ static int __Pyx_InitGlobals(void) {
   __pyx_float_0_5 = PyFloat_FromDouble(0.5); if (unlikely(!__pyx_float_0_5)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_float_1_0 = PyFloat_FromDouble(1.0); if (unlikely(!__pyx_float_1_0)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_float_1_01 = PyFloat_FromDouble(1.01); if (unlikely(!__pyx_float_1_01)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_float_1eneg_3 = PyFloat_FromDouble(1e-3); if (unlikely(!__pyx_float_1eneg_3)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_float_1eneg_6 = PyFloat_FromDouble(1e-6); if (unlikely(!__pyx_float_1eneg_6)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_float_1eneg_8 = PyFloat_FromDouble(1e-8); if (unlikely(!__pyx_float_1eneg_8)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_float_0_001 = PyFloat_FromDouble(0.001); if (unlikely(!__pyx_float_0_001)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_float_1eneg_14 = PyFloat_FromDouble(1e-14); if (unlikely(!__pyx_float_1eneg_14)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_float_1eneg_16 = PyFloat_FromDouble(1e-16); if (unlikely(!__pyx_float_1eneg_16)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -26263,7 +26257,7 @@ if (!__Pyx_RefNanny) {
  * 
  * class KLMNN(KernelDML_Algorithm):             # <<<<<<<<<<<<<<
  * 
- *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_metric = None, max_iter = 100, prec = 1e-3,
+ *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.3, initial_metric = None, max_iter = 100, prec = 1e-8,
  */
   __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_KernelDML_Algorithm); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -26280,9 +26274,9 @@ if (!__Pyx_RefNanny) {
   /* "dml/lmnn.pyx":487
  * class KLMNN(KernelDML_Algorithm):
  * 
- *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_metric = None, max_iter = 100, prec = 1e-3,             # <<<<<<<<<<<<<<
- *                 tol = 1e-6, k = 3, mu = 0.5, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14,
- *                 kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="original"):
+ *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.3, initial_metric = None, max_iter = 100, prec = 1e-8,             # <<<<<<<<<<<<<<
+ *                 tol = 1e-8, k = 3, mu = 0.5, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14,
+ *                 kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="kernel"):
  */
   __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_3dml_4lmnn_5KLMNN_1__init__, 0, __pyx_n_s_KLMNN___init, NULL, __pyx_n_s_dml_lmnn, __pyx_d, ((PyObject *)__pyx_codeobj__103)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 487, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -26391,7 +26385,7 @@ if (!__Pyx_RefNanny) {
  * 
  * class KLMNN(KernelDML_Algorithm):             # <<<<<<<<<<<<<<
  * 
- *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_metric = None, max_iter = 100, prec = 1e-3,
+ *     def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.3, initial_metric = None, max_iter = 100, prec = 1e-8,
  */
   __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_3, __pyx_n_s_KLMNN, __pyx_t_2, __pyx_t_1, NULL, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);

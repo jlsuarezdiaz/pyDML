@@ -484,9 +484,9 @@ class LMNN(DML_Algorithm, ClassifierMixin):
 
 class KLMNN(KernelDML_Algorithm):
     
-    def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.001, initial_metric = None, max_iter = 100, prec = 1e-3,
-                tol = 1e-6, k = 3, mu = 0.5, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14,
-                kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="original"):
+    def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.3, initial_metric = None, max_iter = 100, prec = 1e-8,
+                tol = 1e-8, k = 3, mu = 0.5, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14,
+                kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="kernel"):
         
         self.num_dims_ = num_dims
         self.M0_ = initial_metric
