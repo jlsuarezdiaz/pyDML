@@ -255,12 +255,12 @@ results = {}
 
 rownames = ["FOLD "+str(i+1) for i in range(10)]
 
-large1 = [('segment',5),
-          ('satimage',5),
-          ('winequality-red',5),
+large1 = [#('segment',5),
+          #('satimage',5),
+          ('winequality-red',1),
           ('digits',1)]
 
-large2 = [('spambase',1),
+large2 = [#('spambase',1),
           ('optdigits',5),
           ('twonorm',5),
           ('titanic',1)]
@@ -275,7 +275,14 @@ large4 = [('phoneme',5),
           ('thyroid',5),
           ('magic',10)]
 
-for d, f in large4:
+large = [large1,large2,large3,large4]
+
+if len(sys.argv) > 1:
+    large_datasets = large[int(sys.argv[1])]
+else:
+    large_datasets = large[0]
+
+for d, f in large_datasets:
     
     print("* DATASET ", d)
     

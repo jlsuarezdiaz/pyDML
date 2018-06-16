@@ -3,12 +3,12 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "language": "c++",
-        "name": "dml.lsi",
+        "language": "c++", 
+        "name": "dml.lsi", 
         "sources": [
             "dml/lsi.pyx"
         ]
-    },
+    }, 
     "module_name": "dml.lsi"
 }
 END: Cython Metadata */

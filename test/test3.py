@@ -95,14 +95,14 @@ def wine_data():
 #X,y = spambase_data()
 #X,y = wine_data()
     
-#X,y = datasets.iris()
+X,y = datasets.iris()
 #X,y = datasets.sonar()
 #X,y = datasets.balance()
 #X,y = datasets.letters()
 #X,y = datasets.wine()
 #X,y = datasets.isolet('train')
 #X,y = datasets.wdbc()
-X,y = datasets.spambase()
+#X,y = datasets.spambase()
 #X,y = datasets.digits(numbers=[0,1,3,4,6,9])
 #X,y = datasets.digits()
 
@@ -138,7 +138,7 @@ dml_eig = DML_eig(max_it=25)
 mcml = MCML(eta0=0.3)
 ldml = LDML(b=0.001,learning_rate='adaptive')
 #dmls = [itml,pca,lda,anmm,lsi,nca_bgd,nca_sgd,lmnn]
-dmls = [dml_eig]
+dmls = [lda]
 
 results = kfold_multitester_supervised_knn(X,y,k = 5, n_neigh = 1, dmls = dmls, verbose = True,seed = 28)
 

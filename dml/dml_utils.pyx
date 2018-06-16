@@ -36,6 +36,8 @@ def calc_outers(X, Y=None):
     if Y is None:
         Y = X
     m, e = Y.shape
+    if n*m*d*e > 600000000:
+	return None
     try:
         outers = np.empty([n,n,d,d],dtype=float)
 

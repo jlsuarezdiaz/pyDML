@@ -72,7 +72,7 @@ setup(
       packages=find_packages(exclude=['misc','data','test','utils']),
       
       # Requeriments
-      install_requires=[],
+      install_requires=['numpy','pandas'],
       extras_require={},
       
       # Additional data
