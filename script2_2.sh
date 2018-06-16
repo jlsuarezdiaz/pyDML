@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Name of the job
-#$ -N large_datasets0
+#$ -N j2_2
 
 #Queue
 #$ -q muylarga
