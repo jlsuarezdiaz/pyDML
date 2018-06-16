@@ -1,16 +1,16 @@
 #!/bin/bash
 
 #Name of the job
-#$ -N large_datasets0
+#$ -N fix4
 
 #Queue
 #$ -q muylarga
 
 #Output stream
-#$ -o large_output0.info
+#$ -o large_output_fix4.info
 
 #Error stream
-#$ -e large_error0.info
+#$ -e large_error_fix4.info
 
 #Current working directory
 #$ -cwd

@@ -7,10 +7,10 @@
 #$ -q muylarga
 
 #Output stream
-#$ -o large_output0.info
+#$ -o large_output2_2.info
 
 #Error stream
-#$ -e large_error0.info
+#$ -e large_error2_2.info
 
 #Current working directory
 #$ -cwd
