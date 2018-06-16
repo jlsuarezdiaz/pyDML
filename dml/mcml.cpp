@@ -3,12 +3,12 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "language": "c++",
-        "name": "dml.mcml",
+        "language": "c++", 
+        "name": "dml.mcml", 
         "sources": [
             "dml/mcml.pyx"
         ]
-    },
+    }, 
     "module_name": "dml.mcml"
 }
 END: Cython Metadata */

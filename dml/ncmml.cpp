@@ -3,12 +3,12 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "language": "c++",
-        "name": "dml.ncmml",
+        "language": "c++", 
+        "name": "dml.ncmml", 
         "sources": [
             "dml/ncmml.pyx"
         ]
-    },
+    }, 
     "module_name": "dml.ncmml"
 }
 END: Cython Metadata */
