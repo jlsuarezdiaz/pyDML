@@ -22,8 +22,8 @@ from .dml_utils import calc_outers, calc_outers_i
 
 class NCMML(DML_Algorithm):
     
-    def __init__(self, num_dims=None, learning_rate = "adaptive", eta0 = 0.01, initial_transform = None, max_iter = 100,
-                 tol = 1e-3, prec = 1e-3, descent_method = "SGD", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5):
+    def __init__(self, num_dims=None, learning_rate = "adaptive", eta0 = 0.3, initial_transform = None, max_iter = 300,
+                 tol = 1e-15, prec = 1e-15, descent_method = "SGD", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5):
         
         self.num_dims_ = num_dims
         self.L0_ = initial_transform
@@ -103,6 +103,7 @@ class NCMML(DML_Algorithm):
         
         stop = False
         
+        acc_softmax = False
         
         while not stop:
             #X, y, outers = NCMML._shuffle(X,y,outers)            
@@ -114,8 +115,27 @@ class NCMML(DML_Algorithm):
                 
                 mu_diff = Lxi - Lmu
                 dists_i = -0.5*np.diag(mu_diff.dot(mu_diff.T))
-                softmax = np.exp(dists_i)
-                softmax /= softmax.sum()
+                
+                if acc_softmax:
+                    i_max = np.argmax(dists_i)
+                    cmax = dists_i[i_max]
+                    
+                    softmax = np.exp(dists_i-cmax)
+                else:
+                    softmax = np.exp(dists_i)
+                    
+                softmax_sum = softmax.sum()
+                if softmax_sum > 0.0:
+                    softmax /= softmax_sum
+                else:
+                    print("Accurracy softmax error. Recalculating.")
+                    acc_softmax = True
+                    i_max = np.argmax(dists_i)
+                    cmax = dists_i[i_max]
+                    softmax = np.exp(dists_i-cmax)
+                    softmax /= softmax.sum()
+                    
+                
     
                 grad_sum = 0.0
                 outers_i = calc_outers_i(X,outers,i,centroids)

@@ -10,7 +10,7 @@ from .anmm import ANMM, KANMM
 from .itml import ITML
 from .dmlmj import DMLMJ, KDMLMJ
 from .ncmml import NCMML
-from .ncmc import NCMC
+from .ncmc import NCMC, NCMC_Classifier
 from .kda import KDA
 from .dml_eig import DML_eig
 from .mcml import MCML

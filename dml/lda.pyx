@@ -24,9 +24,9 @@ class LDA(DML_Algorithm):
             thres: Fraction of variability to keep. Data dimension will be reduced until the lowest dimension that keeps 'thres' explained variance.
         """
 
-        self.num_dims = num_dims
-        self.thres = thres
-        self.sklda = skLDA(n_components=num_dims) 
+        self.nd_init = num_dims
+        self.thres_init = thres
+         
         
         #Metadata
         self.nd_ = None
@@ -44,10 +44,16 @@ class LDA(DML_Algorithm):
         self.X_ = X
         self.y_ = y
         self.n_, self.d_ = X.shape
+        
+        self.num_dims = self.nd_init
+        self.thres = self.thres_init
+        self.sklda = skLDA(n_components=self.num_dims)
 
         self.sklda.fit(X,y)
         self.explained_variance = self.sklda.explained_variance_ratio_
         self.acum_variance = np.cumsum(self.explained_variance)
+        
+        
 
         if self.thres is None and self.num_dims is None:
             self.num_dims = self.d_

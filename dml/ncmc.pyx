@@ -13,6 +13,8 @@ from sklearn.metrics import pairwise_distances
 from sklearn.metrics.pairwise import pairwise_kernels
 from sklearn.utils.validation import check_X_y, check_array
 from sklearn.preprocessing import LabelEncoder
+from sklearn.base import BaseEstimator, ClassifierMixin
+from sklearn.neighbors import NearestCentroid
 
 from sklearn.cluster import KMeans
 
@@ -24,8 +26,8 @@ from .dml_utils import calc_outers, calc_outers_i
 
 class NCMC(DML_Algorithm):
     
-    def __init__(self, num_dims=None, centroids_num = 3, learning_rate = "adaptive", eta0 = 0.01, initial_transform = None, max_iter = 100,
-                 tol = 1e-3, prec = 1e-3, descent_method = "SGD", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5, **kmeans_kwargs):
+    def __init__(self, num_dims=None, centroids_num = 3, learning_rate = "adaptive", eta0 = 0.3, initial_transform = None, max_iter = 300,
+                 tol = 1e-15, prec = 1e-15, descent_method = "SGD", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5, **kmeans_kwargs):
         
         self.num_dims_ = num_dims
         self.L0_ = initial_transform
@@ -39,7 +41,7 @@ class NCMC(DML_Algorithm):
         self.etamin_ = eta_thres
         self.l_inc_ = learn_inc
         self.l_dec_ = learn_dec
-        self.centroids_num_ = centroids_num
+        self.centroids_num_init_ = centroids_num
         self.kmeans_kwargs_ = kmeans_kwargs
         
         # Metadata initialization
@@ -69,6 +71,8 @@ class NCMC(DML_Algorithm):
         self.X_ = X
         self.y_ = y      
 
+        self.centroids_num_ = self.centroids_num_init_
+        
         if self.L_ is None or self.L_ == "euclidean":
             self.L_= np.zeros([self.nd_,self.d_])
             np.fill_diagonal(self.L_,1.0) #Euclidean distance 
@@ -125,8 +129,8 @@ class NCMC(DML_Algorithm):
                 mu_diff = Lxi - Lm
                 dists_i = -0.5*np.diag(mu_diff.dot(mu_diff.T))
                 i_max = np.argmax(dists_i)
-                c = dists_i[i_max]
-                softmax = np.exp(dists_i-c)
+                cmax = dists_i[i_max]
+                softmax = np.exp(dists_i-cmax)
                 softmax[i_max]=1.0
                 softmax /= softmax.sum()
                 
@@ -137,7 +141,11 @@ class NCMC(DML_Algorithm):
                         mask = softmax[cs[c]+k]/(softmax[cs[c]:cs[c+1]].sum()) if y[i] == c else 0.0
                         grad_sum += (softmax[cs[c]+k]-mask)*outers_i[cs[c]+k]
                 grad = L.dot(grad_sum)
-                L += self.eta_*grad   
+                
+                if np.isnan(grad.sum()):
+                    stop=True
+                else:
+                    L += self.eta_*grad   
             
             if self.adaptive_:
                 succ = NCMC._compute_expected_success(L,X,y,centroids,cs)
@@ -217,8 +225,8 @@ class NCMC(DML_Algorithm):
             
             if self.adaptive_:
                 succ = NCMC._compute_expected_success(L,X,y,centroids,cs)
-                print("SUCC: ",succ)
-                print("ETA: ",self.eta_)
+                #print("SUCC: ",succ)
+                #print("ETA: ",self.eta_)
                 if succ > succ_prev:
                     self.eta_ *= self.l_inc_                    
                 else:
@@ -232,7 +240,7 @@ class NCMC(DML_Algorithm):
             grad_norm = np.max(np.abs(grad))
             if grad_norm < self.eps_ or self.eta_*grad_norm < self.tol_: # Difference between two iterations is given by eta*grad
                 stop=True
-                print(grad_norm)
+                #print(grad_norm)
 
             self.num_its_+=1
             if self.num_its_ == self.max_it_:
@@ -282,6 +290,7 @@ class NCMC(DML_Algorithm):
         centroids = np.empty([sum(centroids_num),d])
         class_start = np.cumsum([0]+list(centroids_num))
         for i,c in enumerate(classes):
+            print(i, centroids_num)
             k = centroids_num[i]
             #class_cent = np.empty([k,d])
             Xc = X[y==c]
@@ -290,3 +299,47 @@ class NCMC(DML_Algorithm):
             centroids[class_start[i]:(class_start[i+1]),:]=kmeans.cluster_centers_
             
         return centroids, class_start
+    
+class NCMC_Classifier(BaseEstimator, ClassifierMixin):
+    
+    def __init__(self,centroids_num = 3, **kmeans_kwargs):
+        self.centroids_num_ = centroids_num
+        self.kmeans_args_ = kmeans_kwargs
+        
+    def fit(self,X,y):
+        X,y = check_X_y(X,y)
+        self.X_, self.y_ = X,y
+        self.le_ = LabelEncoder()
+        y = self.le_.fit_transform(y)
+        self.classes_ = np.unique(y)
+        le = LabelEncoder()
+        le.fit_transform(y)
+        
+        if isinstance(self.centroids_num_,int):
+            self.centroids_num_ = [self.centroids_num_]*len(self.classes_)
+            
+        self.class_map_ = {}
+        last_c = 0
+        ygroups = np.array(y)
+        for i,c in enumerate(self.classes_):
+            c_mask = y==c
+            Xc = X[c_mask]
+            kmeans = KMeans(self.centroids_num_[c],**self.kmeans_args_)
+            ymeans = kmeans.fit_predict(Xc)
+            ymeans += last_c
+            ymeans_groups = np.unique(ymeans)
+            for j in ymeans_groups:
+                self.class_map_[j] = c
+            last_c = ymeans.max()+1
+            ygroups[c_mask] = ymeans 
+        
+        self.ncm_ = NearestCentroid()
+        self.ncm_.fit(X,ygroups)
+        
+        return self
+    
+    def predict(self,X):
+        y = self.ncm_.predict(X)
+        for i in range(len(y)):
+            y[i] = self.class_map_[y[i]]
+        return self.le_.inverse_transform(y)

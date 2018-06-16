@@ -17,7 +17,7 @@ from .dml_algorithm import DML_Algorithm
 class MCML(DML_Algorithm):
 
 
-    def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.3, initial_metric = None, max_iter = 20, prec = 0.01, 
+    def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.01, initial_metric = None, max_iter = 20, prec = 0.01, 
                 tol = 0.01, descent_method = "SDP", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5):
         self.num_dims_ = num_dims
         self.initial_ = initial_metric
@@ -84,6 +84,7 @@ class MCML(DML_Algorithm):
         
         
         stop = False
+        invalid=False
         err_prev = err = self.initial_error_ = MCML._compute_error(M,X,y)
         
         while not stop:
@@ -121,12 +122,11 @@ class MCML(DML_Algorithm):
                         softmax_sum += pik
                         softout_sum += pik*outers_i[k]
                         
-                    if softmax_sum > 1e-16:
-                        const_grad = softout_sum / softmax_sum
-                    else:
-                        const_grad = softout_sum
-                        stop = True
-                    
+                if softmax_sum > 1e-16:
+                    const_grad = softout_sum / softmax_sum
+                    invalid=False
+                else:
+                    invalid=True
                 
                 const_count = 0
                 for j, yj in enumerate(y):
@@ -134,8 +134,8 @@ class MCML(DML_Algorithm):
                         grad += outers_i[j]
                         const_count+=1
                         
-                        
-                grad -= const_count*const_grad
+                if not invalid:        
+                    grad -= const_count*const_grad
             
             if stop:
                 grad = np.zeros([d,d])
@@ -146,11 +146,16 @@ class MCML(DML_Algorithm):
             M = M - self.eta_*grad
             M = SDProject(M)    
             
-            err = MCML._compute_error(M,X,y)
+            if not invalid:
+                err = MCML._compute_error(M,X,y)
+                
+            else:
+                err = err_prev
+            
             #print(err)
             #print("ETA: ", self.eta_)
             if self.adaptive_:
-                if err < err_prev:
+                if err < err_prev and not invalid:
                     self.eta_ *= self.l_inc_                    
                 else:
                     self.eta_ *= self.l_dec_
@@ -162,7 +167,7 @@ class MCML(DML_Algorithm):
             grad_norm = np.max(np.abs(grad))
             tol_norm = np.max(np.abs(M-Mprev)) 
             
-            if grad_norm < self.eps_ or tol_norm < self.tol_:
+            if (not invalid and (grad_norm < self.eps_ or tol_norm < self.tol_)) or (invalid and not self.adaptive_):
                 stop=True
 
             self.num_its_+=1

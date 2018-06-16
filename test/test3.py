@@ -135,10 +135,10 @@ ncmml_bgd = NCMML(max_iter=300, learning_rate="adaptive", eta0=0.3, descent_meth
 ncmc_sgd = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.3,descent_method="SGD",centroids_num=2,tol=1e-15,prec=1e-15)
 ncmc_bgd = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.3,descent_method="BGD",centroids_num=2,tol=1e-15,prec=1e-15)
 dml_eig = DML_eig(max_it=25)
-mcml = MCML(eta0=0.3)
+mcml = MCML(eta0=0.01)
 ldml = LDML(b=0.001,learning_rate='adaptive')
 #dmls = [itml,pca,lda,anmm,lsi,nca_bgd,nca_sgd,lmnn]
-dmls = [dml_eig]
+dmls = [lda]
 
 results = kfold_multitester_supervised_knn(X,y,k = 5, n_neigh = 1, dmls = dmls, verbose = True,seed = 28)
 
