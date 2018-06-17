@@ -97,7 +97,7 @@ medium = [
 
 large1 = [('segment',5),
           ('satimage',5),
-          ('winequality-red',5),
+          ('winequality-red',1),
           ('digits',1)]
 
 large2 = [('spambase',1),
