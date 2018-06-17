@@ -66,7 +66,7 @@ for d, f in selected_dataset:
         dmlmj = {3: DMLMJ(num_dims=dim,n_neighbors=3),5: DMLMJ(num_dims=dim,n_neighbors=5),7: DMLMJ(num_dims=dim,n_neighbors=7)}
         
         
-        train_dmls = [pca, lda, anmm[3], anmm[5], anmm[7], dmlmj[3], dmlmj[5], dmlmj[7]]#, nca, lmnn[3], lmnn[5], lmnn[7]]
+        train_dmls = [pca, lda, anmm[3], anmm[5], anmm[7], dmlmj[3], dmlmj[5], dmlmj[7], nca, lmnn[3], lmnn[5], lmnn[7]]
         
         
         dml_basic = {3:[pca,lda, anmm[3], dmlmj[3], nca, lmnn[3]],
