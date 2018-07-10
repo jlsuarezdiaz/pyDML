@@ -76,6 +76,7 @@ class ANMM(DML_Algorithm):
         self.acum_eigvals_ = np.cumsum(self.eig_vals_)
         self.acum_eig_ = self.acum_eigvals_[num_dims-1]/self.acum_eigvals_[-1]
         
+        
         return self
     
     
@@ -185,6 +186,7 @@ class KANMM(KernelDML_Algorithm):
 
         self.L_ = self.eig_vecs_[:num_dims,:]
         #print(np.trace(self.L_.dot(S-C).dot(self.L_.T)))
+
         return self
     
     def transformer(self):
