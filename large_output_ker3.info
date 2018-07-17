@@ -1,0 +1,3494 @@
+Requirement already up-to-date: numpy in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: pandas in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: python-dateutil>=2.5.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: pytz>=2011k in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: numpy>=1.9.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: six>=1.5 in /usr/local/lib/python3.6/site-packages (from python-dateutil>=2.5.0->pandas)
+Collecting Cython
+  Using cached https://files.pythonhosted.org/packages/6f/79/d8e2cd00bea8156a995fb284ce7b6677c49eccd2d318f73e201a9ce560dc/Cython-0.28.3-cp36-cp36m-manylinux1_x86_64.whl
+Installing collected packages: Cython
+Requirement already up-to-date: arff in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: scikit-learn in /usr/local/lib/python3.6/site-packages
+Requirement already up-to-date: matplotlib in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: six>=1.10 in /usr/local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: cycler>=0.10 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: kiwisolver>=1.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: numpy>=1.7.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: python-dateutil>=2.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pytz in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: setuptools in /home/jlsuarez/.local/lib/python3.6/site-packages (from kiwisolver>=1.0.1->matplotlib)
+Requirement already up-to-date: seaborn in /home/jlsuarez/.local/lib/python3.6/site-packages
+Python 3.6.4
+Requirement already up-to-date: numpy in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: pandas in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: python-dateutil>=2.5.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: numpy>=1.9.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: pytz>=2011k in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: six>=1.5 in /usr/local/lib/python3.6/site-packages (from python-dateutil>=2.5.0->pandas)
+Requirement already up-to-date: Cython in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: arff in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: scikit-learn in /usr/local/lib/python3.6/site-packages
+Requirement already up-to-date: matplotlib in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: kiwisolver>=1.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: python-dateutil>=2.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pytz in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: numpy>=1.7.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: cycler>=0.10 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: six>=1.10 in /usr/local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: setuptools in /home/jlsuarez/.local/lib/python3.6/site-packages (from kiwisolver>=1.0.1->matplotlib)
+Requirement already up-to-date: seaborn in /home/jlsuarez/.local/lib/python3.6/site-packages
+Python 3.6.4
+Please put "# distutils: language=c++" in your .pyx or .pxd file(s)
+running build_ext
+copying build/lib.linux-x86_64-3.6/dml/anmm.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_eig.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_utils.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dmlmj.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/itml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/kda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ldml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lmnn.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lsi.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/mcml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/nca.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmc.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/pca.cpython-36m-x86_64-linux-gnu.so -> dml
+Requirement already up-to-date: numpy in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: pandas in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: numpy>=1.9.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: python-dateutil>=2.5.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: pytz>=2011k in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: six>=1.5 in /usr/local/lib/python3.6/site-packages (from python-dateutil>=2.5.0->pandas)
+Requirement already up-to-date: Cython in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: arff in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: scikit-learn in /usr/local/lib/python3.6/site-packages
+Requirement already up-to-date: matplotlib in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: six>=1.10 in /usr/local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: numpy>=1.7.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pytz in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: kiwisolver>=1.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: python-dateutil>=2.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: cycler>=0.10 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: setuptools in /home/jlsuarez/.local/lib/python3.6/site-packages (from kiwisolver>=1.0.1->matplotlib)
+Requirement already up-to-date: seaborn in /home/jlsuarez/.local/lib/python3.6/site-packages
+Python 3.6.4
+Please put "# distutils: language=c++" in your .pyx or .pxd file(s)
+running build_ext
+copying build/lib.linux-x86_64-3.6/dml/anmm.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_eig.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_utils.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dmlmj.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/itml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/kda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ldml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lmnn.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lsi.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/mcml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/nca.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmc.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/pca.cpython-36m-x86_64-linux-gnu.so -> dml
+* DATASET  banana
+** NORMALIZING FOLD  1
+** NORMALIZING FOLD  2
+** NORMALIZING FOLD  3
+** NORMALIZING FOLD  4
+** NORMALIZING FOLD  5
+** NORMALIZING FOLD  6
+** NORMALIZING FOLD  7
+** NORMALIZING FOLD  8
+** NORMALIZING FOLD  9
+** NORMALIZING FOLD  10
+** TESTING DML  Euclidean
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KernelPCA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KernelPCA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KernelPCA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KernelPCA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KernelPCA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KANMM
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KANMM
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KANMM
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KANMM
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KANMM
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDMLMJ
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDMLMJ
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDMLMJ
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDMLMJ
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDMLMJ
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KLMNN
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KLMNN
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KLMNN
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KLMNN
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                        0.0
+FOLD 2    0.856243        ...                        0.0
+FOLD 3    0.845750        ...                        0.0
+FOLD 4    0.840504        ...                        0.0
+FOLD 5    0.855194        ...                        0.0
+FOLD 6    0.855497        ...                        0.0
+FOLD 7    0.873298        ...                        0.0
+FOLD 8    0.861780        ...                        0.0
+FOLD 9    0.843979        ...                        0.0
+FOLD 10   0.859686        ...                        0.0
+MEAN      0.854398        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                        0.0
+FOLD 2    0.841121        ...                        0.0
+FOLD 3    0.887850        ...                        0.0
+FOLD 4    0.897196        ...                        0.0
+FOLD 5    0.841121        ...                        0.0
+FOLD 6    0.876190        ...                        0.0
+FOLD 7    0.780952        ...                        0.0
+FOLD 8    0.819048        ...                        0.0
+FOLD 9    0.895238        ...                        0.0
+FOLD 10   0.866667        ...                        0.0
+MEAN      0.855585        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KLMNN
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                   0.993704
+FOLD 2    0.856243        ...                   0.992655
+FOLD 3    0.845750        ...                   0.990556
+FOLD 4    0.840504        ...                   0.982162
+FOLD 5    0.855194        ...                   0.983211
+FOLD 6    0.855497        ...                   0.995812
+FOLD 7    0.873298        ...                   0.992670
+FOLD 8    0.861780        ...                   0.997906
+FOLD 9    0.843979        ...                   0.980105
+FOLD 10   0.859686        ...                   0.893194
+MEAN      0.854398        ...                   0.980197
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                   0.869159
+FOLD 2    0.841121        ...                   0.831776
+FOLD 3    0.887850        ...                   0.859813
+FOLD 4    0.897196        ...                   0.850467
+FOLD 5    0.841121        ...                   0.841121
+FOLD 6    0.876190        ...                   0.876190
+FOLD 7    0.780952        ...                   0.761905
+FOLD 8    0.819048        ...                   0.809524
+FOLD 9    0.895238        ...                   0.895238
+FOLD 10   0.866667        ...                   0.819048
+MEAN      0.855585        ...                   0.841424
+
+[11 rows x 26 columns]
+** TESTING DML  KLMNN
+*** FOLD  1
+**** TRAINING
+*** FOLD  2
+**** TRAINING
+*** FOLD  3
+**** TRAINING
+*** FOLD  4
+**** TRAINING
+*** FOLD  5
+**** TRAINING
+*** FOLD  6
+**** TRAINING
+*** FOLD  7
+**** TRAINING
+*** FOLD  8
+**** TRAINING
+*** FOLD  9
+**** TRAINING
+*** FOLD  10
+**** TRAINING
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                   0.993704
+FOLD 2    0.856243        ...                   0.992655
+FOLD 3    0.845750        ...                   0.990556
+FOLD 4    0.840504        ...                   0.982162
+FOLD 5    0.855194        ...                   0.983211
+FOLD 6    0.855497        ...                   0.995812
+FOLD 7    0.873298        ...                   0.992670
+FOLD 8    0.861780        ...                   0.997906
+FOLD 9    0.843979        ...                   0.980105
+FOLD 10   0.859686        ...                   0.893194
+MEAN      0.854398        ...                   0.980197
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                   0.869159
+FOLD 2    0.841121        ...                   0.831776
+FOLD 3    0.887850        ...                   0.859813
+FOLD 4    0.897196        ...                   0.850467
+FOLD 5    0.841121        ...                   0.841121
+FOLD 6    0.876190        ...                   0.876190
+FOLD 7    0.780952        ...                   0.761905
+FOLD 8    0.819048        ...                   0.809524
+FOLD 9    0.895238        ...                   0.895238
+FOLD 10   0.866667        ...                   0.819048
+MEAN      0.855585        ...                   0.841424
+
+[11 rows x 26 columns]
+** TESTING DML  KLMNN
+*** FOLD  1
+**** TRAINING
+*** FOLD  2
+**** TRAINING
+*** FOLD  3
+**** TRAINING
+*** FOLD  4
+**** TRAINING
+*** FOLD  5
+**** TRAINING
+*** FOLD  6
+**** TRAINING
+*** FOLD  7
+**** TRAINING
+*** FOLD  8
+**** TRAINING
+*** FOLD  9
+**** TRAINING
+*** FOLD  10
+**** TRAINING
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                   0.993704
+FOLD 2    0.856243        ...                   0.992655
+FOLD 3    0.845750        ...                   0.990556
+FOLD 4    0.840504        ...                   0.982162
+FOLD 5    0.855194        ...                   0.983211
+FOLD 6    0.855497        ...                   0.995812
+FOLD 7    0.873298        ...                   0.992670
+FOLD 8    0.861780        ...                   0.997906
+FOLD 9    0.843979        ...                   0.980105
+FOLD 10   0.859686        ...                   0.893194
+MEAN      0.854398        ...                   0.980197
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                   0.869159
+FOLD 2    0.841121        ...                   0.831776
+FOLD 3    0.887850        ...                   0.859813
+FOLD 4    0.897196        ...                   0.850467
+FOLD 5    0.841121        ...                   0.841121
+FOLD 6    0.876190        ...                   0.876190
+FOLD 7    0.780952        ...                   0.761905
+FOLD 8    0.819048        ...                   0.809524
+FOLD 9    0.895238        ...                   0.895238
+FOLD 10   0.866667        ...                   0.819048
+MEAN      0.855585        ...                   0.841424
+
+[11 rows x 26 columns]
+** TESTING DML  KLMNN
+*** FOLD  1
+**** TRAINING
+*** FOLD  2
+**** TRAINING
+*** FOLD  3
+**** TRAINING
+*** FOLD  4
+**** TRAINING
+*** FOLD  5
+**** TRAINING
+*** FOLD  6
+**** TRAINING
+*** FOLD  7
+**** TRAINING
+*** FOLD  8
+**** TRAINING
+*** FOLD  9
+**** TRAINING
+*** FOLD  10
+**** TRAINING
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                   0.993704
+FOLD 2    0.856243        ...                   0.992655
+FOLD 3    0.845750        ...                   0.990556
+FOLD 4    0.840504        ...                   0.982162
+FOLD 5    0.855194        ...                   0.983211
+FOLD 6    0.855497        ...                   0.995812
+FOLD 7    0.873298        ...                   0.992670
+FOLD 8    0.861780        ...                   0.997906
+FOLD 9    0.843979        ...                   0.980105
+FOLD 10   0.859686        ...                   0.893194
+MEAN      0.854398        ...                   0.980197
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                   0.869159
+FOLD 2    0.841121        ...                   0.831776
+FOLD 3    0.887850        ...                   0.859813
+FOLD 4    0.897196        ...                   0.850467
+FOLD 5    0.841121        ...                   0.841121
+FOLD 6    0.876190        ...                   0.876190
+FOLD 7    0.780952        ...                   0.761905
+FOLD 8    0.819048        ...                   0.809524
+FOLD 9    0.895238        ...                   0.895238
+FOLD 10   0.866667        ...                   0.819048
+MEAN      0.855585        ...                   0.841424
+
+[11 rows x 26 columns]
+** TESTING DML  KLMNN
+*** FOLD  1
+**** TRAINING
+*** FOLD  2
+**** TRAINING
+*** FOLD  3
+**** TRAINING
+*** FOLD  4
+**** TRAINING
+*** FOLD  5
+**** TRAINING
+*** FOLD  6
+**** TRAINING
+*** FOLD  7
+**** TRAINING
+*** FOLD  8
+**** TRAINING
+*** FOLD  9
+**** TRAINING
+*** FOLD  10
+**** TRAINING
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                   0.993704
+FOLD 2    0.856243        ...                   0.992655
+FOLD 3    0.845750        ...                   0.990556
+FOLD 4    0.840504        ...                   0.982162
+FOLD 5    0.855194        ...                   0.983211
+FOLD 6    0.855497        ...                   0.995812
+FOLD 7    0.873298        ...                   0.992670
+FOLD 8    0.861780        ...                   0.997906
+FOLD 9    0.843979        ...                   0.980105
+FOLD 10   0.859686        ...                   0.893194
+MEAN      0.854398        ...                   0.980197
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                   0.869159
+FOLD 2    0.841121        ...                   0.831776
+FOLD 3    0.887850        ...                   0.859813
+FOLD 4    0.897196        ...                   0.850467
+FOLD 5    0.841121        ...                   0.841121
+FOLD 6    0.876190        ...                   0.876190
+FOLD 7    0.780952        ...                   0.761905
+FOLD 8    0.819048        ...                   0.809524
+FOLD 9    0.895238        ...                   0.895238
+FOLD 10   0.866667        ...                   0.819048
+MEAN      0.855585        ...                   0.841424
+
+[11 rows x 26 columns]
+** TESTING DML  KLMNN
+*** FOLD  1
+**** TRAINING
+*** FOLD  2
+**** TRAINING
+*** FOLD  3
+**** TRAINING
+*** FOLD  4
+**** TRAINING
+*** FOLD  5
+**** TRAINING
+*** FOLD  6
+**** TRAINING
+*** FOLD  7
+**** TRAINING
+*** FOLD  8
+**** TRAINING
+*** FOLD  9
+**** TRAINING
+*** FOLD  10
+**** TRAINING
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                   0.993704
+FOLD 2    0.856243        ...                   0.992655
+FOLD 3    0.845750        ...                   0.990556
+FOLD 4    0.840504        ...                   0.982162
+FOLD 5    0.855194        ...                   0.983211
+FOLD 6    0.855497        ...                   0.995812
+FOLD 7    0.873298        ...                   0.992670
+FOLD 8    0.861780        ...                   0.997906
+FOLD 9    0.843979        ...                   0.980105
+FOLD 10   0.859686        ...                   0.893194
+MEAN      0.854398        ...                   0.980197
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                   0.869159
+FOLD 2    0.841121        ...                   0.831776
+FOLD 3    0.887850        ...                   0.859813
+FOLD 4    0.897196        ...                   0.850467
+FOLD 5    0.841121        ...                   0.841121
+FOLD 6    0.876190        ...                   0.876190
+FOLD 7    0.780952        ...                   0.761905
+FOLD 8    0.819048        ...                   0.809524
+FOLD 9    0.895238        ...                   0.895238
+FOLD 10   0.866667        ...                   0.819048
+MEAN      0.855585        ...                   0.841424
+
+[11 rows x 26 columns]
+** TESTING DML  KLMNN
+*** FOLD  1
+**** TRAINING
+*** FOLD  2
+**** TRAINING
+*** FOLD  3
+**** TRAINING
+*** FOLD  4
+**** TRAINING
+*** FOLD  5
+**** TRAINING
+*** FOLD  6
+**** TRAINING
+*** FOLD  7
+**** TRAINING
+*** FOLD  8
+**** TRAINING
+*** FOLD  9
+**** TRAINING
+*** FOLD  10
+**** TRAINING
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                   0.993704
+FOLD 2    0.856243        ...                   0.992655
+FOLD 3    0.845750        ...                   0.990556
+FOLD 4    0.840504        ...                   0.982162
+FOLD 5    0.855194        ...                   0.983211
+FOLD 6    0.855497        ...                   0.995812
+FOLD 7    0.873298        ...                   0.992670
+FOLD 8    0.861780        ...                   0.997906
+FOLD 9    0.843979        ...                   0.980105
+FOLD 10   0.859686        ...                   0.893194
+MEAN      0.854398        ...                   0.980197
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                   0.869159
+FOLD 2    0.841121        ...                   0.831776
+FOLD 3    0.887850        ...                   0.859813
+FOLD 4    0.897196        ...                   0.850467
+FOLD 5    0.841121        ...                   0.841121
+FOLD 6    0.876190        ...                   0.876190
+FOLD 7    0.780952        ...                   0.761905
+FOLD 8    0.819048        ...                   0.809524
+FOLD 9    0.895238        ...                   0.895238
+FOLD 10   0.866667        ...                   0.819048
+MEAN      0.855585        ...                   0.841424
+
+[11 rows x 26 columns]
+** TESTING DML  KLMNN
+*** FOLD  1
+**** TRAINING
+*** FOLD  2
+**** TRAINING
+*** FOLD  3
+**** TRAINING
+*** FOLD  4
+**** TRAINING
+*** FOLD  5
+**** TRAINING
+*** FOLD  6
+**** TRAINING
+*** FOLD  7
+**** TRAINING
+*** FOLD  8
+**** TRAINING
+*** FOLD  9
+**** TRAINING
+*** FOLD  10
+**** TRAINING
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                   0.993704
+FOLD 2    0.856243        ...                   0.992655
+FOLD 3    0.845750        ...                   0.990556
+FOLD 4    0.840504        ...                   0.982162
+FOLD 5    0.855194        ...                   0.983211
+FOLD 6    0.855497        ...                   0.995812
+FOLD 7    0.873298        ...                   0.992670
+FOLD 8    0.861780        ...                   0.997906
+FOLD 9    0.843979        ...                   0.980105
+FOLD 10   0.859686        ...                   0.893194
+MEAN      0.854398        ...                   0.980197
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                   0.869159
+FOLD 2    0.841121        ...                   0.831776
+FOLD 3    0.887850        ...                   0.859813
+FOLD 4    0.897196        ...                   0.850467
+FOLD 5    0.841121        ...                   0.841121
+FOLD 6    0.876190        ...                   0.876190
+FOLD 7    0.780952        ...                   0.761905
+FOLD 8    0.819048        ...                   0.809524
+FOLD 9    0.895238        ...                   0.895238
+FOLD 10   0.866667        ...                   0.819048
+MEAN      0.855585        ...                   0.841424
+
+[11 rows x 26 columns]
+** TESTING DML  KLMNN
+*** FOLD  1
+**** TRAINING
+*** FOLD  2
+**** TRAINING
+*** FOLD  3
+**** TRAINING
+*** FOLD  4
+**** TRAINING
+*** FOLD  5
+**** TRAINING
+*** FOLD  6
+**** TRAINING
+*** FOLD  7
+**** TRAINING
+*** FOLD  8
+**** TRAINING
+*** FOLD  9
+**** TRAINING
+*** FOLD  10
+**** TRAINING
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                   0.993704
+FOLD 2    0.856243        ...                   0.992655
+FOLD 3    0.845750        ...                   0.990556
+FOLD 4    0.840504        ...                   0.982162
+FOLD 5    0.855194        ...                   0.983211
+FOLD 6    0.855497        ...                   0.995812
+FOLD 7    0.873298        ...                   0.992670
+FOLD 8    0.861780        ...                   0.997906
+FOLD 9    0.843979        ...                   0.980105
+FOLD 10   0.859686        ...                   0.893194
+MEAN      0.854398        ...                   0.980197
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                   0.869159
+FOLD 2    0.841121        ...                   0.831776
+FOLD 3    0.887850        ...                   0.859813
+FOLD 4    0.897196        ...                   0.850467
+FOLD 5    0.841121        ...                   0.841121
+FOLD 6    0.876190        ...                   0.876190
+FOLD 7    0.780952        ...                   0.761905
+FOLD 8    0.819048        ...                   0.809524
+FOLD 9    0.895238        ...                   0.895238
+FOLD 10   0.866667        ...                   0.819048
+MEAN      0.855585        ...                   0.841424
+
+[11 rows x 26 columns]
+** TESTING DML  KLMNN
+*** FOLD  1
+**** TRAINING
+*** FOLD  2
+**** TRAINING
+*** FOLD  3
+**** TRAINING
+*** FOLD  4
+**** TRAINING
+*** FOLD  5
+**** TRAINING
+*** FOLD  6
+**** TRAINING
+*** FOLD  7
+**** TRAINING
+*** FOLD  8
+**** TRAINING
+*** FOLD  9
+**** TRAINING
+*** FOLD  10
+**** TRAINING
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                   0.993704
+FOLD 2    0.856243        ...                   0.992655
+FOLD 3    0.845750        ...                   0.990556
+FOLD 4    0.840504        ...                   0.982162
+FOLD 5    0.855194        ...                   0.983211
+FOLD 6    0.855497        ...                   0.995812
+FOLD 7    0.873298        ...                   0.992670
+FOLD 8    0.861780        ...                   0.997906
+FOLD 9    0.843979        ...                   0.980105
+FOLD 10   0.859686        ...                   0.893194
+MEAN      0.854398        ...                   0.980197
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                   0.869159
+FOLD 2    0.841121        ...                   0.831776
+FOLD 3    0.887850        ...                   0.859813
+FOLD 4    0.897196        ...                   0.850467
+FOLD 5    0.841121        ...                   0.841121
+FOLD 6    0.876190        ...                   0.876190
+FOLD 7    0.780952        ...                   0.761905
+FOLD 8    0.819048        ...                   0.809524
+FOLD 9    0.895238        ...                   0.895238
+FOLD 10   0.866667        ...                   0.819048
+MEAN      0.855585        ...                   0.841424
+
+[11 rows x 26 columns]
+** TESTING DML  KLMNN
+*** FOLD  1
+**** TRAINING
+*** FOLD  2
+**** TRAINING
+*** FOLD  3
+**** TRAINING
+*** FOLD  4
+**** TRAINING
+*** FOLD  5
+**** TRAINING
+*** FOLD  6
+**** TRAINING
+*** FOLD  7
+**** TRAINING
+*** FOLD  8
+**** TRAINING
+*** FOLD  9
+**** TRAINING
+*** FOLD  10
+**** TRAINING
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                   0.993704
+FOLD 2    0.856243        ...                   0.992655
+FOLD 3    0.845750        ...                   0.990556
+FOLD 4    0.840504        ...                   0.982162
+FOLD 5    0.855194        ...                   0.983211
+FOLD 6    0.855497        ...                   0.995812
+FOLD 7    0.873298        ...                   0.992670
+FOLD 8    0.861780        ...                   0.997906
+FOLD 9    0.843979        ...                   0.980105
+FOLD 10   0.859686        ...                   0.893194
+MEAN      0.854398        ...                   0.980197
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                   0.869159
+FOLD 2    0.841121        ...                   0.831776
+FOLD 3    0.887850        ...                   0.859813
+FOLD 4    0.897196        ...                   0.850467
+FOLD 5    0.841121        ...                   0.841121
+FOLD 6    0.876190        ...                   0.876190
+FOLD 7    0.780952        ...                   0.761905
+FOLD 8    0.819048        ...                   0.809524
+FOLD 9    0.895238        ...                   0.895238
+FOLD 10   0.866667        ...                   0.819048
+MEAN      0.855585        ...                   0.841424
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.852046        ...                   0.993704
+FOLD 2    0.856243        ...                   0.992655
+FOLD 3    0.845750        ...                   0.990556
+FOLD 4    0.840504        ...                   0.982162
+FOLD 5    0.855194        ...                   0.983211
+FOLD 6    0.855497        ...                   0.995812
+FOLD 7    0.873298        ...                   0.992670
+FOLD 8    0.861780        ...                   0.997906
+FOLD 9    0.843979        ...                   0.980105
+FOLD 10   0.859686        ...                   0.893194
+MEAN      0.854398        ...                   0.980197
+
+[11 rows x 26 columns]
+RESULTS:  banana k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.850467        ...                   0.869159
+FOLD 2    0.841121        ...                   0.831776
+FOLD 3    0.887850        ...                   0.859813
+FOLD 4    0.897196        ...                   0.850467
+FOLD 5    0.841121        ...                   0.841121
+FOLD 6    0.876190        ...                   0.876190
+FOLD 7    0.780952        ...                   0.761905
+FOLD 8    0.819048        ...                   0.809524
+FOLD 9    0.895238        ...                   0.895238
+FOLD 10   0.866667        ...                   0.819048
+MEAN      0.855585        ...                   0.841424
+
+[11 rows x 26 columns]
+* DATASET  texture
+** NORMALIZING FOLD  1
+** NORMALIZING FOLD  2
+** NORMALIZING FOLD  3
+** NORMALIZING FOLD  4
+** NORMALIZING FOLD  5
+** NORMALIZING FOLD  6
+** NORMALIZING FOLD  7
+** NORMALIZING FOLD  8
+** NORMALIZING FOLD  9
+** NORMALIZING FOLD  10
+** TESTING DML  Euclidean
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KernelPCA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KernelPCA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KernelPCA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KernelPCA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KernelPCA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KANMM
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KANMM
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KANMM
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KANMM
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KANMM
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDMLMJ
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDMLMJ
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDMLMJ
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDMLMJ
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  texture k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.955556        ...                        0.0
+FOLD 2    0.959596        ...                        0.0
+FOLD 3    0.959596        ...                        0.0
+FOLD 4    0.954545        ...                        0.0
+FOLD 5    0.955556        ...                        0.0
+FOLD 6    0.952525        ...                        0.0
+FOLD 7    0.961616        ...                        0.0
+FOLD 8    0.958586        ...                        0.0
+FOLD 9    0.949495        ...                        0.0
+FOLD 10   0.953535        ...                        0.0
+MEAN      0.956061        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  texture k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.927273        ...                        0.0
+FOLD 2    0.963636        ...                        0.0
+FOLD 3    0.981818        ...                        0.0
+FOLD 4    0.972727        ...                        0.0
+FOLD 5    0.945455        ...                        0.0
+FOLD 6    0.972727        ...                        0.0
+FOLD 7    0.954545        ...                        0.0
+FOLD 8    0.945455        ...                        0.0
+FOLD 9    0.972727        ...                        0.0
+FOLD 10   0.981818        ...                        0.0
+MEAN      0.961818        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDMLMJ
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING

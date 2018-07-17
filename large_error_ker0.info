@@ -1,0 +1,67 @@
+/home2/sge/default/spool/node25/job_scripts/247790: línea 24: python3.6: no se encontró la orden
+/home2/sge/default/spool/node25/job_scripts/247790: línea 25: python3.6: no se encontró la orden
+/home2/sge/default/spool/node25/job_scripts/247790: línea 26: python3.6: no se encontró la orden
+/home2/sge/default/spool/node25/job_scripts/247790: línea 27: python3.6: no se encontró la orden
+/home2/sge/default/spool/node25/job_scripts/247790: línea 28: python3.6: no se encontró la orden
+/home2/sge/default/spool/node25/job_scripts/247790: línea 29: python3.6: no se encontró la orden
+/home2/sge/default/spool/node25/job_scripts/247790: línea 30: python3.6: no se encontró la orden
+/home2/sge/default/spool/node25/job_scripts/247790: línea 32: python3.6: no se encontró la orden
+/home2/sge/default/spool/node25/job_scripts/247790: línea 33: python3.6: no se encontró la orden
+/home2/sge/default/spool/node25/job_scripts/247790: línea 35: python3.6: no se encontró la orden
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Traceback (most recent call last):
+  File "test/test_tfg_ker.py", line 13, in <module>
+    from utils import datasets as ds
+  File "/home/jlsuarez/pyDML/utils/__init__.py", line 4, in <module>
+    from .kfold_tester import kfold_tester_supervised_knn
+  File "/home/jlsuarez/pyDML/utils/kfold_tester.py", line 16, in <module>
+    from dml import(
+  File "/home/jlsuarez/pyDML/dml/__init__.py", line 3, in <module>
+    from .nca import NCA
+ImportError: /home/jlsuarez/pyDML/dml/nca.cpython-36m-x86_64-linux-gnu.so: file too short
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+You are using pip version 9.0.1, however version 10.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+/home/jlsuarez/.local/lib/python3.6/site-packages/numpy/core/numeric.py:492: ComplexWarning: Casting complex values to real discards the imaginary part
+  return array(a, dtype, copy=False, order=order)
+/usr/local/lib/python3.6/site-packages/sklearn/utils/validation.py:433: ComplexWarning: Casting complex values to real discards the imaginary part
+  array = np.array(array, dtype=dtype, order=order, copy=copy)
+/usr/local/lib/python3.6/site-packages/sklearn/metrics/pairwise.py:247: RuntimeWarning: overflow encountered in multiply
+  distances *= -2
+test/test_tfg_ker.py:196: RuntimeWarning: overflow encountered in double_scalars
+  dml.fit(xtr,ytr)
+/usr/local/lib/python3.6/site-packages/sklearn/metrics/pairwise.py:248: RuntimeWarning: invalid value encountered in add
+  distances += XX
+/usr/local/lib/python3.6/site-packages/sklearn/metrics/pairwise.py:248: RuntimeWarning: overflow encountered in add
+  distances += XX
+/usr/local/lib/python3.6/site-packages/sklearn/metrics/pairwise.py:249: RuntimeWarning: overflow encountered in add
+  distances += YY
+/usr/local/lib/python3.6/site-packages/sklearn/metrics/pairwise.py:249: RuntimeWarning: invalid value encountered in add
+  distances += YY
+test/test_tfg_ker.py:196: RuntimeWarning: invalid value encountered in double_scalars
+  dml.fit(xtr,ytr)
+/home2/sge/default/spool/node06/job_scripts/247960: línea 35: 10455 Error del bus           (`core' generado) python3.6 test/test_tfg_ker.py 0
