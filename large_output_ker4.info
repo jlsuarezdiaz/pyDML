@@ -1,0 +1,1337 @@
+Requirement already up-to-date: numpy in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: pandas in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: pytz>=2011k in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: numpy>=1.9.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: python-dateutil>=2.5.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: six>=1.5 in /usr/local/lib/python3.6/site-packages (from python-dateutil>=2.5.0->pandas)
+Collecting Cython
+  Using cached https://files.pythonhosted.org/packages/6f/79/d8e2cd00bea8156a995fb284ce7b6677c49eccd2d318f73e201a9ce560dc/Cython-0.28.3-cp36-cp36m-manylinux1_x86_64.whl
+Installing collected packages: Cython
+Requirement already up-to-date: arff in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: scikit-learn in /usr/local/lib/python3.6/site-packages
+Requirement already up-to-date: matplotlib in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: pytz in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: python-dateutil>=2.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: numpy>=1.7.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: kiwisolver>=1.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: cycler>=0.10 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: six>=1.10 in /usr/local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: setuptools in /home/jlsuarez/.local/lib/python3.6/site-packages (from kiwisolver>=1.0.1->matplotlib)
+Requirement already up-to-date: seaborn in /home/jlsuarez/.local/lib/python3.6/site-packages
+Python 3.6.4
+Please put "# distutils: language=c++" in your .pyx or .pxd file(s)
+running build_ext
+copying build/lib.linux-x86_64-3.6/dml/anmm.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_eig.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_utils.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dmlmj.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/itml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/kda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ldml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lmnn.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lsi.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/mcml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/nca.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmc.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/pca.cpython-36m-x86_64-linux-gnu.so -> dml
+Requirement already up-to-date: numpy in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: pandas in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: pytz>=2011k in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: python-dateutil>=2.5.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: numpy>=1.9.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: six>=1.5 in /usr/local/lib/python3.6/site-packages (from python-dateutil>=2.5.0->pandas)
+Requirement already up-to-date: Cython in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: arff in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: scikit-learn in /usr/local/lib/python3.6/site-packages
+Requirement already up-to-date: matplotlib in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: numpy>=1.7.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pytz in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: kiwisolver>=1.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: six>=1.10 in /usr/local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: cycler>=0.10 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: python-dateutil>=2.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: setuptools in /home/jlsuarez/.local/lib/python3.6/site-packages (from kiwisolver>=1.0.1->matplotlib)
+Requirement already up-to-date: seaborn in /home/jlsuarez/.local/lib/python3.6/site-packages
+Python 3.6.4
+Please put "# distutils: language=c++" in your .pyx or .pxd file(s)
+running build_ext
+copying build/lib.linux-x86_64-3.6/dml/anmm.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_eig.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_utils.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dmlmj.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/itml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/kda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ldml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lmnn.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lsi.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/mcml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/nca.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmc.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/pca.cpython-36m-x86_64-linux-gnu.so -> dml
+* DATASET  phoneme
+** NORMALIZING FOLD  1
+** NORMALIZING FOLD  2
+** NORMALIZING FOLD  3
+** NORMALIZING FOLD  4
+** NORMALIZING FOLD  5
+** NORMALIZING FOLD  6
+** NORMALIZING FOLD  7
+** NORMALIZING FOLD  8
+** NORMALIZING FOLD  9
+** NORMALIZING FOLD  10
+** TESTING DML  Euclidean
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KernelPCA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KernelPCA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KernelPCA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KernelPCA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KernelPCA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KANMM
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KANMM
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KANMM
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KANMM
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KANMM
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDMLMJ
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDMLMJ
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDMLMJ
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDMLMJ
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+RESULTS:  phoneme k =  3  [TRAIN] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.793210        ...                        0.0
+FOLD 2    0.799383        ...                        0.0
+FOLD 3    0.797325        ...                        0.0
+FOLD 4    0.792181        ...                        0.0
+FOLD 5    0.798561        ...                        0.0
+FOLD 6    0.796506        ...                        0.0
+FOLD 7    0.796506        ...                        0.0
+FOLD 8    0.785421        ...                        0.0
+FOLD 9    0.805955        ...                        0.0
+FOLD 10   0.792608        ...                        0.0
+MEAN      0.795765        ...                        0.0
+
+[11 rows x 26 columns]
+RESULTS:  phoneme k =  3  [TEST] 
+         EUCLIDEAN        ...          KLMNN [Laplacian]
+FOLD 1    0.798165        ...                        0.0
+FOLD 2    0.779817        ...                        0.0
+FOLD 3    0.788991        ...                        0.0
+FOLD 4    0.816514        ...                        0.0
+FOLD 5    0.805556        ...                        0.0
+FOLD 6    0.768519        ...                        0.0
+FOLD 7    0.824074        ...                        0.0
+FOLD 8    0.822430        ...                        0.0
+FOLD 9    0.766355        ...                        0.0
+FOLD 10   0.822430        ...                        0.0
+MEAN      0.799285        ...                        0.0
+
+[11 rows x 26 columns]
+** TESTING DML  KDMLMJ
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+*** FOLD  10
+**** TRAINING

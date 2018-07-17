@@ -1,0 +1,2517 @@
+Collecting numpy
+  Downloading https://files.pythonhosted.org/packages/68/1e/116ad560de97694e2d0c1843a7a0075cc9f49e922454d32f49a80eb6f1f2/numpy-1.14.5-cp36-cp36m-manylinux1_x86_64.whl (12.2MB)
+Installing collected packages: numpy
+  Found existing installation: numpy 1.14.3
+    Uninstalling numpy-1.14.3:
+      Successfully uninstalled numpy-1.14.3
+  Rolling back uninstall of numpy
+Requirement already up-to-date: pandas in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: pytz>=2011k in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: python-dateutil>=2.5.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: numpy>=1.9.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: six>=1.5 in /usr/local/lib/python3.6/site-packages (from python-dateutil>=2.5.0->pandas)
+Requirement already up-to-date: Cython in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: arff in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: scikit-learn in /usr/local/lib/python3.6/site-packages
+Requirement already up-to-date: matplotlib in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: numpy>=1.7.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: python-dateutil>=2.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: kiwisolver>=1.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: cycler>=0.10 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: six>=1.10 in /usr/local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pytz in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: setuptools in /home/jlsuarez/.local/lib/python3.6/site-packages (from kiwisolver>=1.0.1->matplotlib)
+Requirement already up-to-date: seaborn in /home/jlsuarez/.local/lib/python3.6/site-packages
+Python 3.6.4
+Please put "# distutils: language=c++" in your .pyx or .pxd file(s)
+running build_ext
+copying build/lib.linux-x86_64-3.6/dml/anmm.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_eig.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_utils.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dmlmj.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/itml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/kda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ldml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lmnn.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lsi.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/mcml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/nca.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmc.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/pca.cpython-36m-x86_64-linux-gnu.so -> dml
+Requirement already up-to-date: numpy in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: pandas in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: numpy>=1.9.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: pytz>=2011k in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: python-dateutil>=2.5.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: six>=1.5 in /usr/local/lib/python3.6/site-packages (from python-dateutil>=2.5.0->pandas)
+Requirement already up-to-date: Cython in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: arff in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: scikit-learn in /usr/local/lib/python3.6/site-packages
+Requirement already up-to-date: matplotlib in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: cycler>=0.10 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: numpy>=1.7.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: kiwisolver>=1.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: python-dateutil>=2.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pytz in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: six>=1.10 in /usr/local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: setuptools in /home/jlsuarez/.local/lib/python3.6/site-packages (from kiwisolver>=1.0.1->matplotlib)
+Requirement already up-to-date: seaborn in /home/jlsuarez/.local/lib/python3.6/site-packages
+Python 3.6.4
+Please put "# distutils: language=c++" in your .pyx or .pxd file(s)
+running build_ext
+copying build/lib.linux-x86_64-3.6/dml/anmm.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_eig.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_utils.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dmlmj.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/itml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/kda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ldml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lmnn.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lsi.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/mcml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/nca.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmc.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/pca.cpython-36m-x86_64-linux-gnu.so -> dml
+Requirement already up-to-date: numpy in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: pandas in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: pytz>=2011k in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: numpy>=1.9.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: python-dateutil>=2.5.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: six>=1.5 in /usr/local/lib/python3.6/site-packages (from python-dateutil>=2.5.0->pandas)
+Requirement already up-to-date: Cython in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: arff in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: scikit-learn in /usr/local/lib/python3.6/site-packages
+Requirement already up-to-date: matplotlib in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: six>=1.10 in /usr/local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pytz in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: cycler>=0.10 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: python-dateutil>=2.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: kiwisolver>=1.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: numpy>=1.7.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: setuptools in /home/jlsuarez/.local/lib/python3.6/site-packages (from kiwisolver>=1.0.1->matplotlib)
+Requirement already up-to-date: seaborn in /home/jlsuarez/.local/lib/python3.6/site-packages
+Python 3.6.4
+Please put "# distutils: language=c++" in your .pyx or .pxd file(s)
+running build_ext
+copying build/lib.linux-x86_64-3.6/dml/anmm.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_eig.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_utils.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dmlmj.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/itml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/kda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ldml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lmnn.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lsi.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/mcml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/nca.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmc.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/pca.cpython-36m-x86_64-linux-gnu.so -> dml
+* DATASET  phoneme
+** NORMALIZING FOLD  1
+** NORMALIZING FOLD  2
+** NORMALIZING FOLD  3
+** NORMALIZING FOLD  4
+** NORMALIZING FOLD  5
+** NORMALIZING FOLD  6
+** NORMALIZING FOLD  7
+** NORMALIZING FOLD  8
+** NORMALIZING FOLD  9
+** NORMALIZING FOLD  10
+** TESTING DML  Euclidean
+*** FOLD  1
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  2
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  3
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  4
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  5
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  6
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  7
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  8
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  9
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  10
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+RESULTS:  phoneme k =  ncm  [TRAIN] 
+         Euclidean + NCM  NCMML
+FOLD 1          0.750000    0.0
+FOLD 2          0.745885    0.0
+FOLD 3          0.751029    0.0
+FOLD 4          0.731481    0.0
+FOLD 5          0.725591    0.0
+FOLD 6          0.738952    0.0
+FOLD 7          0.739979    0.0
+FOLD 8          0.745380    0.0
+FOLD 9          0.743326    0.0
+FOLD 10         0.745380    0.0
+MEAN            0.741700    0.0
+RESULTS:  phoneme k =  ncm  [TEST] 
+         Euclidean + NCM  NCMML
+FOLD 1          0.816514    0.0
+FOLD 2          0.724771    0.0
+FOLD 3          0.743119    0.0
+FOLD 4          0.733945    0.0
+FOLD 5          0.722222    0.0
+FOLD 6          0.750000    0.0
+FOLD 7          0.722222    0.0
+FOLD 8          0.766355    0.0
+FOLD 9          0.672897    0.0
+FOLD 10         0.747664    0.0
+MEAN            0.739971    0.0
+RESULTS:  phoneme k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.779835                 0.0
+FOLD 2              0.786008                 0.0
+FOLD 3              0.711934                 0.0
+FOLD 4              0.775720                 0.0
+FOLD 5              0.779034                 0.0
+FOLD 6              0.783145                 0.0
+FOLD 7              0.787256                 0.0
+FOLD 8              0.784394                 0.0
+FOLD 9              0.782341                 0.0
+FOLD 10             0.713552                 0.0
+MEAN                0.768322                 0.0
+RESULTS:  phoneme k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.807339                 0.0
+FOLD 2              0.743119                 0.0
+FOLD 3              0.724771                 0.0
+FOLD 4              0.853211                 0.0
+FOLD 5              0.787037                 0.0
+FOLD 6              0.787037                 0.0
+FOLD 7              0.740741                 0.0
+FOLD 8              0.775701                 0.0
+FOLD 9              0.766355                 0.0
+FOLD 10             0.682243                 0.0
+MEAN                0.766755                 0.0
+RESULTS:  phoneme k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.706790                 0.0
+FOLD 2              0.762346                 0.0
+FOLD 3              0.717078                 0.0
+FOLD 4              0.712963                 0.0
+FOLD 5              0.715313                 0.0
+FOLD 6              0.711202                 0.0
+FOLD 7              0.721480                 0.0
+FOLD 8              0.721766                 0.0
+FOLD 9              0.714579                 0.0
+FOLD 10             0.723819                 0.0
+MEAN                0.720734                 0.0
+RESULTS:  phoneme k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.761468                 0.0
+FOLD 2              0.724771                 0.0
+FOLD 3              0.752294                 0.0
+FOLD 4              0.743119                 0.0
+FOLD 5              0.722222                 0.0
+FOLD 6              0.703704                 0.0
+FOLD 7              0.657407                 0.0
+FOLD 8              0.663551                 0.0
+FOLD 9              0.728972                 0.0
+FOLD 10             0.691589                 0.0
+MEAN                0.714910                 0.0
+** TESTING DML  NCMML
+*** FOLD  1
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  2
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  3
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  4
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  5
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  6
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  7
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  8
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  9
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  10
+**** TRAINING
+**** TEST Classifier  ncm
+RESULTS:  phoneme k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.750000  0.758230
+FOLD 2          0.745885  0.766461
+FOLD 3          0.751029  0.763374
+FOLD 4          0.731481  0.744856
+FOLD 5          0.725591  0.761562
+FOLD 6          0.738952  0.753340
+FOLD 7          0.739979  0.763618
+FOLD 8          0.745380  0.766940
+FOLD 9          0.743326  0.755647
+FOLD 10         0.745380  0.753593
+MEAN            0.741700  0.758762
+RESULTS:  phoneme k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.816514  0.844037
+FOLD 2          0.724771  0.724771
+FOLD 3          0.743119  0.752294
+FOLD 4          0.733945  0.752294
+FOLD 5          0.722222  0.777778
+FOLD 6          0.750000  0.787037
+FOLD 7          0.722222  0.722222
+FOLD 8          0.766355  0.738318
+FOLD 9          0.672897  0.672897
+FOLD 10         0.747664  0.766355
+MEAN            0.739971  0.753800
+RESULTS:  phoneme k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.779835                 0.0
+FOLD 2              0.786008                 0.0
+FOLD 3              0.711934                 0.0
+FOLD 4              0.775720                 0.0
+FOLD 5              0.779034                 0.0
+FOLD 6              0.783145                 0.0
+FOLD 7              0.787256                 0.0
+FOLD 8              0.784394                 0.0
+FOLD 9              0.782341                 0.0
+FOLD 10             0.713552                 0.0
+MEAN                0.768322                 0.0
+RESULTS:  phoneme k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.807339                 0.0
+FOLD 2              0.743119                 0.0
+FOLD 3              0.724771                 0.0
+FOLD 4              0.853211                 0.0
+FOLD 5              0.787037                 0.0
+FOLD 6              0.787037                 0.0
+FOLD 7              0.740741                 0.0
+FOLD 8              0.775701                 0.0
+FOLD 9              0.766355                 0.0
+FOLD 10             0.682243                 0.0
+MEAN                0.766755                 0.0
+RESULTS:  phoneme k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.706790                 0.0
+FOLD 2              0.762346                 0.0
+FOLD 3              0.717078                 0.0
+FOLD 4              0.712963                 0.0
+FOLD 5              0.715313                 0.0
+FOLD 6              0.711202                 0.0
+FOLD 7              0.721480                 0.0
+FOLD 8              0.721766                 0.0
+FOLD 9              0.714579                 0.0
+FOLD 10             0.723819                 0.0
+MEAN                0.720734                 0.0
+RESULTS:  phoneme k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.761468                 0.0
+FOLD 2              0.724771                 0.0
+FOLD 3              0.752294                 0.0
+FOLD 4              0.743119                 0.0
+FOLD 5              0.722222                 0.0
+FOLD 6              0.703704                 0.0
+FOLD 7              0.657407                 0.0
+FOLD 8              0.663551                 0.0
+FOLD 9              0.728972                 0.0
+FOLD 10             0.691589                 0.0
+MEAN                0.714910                 0.0
+** TESTING DML  NCMC
+*** FOLD  1
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  2
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  3
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  4
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  5
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  6
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  7
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  8
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  9
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  10
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+RESULTS:  phoneme k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.750000  0.758230
+FOLD 2          0.745885  0.766461
+FOLD 3          0.751029  0.763374
+FOLD 4          0.731481  0.744856
+FOLD 5          0.725591  0.761562
+FOLD 6          0.738952  0.753340
+FOLD 7          0.739979  0.763618
+FOLD 8          0.745380  0.766940
+FOLD 9          0.743326  0.755647
+FOLD 10         0.745380  0.753593
+MEAN            0.741700  0.758762
+RESULTS:  phoneme k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.816514  0.844037
+FOLD 2          0.724771  0.724771
+FOLD 3          0.743119  0.752294
+FOLD 4          0.733945  0.752294
+FOLD 5          0.722222  0.777778
+FOLD 6          0.750000  0.787037
+FOLD 7          0.722222  0.722222
+FOLD 8          0.766355  0.738318
+FOLD 9          0.672897  0.672897
+FOLD 10         0.747664  0.766355
+MEAN            0.739971  0.753800
+RESULTS:  phoneme k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.779835            0.668724
+FOLD 2              0.786008            0.716049
+FOLD 3              0.711934            0.696502
+FOLD 4              0.775720            0.691358
+FOLD 5              0.779034            0.697842
+FOLD 6              0.783145            0.709147
+FOLD 7              0.787256            0.731757
+FOLD 8              0.784394            0.736140
+FOLD 9              0.782341            0.741273
+FOLD 10             0.713552            0.696099
+MEAN                0.768322            0.708489
+RESULTS:  phoneme k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.807339            0.770642
+FOLD 2              0.743119            0.706422
+FOLD 3              0.724771            0.761468
+FOLD 4              0.853211            0.688073
+FOLD 5              0.787037            0.712963
+FOLD 6              0.787037            0.759259
+FOLD 7              0.740741            0.638889
+FOLD 8              0.775701            0.728972
+FOLD 9              0.766355            0.691589
+FOLD 10             0.682243            0.700935
+MEAN                0.766755            0.715921
+RESULTS:  phoneme k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.706790                 0.0
+FOLD 2              0.762346                 0.0
+FOLD 3              0.717078                 0.0
+FOLD 4              0.712963                 0.0
+FOLD 5              0.715313                 0.0
+FOLD 6              0.711202                 0.0
+FOLD 7              0.721480                 0.0
+FOLD 8              0.721766                 0.0
+FOLD 9              0.714579                 0.0
+FOLD 10             0.723819                 0.0
+MEAN                0.720734                 0.0
+RESULTS:  phoneme k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.761468                 0.0
+FOLD 2              0.724771                 0.0
+FOLD 3              0.752294                 0.0
+FOLD 4              0.743119                 0.0
+FOLD 5              0.722222                 0.0
+FOLD 6              0.703704                 0.0
+FOLD 7              0.657407                 0.0
+FOLD 8              0.663551                 0.0
+FOLD 9              0.728972                 0.0
+FOLD 10             0.691589                 0.0
+MEAN                0.714910                 0.0
+** TESTING DML  NCMC
+*** FOLD  1
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  2
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  3
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  4
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  5
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  6
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  7
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  8
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  9
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  10
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+RESULTS:  phoneme k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.750000  0.758230
+FOLD 2          0.745885  0.766461
+FOLD 3          0.751029  0.763374
+FOLD 4          0.731481  0.744856
+FOLD 5          0.725591  0.761562
+FOLD 6          0.738952  0.753340
+FOLD 7          0.739979  0.763618
+FOLD 8          0.745380  0.766940
+FOLD 9          0.743326  0.755647
+FOLD 10         0.745380  0.753593
+MEAN            0.741700  0.758762
+RESULTS:  phoneme k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.816514  0.844037
+FOLD 2          0.724771  0.724771
+FOLD 3          0.743119  0.752294
+FOLD 4          0.733945  0.752294
+FOLD 5          0.722222  0.777778
+FOLD 6          0.750000  0.787037
+FOLD 7          0.722222  0.722222
+FOLD 8          0.766355  0.738318
+FOLD 9          0.672897  0.672897
+FOLD 10         0.747664  0.766355
+MEAN            0.739971  0.753800
+RESULTS:  phoneme k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.779835            0.668724
+FOLD 2              0.786008            0.716049
+FOLD 3              0.711934            0.696502
+FOLD 4              0.775720            0.691358
+FOLD 5              0.779034            0.697842
+FOLD 6              0.783145            0.709147
+FOLD 7              0.787256            0.731757
+FOLD 8              0.784394            0.736140
+FOLD 9              0.782341            0.741273
+FOLD 10             0.713552            0.696099
+MEAN                0.768322            0.708489
+RESULTS:  phoneme k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.807339            0.770642
+FOLD 2              0.743119            0.706422
+FOLD 3              0.724771            0.761468
+FOLD 4              0.853211            0.688073
+FOLD 5              0.787037            0.712963
+FOLD 6              0.787037            0.759259
+FOLD 7              0.740741            0.638889
+FOLD 8              0.775701            0.728972
+FOLD 9              0.766355            0.691589
+FOLD 10             0.682243            0.700935
+MEAN                0.766755            0.715921
+RESULTS:  phoneme k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.706790            0.697531
+FOLD 2              0.762346            0.708848
+FOLD 3              0.717078            0.702675
+FOLD 4              0.712963            0.718107
+FOLD 5              0.715313            0.709147
+FOLD 6              0.711202            0.695786
+FOLD 7              0.721480            0.710175
+FOLD 8              0.721766            0.717659
+FOLD 9              0.714579            0.716632
+FOLD 10             0.723819            0.714579
+MEAN                0.720734            0.709114
+RESULTS:  phoneme k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.761468            0.697248
+FOLD 2              0.724771            0.770642
+FOLD 3              0.752294            0.724771
+FOLD 4              0.743119            0.660550
+FOLD 5              0.722222            0.694444
+FOLD 6              0.703704            0.740741
+FOLD 7              0.657407            0.685185
+FOLD 8              0.663551            0.654206
+FOLD 9              0.728972            0.700935
+FOLD 10             0.691589            0.719626
+MEAN                0.714910            0.704835
+RESULTS:  phoneme k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.750000  0.758230
+FOLD 2          0.745885  0.766461
+FOLD 3          0.751029  0.763374
+FOLD 4          0.731481  0.744856
+FOLD 5          0.725591  0.761562
+FOLD 6          0.738952  0.753340
+FOLD 7          0.739979  0.763618
+FOLD 8          0.745380  0.766940
+FOLD 9          0.743326  0.755647
+FOLD 10         0.745380  0.753593
+MEAN            0.741700  0.758762
+RESULTS:  phoneme k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.816514  0.844037
+FOLD 2          0.724771  0.724771
+FOLD 3          0.743119  0.752294
+FOLD 4          0.733945  0.752294
+FOLD 5          0.722222  0.777778
+FOLD 6          0.750000  0.787037
+FOLD 7          0.722222  0.722222
+FOLD 8          0.766355  0.738318
+FOLD 9          0.672897  0.672897
+FOLD 10         0.747664  0.766355
+MEAN            0.739971  0.753800
+RESULTS:  phoneme k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.779835            0.668724
+FOLD 2              0.786008            0.716049
+FOLD 3              0.711934            0.696502
+FOLD 4              0.775720            0.691358
+FOLD 5              0.779034            0.697842
+FOLD 6              0.783145            0.709147
+FOLD 7              0.787256            0.731757
+FOLD 8              0.784394            0.736140
+FOLD 9              0.782341            0.741273
+FOLD 10             0.713552            0.696099
+MEAN                0.768322            0.708489
+RESULTS:  phoneme k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.807339            0.770642
+FOLD 2              0.743119            0.706422
+FOLD 3              0.724771            0.761468
+FOLD 4              0.853211            0.688073
+FOLD 5              0.787037            0.712963
+FOLD 6              0.787037            0.759259
+FOLD 7              0.740741            0.638889
+FOLD 8              0.775701            0.728972
+FOLD 9              0.766355            0.691589
+FOLD 10             0.682243            0.700935
+MEAN                0.766755            0.715921
+RESULTS:  phoneme k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.706790            0.697531
+FOLD 2              0.762346            0.708848
+FOLD 3              0.717078            0.702675
+FOLD 4              0.712963            0.718107
+FOLD 5              0.715313            0.709147
+FOLD 6              0.711202            0.695786
+FOLD 7              0.721480            0.710175
+FOLD 8              0.721766            0.717659
+FOLD 9              0.714579            0.716632
+FOLD 10             0.723819            0.714579
+MEAN                0.720734            0.709114
+RESULTS:  phoneme k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.761468            0.697248
+FOLD 2              0.724771            0.770642
+FOLD 3              0.752294            0.724771
+FOLD 4              0.743119            0.660550
+FOLD 5              0.722222            0.694444
+FOLD 6              0.703704            0.740741
+FOLD 7              0.657407            0.685185
+FOLD 8              0.663551            0.654206
+FOLD 9              0.728972            0.700935
+FOLD 10             0.691589            0.719626
+MEAN                0.714910            0.704835
+* DATASET  page-blocks
+** NORMALIZING FOLD  1
+** NORMALIZING FOLD  2
+** NORMALIZING FOLD  3
+** NORMALIZING FOLD  4
+** NORMALIZING FOLD  5
+** NORMALIZING FOLD  6
+** NORMALIZING FOLD  7
+** NORMALIZING FOLD  8
+** NORMALIZING FOLD  9
+** NORMALIZING FOLD  10
+** TESTING DML  Euclidean
+*** FOLD  1
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  2
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  3
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  4
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  5
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  6
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  7
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  8
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  9
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  10
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+RESULTS:  page-blocks k =  ncm  [TRAIN] 
+         Euclidean + NCM  NCMML
+FOLD 1          0.828221    0.0
+FOLD 2          0.806748    0.0
+FOLD 3          0.807771    0.0
+FOLD 4          0.815306    0.0
+FOLD 5          0.809184    0.0
+FOLD 6          0.822449    0.0
+FOLD 7          0.807339    0.0
+FOLD 8          0.804481    0.0
+FOLD 9          0.818737    0.0
+FOLD 10         0.813646    0.0
+MEAN            0.813388    0.0
+RESULTS:  page-blocks k =  ncm  [TEST] 
+         Euclidean + NCM  NCMML
+FOLD 1          0.756757    0.0
+FOLD 2          0.837838    0.0
+FOLD 3          0.801802    0.0
+FOLD 4          0.816514    0.0
+FOLD 5          0.816514    0.0
+FOLD 6          0.779817    0.0
+FOLD 7          0.851852    0.0
+FOLD 8          0.831776    0.0
+FOLD 9          0.850467    0.0
+FOLD 10         0.822430    0.0
+MEAN            0.816577    0.0
+RESULTS:  page-blocks k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.836401                 0.0
+FOLD 2              0.816973                 0.0
+FOLD 3              0.827198                 0.0
+FOLD 4              0.815306                 0.0
+FOLD 5              0.822449                 0.0
+FOLD 6              0.841837                 0.0
+FOLD 7              0.816514                 0.0
+FOLD 8              0.803462                 0.0
+FOLD 9              0.814664                 0.0
+FOLD 10             0.824847                 0.0
+MEAN                0.821965                 0.0
+RESULTS:  page-blocks k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.783784                 0.0
+FOLD 2              0.837838                 0.0
+FOLD 3              0.810811                 0.0
+FOLD 4              0.844037                 0.0
+FOLD 5              0.724771                 0.0
+FOLD 6              0.788991                 0.0
+FOLD 7              0.888889                 0.0
+FOLD 8              0.850467                 0.0
+FOLD 9              0.831776                 0.0
+FOLD 10             0.859813                 0.0
+MEAN                0.822118                 0.0
+RESULTS:  page-blocks k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.886503                 0.0
+FOLD 2              0.862986                 0.0
+FOLD 3              0.869121                 0.0
+FOLD 4              0.857143                 0.0
+FOLD 5              0.871429                 0.0
+FOLD 6              0.870408                 0.0
+FOLD 7              0.867482                 0.0
+FOLD 8              0.857434                 0.0
+FOLD 9              0.871690                 0.0
+FOLD 10             0.866599                 0.0
+MEAN                0.868079                 0.0
+RESULTS:  page-blocks k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.846847                 0.0
+FOLD 2              0.882883                 0.0
+FOLD 3              0.864865                 0.0
+FOLD 4              0.917431                 0.0
+FOLD 5              0.807339                 0.0
+FOLD 6              0.862385                 0.0
+FOLD 7              0.888889                 0.0
+FOLD 8              0.906542                 0.0
+FOLD 9              0.850467                 0.0
+FOLD 10             0.869159                 0.0
+MEAN                0.869681                 0.0
+** TESTING DML  NCMML
+*** FOLD  1
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  2
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  3
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  4
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  5
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  6
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  7
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  8
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  9
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  10
+**** TRAINING
+**** TEST Classifier  ncm
+RESULTS:  page-blocks k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.828221  0.966258
+FOLD 2          0.806748  0.963190
+FOLD 3          0.807771  0.963190
+FOLD 4          0.815306  0.964286
+FOLD 5          0.809184  0.959184
+FOLD 6          0.822449  0.964286
+FOLD 7          0.807339  0.965341
+FOLD 8          0.804481  0.960285
+FOLD 9          0.818737  0.966395
+FOLD 10         0.813646  0.964358
+MEAN            0.813388  0.963677
+RESULTS:  page-blocks k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.756757  0.954955
+FOLD 2          0.837838  0.963964
+FOLD 3          0.801802  0.972973
+FOLD 4          0.816514  0.972477
+FOLD 5          0.816514  0.972477
+FOLD 6          0.779817  0.935780
+FOLD 7          0.851852  0.944444
+FOLD 8          0.831776  0.971963
+FOLD 9          0.850467  0.934579
+FOLD 10         0.822430  0.953271
+MEAN            0.816577  0.957688
+RESULTS:  page-blocks k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.836401                 0.0
+FOLD 2              0.816973                 0.0
+FOLD 3              0.827198                 0.0
+FOLD 4              0.815306                 0.0
+FOLD 5              0.822449                 0.0
+FOLD 6              0.841837                 0.0
+FOLD 7              0.816514                 0.0
+FOLD 8              0.803462                 0.0
+FOLD 9              0.814664                 0.0
+FOLD 10             0.824847                 0.0
+MEAN                0.821965                 0.0
+RESULTS:  page-blocks k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.783784                 0.0
+FOLD 2              0.837838                 0.0
+FOLD 3              0.810811                 0.0
+FOLD 4              0.844037                 0.0
+FOLD 5              0.724771                 0.0
+FOLD 6              0.788991                 0.0
+FOLD 7              0.888889                 0.0
+FOLD 8              0.850467                 0.0
+FOLD 9              0.831776                 0.0
+FOLD 10             0.859813                 0.0
+MEAN                0.822118                 0.0
+RESULTS:  page-blocks k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.886503                 0.0
+FOLD 2              0.862986                 0.0
+FOLD 3              0.869121                 0.0
+FOLD 4              0.857143                 0.0
+FOLD 5              0.871429                 0.0
+FOLD 6              0.870408                 0.0
+FOLD 7              0.867482                 0.0
+FOLD 8              0.857434                 0.0
+FOLD 9              0.871690                 0.0
+FOLD 10             0.866599                 0.0
+MEAN                0.868079                 0.0
+RESULTS:  page-blocks k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.846847                 0.0
+FOLD 2              0.882883                 0.0
+FOLD 3              0.864865                 0.0
+FOLD 4              0.917431                 0.0
+FOLD 5              0.807339                 0.0
+FOLD 6              0.862385                 0.0
+FOLD 7              0.888889                 0.0
+FOLD 8              0.906542                 0.0
+FOLD 9              0.850467                 0.0
+FOLD 10             0.869159                 0.0
+MEAN                0.869681                 0.0
+** TESTING DML  NCMC
+*** FOLD  1
+**** TRAINING
+0 [2, 2, 2, 2]
+1 [2, 2, 2, 2]
+2 [2, 2, 2, 2]
+3 [2, 2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  2
+**** TRAINING
+0 [2, 2, 2, 2]
+1 [2, 2, 2, 2]
+2 [2, 2, 2, 2]
+3 [2, 2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  3
+**** TRAINING
+0 [2, 2, 2, 2]
+1 [2, 2, 2, 2]
+2 [2, 2, 2, 2]
+3 [2, 2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  4
+**** TRAINING
+0 [2, 2, 2, 2]
+1 [2, 2, 2, 2]
+2 [2, 2, 2, 2]
+3 [2, 2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  5
+**** TRAINING
+0 [2, 2, 2, 2]
+1 [2, 2, 2, 2]
+2 [2, 2, 2, 2]
+3 [2, 2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  6
+**** TRAINING
+0 [2, 2, 2, 2]
+1 [2, 2, 2, 2]
+2 [2, 2, 2, 2]
+3 [2, 2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  7
+**** TRAINING
+0 [2, 2, 2, 2]
+1 [2, 2, 2, 2]
+2 [2, 2, 2, 2]
+3 [2, 2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  8
+**** TRAINING
+0 [2, 2, 2, 2]
+1 [2, 2, 2, 2]
+2 [2, 2, 2, 2]
+3 [2, 2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  9
+**** TRAINING
+0 [2, 2, 2, 2]
+1 [2, 2, 2, 2]
+2 [2, 2, 2, 2]
+3 [2, 2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  10
+**** TRAINING
+0 [2, 2, 2, 2]
+1 [2, 2, 2, 2]
+2 [2, 2, 2, 2]
+3 [2, 2, 2, 2]
+**** TEST Classifier  ncmc-2
+RESULTS:  page-blocks k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.828221  0.966258
+FOLD 2          0.806748  0.963190
+FOLD 3          0.807771  0.963190
+FOLD 4          0.815306  0.964286
+FOLD 5          0.809184  0.959184
+FOLD 6          0.822449  0.964286
+FOLD 7          0.807339  0.965341
+FOLD 8          0.804481  0.960285
+FOLD 9          0.818737  0.966395
+FOLD 10         0.813646  0.964358
+MEAN            0.813388  0.963677
+RESULTS:  page-blocks k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.756757  0.954955
+FOLD 2          0.837838  0.963964
+FOLD 3          0.801802  0.972973
+FOLD 4          0.816514  0.972477
+FOLD 5          0.816514  0.972477
+FOLD 6          0.779817  0.935780
+FOLD 7          0.851852  0.944444
+FOLD 8          0.831776  0.971963
+FOLD 9          0.850467  0.934579
+FOLD 10         0.822430  0.953271
+MEAN            0.816577  0.957688
+RESULTS:  page-blocks k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.836401            0.926380
+FOLD 2              0.816973            0.903885
+FOLD 3              0.827198            0.912065
+FOLD 4              0.815306            0.912245
+FOLD 5              0.822449            0.909184
+FOLD 6              0.841837            0.912245
+FOLD 7              0.816514            0.903160
+FOLD 8              0.803462            0.890020
+FOLD 9              0.814664            0.917515
+FOLD 10             0.824847            0.904277
+MEAN                0.821965            0.909098
+RESULTS:  page-blocks k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.783784            0.909910
+FOLD 2              0.837838            0.900901
+FOLD 3              0.810811            0.927928
+FOLD 4              0.844037            0.926606
+FOLD 5              0.724771            0.880734
+FOLD 6              0.788991            0.935780
+FOLD 7              0.888889            0.907407
+FOLD 8              0.850467            0.887850
+FOLD 9              0.831776            0.887850
+FOLD 10             0.859813            0.906542
+MEAN                0.822118            0.907151
+RESULTS:  page-blocks k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.886503                 0.0
+FOLD 2              0.862986                 0.0
+FOLD 3              0.869121                 0.0
+FOLD 4              0.857143                 0.0
+FOLD 5              0.871429                 0.0
+FOLD 6              0.870408                 0.0
+FOLD 7              0.867482                 0.0
+FOLD 8              0.857434                 0.0
+FOLD 9              0.871690                 0.0
+FOLD 10             0.866599                 0.0
+MEAN                0.868079                 0.0
+RESULTS:  page-blocks k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.846847                 0.0
+FOLD 2              0.882883                 0.0
+FOLD 3              0.864865                 0.0
+FOLD 4              0.917431                 0.0
+FOLD 5              0.807339                 0.0
+FOLD 6              0.862385                 0.0
+FOLD 7              0.888889                 0.0
+FOLD 8              0.906542                 0.0
+FOLD 9              0.850467                 0.0
+FOLD 10             0.869159                 0.0
+MEAN                0.869681                 0.0
+** TESTING DML  NCMC
+*** FOLD  1
+**** TRAINING
+0 [3, 3, 3, 3]
+1 [3, 3, 3, 3]
+2 [3, 3, 3, 3]
+3 [3, 3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  2
+**** TRAINING
+0 [3, 3, 3, 3]
+1 [3, 3, 3, 3]
+2 [3, 3, 3, 3]
+3 [3, 3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  3
+**** TRAINING
+0 [3, 3, 3, 3]
+1 [3, 3, 3, 3]
+2 [3, 3, 3, 3]
+3 [3, 3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  4
+**** TRAINING
+0 [3, 3, 3, 3]
+1 [3, 3, 3, 3]
+2 [3, 3, 3, 3]
+3 [3, 3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  5
+**** TRAINING
+0 [3, 3, 3, 3]
+1 [3, 3, 3, 3]
+2 [3, 3, 3, 3]
+3 [3, 3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  6
+**** TRAINING
+0 [3, 3, 3, 3]
+1 [3, 3, 3, 3]
+2 [3, 3, 3, 3]
+3 [3, 3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  7
+**** TRAINING
+0 [3, 3, 3, 3]
+1 [3, 3, 3, 3]
+2 [3, 3, 3, 3]
+3 [3, 3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  8
+**** TRAINING
+0 [3, 3, 3, 3]
+1 [3, 3, 3, 3]
+2 [3, 3, 3, 3]
+3 [3, 3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  9
+**** TRAINING
+0 [3, 3, 3, 3]
+1 [3, 3, 3, 3]
+2 [3, 3, 3, 3]
+3 [3, 3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  10
+**** TRAINING
+0 [3, 3, 3, 3]
+1 [3, 3, 3, 3]
+2 [3, 3, 3, 3]
+3 [3, 3, 3, 3]
+**** TEST Classifier  ncmc-3
+RESULTS:  page-blocks k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.828221  0.966258
+FOLD 2          0.806748  0.963190
+FOLD 3          0.807771  0.963190
+FOLD 4          0.815306  0.964286
+FOLD 5          0.809184  0.959184
+FOLD 6          0.822449  0.964286
+FOLD 7          0.807339  0.965341
+FOLD 8          0.804481  0.960285
+FOLD 9          0.818737  0.966395
+FOLD 10         0.813646  0.964358
+MEAN            0.813388  0.963677
+RESULTS:  page-blocks k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.756757  0.954955
+FOLD 2          0.837838  0.963964
+FOLD 3          0.801802  0.972973
+FOLD 4          0.816514  0.972477
+FOLD 5          0.816514  0.972477
+FOLD 6          0.779817  0.935780
+FOLD 7          0.851852  0.944444
+FOLD 8          0.831776  0.971963
+FOLD 9          0.850467  0.934579
+FOLD 10         0.822430  0.953271
+MEAN            0.816577  0.957688
+RESULTS:  page-blocks k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.836401            0.926380
+FOLD 2              0.816973            0.903885
+FOLD 3              0.827198            0.912065
+FOLD 4              0.815306            0.912245
+FOLD 5              0.822449            0.909184
+FOLD 6              0.841837            0.912245
+FOLD 7              0.816514            0.903160
+FOLD 8              0.803462            0.890020
+FOLD 9              0.814664            0.917515
+FOLD 10             0.824847            0.904277
+MEAN                0.821965            0.909098
+RESULTS:  page-blocks k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.783784            0.909910
+FOLD 2              0.837838            0.900901
+FOLD 3              0.810811            0.927928
+FOLD 4              0.844037            0.926606
+FOLD 5              0.724771            0.880734
+FOLD 6              0.788991            0.935780
+FOLD 7              0.888889            0.907407
+FOLD 8              0.850467            0.887850
+FOLD 9              0.831776            0.887850
+FOLD 10             0.859813            0.906542
+MEAN                0.822118            0.907151
+RESULTS:  page-blocks k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.886503            0.879346
+FOLD 2              0.862986            0.890593
+FOLD 3              0.869121            0.898773
+FOLD 4              0.857143            0.898980
+FOLD 5              0.871429            0.895918
+FOLD 6              0.870408            0.910204
+FOLD 7              0.867482            0.891947
+FOLD 8              0.857434            0.886965
+FOLD 9              0.871690            0.909369
+FOLD 10             0.866599            0.904277
+MEAN                0.868079            0.896637
+RESULTS:  page-blocks k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.846847            0.855856
+FOLD 2              0.882883            0.900901
+FOLD 3              0.864865            0.918919
+FOLD 4              0.917431            0.944954
+FOLD 5              0.807339            0.862385
+FOLD 6              0.862385            0.871560
+FOLD 7              0.888889            0.907407
+FOLD 8              0.906542            0.915888
+FOLD 9              0.850467            0.878505
+FOLD 10             0.869159            0.897196
+MEAN                0.869681            0.895357
+RESULTS:  page-blocks k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.828221  0.966258
+FOLD 2          0.806748  0.963190
+FOLD 3          0.807771  0.963190
+FOLD 4          0.815306  0.964286
+FOLD 5          0.809184  0.959184
+FOLD 6          0.822449  0.964286
+FOLD 7          0.807339  0.965341
+FOLD 8          0.804481  0.960285
+FOLD 9          0.818737  0.966395
+FOLD 10         0.813646  0.964358
+MEAN            0.813388  0.963677
+RESULTS:  page-blocks k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.756757  0.954955
+FOLD 2          0.837838  0.963964
+FOLD 3          0.801802  0.972973
+FOLD 4          0.816514  0.972477
+FOLD 5          0.816514  0.972477
+FOLD 6          0.779817  0.935780
+FOLD 7          0.851852  0.944444
+FOLD 8          0.831776  0.971963
+FOLD 9          0.850467  0.934579
+FOLD 10         0.822430  0.953271
+MEAN            0.816577  0.957688
+RESULTS:  page-blocks k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.836401            0.926380
+FOLD 2              0.816973            0.903885
+FOLD 3              0.827198            0.912065
+FOLD 4              0.815306            0.912245
+FOLD 5              0.822449            0.909184
+FOLD 6              0.841837            0.912245
+FOLD 7              0.816514            0.903160
+FOLD 8              0.803462            0.890020
+FOLD 9              0.814664            0.917515
+FOLD 10             0.824847            0.904277
+MEAN                0.821965            0.909098
+RESULTS:  page-blocks k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.783784            0.909910
+FOLD 2              0.837838            0.900901
+FOLD 3              0.810811            0.927928
+FOLD 4              0.844037            0.926606
+FOLD 5              0.724771            0.880734
+FOLD 6              0.788991            0.935780
+FOLD 7              0.888889            0.907407
+FOLD 8              0.850467            0.887850
+FOLD 9              0.831776            0.887850
+FOLD 10             0.859813            0.906542
+MEAN                0.822118            0.907151
+RESULTS:  page-blocks k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.886503            0.879346
+FOLD 2              0.862986            0.890593
+FOLD 3              0.869121            0.898773
+FOLD 4              0.857143            0.898980
+FOLD 5              0.871429            0.895918
+FOLD 6              0.870408            0.910204
+FOLD 7              0.867482            0.891947
+FOLD 8              0.857434            0.886965
+FOLD 9              0.871690            0.909369
+FOLD 10             0.866599            0.904277
+MEAN                0.868079            0.896637
+RESULTS:  page-blocks k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.846847            0.855856
+FOLD 2              0.882883            0.900901
+FOLD 3              0.864865            0.918919
+FOLD 4              0.917431            0.944954
+FOLD 5              0.807339            0.862385
+FOLD 6              0.862385            0.871560
+FOLD 7              0.888889            0.907407
+FOLD 8              0.906542            0.915888
+FOLD 9              0.850467            0.878505
+FOLD 10             0.869159            0.897196
+MEAN                0.869681            0.895357
+* DATASET  thyroid
+** NORMALIZING FOLD  1
+** NORMALIZING FOLD  2
+** NORMALIZING FOLD  3
+** NORMALIZING FOLD  4
+** NORMALIZING FOLD  5
+** NORMALIZING FOLD  6
+** NORMALIZING FOLD  7
+** NORMALIZING FOLD  8
+** NORMALIZING FOLD  9
+** NORMALIZING FOLD  10
+** TESTING DML  Euclidean
+*** FOLD  1
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  2
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  3
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  4
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  5
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  6
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  7
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  8
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  9
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  10
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+RESULTS:  thyroid k =  ncm  [TRAIN] 
+         Euclidean + NCM  NCMML
+FOLD 1          0.426584    0.0
+FOLD 2          0.434312    0.0
+FOLD 3          0.462133    0.0
+FOLD 4          0.442130    0.0
+FOLD 5          0.467232    0.0
+FOLD 6          0.463377    0.0
+FOLD 7          0.513493    0.0
+FOLD 8          0.437934    0.0
+FOLD 9          0.431766    0.0
+FOLD 10         0.453354    0.0
+MEAN            0.453231    0.0
+RESULTS:  thyroid k =  ncm  [TEST] 
+         Euclidean + NCM  NCMML
+FOLD 1          0.506849    0.0
+FOLD 2          0.369863    0.0
+FOLD 3          0.472603    0.0
+FOLD 4          0.493056    0.0
+FOLD 5          0.405594    0.0
+FOLD 6          0.342657    0.0
+FOLD 7          0.433566    0.0
+FOLD 8          0.405594    0.0
+FOLD 9          0.475524    0.0
+FOLD 10         0.489510    0.0
+MEAN            0.439482    0.0
+RESULTS:  thyroid k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.544049                 0.0
+FOLD 2              0.454405                 0.0
+FOLD 3              0.559505                 0.0
+FOLD 4              0.584105                 0.0
+FOLD 5              0.568234                 0.0
+FOLD 6              0.605243                 0.0
+FOLD 7              0.633770                 0.0
+FOLD 8              0.607556                 0.0
+FOLD 9              0.584426                 0.0
+FOLD 10             0.583655                 0.0
+MEAN                0.572495                 0.0
+RESULTS:  thyroid k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.602740                 0.0
+FOLD 2              0.424658                 0.0
+FOLD 3              0.527397                 0.0
+FOLD 4              0.520833                 0.0
+FOLD 5              0.601399                 0.0
+FOLD 6              0.559441                 0.0
+FOLD 7              0.636364                 0.0
+FOLD 8              0.580420                 0.0
+FOLD 9              0.566434                 0.0
+FOLD 10             0.538462                 0.0
+MEAN                0.555815                 0.0
+RESULTS:  thyroid k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.608192                 0.0
+FOLD 2              0.602009                 0.0
+FOLD 3              0.593509                 0.0
+FOLD 4              0.577932                 0.0
+FOLD 5              0.577487                 0.0
+FOLD 6              0.592907                 0.0
+FOLD 7              0.612953                 0.0
+FOLD 8              0.609869                 0.0
+FOLD 9              0.603701                 0.0
+FOLD 10             0.581342                 0.0
+MEAN                0.595990                 0.0
+RESULTS:  thyroid k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.609589                 0.0
+FOLD 2              0.575342                 0.0
+FOLD 3              0.589041                 0.0
+FOLD 4              0.479167                 0.0
+FOLD 5              0.538462                 0.0
+FOLD 6              0.531469                 0.0
+FOLD 7              0.615385                 0.0
+FOLD 8              0.615385                 0.0
+FOLD 9              0.531469                 0.0
+FOLD 10             0.545455                 0.0
+MEAN                0.563076                 0.0
+** TESTING DML  NCMML
+*** FOLD  1
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  2
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  3
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  4
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  5
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  6
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  7
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  8
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  9
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  10
+**** TRAINING
+**** TEST Classifier  ncm
+RESULTS:  thyroid k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.426584  0.816074
+FOLD 2          0.434312  0.779753
+FOLD 3          0.462133  0.938949
+FOLD 4          0.442130  0.801698
+FOLD 5          0.467232  0.816500
+FOLD 6          0.463377  0.798766
+FOLD 7          0.513493  0.789514
+FOLD 8          0.437934  0.787972
+FOLD 9          0.431766  0.832691
+FOLD 10         0.453354  0.801850
+MEAN            0.453231  0.816377
+RESULTS:  thyroid k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.506849  0.815068
+FOLD 2          0.369863  0.760274
+FOLD 3          0.472603  0.904110
+FOLD 4          0.493056  0.777778
+FOLD 5          0.405594  0.874126
+FOLD 6          0.342657  0.832168
+FOLD 7          0.433566  0.762238
+FOLD 8          0.405594  0.797203
+FOLD 9          0.475524  0.846154
+FOLD 10         0.489510  0.713287
+MEAN            0.439482  0.808240
+RESULTS:  thyroid k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.544049                 0.0
+FOLD 2              0.454405                 0.0
+FOLD 3              0.559505                 0.0
+FOLD 4              0.584105                 0.0
+FOLD 5              0.568234                 0.0
+FOLD 6              0.605243                 0.0
+FOLD 7              0.633770                 0.0
+FOLD 8              0.607556                 0.0
+FOLD 9              0.584426                 0.0
+FOLD 10             0.583655                 0.0
+MEAN                0.572495                 0.0
+RESULTS:  thyroid k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.602740                 0.0
+FOLD 2              0.424658                 0.0
+FOLD 3              0.527397                 0.0
+FOLD 4              0.520833                 0.0
+FOLD 5              0.601399                 0.0
+FOLD 6              0.559441                 0.0
+FOLD 7              0.636364                 0.0
+FOLD 8              0.580420                 0.0
+FOLD 9              0.566434                 0.0
+FOLD 10             0.538462                 0.0
+MEAN                0.555815                 0.0
+RESULTS:  thyroid k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.608192                 0.0
+FOLD 2              0.602009                 0.0
+FOLD 3              0.593509                 0.0
+FOLD 4              0.577932                 0.0
+FOLD 5              0.577487                 0.0
+FOLD 6              0.592907                 0.0
+FOLD 7              0.612953                 0.0
+FOLD 8              0.609869                 0.0
+FOLD 9              0.603701                 0.0
+FOLD 10             0.581342                 0.0
+MEAN                0.595990                 0.0
+RESULTS:  thyroid k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.609589                 0.0
+FOLD 2              0.575342                 0.0
+FOLD 3              0.589041                 0.0
+FOLD 4              0.479167                 0.0
+FOLD 5              0.538462                 0.0
+FOLD 6              0.531469                 0.0
+FOLD 7              0.615385                 0.0
+FOLD 8              0.615385                 0.0
+FOLD 9              0.531469                 0.0
+FOLD 10             0.545455                 0.0
+MEAN                0.563076                 0.0
+** TESTING DML  NCMC
+*** FOLD  1
+**** TRAINING
+0 [2, 2, 2]
+1 [2, 2, 2]
+2 [2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  2
+**** TRAINING
+0 [2, 2, 2]
+1 [2, 2, 2]
+2 [2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  3
+**** TRAINING
+0 [2, 2, 2]
+1 [2, 2, 2]
+2 [2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  4
+**** TRAINING
+0 [2, 2, 2]
+1 [2, 2, 2]
+2 [2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  5
+**** TRAINING
+0 [2, 2, 2]
+1 [2, 2, 2]
+2 [2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  6
+**** TRAINING
+0 [2, 2, 2]
+1 [2, 2, 2]
+2 [2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  7
+**** TRAINING
+0 [2, 2, 2]
+1 [2, 2, 2]
+2 [2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  8
+**** TRAINING
+0 [2, 2, 2]
+1 [2, 2, 2]
+2 [2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  9
+**** TRAINING
+0 [2, 2, 2]
+1 [2, 2, 2]
+2 [2, 2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  10
+**** TRAINING
+0 [2, 2, 2]
+1 [2, 2, 2]
+2 [2, 2, 2]
+**** TEST Classifier  ncmc-2
+RESULTS:  thyroid k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.426584  0.816074
+FOLD 2          0.434312  0.779753
+FOLD 3          0.462133  0.938949
+FOLD 4          0.442130  0.801698
+FOLD 5          0.467232  0.816500
+FOLD 6          0.463377  0.798766
+FOLD 7          0.513493  0.789514
+FOLD 8          0.437934  0.787972
+FOLD 9          0.431766  0.832691
+FOLD 10         0.453354  0.801850
+MEAN            0.453231  0.816377
+RESULTS:  thyroid k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.506849  0.815068
+FOLD 2          0.369863  0.760274
+FOLD 3          0.472603  0.904110
+FOLD 4          0.493056  0.777778
+FOLD 5          0.405594  0.874126
+FOLD 6          0.342657  0.832168
+FOLD 7          0.433566  0.762238
+FOLD 8          0.405594  0.797203
+FOLD 9          0.475524  0.846154
+FOLD 10         0.489510  0.713287
+MEAN            0.439482  0.808240
+RESULTS:  thyroid k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.544049            0.724111
+FOLD 2              0.454405            0.595054
+FOLD 3              0.559505            0.859351
+FOLD 4              0.584105            0.611883
+FOLD 5              0.568234            0.655359
+FOLD 6              0.605243            0.712413
+FOLD 7              0.633770            0.646106
+FOLD 8              0.607556            0.670779
+FOLD 9              0.584426            0.686970
+FOLD 10             0.583655            0.713184
+MEAN                0.572495            0.687521
+RESULTS:  thyroid k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.602740            0.712329
+FOLD 2              0.424658            0.616438
+FOLD 3              0.527397            0.821918
+FOLD 4              0.520833            0.604167
+FOLD 5              0.601399            0.727273
+FOLD 6              0.559441            0.769231
+FOLD 7              0.636364            0.587413
+FOLD 8              0.580420            0.678322
+FOLD 9              0.566434            0.706294
+FOLD 10             0.538462            0.699301
+MEAN                0.555815            0.692268
+RESULTS:  thyroid k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.608192                 0.0
+FOLD 2              0.602009                 0.0
+FOLD 3              0.593509                 0.0
+FOLD 4              0.577932                 0.0
+FOLD 5              0.577487                 0.0
+FOLD 6              0.592907                 0.0
+FOLD 7              0.612953                 0.0
+FOLD 8              0.609869                 0.0
+FOLD 9              0.603701                 0.0
+FOLD 10             0.581342                 0.0
+MEAN                0.595990                 0.0
+RESULTS:  thyroid k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.609589                 0.0
+FOLD 2              0.575342                 0.0
+FOLD 3              0.589041                 0.0
+FOLD 4              0.479167                 0.0
+FOLD 5              0.538462                 0.0
+FOLD 6              0.531469                 0.0
+FOLD 7              0.615385                 0.0
+FOLD 8              0.615385                 0.0
+FOLD 9              0.531469                 0.0
+FOLD 10             0.545455                 0.0
+MEAN                0.563076                 0.0
+** TESTING DML  NCMC
+*** FOLD  1
+**** TRAINING
+0 [3, 3, 3]
+1 [3, 3, 3]
+2 [3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  2
+**** TRAINING
+0 [3, 3, 3]
+1 [3, 3, 3]
+2 [3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  3
+**** TRAINING
+0 [3, 3, 3]
+1 [3, 3, 3]
+2 [3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  4
+**** TRAINING
+0 [3, 3, 3]
+1 [3, 3, 3]
+2 [3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  5
+**** TRAINING
+0 [3, 3, 3]
+1 [3, 3, 3]
+2 [3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  6
+**** TRAINING
+0 [3, 3, 3]
+1 [3, 3, 3]
+2 [3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  7
+**** TRAINING
+0 [3, 3, 3]
+1 [3, 3, 3]
+2 [3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  8
+**** TRAINING
+0 [3, 3, 3]
+1 [3, 3, 3]
+2 [3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  9
+**** TRAINING
+0 [3, 3, 3]
+1 [3, 3, 3]
+2 [3, 3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  10
+**** TRAINING
+0 [3, 3, 3]
+1 [3, 3, 3]
+2 [3, 3, 3]
+**** TEST Classifier  ncmc-3
+RESULTS:  thyroid k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.426584  0.816074
+FOLD 2          0.434312  0.779753
+FOLD 3          0.462133  0.938949
+FOLD 4          0.442130  0.801698
+FOLD 5          0.467232  0.816500
+FOLD 6          0.463377  0.798766
+FOLD 7          0.513493  0.789514
+FOLD 8          0.437934  0.787972
+FOLD 9          0.431766  0.832691
+FOLD 10         0.453354  0.801850
+MEAN            0.453231  0.816377
+RESULTS:  thyroid k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.506849  0.815068
+FOLD 2          0.369863  0.760274
+FOLD 3          0.472603  0.904110
+FOLD 4          0.493056  0.777778
+FOLD 5          0.405594  0.874126
+FOLD 6          0.342657  0.832168
+FOLD 7          0.433566  0.762238
+FOLD 8          0.405594  0.797203
+FOLD 9          0.475524  0.846154
+FOLD 10         0.489510  0.713287
+MEAN            0.439482  0.808240
+RESULTS:  thyroid k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.544049            0.724111
+FOLD 2              0.454405            0.595054
+FOLD 3              0.559505            0.859351
+FOLD 4              0.584105            0.611883
+FOLD 5              0.568234            0.655359
+FOLD 6              0.605243            0.712413
+FOLD 7              0.633770            0.646106
+FOLD 8              0.607556            0.670779
+FOLD 9              0.584426            0.686970
+FOLD 10             0.583655            0.713184
+MEAN                0.572495            0.687521
+RESULTS:  thyroid k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.602740            0.712329
+FOLD 2              0.424658            0.616438
+FOLD 3              0.527397            0.821918
+FOLD 4              0.520833            0.604167
+FOLD 5              0.601399            0.727273
+FOLD 6              0.559441            0.769231
+FOLD 7              0.636364            0.587413
+FOLD 8              0.580420            0.678322
+FOLD 9              0.566434            0.706294
+FOLD 10             0.538462            0.699301
+MEAN                0.555815            0.692268
+RESULTS:  thyroid k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.608192            0.736476
+FOLD 2              0.602009            0.733385
+FOLD 3              0.593509            0.878671
+FOLD 4              0.577932            0.725309
+FOLD 5              0.577487            0.763300
+FOLD 6              0.592907            0.727062
+FOLD 7              0.612953            0.727833
+FOLD 8              0.609869            0.728604
+FOLD 9              0.603701            0.712413
+FOLD 10             0.581342            0.736315
+MEAN                0.595990            0.746937
+RESULTS:  thyroid k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.609589            0.767123
+FOLD 2              0.575342            0.698630
+FOLD 3              0.589041            0.876712
+FOLD 4              0.479167            0.680556
+FOLD 5              0.538462            0.741259
+FOLD 6              0.531469            0.755245
+FOLD 7              0.615385            0.734266
+FOLD 8              0.615385            0.713287
+FOLD 9              0.531469            0.755245
+FOLD 10             0.545455            0.636364
+MEAN                0.563076            0.735869
+RESULTS:  thyroid k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.426584  0.816074
+FOLD 2          0.434312  0.779753
+FOLD 3          0.462133  0.938949
+FOLD 4          0.442130  0.801698
+FOLD 5          0.467232  0.816500
+FOLD 6          0.463377  0.798766
+FOLD 7          0.513493  0.789514
+FOLD 8          0.437934  0.787972
+FOLD 9          0.431766  0.832691
+FOLD 10         0.453354  0.801850
+MEAN            0.453231  0.816377
+RESULTS:  thyroid k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.506849  0.815068
+FOLD 2          0.369863  0.760274
+FOLD 3          0.472603  0.904110
+FOLD 4          0.493056  0.777778
+FOLD 5          0.405594  0.874126
+FOLD 6          0.342657  0.832168
+FOLD 7          0.433566  0.762238
+FOLD 8          0.405594  0.797203
+FOLD 9          0.475524  0.846154
+FOLD 10         0.489510  0.713287
+MEAN            0.439482  0.808240
+RESULTS:  thyroid k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.544049            0.724111
+FOLD 2              0.454405            0.595054
+FOLD 3              0.559505            0.859351
+FOLD 4              0.584105            0.611883
+FOLD 5              0.568234            0.655359
+FOLD 6              0.605243            0.712413
+FOLD 7              0.633770            0.646106
+FOLD 8              0.607556            0.670779
+FOLD 9              0.584426            0.686970
+FOLD 10             0.583655            0.713184
+MEAN                0.572495            0.687521
+RESULTS:  thyroid k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.602740            0.712329
+FOLD 2              0.424658            0.616438
+FOLD 3              0.527397            0.821918
+FOLD 4              0.520833            0.604167
+FOLD 5              0.601399            0.727273
+FOLD 6              0.559441            0.769231
+FOLD 7              0.636364            0.587413
+FOLD 8              0.580420            0.678322
+FOLD 9              0.566434            0.706294
+FOLD 10             0.538462            0.699301
+MEAN                0.555815            0.692268
+RESULTS:  thyroid k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.608192            0.736476
+FOLD 2              0.602009            0.733385
+FOLD 3              0.593509            0.878671
+FOLD 4              0.577932            0.725309
+FOLD 5              0.577487            0.763300
+FOLD 6              0.592907            0.727062
+FOLD 7              0.612953            0.727833
+FOLD 8              0.609869            0.728604
+FOLD 9              0.603701            0.712413
+FOLD 10             0.581342            0.736315
+MEAN                0.595990            0.746937
+RESULTS:  thyroid k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.609589            0.767123
+FOLD 2              0.575342            0.698630
+FOLD 3              0.589041            0.876712
+FOLD 4              0.479167            0.680556
+FOLD 5              0.538462            0.741259
+FOLD 6              0.531469            0.755245
+FOLD 7              0.615385            0.734266
+FOLD 8              0.615385            0.713287
+FOLD 9              0.531469            0.755245
+FOLD 10             0.545455            0.636364
+MEAN                0.563076            0.735869
+* DATASET  magic
+** NORMALIZING FOLD  1
+** NORMALIZING FOLD  2
+** NORMALIZING FOLD  3
+** NORMALIZING FOLD  4
+** NORMALIZING FOLD  5
+** NORMALIZING FOLD  6
+** NORMALIZING FOLD  7
+** NORMALIZING FOLD  8
+** NORMALIZING FOLD  9
+** NORMALIZING FOLD  10
+** TESTING DML  Euclidean
+*** FOLD  1
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  2
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  3
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  4
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  5
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  6
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  7
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  8
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  9
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+*** FOLD  10
+**** TRAINING
+**** TEST Classifier  ncm
+**** TEST Classifier  ncmc-2
+**** TEST Classifier  ncmc-3
+RESULTS:  magic k =  ncm  [TRAIN] 
+         Euclidean + NCM  NCMML
+FOLD 1          0.775701    0.0
+FOLD 2          0.775117    0.0
+FOLD 3          0.770444    0.0
+FOLD 4          0.771028    0.0
+FOLD 5          0.773497    0.0
+FOLD 6          0.769410    0.0
+FOLD 7          0.766492    0.0
+FOLD 8          0.768243    0.0
+FOLD 9          0.777583    0.0
+FOLD 10         0.764877    0.0
+MEAN            0.771239    0.0
+RESULTS:  magic k =  ncm  [TEST] 
+         Euclidean + NCM  NCMML
+FOLD 1          0.759162    0.0
+FOLD 2          0.727749    0.0
+FOLD 3          0.785340    0.0
+FOLD 4          0.785340    0.0
+FOLD 5          0.731579    0.0
+FOLD 6          0.773684    0.0
+FOLD 7          0.800000    0.0
+FOLD 8          0.800000    0.0
+FOLD 9          0.694737    0.0
+FOLD 10         0.835979    0.0
+MEAN            0.769357    0.0
+RESULTS:  magic k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.779790                 0.0
+FOLD 2              0.782710                 0.0
+FOLD 3              0.779206                 0.0
+FOLD 4              0.776869                 0.0
+FOLD 5              0.778751                 0.0
+FOLD 6              0.776999                 0.0
+FOLD 7              0.772329                 0.0
+FOLD 8              0.779918                 0.0
+FOLD 9              0.785172                 0.0
+FOLD 10             0.774796                 0.0
+MEAN                0.778654                 0.0
+RESULTS:  magic k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.785340                 0.0
+FOLD 2              0.732984                 0.0
+FOLD 3              0.774869                 0.0
+FOLD 4              0.795812                 0.0
+FOLD 5              0.768421                 0.0
+FOLD 6              0.784211                 0.0
+FOLD 7              0.810526                 0.0
+FOLD 8              0.778947                 0.0
+FOLD 9              0.721053                 0.0
+FOLD 10             0.793651                 0.0
+MEAN                0.774581                 0.0
+RESULTS:  magic k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.756425                 0.0
+FOLD 2              0.769276                 0.0
+FOLD 3              0.748248                 0.0
+FOLD 4              0.751752                 0.0
+FOLD 5              0.767075                 0.0
+FOLD 6              0.762989                 0.0
+FOLD 7              0.762405                 0.0
+FOLD 8              0.768243                 0.0
+FOLD 9              0.758903                 0.0
+FOLD 10             0.755543                 0.0
+MEAN                0.760086                 0.0
+RESULTS:  magic k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.774869                 0.0
+FOLD 2              0.727749                 0.0
+FOLD 3              0.732984                 0.0
+FOLD 4              0.722513                 0.0
+FOLD 5              0.752632                 0.0
+FOLD 6              0.747368                 0.0
+FOLD 7              0.773684                 0.0
+FOLD 8              0.715789                 0.0
+FOLD 9              0.784211                 0.0
+FOLD 10             0.777778                 0.0
+MEAN                0.750958                 0.0
+** TESTING DML  NCMML
+*** FOLD  1
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  2
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  3
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  4
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  5
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  6
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  7
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  8
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  9
+**** TRAINING
+**** TEST Classifier  ncm
+*** FOLD  10
+**** TRAINING
+**** TEST Classifier  ncm
+RESULTS:  magic k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.775701  0.776869
+FOLD 2          0.775117  0.785047
+FOLD 3          0.770444  0.777453
+FOLD 4          0.771028  0.775117
+FOLD 5          0.773497  0.779918
+FOLD 6          0.769410  0.782253
+FOLD 7          0.766492  0.778167
+FOLD 8          0.768243  0.775248
+FOLD 9          0.777583  0.785756
+FOLD 10         0.764877  0.774212
+MEAN            0.771239  0.779004
+RESULTS:  magic k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.759162  0.774869
+FOLD 2          0.727749  0.732984
+FOLD 3          0.785340  0.806283
+FOLD 4          0.785340  0.780105
+FOLD 5          0.731579  0.789474
+FOLD 6          0.773684  0.773684
+FOLD 7          0.800000  0.778947
+FOLD 8          0.800000  0.773684
+FOLD 9          0.694737  0.726316
+FOLD 10         0.835979  0.814815
+MEAN            0.769357  0.775116
+RESULTS:  magic k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.779790                 0.0
+FOLD 2              0.782710                 0.0
+FOLD 3              0.779206                 0.0
+FOLD 4              0.776869                 0.0
+FOLD 5              0.778751                 0.0
+FOLD 6              0.776999                 0.0
+FOLD 7              0.772329                 0.0
+FOLD 8              0.779918                 0.0
+FOLD 9              0.785172                 0.0
+FOLD 10             0.774796                 0.0
+MEAN                0.778654                 0.0
+RESULTS:  magic k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.785340                 0.0
+FOLD 2              0.732984                 0.0
+FOLD 3              0.774869                 0.0
+FOLD 4              0.795812                 0.0
+FOLD 5              0.768421                 0.0
+FOLD 6              0.784211                 0.0
+FOLD 7              0.810526                 0.0
+FOLD 8              0.778947                 0.0
+FOLD 9              0.721053                 0.0
+FOLD 10             0.793651                 0.0
+MEAN                0.774581                 0.0
+RESULTS:  magic k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.756425                 0.0
+FOLD 2              0.769276                 0.0
+FOLD 3              0.748248                 0.0
+FOLD 4              0.751752                 0.0
+FOLD 5              0.767075                 0.0
+FOLD 6              0.762989                 0.0
+FOLD 7              0.762405                 0.0
+FOLD 8              0.768243                 0.0
+FOLD 9              0.758903                 0.0
+FOLD 10             0.755543                 0.0
+MEAN                0.760086                 0.0
+RESULTS:  magic k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.774869                 0.0
+FOLD 2              0.727749                 0.0
+FOLD 3              0.732984                 0.0
+FOLD 4              0.722513                 0.0
+FOLD 5              0.752632                 0.0
+FOLD 6              0.747368                 0.0
+FOLD 7              0.773684                 0.0
+FOLD 8              0.715789                 0.0
+FOLD 9              0.784211                 0.0
+FOLD 10             0.777778                 0.0
+MEAN                0.750958                 0.0
+** TESTING DML  NCMC
+*** FOLD  1
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  2
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  3
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  4
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  5
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  6
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  7
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  8
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  9
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+*** FOLD  10
+**** TRAINING
+0 [2, 2]
+1 [2, 2]
+**** TEST Classifier  ncmc-2
+RESULTS:  magic k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.775701  0.776869
+FOLD 2          0.775117  0.785047
+FOLD 3          0.770444  0.777453
+FOLD 4          0.771028  0.775117
+FOLD 5          0.773497  0.779918
+FOLD 6          0.769410  0.782253
+FOLD 7          0.766492  0.778167
+FOLD 8          0.768243  0.775248
+FOLD 9          0.777583  0.785756
+FOLD 10         0.764877  0.774212
+MEAN            0.771239  0.779004
+RESULTS:  magic k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.759162  0.774869
+FOLD 2          0.727749  0.732984
+FOLD 3          0.785340  0.806283
+FOLD 4          0.785340  0.780105
+FOLD 5          0.731579  0.789474
+FOLD 6          0.773684  0.773684
+FOLD 7          0.800000  0.778947
+FOLD 8          0.800000  0.773684
+FOLD 9          0.694737  0.726316
+FOLD 10         0.835979  0.814815
+MEAN            0.769357  0.775116
+RESULTS:  magic k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.779790            0.796729
+FOLD 2              0.782710            0.800818
+FOLD 3              0.779206            0.794393
+FOLD 4              0.776869            0.790888
+FOLD 5              0.778751            0.790426
+FOLD 6              0.776999            0.798599
+FOLD 7              0.772329            0.795680
+FOLD 8              0.779918            0.793929
+FOLD 9              0.785172            0.792761
+FOLD 10             0.774796            0.792882
+MEAN                0.778654            0.794710
+RESULTS:  magic k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.785340            0.816754
+FOLD 2              0.732984            0.743455
+FOLD 3              0.774869            0.774869
+FOLD 4              0.795812            0.769634
+FOLD 5              0.768421            0.773684
+FOLD 6              0.784211            0.778947
+FOLD 7              0.810526            0.815789
+FOLD 8              0.778947            0.800000
+FOLD 9              0.721053            0.794737
+FOLD 10             0.793651            0.793651
+MEAN                0.774581            0.786152
+RESULTS:  magic k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.756425                 0.0
+FOLD 2              0.769276                 0.0
+FOLD 3              0.748248                 0.0
+FOLD 4              0.751752                 0.0
+FOLD 5              0.767075                 0.0
+FOLD 6              0.762989                 0.0
+FOLD 7              0.762405                 0.0
+FOLD 8              0.768243                 0.0
+FOLD 9              0.758903                 0.0
+FOLD 10             0.755543                 0.0
+MEAN                0.760086                 0.0
+RESULTS:  magic k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.774869                 0.0
+FOLD 2              0.727749                 0.0
+FOLD 3              0.732984                 0.0
+FOLD 4              0.722513                 0.0
+FOLD 5              0.752632                 0.0
+FOLD 6              0.747368                 0.0
+FOLD 7              0.773684                 0.0
+FOLD 8              0.715789                 0.0
+FOLD 9              0.784211                 0.0
+FOLD 10             0.777778                 0.0
+MEAN                0.750958                 0.0
+** TESTING DML  NCMC
+*** FOLD  1
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  2
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  3
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  4
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  5
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  6
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  7
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  8
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  9
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+*** FOLD  10
+**** TRAINING
+0 [3, 3]
+1 [3, 3]
+**** TEST Classifier  ncmc-3
+RESULTS:  magic k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.775701  0.776869
+FOLD 2          0.775117  0.785047
+FOLD 3          0.770444  0.777453
+FOLD 4          0.771028  0.775117
+FOLD 5          0.773497  0.779918
+FOLD 6          0.769410  0.782253
+FOLD 7          0.766492  0.778167
+FOLD 8          0.768243  0.775248
+FOLD 9          0.777583  0.785756
+FOLD 10         0.764877  0.774212
+MEAN            0.771239  0.779004
+RESULTS:  magic k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.759162  0.774869
+FOLD 2          0.727749  0.732984
+FOLD 3          0.785340  0.806283
+FOLD 4          0.785340  0.780105
+FOLD 5          0.731579  0.789474
+FOLD 6          0.773684  0.773684
+FOLD 7          0.800000  0.778947
+FOLD 8          0.800000  0.773684
+FOLD 9          0.694737  0.726316
+FOLD 10         0.835979  0.814815
+MEAN            0.769357  0.775116
+RESULTS:  magic k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.779790            0.796729
+FOLD 2              0.782710            0.800818
+FOLD 3              0.779206            0.794393
+FOLD 4              0.776869            0.790888
+FOLD 5              0.778751            0.790426
+FOLD 6              0.776999            0.798599
+FOLD 7              0.772329            0.795680
+FOLD 8              0.779918            0.793929
+FOLD 9              0.785172            0.792761
+FOLD 10             0.774796            0.792882
+MEAN                0.778654            0.794710
+RESULTS:  magic k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.785340            0.816754
+FOLD 2              0.732984            0.743455
+FOLD 3              0.774869            0.774869
+FOLD 4              0.795812            0.769634
+FOLD 5              0.768421            0.773684
+FOLD 6              0.784211            0.778947
+FOLD 7              0.810526            0.815789
+FOLD 8              0.778947            0.800000
+FOLD 9              0.721053            0.794737
+FOLD 10             0.793651            0.793651
+MEAN                0.774581            0.786152
+RESULTS:  magic k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.756425            0.787383
+FOLD 2              0.769276            0.790304
+FOLD 3              0.748248            0.783879
+FOLD 4              0.751752            0.771612
+FOLD 5              0.767075            0.776999
+FOLD 6              0.762989            0.779335
+FOLD 7              0.762405            0.768243
+FOLD 8              0.768243            0.791594
+FOLD 9              0.758903            0.790426
+FOLD 10             0.755543            0.780630
+MEAN                0.760086            0.782040
+RESULTS:  magic k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.774869            0.806283
+FOLD 2              0.727749            0.732984
+FOLD 3              0.732984            0.717277
+FOLD 4              0.722513            0.748691
+FOLD 5              0.752632            0.773684
+FOLD 6              0.747368            0.810526
+FOLD 7              0.773684            0.789474
+FOLD 8              0.715789            0.747368
+FOLD 9              0.784211            0.810526
+FOLD 10             0.777778            0.814815
+MEAN                0.750958            0.775163
+RESULTS:  magic k =  ncm  [TRAIN] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.775701  0.776869
+FOLD 2          0.775117  0.785047
+FOLD 3          0.770444  0.777453
+FOLD 4          0.771028  0.775117
+FOLD 5          0.773497  0.779918
+FOLD 6          0.769410  0.782253
+FOLD 7          0.766492  0.778167
+FOLD 8          0.768243  0.775248
+FOLD 9          0.777583  0.785756
+FOLD 10         0.764877  0.774212
+MEAN            0.771239  0.779004
+RESULTS:  magic k =  ncm  [TEST] 
+         Euclidean + NCM     NCMML
+FOLD 1          0.759162  0.774869
+FOLD 2          0.727749  0.732984
+FOLD 3          0.785340  0.806283
+FOLD 4          0.785340  0.780105
+FOLD 5          0.731579  0.789474
+FOLD 6          0.773684  0.773684
+FOLD 7          0.800000  0.778947
+FOLD 8          0.800000  0.773684
+FOLD 9          0.694737  0.726316
+FOLD 10         0.835979  0.814815
+MEAN            0.769357  0.775116
+RESULTS:  magic k =  ncmc-2  [TRAIN] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.779790            0.796729
+FOLD 2              0.782710            0.800818
+FOLD 3              0.779206            0.794393
+FOLD 4              0.776869            0.790888
+FOLD 5              0.778751            0.790426
+FOLD 6              0.776999            0.798599
+FOLD 7              0.772329            0.795680
+FOLD 8              0.779918            0.793929
+FOLD 9              0.785172            0.792761
+FOLD 10             0.774796            0.792882
+MEAN                0.778654            0.794710
+RESULTS:  magic k =  ncmc-2  [TEST] 
+         Euclidean + NCM (2)  NCMC (2 centroids)
+FOLD 1              0.785340            0.816754
+FOLD 2              0.732984            0.743455
+FOLD 3              0.774869            0.774869
+FOLD 4              0.795812            0.769634
+FOLD 5              0.768421            0.773684
+FOLD 6              0.784211            0.778947
+FOLD 7              0.810526            0.815789
+FOLD 8              0.778947            0.800000
+FOLD 9              0.721053            0.794737
+FOLD 10             0.793651            0.793651
+MEAN                0.774581            0.786152
+RESULTS:  magic k =  ncmc-3  [TRAIN] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.756425            0.787383
+FOLD 2              0.769276            0.790304
+FOLD 3              0.748248            0.783879
+FOLD 4              0.751752            0.771612
+FOLD 5              0.767075            0.776999
+FOLD 6              0.762989            0.779335
+FOLD 7              0.762405            0.768243
+FOLD 8              0.768243            0.791594
+FOLD 9              0.758903            0.790426
+FOLD 10             0.755543            0.780630
+MEAN                0.760086            0.782040
+RESULTS:  magic k =  ncmc-3  [TEST] 
+         Euclidean + NCM (3)  NCMC (3 centroids)
+FOLD 1              0.774869            0.806283
+FOLD 2              0.727749            0.732984
+FOLD 3              0.732984            0.717277
+FOLD 4              0.722513            0.748691
+FOLD 5              0.752632            0.773684
+FOLD 6              0.747368            0.810526
+FOLD 7              0.773684            0.789474
+FOLD 8              0.715789            0.747368
+FOLD 9              0.784211            0.810526
+FOLD 10             0.777778            0.814815
+MEAN                0.750958            0.775163

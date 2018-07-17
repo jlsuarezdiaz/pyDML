@@ -1,0 +1,1653 @@
+Collecting numpy
+  Using cached https://files.pythonhosted.org/packages/68/1e/116ad560de97694e2d0c1843a7a0075cc9f49e922454d32f49a80eb6f1f2/numpy-1.14.5-cp36-cp36m-manylinux1_x86_64.whl
+Installing collected packages: numpy
+Requirement already up-to-date: pandas in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: python-dateutil>=2.5.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: numpy>=1.9.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: pytz>=2011k in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: six>=1.5 in /usr/local/lib/python3.6/site-packages (from python-dateutil>=2.5.0->pandas)
+Requirement already up-to-date: Cython in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: arff in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: scikit-learn in /usr/local/lib/python3.6/site-packages
+Requirement already up-to-date: matplotlib in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: python-dateutil>=2.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: kiwisolver>=1.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: numpy>=1.7.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: six>=1.10 in /usr/local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pytz in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: cycler>=0.10 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Collecting setuptools (from kiwisolver>=1.0.1->matplotlib)
+  Using cached https://files.pythonhosted.org/packages/7f/e1/820d941153923aac1d49d7fc37e17b6e73bfbd2904959fffbad77900cf92/setuptools-39.2.0-py2.py3-none-any.whl
+Installing collected packages: setuptools
+Requirement already up-to-date: seaborn in /home/jlsuarez/.local/lib/python3.6/site-packages
+Python 3.6.4
+Please put "# distutils: language=c++" in your .pyx or .pxd file(s)
+running build_ext
+building 'dml.ncmc' extension
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/local/include/python3.6m -c dml/ncmc.cpp -o build/temp.linux-x86_64-3.6/dml/ncmc.o
+g++ -pthread -shared build/temp.linux-x86_64-3.6/dml/ncmc.o -o build/lib.linux-x86_64-3.6/dml/ncmc.cpython-36m-x86_64-linux-gnu.so
+building 'dml.ncmml' extension
+gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/local/include/python3.6m -c dml/ncmml.cpp -o build/temp.linux-x86_64-3.6/dml/ncmml.o
+g++ -pthread -shared build/temp.linux-x86_64-3.6/dml/ncmml.o -o build/lib.linux-x86_64-3.6/dml/ncmml.cpython-36m-x86_64-linux-gnu.so
+copying build/lib.linux-x86_64-3.6/dml/anmm.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_eig.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_utils.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dmlmj.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/itml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/kda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ldml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lmnn.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lsi.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/mcml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/nca.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmc.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/pca.cpython-36m-x86_64-linux-gnu.so -> dml
+Requirement already up-to-date: numpy in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: pandas in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: pytz>=2011k in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: python-dateutil>=2.5.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: numpy>=1.9.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: six>=1.5 in /usr/local/lib/python3.6/site-packages (from python-dateutil>=2.5.0->pandas)
+Requirement already up-to-date: Cython in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: arff in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: scikit-learn in /usr/local/lib/python3.6/site-packages
+Requirement already up-to-date: matplotlib in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: kiwisolver>=1.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: python-dateutil>=2.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: cycler>=0.10 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: numpy>=1.7.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pytz in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: six>=1.10 in /usr/local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: setuptools in /home/jlsuarez/.local/lib/python3.6/site-packages (from kiwisolver>=1.0.1->matplotlib)
+Requirement already up-to-date: seaborn in /home/jlsuarez/.local/lib/python3.6/site-packages
+Python 3.6.4
+Please put "# distutils: language=c++" in your .pyx or .pxd file(s)
+running build_ext
+copying build/lib.linux-x86_64-3.6/dml/anmm.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_eig.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_utils.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dmlmj.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/itml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/kda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ldml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lmnn.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lsi.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/mcml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/nca.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmc.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/pca.cpython-36m-x86_64-linux-gnu.so -> dml
+Requirement already up-to-date: numpy in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: pandas in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: python-dateutil>=2.5.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: pytz>=2011k in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: numpy>=1.9.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas)
+Requirement already up-to-date: six>=1.5 in /usr/local/lib/python3.6/site-packages (from python-dateutil>=2.5.0->pandas)
+Requirement already up-to-date: Cython in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: arff in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: scikit-learn in /usr/local/lib/python3.6/site-packages
+Requirement already up-to-date: matplotlib in /home/jlsuarez/.local/lib/python3.6/site-packages
+Requirement already up-to-date: cycler>=0.10 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pytz in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: kiwisolver>=1.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: numpy>=1.7.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: python-dateutil>=2.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: six>=1.10 in /usr/local/lib/python3.6/site-packages (from matplotlib)
+Requirement already up-to-date: setuptools in /home/jlsuarez/.local/lib/python3.6/site-packages (from kiwisolver>=1.0.1->matplotlib)
+Requirement already up-to-date: seaborn in /home/jlsuarez/.local/lib/python3.6/site-packages
+Python 3.6.4
+Please put "# distutils: language=c++" in your .pyx or .pxd file(s)
+running build_ext
+copying build/lib.linux-x86_64-3.6/dml/anmm.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_eig.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_utils.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dmlmj.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/itml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/kda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lda.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ldml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lmnn.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/lsi.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/mcml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/nca.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmc.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/ncmml.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/pca.cpython-36m-x86_64-linux-gnu.so -> dml
+* DATASET  spambase
+** NORMALIZING FOLD  1
+** NORMALIZING FOLD  2
+** NORMALIZING FOLD  3
+** NORMALIZING FOLD  4
+** NORMALIZING FOLD  5
+** NORMALIZING FOLD  6
+** NORMALIZING FOLD  7
+** NORMALIZING FOLD  8
+** NORMALIZING FOLD  9
+** NORMALIZING FOLD  10
+** TESTING DML  LDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+RESULTS:  spambase k =  3  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.878935  0.941889  0.886199    ...     0.917676  0.878935  0.920097
+FOLD 2    0.842615  0.920097  0.876513    ...     0.905569  0.842615  0.910412
+FOLD 3    0.847826  0.934783  0.874396    ...     0.917874  0.847826  0.946860
+FOLD 4    0.852657  0.915459  0.891304    ...     0.903382  0.852657  0.937198
+FOLD 5    0.847826  0.903382  0.857488    ...     0.908213  0.847826  0.917874
+FOLD 6    0.833333  0.913043  0.876812    ...     0.893720  0.833333  0.920290
+FOLD 7    0.867150  0.925121  0.881643    ...     0.905797  0.867150  0.942029
+FOLD 8    0.842995  0.915459  0.903382    ...     0.908213  0.842995  0.922705
+FOLD 9    0.838554  0.922892  0.867470    ...     0.910843  0.838554  0.901205
+FOLD 10   0.848193  0.922892  0.886747    ...     0.906024  0.848193  0.910843
+MEAN      0.850008  0.921501  0.880195    ...     0.907731  0.850008  0.922951
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  3  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.851064  0.851064  0.787234    ...     0.851064  0.851064  0.787234
+FOLD 2    0.872340  0.914894  0.872340    ...     0.936170  0.872340  0.893617
+FOLD 3    0.826087  0.739130  0.826087    ...     0.804348  0.826087  0.847826
+FOLD 4    0.869565  0.934783  0.869565    ...     0.934783  0.869565  0.956522
+FOLD 5    0.891304  0.956522  0.913043    ...     0.956522  0.891304  0.956522
+FOLD 6    0.847826  0.956522  0.869565    ...     0.934783  0.847826  0.913043
+FOLD 7    0.760870  0.782609  0.782609    ...     0.804348  0.760870  0.804348
+FOLD 8    0.891304  0.891304  0.913043    ...     0.891304  0.891304  0.934783
+FOLD 9    0.933333  0.911111  0.977778    ...     0.977778  0.933333  0.933333
+FOLD 10   0.911111  0.933333  0.955556    ...     0.955556  0.911111  0.955556
+MEAN      0.865481  0.887127  0.876682    ...     0.904665  0.865481  0.898278
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  5  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.869249  0.949153  0.878935    ...     0.927361  0.869249  0.924939
+FOLD 2    0.849879  0.924939  0.878935    ...     0.915254  0.849879  0.915254
+FOLD 3    0.855072  0.934783  0.857488    ...     0.925121  0.855072  0.951691
+FOLD 4    0.855072  0.925121  0.917874    ...     0.908213  0.855072  0.942029
+FOLD 5    0.852657  0.913043  0.871981    ...     0.913043  0.852657  0.908213
+FOLD 6    0.855072  0.910628  0.884058    ...     0.910628  0.855072  0.932367
+FOLD 7    0.869565  0.934783  0.888889    ...     0.920290  0.869565  0.942029
+FOLD 8    0.857488  0.929952  0.903382    ...     0.898551  0.857488  0.920290
+FOLD 9    0.853012  0.927711  0.862651    ...     0.908434  0.853012  0.920482
+FOLD 10   0.862651  0.920482  0.901205    ...     0.910843  0.862651  0.918072
+MEAN      0.857972  0.927059  0.884540    ...     0.913774  0.857972  0.927537
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  5  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.829787  0.851064  0.829787    ...     0.829787  0.829787  0.808511
+FOLD 2    0.851064  0.914894  0.851064    ...     0.914894  0.851064  0.914894
+FOLD 3    0.782609  0.782609  0.760870    ...     0.847826  0.782609  0.847826
+FOLD 4    0.913043  0.934783  0.913043    ...     0.934783  0.913043  0.934783
+FOLD 5    0.913043  0.978261  0.934783    ...     0.956522  0.913043  0.978261
+FOLD 6    0.913043  0.934783  0.891304    ...     0.956522  0.913043  0.934783
+FOLD 7    0.695652  0.782609  0.804348    ...     0.847826  0.695652  0.826087
+FOLD 8    0.826087  0.913043  0.934783    ...     0.869565  0.826087  0.913043
+FOLD 9    0.977778  0.933333  1.000000    ...     0.977778  0.977778  0.933333
+FOLD 10   0.911111  0.911111  0.955556    ...     0.933333  0.911111  0.955556
+MEAN      0.861322  0.893649  0.887554    ...     0.906884  0.861322  0.904708
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  7  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.869249  0.953995  0.874092    ...     0.927361  0.869249  0.927361
+FOLD 2    0.849879  0.922518  0.891041    ...     0.922518  0.849879  0.915254
+FOLD 3    0.859903  0.939614  0.867150    ...     0.922705  0.859903  0.944444
+FOLD 4    0.855072  0.934783  0.913043    ...     0.913043  0.855072  0.942029
+FOLD 5    0.845411  0.927536  0.871981    ...     0.915459  0.845411  0.920290
+FOLD 6    0.852657  0.915459  0.898551    ...     0.908213  0.852657  0.932367
+FOLD 7    0.867150  0.939614  0.874396    ...     0.920290  0.867150  0.939614
+FOLD 8    0.857488  0.927536  0.908213    ...     0.905797  0.857488  0.920290
+FOLD 9    0.855422  0.932530  0.869880    ...     0.903614  0.855422  0.925301
+FOLD 10   0.862651  0.930120  0.891566    ...     0.925301  0.862651  0.922892
+MEAN      0.857488  0.932370  0.885991    ...     0.916430  0.857488  0.928984
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  7  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.787234  0.851064  0.808511    ...     0.829787  0.787234  0.808511
+FOLD 2    0.829787  0.914894  0.872340    ...     0.914894  0.829787  0.893617
+FOLD 3    0.739130  0.826087  0.782609    ...     0.826087  0.739130  0.847826
+FOLD 4    0.869565  0.934783  0.913043    ...     0.934783  0.869565  0.934783
+FOLD 5    0.913043  0.978261  0.956522    ...     0.978261  0.913043  0.978261
+FOLD 6    0.869565  0.934783  0.934783    ...     0.934783  0.869565  0.956522
+FOLD 7    0.695652  0.804348  0.739130    ...     0.847826  0.695652  0.826087
+FOLD 8    0.847826  0.913043  0.913043    ...     0.891304  0.847826  0.891304
+FOLD 9    0.955556  0.955556  0.955556    ...     0.977778  0.955556  0.955556
+FOLD 10   0.888889  0.933333  0.933333    ...     0.911111  0.888889  0.955556
+MEAN      0.839625  0.904615  0.880887    ...     0.904661  0.839625  0.904802
+
+[11 rows x 10 columns]
+** TESTING DML  MCML
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+RESULTS:  spambase k =  3  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.878935  0.941889  0.886199    ...     0.917676  0.932203  0.920097
+FOLD 2    0.842615  0.920097  0.876513    ...     0.905569  0.903148  0.910412
+FOLD 3    0.847826  0.934783  0.874396    ...     0.917874  0.925121  0.946860
+FOLD 4    0.852657  0.915459  0.891304    ...     0.903382  0.925121  0.937198
+FOLD 5    0.847826  0.903382  0.857488    ...     0.908213  0.903382  0.917874
+FOLD 6    0.833333  0.913043  0.876812    ...     0.893720  0.896135  0.920290
+FOLD 7    0.867150  0.925121  0.881643    ...     0.905797  0.927536  0.942029
+FOLD 8    0.842995  0.915459  0.903382    ...     0.908213  0.917874  0.922705
+FOLD 9    0.838554  0.922892  0.867470    ...     0.910843  0.922892  0.901205
+FOLD 10   0.848193  0.922892  0.886747    ...     0.906024  0.922892  0.910843
+MEAN      0.850008  0.921501  0.880195    ...     0.907731  0.917630  0.922951
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  3  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.851064  0.851064  0.787234    ...     0.851064  0.872340  0.787234
+FOLD 2    0.872340  0.914894  0.872340    ...     0.936170  0.872340  0.893617
+FOLD 3    0.826087  0.739130  0.826087    ...     0.804348  0.869565  0.847826
+FOLD 4    0.869565  0.934783  0.869565    ...     0.934783  0.934783  0.956522
+FOLD 5    0.891304  0.956522  0.913043    ...     0.956522  0.956522  0.956522
+FOLD 6    0.847826  0.956522  0.869565    ...     0.934783  0.934783  0.913043
+FOLD 7    0.760870  0.782609  0.782609    ...     0.804348  0.804348  0.804348
+FOLD 8    0.891304  0.891304  0.913043    ...     0.891304  0.869565  0.934783
+FOLD 9    0.933333  0.911111  0.977778    ...     0.977778  0.977778  0.933333
+FOLD 10   0.911111  0.933333  0.955556    ...     0.955556  0.955556  0.955556
+MEAN      0.865481  0.887127  0.876682    ...     0.904665  0.904758  0.898278
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  5  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.869249  0.949153  0.878935    ...     0.927361  0.941889  0.924939
+FOLD 2    0.849879  0.924939  0.878935    ...     0.915254  0.924939  0.915254
+FOLD 3    0.855072  0.934783  0.857488    ...     0.925121  0.929952  0.951691
+FOLD 4    0.855072  0.925121  0.917874    ...     0.908213  0.939614  0.942029
+FOLD 5    0.852657  0.913043  0.871981    ...     0.913043  0.937198  0.908213
+FOLD 6    0.855072  0.910628  0.884058    ...     0.910628  0.915459  0.932367
+FOLD 7    0.869565  0.934783  0.888889    ...     0.920290  0.942029  0.942029
+FOLD 8    0.857488  0.929952  0.903382    ...     0.898551  0.937198  0.920290
+FOLD 9    0.853012  0.927711  0.862651    ...     0.908434  0.937349  0.920482
+FOLD 10   0.862651  0.920482  0.901205    ...     0.910843  0.925301  0.918072
+MEAN      0.857972  0.927059  0.884540    ...     0.913774  0.933093  0.927537
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  5  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.829787  0.851064  0.829787    ...     0.829787  0.851064  0.808511
+FOLD 2    0.851064  0.914894  0.851064    ...     0.914894  0.872340  0.914894
+FOLD 3    0.782609  0.782609  0.760870    ...     0.847826  0.891304  0.847826
+FOLD 4    0.913043  0.934783  0.913043    ...     0.934783  0.913043  0.934783
+FOLD 5    0.913043  0.978261  0.934783    ...     0.956522  0.978261  0.978261
+FOLD 6    0.913043  0.934783  0.891304    ...     0.956522  1.000000  0.934783
+FOLD 7    0.695652  0.782609  0.804348    ...     0.847826  0.804348  0.826087
+FOLD 8    0.826087  0.913043  0.934783    ...     0.869565  0.891304  0.913043
+FOLD 9    0.977778  0.933333  1.000000    ...     0.977778  0.977778  0.933333
+FOLD 10   0.911111  0.911111  0.955556    ...     0.933333  0.977778  0.955556
+MEAN      0.861322  0.893649  0.887554    ...     0.906884  0.915722  0.904708
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  7  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.869249  0.953995  0.874092    ...     0.927361  0.941889  0.927361
+FOLD 2    0.849879  0.922518  0.891041    ...     0.922518  0.929782  0.915254
+FOLD 3    0.859903  0.939614  0.867150    ...     0.922705  0.939614  0.944444
+FOLD 4    0.855072  0.934783  0.913043    ...     0.913043  0.929952  0.942029
+FOLD 5    0.845411  0.927536  0.871981    ...     0.915459  0.939614  0.920290
+FOLD 6    0.852657  0.915459  0.898551    ...     0.908213  0.925121  0.932367
+FOLD 7    0.867150  0.939614  0.874396    ...     0.920290  0.942029  0.939614
+FOLD 8    0.857488  0.927536  0.908213    ...     0.905797  0.937198  0.920290
+FOLD 9    0.855422  0.932530  0.869880    ...     0.903614  0.937349  0.925301
+FOLD 10   0.862651  0.930120  0.891566    ...     0.925301  0.930120  0.922892
+MEAN      0.857488  0.932370  0.885991    ...     0.916430  0.935267  0.928984
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  7  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.787234  0.851064  0.808511    ...     0.829787  0.851064  0.808511
+FOLD 2    0.829787  0.914894  0.872340    ...     0.914894  0.914894  0.893617
+FOLD 3    0.739130  0.826087  0.782609    ...     0.826087  0.869565  0.847826
+FOLD 4    0.869565  0.934783  0.913043    ...     0.934783  0.934783  0.934783
+FOLD 5    0.913043  0.978261  0.956522    ...     0.978261  0.956522  0.978261
+FOLD 6    0.869565  0.934783  0.934783    ...     0.934783  1.000000  0.956522
+FOLD 7    0.695652  0.804348  0.739130    ...     0.847826  0.804348  0.826087
+FOLD 8    0.847826  0.913043  0.913043    ...     0.891304  0.869565  0.891304
+FOLD 9    0.955556  0.955556  0.955556    ...     0.977778  0.977778  0.955556
+FOLD 10   0.888889  0.933333  0.933333    ...     0.911111  0.955556  0.955556
+MEAN      0.839625  0.904615  0.880887    ...     0.904661  0.913407  0.904802
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  3  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.878935  0.941889  0.886199    ...     0.917676  0.932203  0.920097
+FOLD 2    0.842615  0.920097  0.876513    ...     0.905569  0.903148  0.910412
+FOLD 3    0.847826  0.934783  0.874396    ...     0.917874  0.925121  0.946860
+FOLD 4    0.852657  0.915459  0.891304    ...     0.903382  0.925121  0.937198
+FOLD 5    0.847826  0.903382  0.857488    ...     0.908213  0.903382  0.917874
+FOLD 6    0.833333  0.913043  0.876812    ...     0.893720  0.896135  0.920290
+FOLD 7    0.867150  0.925121  0.881643    ...     0.905797  0.927536  0.942029
+FOLD 8    0.842995  0.915459  0.903382    ...     0.908213  0.917874  0.922705
+FOLD 9    0.838554  0.922892  0.867470    ...     0.910843  0.922892  0.901205
+FOLD 10   0.848193  0.922892  0.886747    ...     0.906024  0.922892  0.910843
+MEAN      0.850008  0.921501  0.880195    ...     0.907731  0.917630  0.922951
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  3  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.851064  0.851064  0.787234    ...     0.851064  0.872340  0.787234
+FOLD 2    0.872340  0.914894  0.872340    ...     0.936170  0.872340  0.893617
+FOLD 3    0.826087  0.739130  0.826087    ...     0.804348  0.869565  0.847826
+FOLD 4    0.869565  0.934783  0.869565    ...     0.934783  0.934783  0.956522
+FOLD 5    0.891304  0.956522  0.913043    ...     0.956522  0.956522  0.956522
+FOLD 6    0.847826  0.956522  0.869565    ...     0.934783  0.934783  0.913043
+FOLD 7    0.760870  0.782609  0.782609    ...     0.804348  0.804348  0.804348
+FOLD 8    0.891304  0.891304  0.913043    ...     0.891304  0.869565  0.934783
+FOLD 9    0.933333  0.911111  0.977778    ...     0.977778  0.977778  0.933333
+FOLD 10   0.911111  0.933333  0.955556    ...     0.955556  0.955556  0.955556
+MEAN      0.865481  0.887127  0.876682    ...     0.904665  0.904758  0.898278
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  5  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.869249  0.949153  0.878935    ...     0.927361  0.941889  0.924939
+FOLD 2    0.849879  0.924939  0.878935    ...     0.915254  0.924939  0.915254
+FOLD 3    0.855072  0.934783  0.857488    ...     0.925121  0.929952  0.951691
+FOLD 4    0.855072  0.925121  0.917874    ...     0.908213  0.939614  0.942029
+FOLD 5    0.852657  0.913043  0.871981    ...     0.913043  0.937198  0.908213
+FOLD 6    0.855072  0.910628  0.884058    ...     0.910628  0.915459  0.932367
+FOLD 7    0.869565  0.934783  0.888889    ...     0.920290  0.942029  0.942029
+FOLD 8    0.857488  0.929952  0.903382    ...     0.898551  0.937198  0.920290
+FOLD 9    0.853012  0.927711  0.862651    ...     0.908434  0.937349  0.920482
+FOLD 10   0.862651  0.920482  0.901205    ...     0.910843  0.925301  0.918072
+MEAN      0.857972  0.927059  0.884540    ...     0.913774  0.933093  0.927537
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  5  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.829787  0.851064  0.829787    ...     0.829787  0.851064  0.808511
+FOLD 2    0.851064  0.914894  0.851064    ...     0.914894  0.872340  0.914894
+FOLD 3    0.782609  0.782609  0.760870    ...     0.847826  0.891304  0.847826
+FOLD 4    0.913043  0.934783  0.913043    ...     0.934783  0.913043  0.934783
+FOLD 5    0.913043  0.978261  0.934783    ...     0.956522  0.978261  0.978261
+FOLD 6    0.913043  0.934783  0.891304    ...     0.956522  1.000000  0.934783
+FOLD 7    0.695652  0.782609  0.804348    ...     0.847826  0.804348  0.826087
+FOLD 8    0.826087  0.913043  0.934783    ...     0.869565  0.891304  0.913043
+FOLD 9    0.977778  0.933333  1.000000    ...     0.977778  0.977778  0.933333
+FOLD 10   0.911111  0.911111  0.955556    ...     0.933333  0.977778  0.955556
+MEAN      0.861322  0.893649  0.887554    ...     0.906884  0.915722  0.904708
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  7  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.869249  0.953995  0.874092    ...     0.927361  0.941889  0.927361
+FOLD 2    0.849879  0.922518  0.891041    ...     0.922518  0.929782  0.915254
+FOLD 3    0.859903  0.939614  0.867150    ...     0.922705  0.939614  0.944444
+FOLD 4    0.855072  0.934783  0.913043    ...     0.913043  0.929952  0.942029
+FOLD 5    0.845411  0.927536  0.871981    ...     0.915459  0.939614  0.920290
+FOLD 6    0.852657  0.915459  0.898551    ...     0.908213  0.925121  0.932367
+FOLD 7    0.867150  0.939614  0.874396    ...     0.920290  0.942029  0.939614
+FOLD 8    0.857488  0.927536  0.908213    ...     0.905797  0.937198  0.920290
+FOLD 9    0.855422  0.932530  0.869880    ...     0.903614  0.937349  0.925301
+FOLD 10   0.862651  0.930120  0.891566    ...     0.925301  0.930120  0.922892
+MEAN      0.857488  0.932370  0.885991    ...     0.916430  0.935267  0.928984
+
+[11 rows x 10 columns]
+RESULTS:  spambase k =  7  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.787234  0.851064  0.808511    ...     0.829787  0.851064  0.808511
+FOLD 2    0.829787  0.914894  0.872340    ...     0.914894  0.914894  0.893617
+FOLD 3    0.739130  0.826087  0.782609    ...     0.826087  0.869565  0.847826
+FOLD 4    0.869565  0.934783  0.913043    ...     0.934783  0.934783  0.934783
+FOLD 5    0.913043  0.978261  0.956522    ...     0.978261  0.956522  0.978261
+FOLD 6    0.869565  0.934783  0.934783    ...     0.934783  1.000000  0.956522
+FOLD 7    0.695652  0.804348  0.739130    ...     0.847826  0.804348  0.826087
+FOLD 8    0.847826  0.913043  0.913043    ...     0.891304  0.869565  0.891304
+FOLD 9    0.955556  0.955556  0.955556    ...     0.977778  0.977778  0.955556
+FOLD 10   0.888889  0.933333  0.933333    ...     0.911111  0.955556  0.955556
+MEAN      0.839625  0.904615  0.880887    ...     0.904661  0.913407  0.904802
+
+[11 rows x 10 columns]
+* DATASET  optdigits
+** NORMALIZING FOLD  1
+** NORMALIZING FOLD  2
+** NORMALIZING FOLD  3
+** NORMALIZING FOLD  4
+** NORMALIZING FOLD  5
+** NORMALIZING FOLD  6
+** NORMALIZING FOLD  7
+** NORMALIZING FOLD  8
+** NORMALIZING FOLD  9
+** NORMALIZING FOLD  10
+** TESTING DML  LDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+RESULTS:  optdigits k =  3  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.974181  0.968222  0.975174    ...     0.810328  0.974181  0.959285
+FOLD 2    0.975223  0.968285  0.973241    ...     0.790882  0.975223  0.955401
+FOLD 3    0.980237  0.964427  0.977273    ...     0.820158  0.980237  0.966403
+FOLD 4    0.977318  0.966469  0.978304    ...     0.815582  0.977318  0.963511
+FOLD 5    0.974409  0.962598  0.974409    ...     0.833661  0.974409  0.954724
+FOLD 6    0.976401  0.971485  0.963618    ...     0.815143  0.976401  0.962635
+FOLD 7    0.971485  0.962635  0.970501    ...     0.818092  0.971485  0.959685
+FOLD 8    0.976401  0.965585  0.967552    ...     0.824975  0.976401  0.956735
+FOLD 9    0.972468  0.968535  0.978368    ...     0.817109  0.972468  0.960669
+FOLD 10   0.978368  0.973451  0.973451    ...     0.818092  0.978368  0.957719
+MEAN      0.975649  0.967169  0.973189    ...     0.816402  0.975649  0.959677
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  3  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.983333  0.933333  0.975000    ...     0.775000  0.983333  0.958333
+FOLD 2    0.991525  0.957627  0.991525    ...     0.813559  0.991525  0.991525
+FOLD 3    0.956522  0.939130  0.947826    ...     0.808696  0.956522  0.930435
+FOLD 4    0.991150  0.982301  0.982301    ...     0.805310  0.991150  0.929204
+FOLD 5    0.972973  0.963964  0.972973    ...     0.783784  0.972973  0.963964
+FOLD 6    0.963636  0.945455  0.963636    ...     0.809091  0.963636  0.945455
+FOLD 7    0.990909  0.981818  0.972727    ...     0.800000  0.990909  0.981818
+FOLD 8    0.981818  0.954545  0.963636    ...     0.863636  0.981818  0.945455
+FOLD 9    0.972727  0.918182  0.963636    ...     0.745455  0.972727  0.972727
+FOLD 10   0.972727  0.936364  0.936364    ...     0.818182  0.972727  0.972727
+MEAN      0.977732  0.951272  0.966963    ...     0.802271  0.977732  0.959164
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  5  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.972195  0.969215  0.971202    ...     0.827210  0.972195  0.959285
+FOLD 2    0.974232  0.964321  0.968285    ...     0.808722  0.974232  0.954410
+FOLD 3    0.978261  0.970356  0.977273    ...     0.822134  0.978261  0.966403
+FOLD 4    0.974359  0.965483  0.972387    ...     0.821499  0.974359  0.965483
+FOLD 5    0.978346  0.961614  0.975394    ...     0.837598  0.978346  0.960630
+FOLD 6    0.970501  0.968535  0.963618    ...     0.830875  0.970501  0.959685
+FOLD 7    0.973451  0.962635  0.969518    ...     0.823992  0.973451  0.962635
+FOLD 8    0.976401  0.963618  0.969518    ...     0.822026  0.976401  0.957719
+FOLD 9    0.979351  0.968535  0.977384    ...     0.829892  0.979351  0.959685
+FOLD 10   0.976401  0.972468  0.974435    ...     0.832842  0.976401  0.964602
+MEAN      0.975350  0.966678  0.971901    ...     0.825679  0.975350  0.961054
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  5  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.983333  0.950000  0.966667    ...     0.800000  0.983333  0.950000
+FOLD 2    1.000000  0.966102  0.983051    ...     0.872881  1.000000  0.991525
+FOLD 3    0.956522  0.921739  0.947826    ...     0.843478  0.956522  0.939130
+FOLD 4    0.982301  0.982301  0.973451    ...     0.831858  0.982301  0.938053
+FOLD 5    0.963964  0.972973  0.954955    ...     0.783784  0.963964  0.972973
+FOLD 6    0.981818  0.972727  0.981818    ...     0.836364  0.981818  0.954545
+FOLD 7    0.981818  0.981818  0.981818    ...     0.827273  0.981818  0.990909
+FOLD 8    0.972727  0.972727  0.954545    ...     0.872727  0.972727  0.954545
+FOLD 9    0.954545  0.918182  0.954545    ...     0.763636  0.954545  0.954545
+FOLD 10   0.990909  0.936364  0.945455    ...     0.827273  0.990909  0.963636
+MEAN      0.976794  0.957493  0.964413    ...     0.825927  0.976794  0.960986
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  7  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.973188  0.971202  0.971202    ...     0.828203  0.973188  0.958292
+FOLD 2    0.972250  0.964321  0.967294    ...     0.816650  0.972250  0.958375
+FOLD 3    0.980237  0.968379  0.973320    ...     0.838933  0.980237  0.968379
+FOLD 4    0.976331  0.968442  0.971400    ...     0.834320  0.976331  0.957594
+FOLD 5    0.973425  0.965551  0.975394    ...     0.840551  0.973425  0.958661
+FOLD 6    0.970501  0.968535  0.959685    ...     0.828909  0.970501  0.960669
+FOLD 7    0.972468  0.965585  0.973451    ...     0.829892  0.972468  0.959685
+FOLD 8    0.975418  0.965585  0.968535    ...     0.819076  0.975418  0.956735
+FOLD 9    0.974435  0.970501  0.975418    ...     0.834808  0.974435  0.962635
+FOLD 10   0.977384  0.971485  0.971485    ...     0.822026  0.977384  0.957719
+MEAN      0.974564  0.967959  0.970718    ...     0.829337  0.974564  0.959874
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  7  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.983333  0.941667  0.958333    ...     0.791667  0.983333  0.958333
+FOLD 2    0.991525  0.966102  0.974576    ...     0.855932  0.991525  0.991525
+FOLD 3    0.956522  0.930435  0.947826    ...     0.817391  0.956522  0.930435
+FOLD 4    0.973451  0.973451  0.955752    ...     0.858407  0.973451  0.946903
+FOLD 5    0.972973  0.972973  0.963964    ...     0.774775  0.972973  0.954955
+FOLD 6    0.981818  0.963636  0.972727    ...     0.836364  0.981818  0.945455
+FOLD 7    1.000000  0.981818  0.963636    ...     0.800000  1.000000  0.981818
+FOLD 8    0.963636  0.972727  0.963636    ...     0.854545  0.963636  0.945455
+FOLD 9    0.954545  0.918182  0.945455    ...     0.790909  0.954545  0.954545
+FOLD 10   0.972727  0.954545  0.954545    ...     0.845455  0.972727  0.954545
+MEAN      0.975053  0.957554  0.960045    ...     0.822544  0.975053  0.956397
+
+[11 rows x 10 columns]
+** TESTING DML  MCML
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+RESULTS:  optdigits k =  3  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.974181  0.968222  0.975174    ...     0.810328  0.981132  0.959285
+FOLD 2    0.975223  0.968285  0.973241    ...     0.790882  0.971259  0.955401
+FOLD 3    0.980237  0.964427  0.977273    ...     0.820158  0.976285  0.966403
+FOLD 4    0.977318  0.966469  0.978304    ...     0.815582  0.972387  0.963511
+FOLD 5    0.974409  0.962598  0.974409    ...     0.833661  0.974409  0.954724
+FOLD 6    0.976401  0.971485  0.963618    ...     0.815143  0.971485  0.962635
+FOLD 7    0.971485  0.962635  0.970501    ...     0.818092  0.979351  0.959685
+FOLD 8    0.976401  0.965585  0.967552    ...     0.824975  0.977384  0.956735
+FOLD 9    0.972468  0.968535  0.978368    ...     0.817109  0.980334  0.960669
+FOLD 10   0.978368  0.973451  0.973451    ...     0.818092  0.977384  0.957719
+MEAN      0.975649  0.967169  0.973189    ...     0.816402  0.976141  0.959677
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  3  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.983333  0.933333  0.975000    ...     0.775000  0.966667  0.958333
+FOLD 2    0.991525  0.957627  0.991525    ...     0.813559  0.957627  0.991525
+FOLD 3    0.956522  0.939130  0.947826    ...     0.808696  0.956522  0.930435
+FOLD 4    0.991150  0.982301  0.982301    ...     0.805310  0.973451  0.929204
+FOLD 5    0.972973  0.963964  0.972973    ...     0.783784  0.945946  0.963964
+FOLD 6    0.963636  0.945455  0.963636    ...     0.809091  0.972727  0.945455
+FOLD 7    0.990909  0.981818  0.972727    ...     0.800000  0.981818  0.981818
+FOLD 8    0.981818  0.954545  0.963636    ...     0.863636  0.963636  0.945455
+FOLD 9    0.972727  0.918182  0.963636    ...     0.745455  0.927273  0.972727
+FOLD 10   0.972727  0.936364  0.936364    ...     0.818182  0.945455  0.972727
+MEAN      0.977732  0.951272  0.966963    ...     0.802271  0.959112  0.959164
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  5  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.972195  0.969215  0.971202    ...     0.827210  0.981132  0.959285
+FOLD 2    0.974232  0.964321  0.968285    ...     0.808722  0.971259  0.954410
+FOLD 3    0.978261  0.970356  0.977273    ...     0.822134  0.975296  0.966403
+FOLD 4    0.974359  0.965483  0.972387    ...     0.821499  0.974359  0.965483
+FOLD 5    0.978346  0.961614  0.975394    ...     0.837598  0.978346  0.960630
+FOLD 6    0.970501  0.968535  0.963618    ...     0.830875  0.975418  0.959685
+FOLD 7    0.973451  0.962635  0.969518    ...     0.823992  0.985251  0.962635
+FOLD 8    0.976401  0.963618  0.969518    ...     0.822026  0.979351  0.957719
+FOLD 9    0.979351  0.968535  0.977384    ...     0.829892  0.983284  0.959685
+FOLD 10   0.976401  0.972468  0.974435    ...     0.832842  0.981318  0.964602
+MEAN      0.975350  0.966678  0.971901    ...     0.825679  0.978501  0.961054
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  5  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.983333  0.950000  0.966667    ...     0.800000  0.975000  0.950000
+FOLD 2    1.000000  0.966102  0.983051    ...     0.872881  0.966102  0.991525
+FOLD 3    0.956522  0.921739  0.947826    ...     0.843478  0.956522  0.939130
+FOLD 4    0.982301  0.982301  0.973451    ...     0.831858  0.964602  0.938053
+FOLD 5    0.963964  0.972973  0.954955    ...     0.783784  0.954955  0.972973
+FOLD 6    0.981818  0.972727  0.981818    ...     0.836364  0.972727  0.954545
+FOLD 7    0.981818  0.981818  0.981818    ...     0.827273  0.981818  0.990909
+FOLD 8    0.972727  0.972727  0.954545    ...     0.872727  0.972727  0.954545
+FOLD 9    0.954545  0.918182  0.954545    ...     0.763636  0.918182  0.954545
+FOLD 10   0.990909  0.936364  0.945455    ...     0.827273  0.936364  0.963636
+MEAN      0.976794  0.957493  0.964413    ...     0.825927  0.959900  0.960986
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  7  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.973188  0.971202  0.971202    ...     0.828203  0.983118  0.958292
+FOLD 2    0.972250  0.964321  0.967294    ...     0.816650  0.972250  0.958375
+FOLD 3    0.980237  0.968379  0.973320    ...     0.838933  0.978261  0.968379
+FOLD 4    0.976331  0.968442  0.971400    ...     0.834320  0.975345  0.957594
+FOLD 5    0.973425  0.965551  0.975394    ...     0.840551  0.976378  0.958661
+FOLD 6    0.970501  0.968535  0.959685    ...     0.828909  0.975418  0.960669
+FOLD 7    0.972468  0.965585  0.973451    ...     0.829892  0.980334  0.959685
+FOLD 8    0.975418  0.965585  0.968535    ...     0.819076  0.977384  0.956735
+FOLD 9    0.974435  0.970501  0.975418    ...     0.834808  0.981318  0.962635
+FOLD 10   0.977384  0.971485  0.971485    ...     0.822026  0.980334  0.957719
+MEAN      0.974564  0.967959  0.970718    ...     0.829337  0.978014  0.959874
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  7  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.983333  0.941667  0.958333    ...     0.791667  0.975000  0.958333
+FOLD 2    0.991525  0.966102  0.974576    ...     0.855932  0.983051  0.991525
+FOLD 3    0.956522  0.930435  0.947826    ...     0.817391  0.956522  0.930435
+FOLD 4    0.973451  0.973451  0.955752    ...     0.858407  0.973451  0.946903
+FOLD 5    0.972973  0.972973  0.963964    ...     0.774775  0.954955  0.954955
+FOLD 6    0.981818  0.963636  0.972727    ...     0.836364  0.972727  0.945455
+FOLD 7    1.000000  0.981818  0.963636    ...     0.800000  0.981818  0.981818
+FOLD 8    0.963636  0.972727  0.963636    ...     0.854545  0.972727  0.945455
+FOLD 9    0.954545  0.918182  0.945455    ...     0.790909  0.927273  0.954545
+FOLD 10   0.972727  0.954545  0.954545    ...     0.845455  0.945455  0.954545
+MEAN      0.975053  0.957554  0.960045    ...     0.822544  0.964298  0.956397
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  3  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.974181  0.968222  0.975174    ...     0.810328  0.981132  0.959285
+FOLD 2    0.975223  0.968285  0.973241    ...     0.790882  0.971259  0.955401
+FOLD 3    0.980237  0.964427  0.977273    ...     0.820158  0.976285  0.966403
+FOLD 4    0.977318  0.966469  0.978304    ...     0.815582  0.972387  0.963511
+FOLD 5    0.974409  0.962598  0.974409    ...     0.833661  0.974409  0.954724
+FOLD 6    0.976401  0.971485  0.963618    ...     0.815143  0.971485  0.962635
+FOLD 7    0.971485  0.962635  0.970501    ...     0.818092  0.979351  0.959685
+FOLD 8    0.976401  0.965585  0.967552    ...     0.824975  0.977384  0.956735
+FOLD 9    0.972468  0.968535  0.978368    ...     0.817109  0.980334  0.960669
+FOLD 10   0.978368  0.973451  0.973451    ...     0.818092  0.977384  0.957719
+MEAN      0.975649  0.967169  0.973189    ...     0.816402  0.976141  0.959677
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  3  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.983333  0.933333  0.975000    ...     0.775000  0.966667  0.958333
+FOLD 2    0.991525  0.957627  0.991525    ...     0.813559  0.957627  0.991525
+FOLD 3    0.956522  0.939130  0.947826    ...     0.808696  0.956522  0.930435
+FOLD 4    0.991150  0.982301  0.982301    ...     0.805310  0.973451  0.929204
+FOLD 5    0.972973  0.963964  0.972973    ...     0.783784  0.945946  0.963964
+FOLD 6    0.963636  0.945455  0.963636    ...     0.809091  0.972727  0.945455
+FOLD 7    0.990909  0.981818  0.972727    ...     0.800000  0.981818  0.981818
+FOLD 8    0.981818  0.954545  0.963636    ...     0.863636  0.963636  0.945455
+FOLD 9    0.972727  0.918182  0.963636    ...     0.745455  0.927273  0.972727
+FOLD 10   0.972727  0.936364  0.936364    ...     0.818182  0.945455  0.972727
+MEAN      0.977732  0.951272  0.966963    ...     0.802271  0.959112  0.959164
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  5  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.972195  0.969215  0.971202    ...     0.827210  0.981132  0.959285
+FOLD 2    0.974232  0.964321  0.968285    ...     0.808722  0.971259  0.954410
+FOLD 3    0.978261  0.970356  0.977273    ...     0.822134  0.975296  0.966403
+FOLD 4    0.974359  0.965483  0.972387    ...     0.821499  0.974359  0.965483
+FOLD 5    0.978346  0.961614  0.975394    ...     0.837598  0.978346  0.960630
+FOLD 6    0.970501  0.968535  0.963618    ...     0.830875  0.975418  0.959685
+FOLD 7    0.973451  0.962635  0.969518    ...     0.823992  0.985251  0.962635
+FOLD 8    0.976401  0.963618  0.969518    ...     0.822026  0.979351  0.957719
+FOLD 9    0.979351  0.968535  0.977384    ...     0.829892  0.983284  0.959685
+FOLD 10   0.976401  0.972468  0.974435    ...     0.832842  0.981318  0.964602
+MEAN      0.975350  0.966678  0.971901    ...     0.825679  0.978501  0.961054
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  5  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.983333  0.950000  0.966667    ...     0.800000  0.975000  0.950000
+FOLD 2    1.000000  0.966102  0.983051    ...     0.872881  0.966102  0.991525
+FOLD 3    0.956522  0.921739  0.947826    ...     0.843478  0.956522  0.939130
+FOLD 4    0.982301  0.982301  0.973451    ...     0.831858  0.964602  0.938053
+FOLD 5    0.963964  0.972973  0.954955    ...     0.783784  0.954955  0.972973
+FOLD 6    0.981818  0.972727  0.981818    ...     0.836364  0.972727  0.954545
+FOLD 7    0.981818  0.981818  0.981818    ...     0.827273  0.981818  0.990909
+FOLD 8    0.972727  0.972727  0.954545    ...     0.872727  0.972727  0.954545
+FOLD 9    0.954545  0.918182  0.954545    ...     0.763636  0.918182  0.954545
+FOLD 10   0.990909  0.936364  0.945455    ...     0.827273  0.936364  0.963636
+MEAN      0.976794  0.957493  0.964413    ...     0.825927  0.959900  0.960986
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  7  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.973188  0.971202  0.971202    ...     0.828203  0.983118  0.958292
+FOLD 2    0.972250  0.964321  0.967294    ...     0.816650  0.972250  0.958375
+FOLD 3    0.980237  0.968379  0.973320    ...     0.838933  0.978261  0.968379
+FOLD 4    0.976331  0.968442  0.971400    ...     0.834320  0.975345  0.957594
+FOLD 5    0.973425  0.965551  0.975394    ...     0.840551  0.976378  0.958661
+FOLD 6    0.970501  0.968535  0.959685    ...     0.828909  0.975418  0.960669
+FOLD 7    0.972468  0.965585  0.973451    ...     0.829892  0.980334  0.959685
+FOLD 8    0.975418  0.965585  0.968535    ...     0.819076  0.977384  0.956735
+FOLD 9    0.974435  0.970501  0.975418    ...     0.834808  0.981318  0.962635
+FOLD 10   0.977384  0.971485  0.971485    ...     0.822026  0.980334  0.957719
+MEAN      0.974564  0.967959  0.970718    ...     0.829337  0.978014  0.959874
+
+[11 rows x 10 columns]
+RESULTS:  optdigits k =  7  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.983333  0.941667  0.958333    ...     0.791667  0.975000  0.958333
+FOLD 2    0.991525  0.966102  0.974576    ...     0.855932  0.983051  0.991525
+FOLD 3    0.956522  0.930435  0.947826    ...     0.817391  0.956522  0.930435
+FOLD 4    0.973451  0.973451  0.955752    ...     0.858407  0.973451  0.946903
+FOLD 5    0.972973  0.972973  0.963964    ...     0.774775  0.954955  0.954955
+FOLD 6    0.981818  0.963636  0.972727    ...     0.836364  0.972727  0.945455
+FOLD 7    1.000000  0.981818  0.963636    ...     0.800000  0.981818  0.981818
+FOLD 8    0.963636  0.972727  0.963636    ...     0.854545  0.972727  0.945455
+FOLD 9    0.954545  0.918182  0.945455    ...     0.790909  0.927273  0.954545
+FOLD 10   0.972727  0.954545  0.954545    ...     0.845455  0.945455  0.954545
+MEAN      0.975053  0.957554  0.960045    ...     0.822544  0.964298  0.956397
+
+[11 rows x 10 columns]
+* DATASET  twonorm
+** NORMALIZING FOLD  1
+** NORMALIZING FOLD  2
+** NORMALIZING FOLD  3
+** NORMALIZING FOLD  4
+** NORMALIZING FOLD  5
+** NORMALIZING FOLD  6
+** NORMALIZING FOLD  7
+** NORMALIZING FOLD  8
+** NORMALIZING FOLD  9
+** NORMALIZING FOLD  10
+** TESTING DML  LDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+RESULTS:  twonorm k =  3  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.964715  0.980480  0.970721    ...     0.981231  0.964715  0.981231
+FOLD 2    0.954239  0.981995  0.964741    ...     0.979745  0.954239  0.979745
+FOLD 3    0.963991  0.975994  0.969992    ...     0.977494  0.963991  0.975994
+FOLD 4    0.960990  0.975244  0.960990    ...     0.975994  0.960990  0.976744
+FOLD 5    0.960990  0.979745  0.974494    ...     0.978995  0.960990  0.982746
+FOLD 6    0.957989  0.984996  0.961740    ...     0.978245  0.957989  0.981995
+FOLD 7    0.957989  0.972993  0.967742    ...     0.981995  0.957989  0.977494
+FOLD 8    0.962491  0.979745  0.971493    ...     0.971493  0.962491  0.981995
+FOLD 9    0.960990  0.974494  0.969242    ...     0.978245  0.960990  0.980495
+FOLD 10   0.965491  0.972993  0.974494    ...     0.978995  0.965491  0.970743
+MEAN      0.960988  0.977868  0.968565    ...     0.978243  0.960988  0.978918
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  3  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.939597  0.973154  0.966443    ...     0.973154  0.939597  0.973154
+FOLD 2    0.979730  0.966216  0.972973    ...     0.966216  0.979730  0.959459
+FOLD 3    0.952703  0.972973  0.945946    ...     0.979730  0.952703  0.993243
+FOLD 4    0.966216  0.979730  0.979730    ...     1.000000  0.966216  0.986486
+FOLD 5    0.966216  0.972973  0.972973    ...     0.972973  0.966216  0.979730
+FOLD 6    0.966216  0.972973  0.979730    ...     0.966216  0.966216  0.972973
+FOLD 7    0.972973  0.972973  0.972973    ...     1.000000  0.972973  1.000000
+FOLD 8    0.959459  0.986486  0.952703    ...     0.979730  0.959459  0.979730
+FOLD 9    0.945946  0.966216  0.952703    ...     0.986486  0.945946  0.966216
+FOLD 10   0.945946  0.986486  0.972973    ...     0.986486  0.945946  0.993243
+MEAN      0.959500  0.975018  0.966915    ...     0.981099  0.959500  0.980424
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  5  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.968468  0.978979  0.974474    ...     0.978979  0.968468  0.981231
+FOLD 2    0.963991  0.986497  0.963991    ...     0.982746  0.963991  0.981995
+FOLD 3    0.968492  0.974494  0.971493    ...     0.975994  0.968492  0.977494
+FOLD 4    0.963241  0.976744  0.969242    ...     0.975244  0.963241  0.978245
+FOLD 5    0.963991  0.981245  0.974494    ...     0.981245  0.963991  0.983496
+FOLD 6    0.967742  0.975244  0.969992    ...     0.983496  0.967742  0.978245
+FOLD 7    0.966242  0.975244  0.968492    ...     0.981995  0.966242  0.981245
+FOLD 8    0.967742  0.973743  0.969242    ...     0.974494  0.967742  0.981995
+FOLD 9    0.967742  0.981995  0.972993    ...     0.979745  0.967742  0.984996
+FOLD 10   0.966242  0.975994  0.975244    ...     0.978245  0.966242  0.976744
+MEAN      0.966389  0.978018  0.970966    ...     0.979218  0.966389  0.980569
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  5  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.953020  0.973154  0.966443    ...     0.979866  0.953020  0.973154
+FOLD 2    0.972973  0.966216  0.972973    ...     0.966216  0.972973  0.959459
+FOLD 3    0.959459  0.979730  0.959459    ...     0.979730  0.959459  0.986486
+FOLD 4    0.979730  0.993243  0.972973    ...     1.000000  0.979730  0.986486
+FOLD 5    0.966216  0.972973  0.966216    ...     0.972973  0.966216  0.972973
+FOLD 6    0.966216  0.972973  0.972973    ...     0.966216  0.966216  0.972973
+FOLD 7    0.986486  0.993243  0.986486    ...     1.000000  0.986486  0.993243
+FOLD 8    0.972973  0.986486  0.979730    ...     0.979730  0.972973  0.979730
+FOLD 9    0.972973  0.972973  0.952703    ...     0.979730  0.972973  0.966216
+FOLD 10   0.945946  0.993243  0.979730    ...     0.979730  0.945946  0.979730
+MEAN      0.967599  0.980424  0.970969    ...     0.980419  0.967599  0.977045
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  7  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.969970  0.979730  0.972973    ...     0.980480  0.969970  0.980480
+FOLD 2    0.969242  0.986497  0.972993    ...     0.984246  0.969242  0.984996
+FOLD 3    0.974494  0.978245  0.973743    ...     0.976744  0.974494  0.976744
+FOLD 4    0.971493  0.978245  0.969242    ...     0.977494  0.971493  0.981245
+FOLD 5    0.972243  0.982746  0.970743    ...     0.981995  0.972243  0.981995
+FOLD 6    0.969992  0.975994  0.968492    ...     0.981995  0.969992  0.977494
+FOLD 7    0.964741  0.977494  0.969992    ...     0.980495  0.964741  0.982746
+FOLD 8    0.972243  0.980495  0.974494    ...     0.975994  0.972243  0.974494
+FOLD 9    0.971493  0.982746  0.969242    ...     0.979745  0.971493  0.984246
+FOLD 10   0.971493  0.979745  0.975994    ...     0.978245  0.971493  0.980495
+MEAN      0.970740  0.980194  0.971791    ...     0.979743  0.970740  0.980494
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  7  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.959732  0.973154  0.959732    ...     0.973154  0.959732  0.979866
+FOLD 2    0.979730  0.966216  0.972973    ...     0.966216  0.979730  0.959459
+FOLD 3    0.979730  0.993243  0.966216    ...     0.986486  0.979730  0.993243
+FOLD 4    0.993243  0.993243  0.979730    ...     0.993243  0.993243  0.986486
+FOLD 5    0.966216  0.972973  0.959459    ...     0.972973  0.966216  0.972973
+FOLD 6    0.966216  0.972973  0.972973    ...     0.966216  0.966216  0.972973
+FOLD 7    0.986486  0.986486  0.993243    ...     1.000000  0.986486  0.993243
+FOLD 8    0.972973  0.979730  0.979730    ...     0.986486  0.972973  0.979730
+FOLD 9    0.959459  0.972973  0.959459    ...     0.972973  0.959459  0.966216
+FOLD 10   0.945946  0.993243  0.986486    ...     0.986486  0.945946  0.986486
+MEAN      0.970973  0.980424  0.973000    ...     0.980424  0.970973  0.979068
+
+[11 rows x 10 columns]
+** TESTING DML  MCML
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+RESULTS:  twonorm k =  3  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.964715  0.980480  0.970721    ...     0.981231  0.923423  0.981231
+FOLD 2    0.954239  0.981995  0.964741    ...     0.979745  0.982746  0.979745
+FOLD 3    0.963991  0.975994  0.969992    ...     0.977494  0.979745  0.975994
+FOLD 4    0.960990  0.975244  0.960990    ...     0.975994  0.975994  0.976744
+FOLD 5    0.960990  0.979745  0.974494    ...     0.978995  0.978245  0.982746
+FOLD 6    0.957989  0.984996  0.961740    ...     0.978245  0.981245  0.981995
+FOLD 7    0.957989  0.972993  0.967742    ...     0.981995  0.973743  0.977494
+FOLD 8    0.962491  0.979745  0.971493    ...     0.971493  0.969242  0.981995
+FOLD 9    0.960990  0.974494  0.969242    ...     0.978245  0.966242  0.980495
+FOLD 10   0.965491  0.972993  0.974494    ...     0.978995  0.977494  0.970743
+MEAN      0.960988  0.977868  0.968565    ...     0.978243  0.970812  0.978918
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  3  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.939597  0.973154  0.966443    ...     0.973154  0.959732  0.973154
+FOLD 2    0.979730  0.966216  0.972973    ...     0.966216  0.966216  0.959459
+FOLD 3    0.952703  0.972973  0.945946    ...     0.979730  0.966216  0.993243
+FOLD 4    0.966216  0.979730  0.979730    ...     1.000000  1.000000  0.986486
+FOLD 5    0.966216  0.972973  0.972973    ...     0.972973  0.972973  0.979730
+FOLD 6    0.966216  0.972973  0.979730    ...     0.966216  0.979730  0.972973
+FOLD 7    0.972973  0.972973  0.972973    ...     1.000000  0.972973  1.000000
+FOLD 8    0.959459  0.986486  0.952703    ...     0.979730  0.972973  0.979730
+FOLD 9    0.945946  0.966216  0.952703    ...     0.986486  0.959459  0.966216
+FOLD 10   0.945946  0.986486  0.972973    ...     0.986486  0.979730  0.993243
+MEAN      0.959500  0.975018  0.966915    ...     0.981099  0.973000  0.980424
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  5  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.968468  0.978979  0.974474    ...     0.978979  0.925676  0.981231
+FOLD 2    0.963991  0.986497  0.963991    ...     0.982746  0.984246  0.981995
+FOLD 3    0.968492  0.974494  0.971493    ...     0.975994  0.979745  0.977494
+FOLD 4    0.963241  0.976744  0.969242    ...     0.975244  0.978995  0.978245
+FOLD 5    0.963991  0.981245  0.974494    ...     0.981245  0.980495  0.983496
+FOLD 6    0.967742  0.975244  0.969992    ...     0.983496  0.982746  0.978245
+FOLD 7    0.966242  0.975244  0.968492    ...     0.981995  0.968492  0.981245
+FOLD 8    0.967742  0.973743  0.969242    ...     0.974494  0.971493  0.981995
+FOLD 9    0.967742  0.981995  0.972993    ...     0.979745  0.969992  0.984996
+FOLD 10   0.966242  0.975994  0.975244    ...     0.978245  0.978245  0.976744
+MEAN      0.966389  0.978018  0.970966    ...     0.979218  0.972012  0.980569
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  5  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.953020  0.973154  0.966443    ...     0.979866  0.953020  0.973154
+FOLD 2    0.972973  0.966216  0.972973    ...     0.966216  0.972973  0.959459
+FOLD 3    0.959459  0.979730  0.959459    ...     0.979730  0.972973  0.986486
+FOLD 4    0.979730  0.993243  0.972973    ...     1.000000  0.993243  0.986486
+FOLD 5    0.966216  0.972973  0.966216    ...     0.972973  0.972973  0.972973
+FOLD 6    0.966216  0.972973  0.972973    ...     0.966216  0.986486  0.972973
+FOLD 7    0.986486  0.993243  0.986486    ...     1.000000  0.986486  0.993243
+FOLD 8    0.972973  0.986486  0.979730    ...     0.979730  0.979730  0.979730
+FOLD 9    0.972973  0.972973  0.952703    ...     0.979730  0.959459  0.966216
+FOLD 10   0.945946  0.993243  0.979730    ...     0.979730  0.972973  0.979730
+MEAN      0.967599  0.980424  0.970969    ...     0.980419  0.975032  0.977045
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  7  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.969970  0.979730  0.972973    ...     0.980480  0.927177  0.980480
+FOLD 2    0.969242  0.986497  0.972993    ...     0.984246  0.982746  0.984996
+FOLD 3    0.974494  0.978245  0.973743    ...     0.976744  0.980495  0.976744
+FOLD 4    0.971493  0.978245  0.969242    ...     0.977494  0.977494  0.981245
+FOLD 5    0.972243  0.982746  0.970743    ...     0.981995  0.980495  0.981995
+FOLD 6    0.969992  0.975994  0.968492    ...     0.981995  0.982746  0.977494
+FOLD 7    0.964741  0.977494  0.969992    ...     0.980495  0.972243  0.982746
+FOLD 8    0.972243  0.980495  0.974494    ...     0.975994  0.971493  0.974494
+FOLD 9    0.971493  0.982746  0.969242    ...     0.979745  0.969242  0.984246
+FOLD 10   0.971493  0.979745  0.975994    ...     0.978245  0.977494  0.980495
+MEAN      0.970740  0.980194  0.971791    ...     0.979743  0.972163  0.980494
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  7  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.959732  0.973154  0.959732    ...     0.973154  0.939597  0.979866
+FOLD 2    0.979730  0.966216  0.972973    ...     0.966216  0.979730  0.959459
+FOLD 3    0.979730  0.993243  0.966216    ...     0.986486  0.979730  0.993243
+FOLD 4    0.993243  0.993243  0.979730    ...     0.993243  0.993243  0.986486
+FOLD 5    0.966216  0.972973  0.959459    ...     0.972973  0.972973  0.972973
+FOLD 6    0.966216  0.972973  0.972973    ...     0.966216  0.979730  0.972973
+FOLD 7    0.986486  0.986486  0.993243    ...     1.000000  0.993243  0.993243
+FOLD 8    0.972973  0.979730  0.979730    ...     0.986486  0.979730  0.979730
+FOLD 9    0.959459  0.972973  0.959459    ...     0.972973  0.959459  0.966216
+FOLD 10   0.945946  0.993243  0.986486    ...     0.986486  0.972973  0.986486
+MEAN      0.970973  0.980424  0.973000    ...     0.980424  0.975041  0.979068
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  3  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.964715  0.980480  0.970721    ...     0.981231  0.923423  0.981231
+FOLD 2    0.954239  0.981995  0.964741    ...     0.979745  0.982746  0.979745
+FOLD 3    0.963991  0.975994  0.969992    ...     0.977494  0.979745  0.975994
+FOLD 4    0.960990  0.975244  0.960990    ...     0.975994  0.975994  0.976744
+FOLD 5    0.960990  0.979745  0.974494    ...     0.978995  0.978245  0.982746
+FOLD 6    0.957989  0.984996  0.961740    ...     0.978245  0.981245  0.981995
+FOLD 7    0.957989  0.972993  0.967742    ...     0.981995  0.973743  0.977494
+FOLD 8    0.962491  0.979745  0.971493    ...     0.971493  0.969242  0.981995
+FOLD 9    0.960990  0.974494  0.969242    ...     0.978245  0.966242  0.980495
+FOLD 10   0.965491  0.972993  0.974494    ...     0.978995  0.977494  0.970743
+MEAN      0.960988  0.977868  0.968565    ...     0.978243  0.970812  0.978918
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  3  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.939597  0.973154  0.966443    ...     0.973154  0.959732  0.973154
+FOLD 2    0.979730  0.966216  0.972973    ...     0.966216  0.966216  0.959459
+FOLD 3    0.952703  0.972973  0.945946    ...     0.979730  0.966216  0.993243
+FOLD 4    0.966216  0.979730  0.979730    ...     1.000000  1.000000  0.986486
+FOLD 5    0.966216  0.972973  0.972973    ...     0.972973  0.972973  0.979730
+FOLD 6    0.966216  0.972973  0.979730    ...     0.966216  0.979730  0.972973
+FOLD 7    0.972973  0.972973  0.972973    ...     1.000000  0.972973  1.000000
+FOLD 8    0.959459  0.986486  0.952703    ...     0.979730  0.972973  0.979730
+FOLD 9    0.945946  0.966216  0.952703    ...     0.986486  0.959459  0.966216
+FOLD 10   0.945946  0.986486  0.972973    ...     0.986486  0.979730  0.993243
+MEAN      0.959500  0.975018  0.966915    ...     0.981099  0.973000  0.980424
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  5  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.968468  0.978979  0.974474    ...     0.978979  0.925676  0.981231
+FOLD 2    0.963991  0.986497  0.963991    ...     0.982746  0.984246  0.981995
+FOLD 3    0.968492  0.974494  0.971493    ...     0.975994  0.979745  0.977494
+FOLD 4    0.963241  0.976744  0.969242    ...     0.975244  0.978995  0.978245
+FOLD 5    0.963991  0.981245  0.974494    ...     0.981245  0.980495  0.983496
+FOLD 6    0.967742  0.975244  0.969992    ...     0.983496  0.982746  0.978245
+FOLD 7    0.966242  0.975244  0.968492    ...     0.981995  0.968492  0.981245
+FOLD 8    0.967742  0.973743  0.969242    ...     0.974494  0.971493  0.981995
+FOLD 9    0.967742  0.981995  0.972993    ...     0.979745  0.969992  0.984996
+FOLD 10   0.966242  0.975994  0.975244    ...     0.978245  0.978245  0.976744
+MEAN      0.966389  0.978018  0.970966    ...     0.979218  0.972012  0.980569
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  5  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.953020  0.973154  0.966443    ...     0.979866  0.953020  0.973154
+FOLD 2    0.972973  0.966216  0.972973    ...     0.966216  0.972973  0.959459
+FOLD 3    0.959459  0.979730  0.959459    ...     0.979730  0.972973  0.986486
+FOLD 4    0.979730  0.993243  0.972973    ...     1.000000  0.993243  0.986486
+FOLD 5    0.966216  0.972973  0.966216    ...     0.972973  0.972973  0.972973
+FOLD 6    0.966216  0.972973  0.972973    ...     0.966216  0.986486  0.972973
+FOLD 7    0.986486  0.993243  0.986486    ...     1.000000  0.986486  0.993243
+FOLD 8    0.972973  0.986486  0.979730    ...     0.979730  0.979730  0.979730
+FOLD 9    0.972973  0.972973  0.952703    ...     0.979730  0.959459  0.966216
+FOLD 10   0.945946  0.993243  0.979730    ...     0.979730  0.972973  0.979730
+MEAN      0.967599  0.980424  0.970969    ...     0.980419  0.975032  0.977045
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  7  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.969970  0.979730  0.972973    ...     0.980480  0.927177  0.980480
+FOLD 2    0.969242  0.986497  0.972993    ...     0.984246  0.982746  0.984996
+FOLD 3    0.974494  0.978245  0.973743    ...     0.976744  0.980495  0.976744
+FOLD 4    0.971493  0.978245  0.969242    ...     0.977494  0.977494  0.981245
+FOLD 5    0.972243  0.982746  0.970743    ...     0.981995  0.980495  0.981995
+FOLD 6    0.969992  0.975994  0.968492    ...     0.981995  0.982746  0.977494
+FOLD 7    0.964741  0.977494  0.969992    ...     0.980495  0.972243  0.982746
+FOLD 8    0.972243  0.980495  0.974494    ...     0.975994  0.971493  0.974494
+FOLD 9    0.971493  0.982746  0.969242    ...     0.979745  0.969242  0.984246
+FOLD 10   0.971493  0.979745  0.975994    ...     0.978245  0.977494  0.980495
+MEAN      0.970740  0.980194  0.971791    ...     0.979743  0.972163  0.980494
+
+[11 rows x 10 columns]
+RESULTS:  twonorm k =  7  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.959732  0.973154  0.959732    ...     0.973154  0.939597  0.979866
+FOLD 2    0.979730  0.966216  0.972973    ...     0.966216  0.979730  0.959459
+FOLD 3    0.979730  0.993243  0.966216    ...     0.986486  0.979730  0.993243
+FOLD 4    0.993243  0.993243  0.979730    ...     0.993243  0.993243  0.986486
+FOLD 5    0.966216  0.972973  0.959459    ...     0.972973  0.972973  0.972973
+FOLD 6    0.966216  0.972973  0.972973    ...     0.966216  0.979730  0.972973
+FOLD 7    0.986486  0.986486  0.993243    ...     1.000000  0.993243  0.993243
+FOLD 8    0.972973  0.979730  0.979730    ...     0.986486  0.979730  0.979730
+FOLD 9    0.959459  0.972973  0.959459    ...     0.972973  0.959459  0.966216
+FOLD 10   0.945946  0.993243  0.986486    ...     0.986486  0.972973  0.986486
+MEAN      0.970973  0.980424  0.973000    ...     0.980424  0.975041  0.979068
+
+[11 rows x 10 columns]
+* DATASET  titanic
+** NORMALIZING FOLD  1
+** NORMALIZING FOLD  2
+** NORMALIZING FOLD  3
+** NORMALIZING FOLD  4
+** NORMALIZING FOLD  5
+** NORMALIZING FOLD  6
+** NORMALIZING FOLD  7
+** NORMALIZING FOLD  8
+** NORMALIZING FOLD  9
+** NORMALIZING FOLD  10
+** TESTING DML  LDA
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+RESULTS:  titanic k =  3  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.797306  0.767677  0.786532    ...     0.721212  0.797306  0.686869
+FOLD 2    0.759705  0.761179  0.737592    ...     0.585749  0.759705  0.585749
+FOLD 3    0.777396  0.771990  0.741032    ...     0.584275  0.777396  0.584275
+FOLD 4    0.765717  0.778487  0.771611    ...     0.777996  0.765717  0.777996
+FOLD 5    0.769155  0.770138  0.778978    ...     0.819253  0.769155  0.832024
+FOLD 6    0.770138  0.783399  0.784381    ...     0.829077  0.770138  0.829077
+FOLD 7    0.760314  0.777014  0.785855    ...     0.833006  0.760314  0.830550
+FOLD 8    0.753438  0.774558  0.783890    ...     0.804519  0.753438  0.829077
+FOLD 9    0.727050  0.771723  0.756505    ...     0.576338  0.727050  0.576338
+FOLD 10   0.727050  0.771723  0.756505    ...     0.576338  0.727050  0.576338
+MEAN      0.760727  0.772789  0.768288    ...     0.710776  0.760727  0.710829
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  3  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.777933  0.773743  0.772346    ...     0.762570  0.777933  0.772346
+FOLD 2    0.777108  0.753012  0.698795    ...     0.795181  0.777108  0.795181
+FOLD 3    0.746988  0.759036  0.686747    ...     0.771084  0.746988  0.771084
+FOLD 4    0.793939  0.793939  0.793939    ...     0.800000  0.793939  0.800000
+FOLD 5    0.745455  0.769697  0.787879    ...     0.696970  0.745455  0.696970
+FOLD 6    0.745455  0.769697  0.787879    ...     0.696970  0.745455  0.696970
+FOLD 7    0.745455  0.793939  0.793939    ...     0.696970  0.745455  0.696970
+FOLD 8    0.739394  0.781818  0.800000    ...     0.696970  0.739394  0.696970
+FOLD 9    0.756098  0.804878  0.743902    ...     0.707317  0.756098  0.707317
+FOLD 10   0.756098  0.804878  0.743902    ...     0.707317  0.756098  0.707317
+MEAN      0.758392  0.780464  0.760933    ...     0.733135  0.758392  0.734112
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  5  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.796633  0.777104  0.770370    ...     0.744108  0.796633  0.738721
+FOLD 2    0.758231  0.759705  0.747912    ...     0.785749  0.758231  0.785749
+FOLD 3    0.760688  0.771007  0.747420    ...     0.776904  0.760688  0.776904
+FOLD 4    0.757367  0.779470  0.790766    ...     0.784381  0.757367  0.784381
+FOLD 5    0.756876  0.780943  0.771120    ...     0.773084  0.756876  0.785855
+FOLD 6    0.754420  0.778487  0.774067    ...     0.786837  0.754420  0.786837
+FOLD 7    0.755403  0.774067  0.783890    ...     0.786837  0.755403  0.786837
+FOLD 8    0.751965  0.781434  0.785363    ...     0.786837  0.751965  0.786837
+FOLD 9    0.751595  0.768778  0.773196    ...     0.786451  0.751595  0.786451
+FOLD 10   0.751595  0.768778  0.773196    ...     0.786451  0.751595  0.786451
+MEAN      0.759477  0.773977  0.771730    ...     0.779764  0.759477  0.780502
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  5  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.777933  0.773743  0.772346    ...     0.769553  0.777933  0.775140
+FOLD 2    0.777108  0.746988  0.698795    ...     0.795181  0.777108  0.795181
+FOLD 3    0.746988  0.759036  0.674699    ...     0.771084  0.746988  0.771084
+FOLD 4    0.757576  0.781818  0.793939    ...     0.800000  0.757576  0.800000
+FOLD 5    0.745455  0.781818  0.787879    ...     0.787879  0.745455  0.787879
+FOLD 6    0.745455  0.769697  0.787879    ...     0.787879  0.745455  0.787879
+FOLD 7    0.745455  0.781818  0.793939    ...     0.787879  0.745455  0.787879
+FOLD 8    0.739394  0.781818  0.800000    ...     0.800000  0.739394  0.800000
+FOLD 9    0.756098  0.804878  0.798780    ...     0.804878  0.756098  0.804878
+FOLD 10   0.756098  0.804878  0.798780    ...     0.804878  0.756098  0.804878
+MEAN      0.754756  0.778649  0.770704    ...     0.790921  0.754756  0.791480
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  7  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.795960  0.762290  0.792593    ...     0.748148  0.795960  0.750842
+FOLD 2    0.752334  0.766585  0.789681    ...     0.783292  0.752334  0.783292
+FOLD 3    0.775921  0.769533  0.788206    ...     0.775921  0.775921  0.775921
+FOLD 4    0.756876  0.781434  0.788310    ...     0.785855  0.756876  0.785855
+FOLD 5    0.755403  0.780943  0.784381    ...     0.774558  0.755403  0.787328
+FOLD 6    0.757367  0.780943  0.789293    ...     0.787328  0.757367  0.787328
+FOLD 7    0.755894  0.777014  0.789784    ...     0.786837  0.755894  0.786837
+FOLD 8    0.755403  0.779470  0.789784    ...     0.783890  0.755403  0.783890
+FOLD 9    0.756996  0.782523  0.783996    ...     0.784487  0.756996  0.784487
+FOLD 10   0.756996  0.782523  0.783996    ...     0.784487  0.756996  0.784487
+MEAN      0.761915  0.776326  0.788002    ...     0.779480  0.761915  0.781027
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  7  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.777933  0.773743  0.772346    ...     0.769553  0.777933  0.775140
+FOLD 2    0.740964  0.746988  0.795181    ...     0.795181  0.740964  0.795181
+FOLD 3    0.746988  0.759036  0.795181    ...     0.771084  0.746988  0.771084
+FOLD 4    0.757576  0.800000  0.793939    ...     0.800000  0.757576  0.800000
+FOLD 5    0.745455  0.781818  0.787879    ...     0.787879  0.745455  0.787879
+FOLD 6    0.745455  0.781818  0.787879    ...     0.787879  0.745455  0.787879
+FOLD 7    0.751515  0.781818  0.793939    ...     0.787879  0.751515  0.787879
+FOLD 8    0.751515  0.781818  0.800000    ...     0.800000  0.751515  0.800000
+FOLD 9    0.756098  0.804878  0.798780    ...     0.804878  0.756098  0.804878
+FOLD 10   0.756098  0.804878  0.798780    ...     0.804878  0.756098  0.804878
+MEAN      0.752960  0.781680  0.792391    ...     0.790921  0.752960  0.791480
+
+[11 rows x 10 columns]
+** TESTING DML  MCML
+*** FOLD  1
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  2
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  3
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  4
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  5
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  6
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  7
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  8
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  9
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+*** FOLD  10
+**** TRAINING
+**** TEST K =  3
+**** TEST K =  5
+**** TEST K =  7
+RESULTS:  titanic k =  3  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.797306  0.767677  0.786532    ...     0.721212  0.762290  0.686869
+FOLD 2    0.759705  0.761179  0.737592    ...     0.585749  0.587224  0.585749
+FOLD 3    0.777396  0.771990  0.741032    ...     0.584275  0.585749  0.584275
+FOLD 4    0.765717  0.778487  0.771611    ...     0.777996  0.777996  0.777996
+FOLD 5    0.769155  0.770138  0.778978    ...     0.819253  0.832024  0.832024
+FOLD 6    0.770138  0.783399  0.784381    ...     0.829077  0.829077  0.829077
+FOLD 7    0.760314  0.777014  0.785855    ...     0.833006  0.830059  0.830550
+FOLD 8    0.753438  0.774558  0.783890    ...     0.804519  0.808939  0.829077
+FOLD 9    0.727050  0.771723  0.756505    ...     0.576338  0.568483  0.576338
+FOLD 10   0.727050  0.771723  0.756505    ...     0.576338  0.568483  0.576338
+MEAN      0.760727  0.772789  0.768288    ...     0.710776  0.715032  0.710829
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  3  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.777933  0.773743  0.772346    ...     0.762570  0.775140  0.772346
+FOLD 2    0.777108  0.753012  0.698795    ...     0.795181  0.795181  0.795181
+FOLD 3    0.746988  0.759036  0.686747    ...     0.771084  0.771084  0.771084
+FOLD 4    0.793939  0.793939  0.793939    ...     0.800000  0.800000  0.800000
+FOLD 5    0.745455  0.769697  0.787879    ...     0.696970  0.696970  0.696970
+FOLD 6    0.745455  0.769697  0.787879    ...     0.696970  0.696970  0.696970
+FOLD 7    0.745455  0.793939  0.793939    ...     0.696970  0.696970  0.696970
+FOLD 8    0.739394  0.781818  0.800000    ...     0.696970  0.606061  0.696970
+FOLD 9    0.756098  0.804878  0.743902    ...     0.707317  0.707317  0.707317
+FOLD 10   0.756098  0.804878  0.743902    ...     0.707317  0.707317  0.707317
+MEAN      0.758392  0.780464  0.760933    ...     0.733135  0.725301  0.734112
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  5  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.796633  0.777104  0.770370    ...     0.744108  0.780471  0.738721
+FOLD 2    0.758231  0.759705  0.747912    ...     0.785749  0.787224  0.785749
+FOLD 3    0.760688  0.771007  0.747420    ...     0.776904  0.778870  0.776904
+FOLD 4    0.757367  0.779470  0.790766    ...     0.784381  0.784381  0.784381
+FOLD 5    0.756876  0.780943  0.771120    ...     0.773084  0.785855  0.785855
+FOLD 6    0.754420  0.778487  0.774067    ...     0.786837  0.786837  0.786837
+FOLD 7    0.755403  0.774067  0.783890    ...     0.786837  0.786837  0.786837
+FOLD 8    0.751965  0.781434  0.785363    ...     0.786837  0.786837  0.786837
+FOLD 9    0.751595  0.768778  0.773196    ...     0.786451  0.772214  0.786451
+FOLD 10   0.751595  0.768778  0.773196    ...     0.786451  0.772214  0.786451
+MEAN      0.759477  0.773977  0.771730    ...     0.779764  0.782174  0.780502
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  5  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.777933  0.773743  0.772346    ...     0.769553  0.777933  0.775140
+FOLD 2    0.777108  0.746988  0.698795    ...     0.795181  0.795181  0.795181
+FOLD 3    0.746988  0.759036  0.674699    ...     0.771084  0.771084  0.771084
+FOLD 4    0.757576  0.781818  0.793939    ...     0.800000  0.800000  0.800000
+FOLD 5    0.745455  0.781818  0.787879    ...     0.787879  0.787879  0.787879
+FOLD 6    0.745455  0.769697  0.787879    ...     0.787879  0.787879  0.787879
+FOLD 7    0.745455  0.781818  0.793939    ...     0.787879  0.787879  0.787879
+FOLD 8    0.739394  0.781818  0.800000    ...     0.800000  0.800000  0.800000
+FOLD 9    0.756098  0.804878  0.798780    ...     0.804878  0.719512  0.804878
+FOLD 10   0.756098  0.804878  0.798780    ...     0.804878  0.719512  0.804878
+MEAN      0.754756  0.778649  0.770704    ...     0.790921  0.774686  0.791480
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  7  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.795960  0.762290  0.792593    ...     0.748148  0.767677  0.750842
+FOLD 2    0.752334  0.766585  0.789681    ...     0.783292  0.784275  0.783292
+FOLD 3    0.775921  0.769533  0.788206    ...     0.775921  0.776413  0.775921
+FOLD 4    0.756876  0.781434  0.788310    ...     0.785855  0.785855  0.785855
+FOLD 5    0.755403  0.780943  0.784381    ...     0.774558  0.787328  0.787328
+FOLD 6    0.757367  0.780943  0.789293    ...     0.787328  0.787328  0.787328
+FOLD 7    0.755894  0.777014  0.789784    ...     0.786837  0.786837  0.786837
+FOLD 8    0.755403  0.779470  0.789784    ...     0.783890  0.785363  0.783890
+FOLD 9    0.756996  0.782523  0.783996    ...     0.784487  0.785960  0.784487
+FOLD 10   0.756996  0.782523  0.783996    ...     0.784487  0.785960  0.784487
+MEAN      0.761915  0.776326  0.788002    ...     0.779480  0.783300  0.781027
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  7  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.777933  0.773743  0.772346    ...     0.769553  0.772346  0.775140
+FOLD 2    0.740964  0.746988  0.795181    ...     0.795181  0.795181  0.795181
+FOLD 3    0.746988  0.759036  0.795181    ...     0.771084  0.771084  0.771084
+FOLD 4    0.757576  0.800000  0.793939    ...     0.800000  0.800000  0.800000
+FOLD 5    0.745455  0.781818  0.787879    ...     0.787879  0.787879  0.787879
+FOLD 6    0.745455  0.781818  0.787879    ...     0.787879  0.787879  0.787879
+FOLD 7    0.751515  0.781818  0.793939    ...     0.787879  0.787879  0.787879
+FOLD 8    0.751515  0.781818  0.800000    ...     0.800000  0.800000  0.800000
+FOLD 9    0.756098  0.804878  0.798780    ...     0.804878  0.804878  0.804878
+FOLD 10   0.756098  0.804878  0.798780    ...     0.804878  0.804878  0.804878
+MEAN      0.752960  0.781680  0.792391    ...     0.790921  0.791200  0.791480
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  3  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.797306  0.767677  0.786532    ...     0.721212  0.762290  0.686869
+FOLD 2    0.759705  0.761179  0.737592    ...     0.585749  0.587224  0.585749
+FOLD 3    0.777396  0.771990  0.741032    ...     0.584275  0.585749  0.584275
+FOLD 4    0.765717  0.778487  0.771611    ...     0.777996  0.777996  0.777996
+FOLD 5    0.769155  0.770138  0.778978    ...     0.819253  0.832024  0.832024
+FOLD 6    0.770138  0.783399  0.784381    ...     0.829077  0.829077  0.829077
+FOLD 7    0.760314  0.777014  0.785855    ...     0.833006  0.830059  0.830550
+FOLD 8    0.753438  0.774558  0.783890    ...     0.804519  0.808939  0.829077
+FOLD 9    0.727050  0.771723  0.756505    ...     0.576338  0.568483  0.576338
+FOLD 10   0.727050  0.771723  0.756505    ...     0.576338  0.568483  0.576338
+MEAN      0.760727  0.772789  0.768288    ...     0.710776  0.715032  0.710829
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  3  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.777933  0.773743  0.772346    ...     0.762570  0.775140  0.772346
+FOLD 2    0.777108  0.753012  0.698795    ...     0.795181  0.795181  0.795181
+FOLD 3    0.746988  0.759036  0.686747    ...     0.771084  0.771084  0.771084
+FOLD 4    0.793939  0.793939  0.793939    ...     0.800000  0.800000  0.800000
+FOLD 5    0.745455  0.769697  0.787879    ...     0.696970  0.696970  0.696970
+FOLD 6    0.745455  0.769697  0.787879    ...     0.696970  0.696970  0.696970
+FOLD 7    0.745455  0.793939  0.793939    ...     0.696970  0.696970  0.696970
+FOLD 8    0.739394  0.781818  0.800000    ...     0.696970  0.606061  0.696970
+FOLD 9    0.756098  0.804878  0.743902    ...     0.707317  0.707317  0.707317
+FOLD 10   0.756098  0.804878  0.743902    ...     0.707317  0.707317  0.707317
+MEAN      0.758392  0.780464  0.760933    ...     0.733135  0.725301  0.734112
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  5  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.796633  0.777104  0.770370    ...     0.744108  0.780471  0.738721
+FOLD 2    0.758231  0.759705  0.747912    ...     0.785749  0.787224  0.785749
+FOLD 3    0.760688  0.771007  0.747420    ...     0.776904  0.778870  0.776904
+FOLD 4    0.757367  0.779470  0.790766    ...     0.784381  0.784381  0.784381
+FOLD 5    0.756876  0.780943  0.771120    ...     0.773084  0.785855  0.785855
+FOLD 6    0.754420  0.778487  0.774067    ...     0.786837  0.786837  0.786837
+FOLD 7    0.755403  0.774067  0.783890    ...     0.786837  0.786837  0.786837
+FOLD 8    0.751965  0.781434  0.785363    ...     0.786837  0.786837  0.786837
+FOLD 9    0.751595  0.768778  0.773196    ...     0.786451  0.772214  0.786451
+FOLD 10   0.751595  0.768778  0.773196    ...     0.786451  0.772214  0.786451
+MEAN      0.759477  0.773977  0.771730    ...     0.779764  0.782174  0.780502
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  5  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.777933  0.773743  0.772346    ...     0.769553  0.777933  0.775140
+FOLD 2    0.777108  0.746988  0.698795    ...     0.795181  0.795181  0.795181
+FOLD 3    0.746988  0.759036  0.674699    ...     0.771084  0.771084  0.771084
+FOLD 4    0.757576  0.781818  0.793939    ...     0.800000  0.800000  0.800000
+FOLD 5    0.745455  0.781818  0.787879    ...     0.787879  0.787879  0.787879
+FOLD 6    0.745455  0.769697  0.787879    ...     0.787879  0.787879  0.787879
+FOLD 7    0.745455  0.781818  0.793939    ...     0.787879  0.787879  0.787879
+FOLD 8    0.739394  0.781818  0.800000    ...     0.800000  0.800000  0.800000
+FOLD 9    0.756098  0.804878  0.798780    ...     0.804878  0.719512  0.804878
+FOLD 10   0.756098  0.804878  0.798780    ...     0.804878  0.719512  0.804878
+MEAN      0.754756  0.778649  0.770704    ...     0.790921  0.774686  0.791480
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  7  [TRAIN] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.795960  0.762290  0.792593    ...     0.748148  0.767677  0.750842
+FOLD 2    0.752334  0.766585  0.789681    ...     0.783292  0.784275  0.783292
+FOLD 3    0.775921  0.769533  0.788206    ...     0.775921  0.776413  0.775921
+FOLD 4    0.756876  0.781434  0.788310    ...     0.785855  0.785855  0.785855
+FOLD 5    0.755403  0.780943  0.784381    ...     0.774558  0.787328  0.787328
+FOLD 6    0.757367  0.780943  0.789293    ...     0.787328  0.787328  0.787328
+FOLD 7    0.755894  0.777014  0.789784    ...     0.786837  0.786837  0.786837
+FOLD 8    0.755403  0.779470  0.789784    ...     0.783890  0.785363  0.783890
+FOLD 9    0.756996  0.782523  0.783996    ...     0.784487  0.785960  0.784487
+FOLD 10   0.756996  0.782523  0.783996    ...     0.784487  0.785960  0.784487
+MEAN      0.761915  0.776326  0.788002    ...     0.779480  0.783300  0.781027
+
+[11 rows x 10 columns]
+RESULTS:  titanic k =  7  [TEST] 
+         Euclidean       LDA      ITML    ...      DML_eig      MCML      LDML
+FOLD 1    0.777933  0.773743  0.772346    ...     0.769553  0.772346  0.775140
+FOLD 2    0.740964  0.746988  0.795181    ...     0.795181  0.795181  0.795181
+FOLD 3    0.746988  0.759036  0.795181    ...     0.771084  0.771084  0.771084
+FOLD 4    0.757576  0.800000  0.793939    ...     0.800000  0.800000  0.800000
+FOLD 5    0.745455  0.781818  0.787879    ...     0.787879  0.787879  0.787879
+FOLD 6    0.745455  0.781818  0.787879    ...     0.787879  0.787879  0.787879
+FOLD 7    0.751515  0.781818  0.793939    ...     0.787879  0.787879  0.787879
+FOLD 8    0.751515  0.781818  0.800000    ...     0.800000  0.800000  0.800000
+FOLD 9    0.756098  0.804878  0.798780    ...     0.804878  0.804878  0.804878
+FOLD 10   0.756098  0.804878  0.798780    ...     0.804878  0.804878  0.804878
+MEAN      0.752960  0.781680  0.792391    ...     0.790921  0.791200  0.791480
+
+[11 rows x 10 columns]
