@@ -61,7 +61,7 @@ for d, f in selected_dataset:
         pca = PCA(num_dims=dim)
         lda = LDA(num_dims=dim)
         anmm = {3: ANMM(num_dims=dim,n_friends=3,n_enemies=3),5: ANMM(num_dims=dim,n_friends=5,n_enemies=5),7: ANMM(num_dims=dim,n_friends=7,n_enemies=7)}
-        lmnn = {3: LMNN(num_dims=dim,k=3), 5: LMNN(num_dims=dim,k=5), 7: LMNN(num_dims=dim,k=7)}
+        lmnn = {3: LMNN(num_dims=dim,k=3,solver="SGD",eta0=0.001), 5: LMNN(num_dims=dim,k=5,solver="SGD",eta0=0.001), 7: LMNN(num_dims=dim,k=7,solver="SGD",eta0=0.001)}
         nca = NCA(num_dims=dim)
         dmlmj = {3: DMLMJ(num_dims=dim,n_neighbors=3),5: DMLMJ(num_dims=dim,n_neighbors=5),7: DMLMJ(num_dims=dim,n_neighbors=7)}
         

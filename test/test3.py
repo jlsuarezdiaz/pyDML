@@ -137,8 +137,9 @@ ncmc_bgd = NCMC(max_iter=300, learning_rate="adaptive",eta0=0.3,descent_method="
 dml_eig = DML_eig(max_it=25)
 mcml = MCML(eta0=0.01)
 ldml = LDML(b=0.001,learning_rate='adaptive')
+lmnn_sgd = LMNN(num_dims=2,solver="SGD",eta0=0.001)
 #dmls = [itml,pca,lda,anmm,lsi,nca_bgd,nca_sgd,lmnn]
-dmls = [klmnn]
+dmls = [lmnn_sgd]
 
 results = kfold_multitester_supervised_knn(X,y,k = 5, n_neigh = 1, dmls = dmls, verbose = True,seed = 28)
 

@@ -208,7 +208,7 @@ class LMNN(DML_Algorithm, ClassifierMixin):
             if self.adaptive_:
                 impostors = self._euc_impostors(Lx,y,target_neighbors)
                 err = self._compute_euc_error(self.mu_,Lx,y,target_neighbors,impostors)
-                
+    
                 if err < err_prev:
                     self.eta_ *= self.l_inc_                    
                 else:
@@ -217,7 +217,6 @@ class LMNN(DML_Algorithm, ClassifierMixin):
                         stop = True
                 
                 err_prev = err
-                    
             
             grad_norm = np.max(np.abs(grad))
             if grad_norm < self.eps_ or self.eta_*grad_norm < self.tol_: # Difference between two iterations is given by eta*grad
