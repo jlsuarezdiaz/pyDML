@@ -1,19 +1,19 @@
 #!/bin/bash
 
 #Name of the job
-#$ -N dim32
+#SBATCH -J dim32
 
 #Queue
-#$ -q muylarga
+#SBATCH -p muylarga
 
 #Output stream
-#$ -o large_output_dim32.info
+#SBATCH -o large_output_dim32.info
 
 #Error stream
-#$ -e large_error_dim32.info
+#SBATCH -e large_error_dim32.info
 
 #Current working directory
-#$ -cwd
+
 
 
 #pip install --user --upgrade Cython
