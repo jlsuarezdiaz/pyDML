@@ -1,0 +1,38 @@
+Requirement already up-to-date: numpy in /home/jlsuarez/.local/lib/python3.6/site-packages (1.15.0)
+Requirement already up-to-date: pandas in /home/jlsuarez/.local/lib/python3.6/site-packages (0.23.3)
+Requirement already satisfied, skipping upgrade: pytz>=2011k in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas) (2018.5)
+Requirement already satisfied, skipping upgrade: python-dateutil>=2.5.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas) (2.7.3)
+Requirement already satisfied, skipping upgrade: numpy>=1.9.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from pandas) (1.15.0)
+Requirement already satisfied, skipping upgrade: six>=1.5 in /home/jlsuarez/.local/lib/python3.6/site-packages (from python-dateutil>=2.5.0->pandas) (1.11.0)
+Requirement already up-to-date: Cython in /home/jlsuarez/.local/lib/python3.6/site-packages (0.28.4)
+Requirement already up-to-date: arff in /home/jlsuarez/.local/lib/python3.6/site-packages (0.9)
+Requirement already up-to-date: scikit-learn in /home/jlsuarez/.local/lib/python3.6/site-packages (0.19.2)
+Requirement already up-to-date: matplotlib in /home/jlsuarez/.local/lib/python3.6/site-packages (2.2.2)
+Requirement already satisfied, skipping upgrade: numpy>=1.7.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib) (1.15.0)
+Requirement already satisfied, skipping upgrade: pytz in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib) (2018.5)
+Requirement already satisfied, skipping upgrade: six>=1.10 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib) (1.11.0)
+Requirement already satisfied, skipping upgrade: python-dateutil>=2.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib) (2.7.3)
+Requirement already satisfied, skipping upgrade: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib) (2.2.0)
+Requirement already satisfied, skipping upgrade: kiwisolver>=1.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib) (1.0.1)
+Requirement already satisfied, skipping upgrade: cycler>=0.10 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib) (0.10.0)
+Requirement already satisfied, skipping upgrade: setuptools in /home/jlsuarez/.local/lib/python3.6/site-packages (from kiwisolver>=1.0.1->matplotlib) (40.0.0)
+Requirement already up-to-date: seaborn in /home/jlsuarez/.local/lib/python3.6/site-packages (0.9.0)
+Requirement already satisfied, skipping upgrade: matplotlib>=1.4.3 in /home/jlsuarez/.local/lib/python3.6/site-packages (from seaborn) (2.2.2)
+Requirement already satisfied, skipping upgrade: numpy>=1.9.3 in /home/jlsuarez/.local/lib/python3.6/site-packages (from seaborn) (1.15.0)
+Requirement already satisfied, skipping upgrade: pandas>=0.15.2 in /home/jlsuarez/.local/lib/python3.6/site-packages (from seaborn) (0.23.3)
+Requirement already satisfied, skipping upgrade: scipy>=0.14.0 in /home/jlsuarez/.local/lib/python3.6/site-packages (from seaborn) (1.1.0)
+Requirement already satisfied, skipping upgrade: pytz in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib>=1.4.3->seaborn) (2018.5)
+Requirement already satisfied, skipping upgrade: kiwisolver>=1.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib>=1.4.3->seaborn) (1.0.1)
+Requirement already satisfied, skipping upgrade: six>=1.10 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib>=1.4.3->seaborn) (1.11.0)
+Requirement already satisfied, skipping upgrade: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib>=1.4.3->seaborn) (2.2.0)
+Requirement already satisfied, skipping upgrade: python-dateutil>=2.1 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib>=1.4.3->seaborn) (2.7.3)
+Requirement already satisfied, skipping upgrade: cycler>=0.10 in /home/jlsuarez/.local/lib/python3.6/site-packages (from matplotlib>=1.4.3->seaborn) (0.10.0)
+Requirement already satisfied, skipping upgrade: setuptools in /home/jlsuarez/.local/lib/python3.6/site-packages (from kiwisolver>=1.0.1->matplotlib>=1.4.3->seaborn) (40.0.0)
+Python 3.6.5
+Please put "# distutils: language=c++" in your .pyx or .pxd file(s)
+running build_ext
+copying build/lib.linux-x86_64-3.6/dml/anmm.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_eig.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dml_utils.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/dmlmj.cpython-36m-x86_64-linux-gnu.so -> dml
+copying build/lib.linux-x86_64-3.6/dml/itml.cpython-36m-x86_64-linux-gnu.so -> dml
