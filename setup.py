@@ -13,6 +13,8 @@ from os import path
 
 from Cython.Build import cythonize
 
+import numpy
+
 here = path.abspath(path.dirname(__file__))
 
 with open(path.join(here,'README.md'),encoding='utf-8') as f:
@@ -86,6 +88,8 @@ setup(
           'Source': 'https://github.com/jlsuarezdiaz/pyDML',
       },
               
-      ext_modules = cythonize(["dml/*.pyx"],language="c++")
+      ext_modules = cythonize(["dml/*.pyx"],language="c++"),
+
+      include_dirs = [numpy.get_include()]
       
 )
