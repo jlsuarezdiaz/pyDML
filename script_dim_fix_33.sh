@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Name of the job
-#SBATCH -J dim02
+#SBATCH -J dim33
 
 #Queue
 #SBATCH -p muylarga

@@ -136,6 +136,7 @@ for d, f in selected_dataset:
                             results[d][dim]['test'][k][i,jj] = np.nan
                             
             for k in [3,5,7]:
+
                 results[d][dim]['train'][k][10,:] = np.mean(results[d][dim]['train'][k][:10,:],axis=0)
                 results[d][dim]['test'][k][10,:] = np.mean(results[d][dim]['test'][k][:10,:],axis=0)
             
