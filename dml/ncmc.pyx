@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+Nearest Class with Multiple Centroids (NCMC)
+
 Created on Wed Feb 28 16:18:39 2018
 
 @author: jlsuarezdiaz
@@ -24,10 +26,88 @@ from scipy.linalg import eigh
 from .dml_algorithm import DML_Algorithm, KernelDML_Algorithm
 from .dml_utils import calc_outers, calc_outers_i
 
+
 class NCMC(DML_Algorithm):
-    
-    def __init__(self, num_dims=None, centroids_num = 3, learning_rate = "adaptive", eta0 = 0.3, initial_transform = None, max_iter = 300,
-                 tol = 1e-15, prec = 1e-15, descent_method = "SGD", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5, **kmeans_kwargs):
+    """
+    Nearest Class with Multiple Centroids distance metric learner (NCMC).
+
+    A distance metric learning algorithm to improve the nearest class with multiple centroids classifier.
+
+    Parameters
+    ----------
+
+    num_dims : int, default=None
+
+        Desired value for dimensionality reduction. If None, the dimension of transformed data will be the same as the original.
+
+    centroids_num : int, or list of int, default=3
+
+        If it is a list, it must have the same size as the number of classes. In this case, i-th item will be the number of
+        centroids to take in the i-th class. If it is an int, every class will have the same number of centroids.
+
+    learning_rate : string, default='adaptive'
+
+        Type of learning rate update for gradient descent. Possible values are:
+
+        - 'adaptive' : the learning rate will increase if the gradient step is succesful, else it will decrease.
+
+        - 'constant' : the learning rate will be constant during all the gradient steps.
+
+    eta0 : int, default=0.3
+
+        The initial value for learning rate.
+
+    initial_transform : 2D-Array or Matrix (d' x d), or string, default=None.
+
+        If array or matrix that will represent the starting linear map for gradient descent, where d is the number of features,
+        and d' is the dimension specified in num_dims.
+        If None, euclidean distance will be used. If a string, the following values are allowed:
+
+        - 'euclidean' : the euclidean distance.
+
+        - 'scale' : a diagonal matrix that normalizes each attribute according to its range will be used.
+
+    max_iter : int, default=300
+
+        Maximum number of gradient descent iterations.
+
+    prec : float, default=1e-15
+
+        Precision stop criterion (gradient norm).
+
+    tol : float, default=1e-15
+
+        Tolerance stop criterion (difference between two iterations)
+
+    descent_method : string, default='SGD'
+
+        The descent method to use. Allowed values are:
+
+        - 'SGD' : stochastic gradient descent.
+
+        - 'BGD' : batch gradient descent.
+
+    eta_thres : float, default=1e-14
+
+        A learning rate threshold stop criterion.
+
+    learn_inc : float, default=1.01
+
+        Increase factor for learning rate. Ignored if learning_rate is not 'adaptive'.
+
+    learn_dec : float, default=0.5
+
+        Decrease factor for learning rate. Ignored if learning_rate is not 'adaptive'.
+
+    References
+    ----------
+        Thomas Mensink et al. “Metric learning for large scale image classification: Generalizing to new
+        classes at near-zero cost”. In: Computer Vision–ECCV 2012. Springer, 2012, pages 488-501.
+
+    """
+
+    def __init__(self, num_dims=None, centroids_num=3, learning_rate="adaptive", eta0=0.3, initial_transform=None, max_iter=300,
+                 tol=1e-15, prec=1e-15, descent_method="SGD", eta_thres=1e-14, learn_inc=1.01, learn_dec=0.5, **kmeans_kwargs):
         
         self.num_dims_ = num_dims
         self.L0_ = initial_transform
@@ -50,12 +130,47 @@ class NCMC(DML_Algorithm):
         self.final_expectance_ = None
         
     def metadata(self):
+        """
+        Obtains algorithm metadata.
+
+        Returns
+        -------
+        meta : A dictionary with the following metadata:
+            - num_iters : Number of iterations that the descent method took.
+
+            - initial_expectance : Initial value of the objective function (the expected score)
+
+            - final_expectance : Final value of the objective function (the expected score)
+        """
         return {'num_iters':self.num_its_, 'initial_expectance':self.initial_expectance_, 'final_expectance':self.final_expectance_}
     
     def transformer(self):
+        """
+        Obtains the learned projection.
+
+        Returns
+        -------
+        L : (d'xd) matrix, where d' is the desired output dimension and d is the number of features.
+        """
         return self.L_
-        
-    def fit(self,X,y): 
+
+    def fit(self,X,y):
+        """
+        Fit the model from the data in X and the labels in y.
+
+        Parameters
+        ----------
+        X : array-like, shape (N x d)
+            Training vector, where N is the number of samples, and d is the number of features.
+
+        y : array-like, shape (N)
+            Labels vector, where N is the number of samples.
+
+        Returns
+        -------
+        self : object
+            Returns the instance itself.
+        """
         self.n_, self.d_ = X.shape
         if self.num_dims_ is not None:
             self.nd_ = min(self.d_,self.num_dims_)
@@ -299,14 +414,49 @@ class NCMC(DML_Algorithm):
             centroids[class_start[i]:(class_start[i+1]),:]=kmeans.cluster_centers_
             
         return centroids, class_start
-    
+
+
 class NCMC_Classifier(BaseEstimator, ClassifierMixin):
-    
-    def __init__(self,centroids_num = 3, **kmeans_kwargs):
+    """
+    Nearest Class with Multiple Centroids classifier.
+
+    A classifier that makes its predictions by choosing the class who has a centroid the nearest to the point.
+    For each class, an arbitrary number of centroids can be set. This centroids are calculated using k-Means
+    over each class sub-dataset.
+
+    Parameters
+    ----------
+
+    centroids_num : int, or list of int, default=3
+
+        If it is a list, it must have the same size as the number of classes. In this case, i-th item will be the number of
+        centroids to take in the i-th class. If it is an int, every class will have the same number of centroids.
+
+    kmeans_args : dictionary
+
+        Additional keyword args for k-Means.
+    """
+    def __init__(self, centroids_num=3, **kmeans_kwargs):
         self.centroids_num_ = centroids_num
         self.kmeans_args_ = kmeans_kwargs
-        
-    def fit(self,X,y):
+
+    def fit(self, X, y):
+        """
+        Fit the model from the data in X and the labels in y.
+
+        Parameters
+        ----------
+        X : array-like, shape (N x d)
+            Training vector, where N is the number of samples, and d is the number of features.
+
+        y : array-like, shape (N)
+            Labels vector, where N is the number of samples.
+
+        Returns
+        -------
+        self : object
+            Returns the instance itself.
+        """
         X,y = check_X_y(X,y)
         self.X_, self.y_ = X,y
         self.le_ = LabelEncoder()
@@ -337,8 +487,23 @@ class NCMC_Classifier(BaseEstimator, ClassifierMixin):
         self.ncm_.fit(X,ygroups)
         
         return self
-    
-    def predict(self,X):
+
+    def predict(self, X):
+        """
+        Predicts the labels for the given data. Model needs to be already fitted.
+
+        X : 2D-Array or Matrix, default=None
+
+            The dataset to be used. If None, the training set will be used. In this case, the prediction will be made
+            using Leave One Out (that is, the sample to predict will be taken away from the training set).
+
+        Returns
+        -------
+
+        y : 1D-Array
+
+            The vector with the label predictions.
+        """
         y = self.ncm_.predict(X)
         for i in range(len(y)):
             y[i] = self.class_map_[y[i]]

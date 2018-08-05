@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+Nearest Class Mean Metric Learning (NCMML)
+
 Created on Wed Feb 28 12:07:43 2018
 
 @author: jlsuarezdiaz
@@ -20,10 +22,83 @@ from scipy.linalg import eigh
 from .dml_algorithm import DML_Algorithm, KernelDML_Algorithm
 from .dml_utils import calc_outers, calc_outers_i
 
+
 class NCMML(DML_Algorithm):
-    
-    def __init__(self, num_dims=None, learning_rate = "adaptive", eta0 = 0.3, initial_transform = None, max_iter = 300,
-                 tol = 1e-15, prec = 1e-15, descent_method = "SGD", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5):
+    """
+    Nearest Class Mean Metric Learning (NCMML)
+
+    A distance metric learning algorithm to improve the nearest class mean classifier.
+
+    Parameters
+    ----------
+
+    num_dims : int, default=None
+
+        Desired value for dimensionality reduction. If None, the dimension of transformed data will be the same as the original.
+
+    learning_rate : string, default='adaptive'
+
+        Type of learning rate update for gradient descent. Possible values are:
+
+        - 'adaptive' : the learning rate will increase if the gradient step is succesful, else it will decrease.
+
+        - 'constant' : the learning rate will be constant during all the gradient steps.
+
+    eta0 : int, default=0.3
+
+        The initial value for learning rate.
+
+    initial_transform : 2D-Array or Matrix (d' x d), or string, default=None.
+
+        If array or matrix that will represent the starting linear map for gradient descent, where d is the number of features,
+        and d' is the dimension specified in num_dims.
+        If None, euclidean distance will be used. If a string, the following values are allowed:
+
+        - 'euclidean' : the euclidean distance.
+
+        - 'scale' : a diagonal matrix that normalizes each attribute according to its range will be used.
+
+    max_iter : int, default=300
+
+        Maximum number of gradient descent iterations.
+
+    prec : float, default=1e-15
+
+        Precision stop criterion (gradient norm).
+
+    tol : float, default=1e-15
+
+        Tolerance stop criterion (difference between two iterations)
+
+    descent_method : string, default='SGD'
+
+        The descent method to use. Allowed values are:
+
+        - 'SGD' : stochastic gradient descent.
+
+        - 'BGD' : batch gradient descent.
+
+    eta_thres : float, default=1e-14
+
+        A learning rate threshold stop criterion.
+
+    learn_inc : float, default=1.01
+
+        Increase factor for learning rate. Ignored if learning_rate is not 'adaptive'.
+
+    learn_dec : float, default=0.5
+
+        Decrease factor for learning rate. Ignored if learning_rate is not 'adaptive'.
+
+    References
+    ----------
+        Thomas Mensink et al. “Metric learning for large scale image classification: Generalizing to new
+        classes at near-zero cost”. In: Computer Vision–ECCV 2012. Springer, 2012, pages 488-501.
+
+    """
+
+    def __init__(self, num_dims=None, learning_rate="adaptive", eta0=0.3, initial_transform=None, max_iter=300,
+                 tol=1e-15, prec=1e-15, descent_method="SGD", eta_thres=1e-14, learn_inc=1.01, learn_dec=0.5):
         
         self.num_dims_ = num_dims
         self.L0_ = initial_transform
@@ -44,12 +119,52 @@ class NCMML(DML_Algorithm):
         self.final_expectance_ = None
         
     def metadata(self):
-        return {'num_iters':self.num_its_, 'initial_expectance':self.initial_expectance_, 'final_expectance':self.final_expectance_}
-    
+        """
+        Obtains algorithm metadata.
+
+        Returns
+        -------
+        meta : A dictionary with the following metadata:
+            - num_iters : Number of iterations that the descent method took.
+
+            - initial_expectance : Initial value of the objective function (the expected score)
+
+            - final_expectance : Final value of the objective function (the expected score)
+        """
+        return {'num_iters': self.num_its_, 'initial_expectance': self.initial_expectance_, 'final_expectance': self.final_expectance_}
+
     def transformer(self):
+        """
+        Obtains algorithm metadata.
+
+        Returns
+        -------
+        meta : A dictionary with the following metadata:
+            - num_iters : Number of iterations that the descent method took.
+
+            - initial_expectance : Initial value of the objective function (the expected score)
+
+            - final_expectance : Final value of the objective function (the expected score)
+        """
         return self.L_
-        
-    def fit(self,X,y): 
+
+    def fit(self, X, y):
+        """
+        Fit the model from the data in X and the labels in y.
+
+        Parameters
+        ----------
+        X : array-like, shape (N x d)
+            Training vector, where N is the number of samples, and d is the number of features.
+
+        y : array-like, shape (N)
+            Labels vector, where N is the number of samples.
+
+        Returns
+        -------
+        self : object
+            Returns the instance itself.
+        """
         self.n_, self.d_ = X.shape
         if self.num_dims_ is not None:
             self.nd_ = min(self.d_,self.num_dims_)

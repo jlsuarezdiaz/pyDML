@@ -312,8 +312,8 @@ ker_results['test'] = ker_results['test'].dropna()
 ker_results['train'] = ker_results['train'][(ker_results['train'] != 0).all(axis=1)]
 ker_results['test'] = ker_results['test'][(ker_results['test'] != 0).all(axis=1)]
 
-#dim_results['train'].to_csv('./results/ker-experiments-3nn-train.csv')
-#dim_results['test'].to_csv('./results/ker-experiments-3nn-test.csv')
-#dim_results['train'].to_csv('./results/ker-experiments-3nn-train.tex')
-#dim_results['test'].to_csv('./results/ker-experiments-3nn-test.tex')
+ker_results['train'].to_csv('./results/ker-experiments-3nn-train.csv')
+ker_results['test'].to_csv('./results/ker-experiments-3nn-test.csv')
+ker_results['train'].to_latex('./results/ker-experiments-3nn-train.tex')
+ker_results['test'].to_latex('./results/ker-experiments-3nn-test.tex')
 

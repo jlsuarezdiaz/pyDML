@@ -2,9 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Large Margin Nearest Neighbors
+Large Margin Nearest Neighbors (LMNN)
 
-A DML that obtains a metric with target neighbors as near as possible and impostors as far as possible
 """
 
 from __future__ import print_function, absolute_import
@@ -18,11 +17,99 @@ from .dml_utils import SDProject, calc_outers, calc_outers_i, metric_sq_distance
 from .dml_algorithm import DML_Algorithm, KernelDML_Algorithm
 
 
-
 class LMNN(DML_Algorithm, ClassifierMixin):
+    """
+    Large Margin Nearest Neighbors (LMNN)
 
-    def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.3, initial_metric = None, max_iter = 100, prec = 1e-8,
-                tol = 1e-8, k = 3, mu = 0.5, soft_comp_interval= 1, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14, solver = "SDP"):
+    A distance metric learning algorithm that obtains a metric with target neighbors as near as possible and impostors as far as possible
+
+    Parameters
+    ----------
+
+    num_dims : int, default=None
+
+        Desired value for dimensionality reduction. Ignored if solver is 'SDP'.
+
+    learning_rate : string, default='adaptive'
+
+        Type of learning rate update for gradient descent. Possible values are:
+
+        - 'adaptive' : the learning rate will increase if the gradient step is succesful, else it will decrease.
+
+        - 'constant' : the learning rate will be constant during all the gradient steps.
+
+    eta0 : int, default=0.3
+
+        The initial value for learning rate.
+
+    initial_metric : 2D-Array or Matrix (d' x d), or string, default=None.
+
+        If array or matrix, and solver is SDP, it must be a positive semidefinite matrix with the starting metric (d x d) for gradient descent, where d is the number of features.
+        If None, euclidean distance will be used. If a string, the following values are allowed:
+
+        - 'euclidean' : the euclidean distance.
+
+        - 'scale' : a diagonal matrix that normalizes each attribute according to its range will be used.
+
+        If solver is SGD, then the array or matrix will represent a linear map (d' x d), where d' is the dimension provided in num_dims.
+
+    max_iter : int, default=100
+
+        Maximum number of iterations of gradient descent.
+
+    prec : float, default=1e-8
+
+        Precision stop criterion (gradient norm).
+
+    tol : float, default=1e-8
+
+        Tolerance stop criterion (difference between two iterations)
+
+    k : int, default=3
+
+        Number of target neighbors to take. If this algorithm is used for nearest neighbors classification, a good choice is
+        to take k as the number of neighbors.
+
+    mu : float, default=0.5
+
+        The weight of the push error in the minimization algorithm. The objective function is composed of a push error, given by the impostors,
+        with weight mu, and a pull error, given by the target neighbors, with weight (1-mu). It must be between 0.0 and 1.0.
+
+    soft_comp_interval : int, default=1
+
+        Intervals of soft computation. The soft computation relaxes the gradient descent conditions, but makes the algorithm more efficient.
+        This value provides the length of a soft computation interval. After soft_comp_interval iterations of gradient descent, a complete
+        gradient step is performed.
+
+    learn_inc : float, default=1.01
+
+        Increase factor for learning rate. Ignored if learning_rate is not 'adaptive'.
+
+    learn_dec : float, default=0.5
+
+        Decrease factor for learning rate. Ignored if learning_rate is not 'adaptive'.
+
+    eta_thres : float, default=1e-14
+
+        A learning rate threshold stop criterion.
+
+    solver : string, default='SDP'
+
+        The algorithm used for minimization. Allowed values are:
+
+        - 'SDP' : semidefinite programming, consisting of gradient descent with projections onto the positive semidefinite cone.
+                  It learns a metric.
+
+        - 'SGD' : stochastic gradient descent. It learns a linear transformer.
+
+    References
+    ----------
+        Kilian Q Weinberger and Lawrence K Saul. “Distance metric learning for large margin nearest
+        neighbor classification”. In: Journal of Machine Learning Research 10.Feb (2009), pages 207-244.
+    """
+
+    def __init__(self, num_dims=None, learning_rate="adaptive", eta0=0.3, initial_metric=None, max_iter=100, prec=1e-8,
+                 tol=1e-8, k=3, mu=0.5, soft_comp_interval=1, learn_inc=1.01, learn_dec=0.5, eta_thres=1e-14, solver="SDP"):
         self.num_dims_ = num_dims
         self.M0_ = initial_metric
         self.max_it_ = max_iter
@@ -39,20 +126,46 @@ class LMNN(DML_Algorithm, ClassifierMixin):
         self.l_dec_ = learn_dec
         self.etamin_ = eta_thres
         self.solver_ = solver
-        
+
         # Metadata
         self.num_its_ = None
         self.initial_error_ = None
         self.final_error_ = None
-        
+
     def metadata(self):
-        return {'num_iters':self.num_its_,
-                'initial_error':self.initial_error_,
-                'final_error':self.final_error_}
+        """
+        Obtains algorithm metadata.
 
+        Returns
+        -------
+        meta : A dictionary with the following metadata:
+            - num_iters : Number of iterations that the descent method took.
 
-    def fit(self,X,y):
-        
+            - initial_error : Initial value of the objective function.
+
+            - final_error : Final value of the objective function.
+        """
+        return {'num_iters': self.num_its_,
+                'initial_error': self.initial_error_,
+                'final_error': self.final_error_}
+
+    def fit(self, X, y):
+        """
+        Fit the model from the data in X and the labels in y.
+
+        Parameters
+        ----------
+        X : array-like, shape (N x d)
+            Training vector, where N is the number of samples, and d is the number of features.
+
+        y : array-like, shape (N)
+            Labels vector, where N is the number of samples.
+
+        Returns
+        -------
+        self : object
+            Returns the instance itself.
+        """
         if self.solver_ == "SDP":
             self._SDP_fit(X,y)
         elif self.solver_ == "SGD":
@@ -230,17 +343,31 @@ class LMNN(DML_Algorithm, ClassifierMixin):
 
         self.L_ = L
         self.final_error_ = self._compute_euc_error(self.mu_,Lx,y,target_neighbors,self._euc_impostors(X,y,target_neighbors))
-            
 
-    def predict(self,X=None):
+    def predict(self, X=None):
+        """
+        Predict the class labels for the provided data, according to the LMNN energy method.
+
+        Parameters
+        ----------
+        X : array-like, shape (N x d)
+
+            Test samples. N is the number of samples and d the number of features. If None, training set will be used.
+
+        Returns
+        -------
+        y : array of shape (N)
+
+            Class labels for each data sample.
+        """
         if X is None:
             X = self.X_
         Xtr, ytr = self.X_, self.y_
         M = self.metric()
-        
-        y = np.empty([X.shape[0]],dtype=ytr.dtype)
+
+        y = np.empty([X.shape[0]], dtype=ytr.dtype)
         classes = np.unique(ytr)
-        
+
         for t, xt in enumerate(X):
             emin = np.inf
             argmin = None
@@ -278,7 +405,7 @@ class LMNN(DML_Algorithm, ClassifierMixin):
                     
         return y
                         
-                
+
 
     def _set_initial_parameters(self,X,y):
         self.n_, self.d_ = X.shape
@@ -304,11 +431,11 @@ class LMNN(DML_Algorithm, ClassifierMixin):
 
 
     def _target_neighbors(self,X,y):
-        """
-        Returns a matrix nxk, where n is the amount of data, and each row contains
-        the target neighbors indexes for each data index.
-        """
-        n,d = X.shape
+
+        # Returns a matrix nxk, where n is the amount of data, and each row contains
+        # the target neighbors indexes for each data index.
+
+        n, d = X.shape
 
         unique_labels = np.unique(y)
         target_neighbors = np.empty([n,self.k_],dtype=int)
@@ -482,11 +609,112 @@ class LMNN(DML_Algorithm, ClassifierMixin):
 
 
 class KLMNN(KernelDML_Algorithm):
-    
-    def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.3, initial_metric = None, max_iter = 100, prec = 1e-8,
-                tol = 1e-8, k = 3, mu = 0.5, learn_inc = 1.01, learn_dec = 0.5, eta_thres=1e-14,
-                kernel = "linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="kernel"):
-        
+    """
+    The kernelized version of LMNN.
+
+    Parameters
+    ----------
+
+    num_dims : int, default=None
+
+        Desired value for dimensionality reduction. Ignored if solver is 'SDP'.
+
+    learning_rate : string, default='adaptive'
+
+        Type of learning rate update for gradient descent. Possible values are:
+
+        - 'adaptive' : the learning rate will increase if the gradient step is succesful, else it will decrease.
+
+        - 'constant' : the learning rate will be constant during all the gradient steps.
+
+    eta0 : float, default=0.3
+
+        The initial value for learning rate.
+
+    initial_metric : 2D-Array or Matrix (d' x d), or string, default=None.
+
+        If array or matrix, and solver is SDP, it must be a positive semidefinite matrix with the starting metric (d x d) for gradient descent, where d is the number of features.
+        If None, euclidean distance will be used. If a string, the following values are allowed:
+
+        - 'euclidean' : the euclidean distance.
+
+        - 'scale' : a diagonal matrix that normalizes each attribute according to its range will be used.
+
+        If solver is SGD, then the array or matrix will represent a linear map (d' x d), where d' is the dimension provided in num_dims.
+
+    max_iter : int, default=100
+
+        Maximum number of iterations of gradient descent.
+
+    prec : float, default=1e-8
+
+        Precision stop criterion (gradient norm).
+
+    tol : float, default=1e-8
+
+        Tolerance stop criterion (difference between two iterations)
+
+    k : int, default=3
+
+        Number of target neighbors to take. If this algorithm is used for nearest neighbors classification, a good choice is
+        to take k as the number of neighbors.
+
+    mu : float, default=0.5
+
+        The weight of the push error in the minimization algorithm. The objective function is composed of a push error, given by the impostors,
+        with weight mu, and a pull error, given by the target neighbors, with weight (1-mu). It must be between 0.0 and 1.0.
+
+    learn_inc : float, default=1.01
+
+        Increase factor for learning rate. Ignored if learning_rate is not 'adaptive'.
+
+    learn_dec : float, default=0.5
+
+        Decrease factor for learning rate. Ignored if learning_rate is not 'adaptive'.
+
+    eta_thres : float, default=1e-14
+
+        A learning rate threshold stop criterion.
+
+    kernel : "linear" | "poly" | "rbf" | "sigmoid" | "cosine" | "precomputed"
+        Kernel. Default="linear".
+
+    gamma : float, default=1/n_features
+        Kernel coefficient for rbf, poly and sigmoid kernels. Ignored by other
+        kernels.
+
+    degree : int, default=3
+        Degree for poly kernels. Ignored by other kernels.
+
+    coef0 : float, default=1
+        Independent term in poly and sigmoid kernels.
+        Ignored by other kernels.
+
+    kernel_params : mapping of string to any, default=None
+        Parameters (keyword arguments) and values for kernel passed as
+        callable object. Ignored by other kernels.
+
+    target_selecion : string, default='kernel'
+
+        How to find the target neighbors. Allowed values are:
+
+        - 'kernel' : using the euclidean distance in the kernel space.
+
+        - 'original' : using the euclidean distance in the original space.
+
+    References
+    ----------
+        Kilian Q Weinberger and Lawrence K Saul. “Distance metric learning for large margin nearest
+        neighbor classification”. In: Journal of Machine Learning Research 10.Feb (2009), pages 207-244.
+
+        Lorenzo Torresani and Kuang-chih Lee. “Large margin component analysis”. In: Advances in neural
+        information processing systems. 2007, pages 1385-1392.
+    """
+
+    def __init__(self, num_dims=None, learning_rate="adaptive", eta0=0.3, initial_metric=None, max_iter=100, prec=1e-8,
+                 tol=1e-8, k=3, mu=0.5, learn_inc=1.01, learn_dec=0.5, eta_thres=1e-14,
+                 kernel="linear", gamma=None, degree=3, coef0=1, kernel_params=None, target_selection="kernel"):
+
         self.num_dims_ = num_dims
         self.M0_ = initial_metric
         self.max_it_ = max_iter
@@ -498,32 +726,71 @@ class KLMNN(KernelDML_Algorithm):
         self.tol_ = tol
         self.mu_ = mu
         self.k_ = k
-        #self.soft_comp_interval_ = soft_comp_interval
+        # self.soft_comp_interval_ = soft_comp_interval
         self.l_inc_ = learn_inc
         self.l_dec_ = learn_dec
         self.etamin_ = eta_thres
         self.target_selection_ = target_selection
-        
+
         self.kernel_ = kernel
         self.gamma_ = gamma
         self.degree_ = degree
         self.coef0_ = coef0
         self.kernel_params_ = kernel_params
-        
+
         # Metadata
         self.num_its_ = None
         self.initial_error_ = None
         self.final_error_ = None
-        
+
     def transformer(self):
+        """
+        Obtains the learned projection.
+
+        Returns
+        -------
+        A : (d'x N) matrix, where d' is the desired output dimension, and N is the number of samples.
+            To apply A to a new sample x, A must be multiplied by the kernel vector of dimension N
+            obtained by taking the kernels between x and each training sample.
+        """
         return self.L_
-    
+
     def metadata(self):
+        """
+        Obtains algorithm metadata.
+
+        Returns
+        -------
+        meta : A dictionary with the following metadata:
+            - 'num_iters' : Number of iterations that the descent method took.
+
+            - 'initial_error' : Initial value of the objective function.
+
+            - 'final_error' : Final value of the objective function.
+
+        """
         return {'num_iters':self.num_its_,
                 'initial_error':self.initial_error_,
                 'final_error':self.final_error_}
     
     def fit(self,X,y):
+        """
+        Fit the model from the data in X and the labels in y.
+
+        Parameters
+        ----------
+        X : array-like, shape (N x d)
+            Training vector, where N is the number of samples, and d is the number of features.
+
+        y : array-like, shape (N)
+            Labels vector, where N is the number of samples.
+
+        Returns
+        -------
+        self : object
+            Returns the instance itself.
+        """
+
         # Initializing parameters
         X, y = check_X_y(X,y)
         n, d = X.shape
@@ -558,7 +825,7 @@ class KLMNN(KernelDML_Algorithm):
         elif self.target_selection_ == "kernel":
             target_neighbors = self._kernel_target_neighbors(X,y,K)
         else:
-            raise ValueError("'target_selection' must be on of the following: 'original', 'kernel'.")
+            raise ValueError("'target_selection' must be one of the following: 'original', 'kernel'.")
     
         L = self.L_
 
@@ -737,49 +1004,4 @@ class KLMNN(KernelDML_Algorithm):
         Lkx = Lkx[rnd,:]
 
         return X,y, K, target_neighbors, Lkx, Kt
-    
-"""    
-class LMNN_Energy(BaseEstimator, ClassifierMixin):
-    def __init__(self, k = 3, mu = 0.5):
-        self.k_ = k
-        self.mu_ = mu
-        
-    def fit(self,X,y):
-        X, y = check_X_y(X,y)
-        self.X_, self.y_ = X, y
-        self.target_neighbors = self._target_neighbors(X,y,self.k_)
-        
-    def predict(self,X=None):
-        if X is None:
-            X = self.X_
-    
-    def _target_neighbors(X,y,k,Xt=None,yt=None):
-        ""
-        Calculate target neighbors from test data to train data
-        ""
-        n,d = X.shape
-        
-        if Xt is None or yt is None:
-            Xt = X
-            yt = y
 
-        unique_labels = np.unique(y)
-        target_neighbors = np.empty([n,k],dtype=int)
-
-        for label in unique_labels:
-            inds, = np.where(y == label)
-            inds_t = np.where(yt == label)
-            dists = pairwise_distances(X[inds],Xt[inds_t])
-
-            np.fill_diagonal(dists, np.inf)
-            target_inds = np.argsort(dists)[..., :self.k_]
-            target_neighbors[inds] = inds[target_inds]
-
-        return target_neighbors
-    
-    
-    
-    def _distance(x,y,M):
-        xy=(x-y).reshape(1,-1)
-        return xy.dot(M).dot(xy.T)
-"""

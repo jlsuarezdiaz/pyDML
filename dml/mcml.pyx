@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+Maximally collapsing metric learning (MCML)
+
 Created on Mon Mar 12 10:47:23 2018
 
 @author: jlsuarezdiaz
@@ -14,11 +16,80 @@ from sklearn.utils.validation import check_X_y
 from .dml_utils import calc_outers, calc_outers_i, SDProject
 from .dml_algorithm import DML_Algorithm
 
+
 class MCML(DML_Algorithm):
 
+    """
+    Maximally Collapsing Metric Learning (MCML)
 
-    def __init__(self, num_dims = None, learning_rate = "adaptive", eta0 = 0.01, initial_metric = None, max_iter = 20, prec = 0.01, 
-                tol = 0.01, descent_method = "SDP", eta_thres = 1e-14, learn_inc = 1.01, learn_dec = 0.5):
+    A distance metric learning algorithm that learns minimizing the KL divergence to the maximally collapsing distribution.
+
+    Parameters
+    ----------
+
+    num_dims : int, default=None.
+
+        Number of dimensions for dimensionality reduction. Not supported yet.
+
+    learning_rate : string, default='adaptive'
+
+        Type of learning rate update for gradient descent. Possible values are:
+
+        - 'adaptive' : the learning rate will increase if the gradient step is succesful, else it will decrease.
+
+        - 'constant' : the learning rate will be constant during all the gradient steps.
+
+    eta0 : float, default=0.01
+
+        The initial value for learning rate.
+
+    initial_metric : 2D-Array or Matrix (d x d), or string, default=None.
+
+        If array or matrix, it must be a positive semidefinite matrix with the starting metric for gradient descent, where d is the number of features.
+        If None, euclidean distance will be used. If a string, the following values are allowed:
+
+        - 'euclidean' : the euclidean distance.
+
+        - 'scale' : a diagonal matrix that normalizes each attribute according to its range will be used.
+
+    max_iter : int, default=20
+
+        Maximum number of iterations of gradient descent.
+
+    prec : float, default=1e-3
+
+        Precision stop criterion (gradient norm).
+
+    tol : float, default=1e-3
+
+        Tolerance stop criterion (difference between two iterations)
+
+    descent_method : string, default='SDP'
+
+        The descent method to use. Allowed values are:
+
+        - 'SDP' : semidefinite programming, consisting of gradient descent with projections onto the PSD cone.
+
+    eta_thres : float, default=1e-14
+
+        A learning rate threshold stop criterion.
+
+    learn_inc : float, default=1.01
+
+        Increase factor for learning rate. Ignored if learning_rate is not 'adaptive'.
+
+    learn_dec : float, default=0.5
+
+        Decrease factor for learning rate. Ignored if learning_rate is not 'adaptive'.
+
+    References
+    ----------
+        Amir Globerson and Sam T Roweis. “Metric learning by collapsing classes”. In: Advances in neural
+        information processing systems. 2006, pages 451-458.
+    """
+
+    def __init__(self, num_dims=None, learning_rate="adaptive", eta0=0.01, initial_metric=None, max_iter=20, prec=0.01,
+                 tol=0.01, descent_method="SDP", eta_thres=1e-14, learn_inc=1.01, learn_dec=0.5):
         self.num_dims_ = num_dims
         self.initial_ = initial_metric
         self.max_it_ = max_iter
@@ -31,19 +102,54 @@ class MCML(DML_Algorithm):
         self.etamin_ = eta_thres
         self.l_inc_ = learn_inc
         self.l_dec_ = learn_dec
-        
+
         # Metadata initialization
         self.num_its_ = None
         self.initial_error_ = None
         self.final_error_ = None
         
     def metadata(self):
+        """
+        Obtains algorithm metadata.
+
+        Returns
+        -------
+        meta : A dictionary with the following metadata:
+            - 'num_iters' : Number of iterations that the descent method took.
+
+            - 'initial_error' : Initial value of the objective function.
+
+            - 'final_error' : Final value of the objective function.
+        """
         return {'num_iters':self.num_its_,'initial_error':self.initial_error_,'final_error':self.final_error_}
 
     def metric(self):
+        """
+        Obtains the learned metric.
+
+        Returns
+        -------
+        M : (dxd) positive semidefinite matrix, where d is the number of features.
+        """
         return self.M_
 
-    def fit(self,X,y): 
+    def fit(self,X,y):
+        """
+        Fit the model from the data in X and the labels in y.
+
+        Parameters
+        ----------
+        X : array-like, shape (N x d)
+            Training vector, where N is the number of samples, and d is the number of features.
+
+        y : array-like, shape (N)
+            Labels vector, where N is the number of samples.
+
+        Returns
+        -------
+        self : object
+            Returns the instance itself.
+        """
         self.n_, self.d_ = X.shape
         if self.num_dims_ is not None:
             self.nd_ = min(self.d_,self.num_dims_)

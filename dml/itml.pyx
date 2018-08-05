@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+Information Theoretic Metric Learning (ITML)
+
 Created on Thu Feb  1 17:19:12 2018
 
 @author: jlsuarezdiaz
@@ -16,9 +18,61 @@ from numpy.linalg import norm
 
 from .dml_algorithm import DML_Algorithm
 
+
 class ITML(DML_Algorithm):
-    
-    def __init__(self,initial_metric = None,upper_bound = None, lower_bound=None, num_constraints = None, gamma = 1.0,tol = 0.001, max_iter = 100000, low_perc=5, up_perc = 95):
+    """
+    Information Theoretic Metric Learning (ITML).
+
+    A DML algorithm that learns a metric associated to the nearest gaussian distribution satisfying similarity constraints.
+    The nearest gaussian distribution is obtained minimizing the Kullback-Leibler divergence.
+
+    Parameters
+    ----------
+
+    initial_metric : 2D-Array or Matrix
+
+            A positive definite matrix that defines the initial metric used to compare.
+
+    upper_bound : float, default=None
+
+            Bound for dissimilarity constraints. If None, it will be estimated from upper_perc.
+
+    lower_bound : float, default=None
+
+            Bound for similarity constraints. If None, it will be estimated from lower_perc.
+
+    num_constraints : int, default=None
+
+            Number of constraints to generate. If None, it will be taken as 40 * k * (k-1), where k is the number of classes.
+
+    gamma : float, default=1.0
+
+            The gamma value for slack variables.
+
+    tol : float, default=0.001
+
+            Tolerance stop criterion for the algorithm.
+
+    max_iter : int, default=100000
+
+            Maximum number of iterations for the algorithm.
+
+    low_perc : int, default=5
+
+            Lower percentile (from 0 to 100) to estimate the lower bound from the dataset. Ignored if lower_bound is provided.
+
+    up_perc : int, default=95
+
+            Upper percentile (from 0 to 100) to estimate the upper bound from the dataset. Ignored if upper_bound is provided.
+
+    References
+    ----------
+        Jason V Davis et al. “Information-theoretic metric learning”. In: Proceedings of the 24th
+        international conference on Machine learning. ACM. 2007, pages. 209-216.
+
+    """
+
+    def __init__(self, initial_metric=None, upper_bound=None, lower_bound=None, num_constraints=None, gamma=1.0, tol=0.001, max_iter=100000, low_perc=5, up_perc=95):
         self.M0_ = initial_metric
         self.u_ = upper_bound
         self.l_ = lower_bound
@@ -28,14 +82,37 @@ class ITML(DML_Algorithm):
         self.num_constraints_ = num_constraints
         self.low_perc_ = low_perc
         self.up_perc_ = up_perc
-        
+
     def metric(self):
+        """
+        Obtains the learned metric.
+
+        Returns
+        -------
+        M : (dxd) positive semidefinite matrix, where d is the number of features.
+        """
         return self.M_
-    
-    def fit(self,X,y):
-        X, y = check_X_y(X,y)
+
+    def fit(self, X, y):
+        """
+        Fit the model from the data in X and the labels in y.
+
+        Parameters
+        ----------
+        X : array-like, shape (N x d)
+            Training vector, where N is the number of samples, and d is the number of features.
+
+        y : array-like, shape (N)
+            Labels vector, where N is the number of samples.
+
+        Returns
+        -------
+        self : object
+            Returns the instance itself.
+        """
+        X, y = check_X_y(X, y)
         self.X_, self.y_ = X, y
-        
+
         # Initialize parameters
         n, d = X.shape
         M = self.M0_
@@ -45,7 +122,7 @@ class ITML(DML_Algorithm):
         tol = self.tol_
         gamma = self.gamma_
         max_its = self.max_its_
-        
+
         if M is None or M == "euclidean":
             M = np.zeros([d,d])
             np.fill_diagonal(M,1.0) #Euclidean distance 
@@ -152,12 +229,11 @@ class ITML(DML_Algorithm):
         return C
     
     def _compute_distance_extremes(X,a,b,M):
-        """
-            X: data matrix
-            a: lower bound percentile (between 1 and 100)
-            b: upper bound percentile (between 1 and 100)
-            M: distance matrix
-        """
+        #    X: data matrix
+        #    a: lower bound percentile (between 1 and 100)
+        #    b: upper bound percentile (between 1 and 100)
+        #    M: distance matrix
+        
         if a < 0 or a > 100:
             raise ValueError('a must be between 0 and 100')
         if b < 0 or b > 100:

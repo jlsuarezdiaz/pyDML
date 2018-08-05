@@ -4,7 +4,6 @@
 """
 Linear Discriminant Analysis (LDA)
 
-A DML that tries to minimize kNN expected error.
 """
 
 from __future__ import absolute_import
@@ -18,11 +17,25 @@ from .dml_algorithm import DML_Algorithm
 
 
 class LDA(DML_Algorithm):
-    def __init__(self,num_dims=None, thres=None):
-        """
-            num_dims: Number of dimensions for transformed data (ignored if num_dims > num_classes or thres specified)
-            thres: Fraction of variability to keep. Data dimension will be reduced until the lowest dimension that keeps 'thres' explained variance.
-        """
+    """
+    Linear Discriminant Analysis (LDA).
+
+    A distance metric learning algorithm for supervised dimensionality reduction, maximizing the ratio of variances between classes and within classes.
+    This class is a wrapper for :class:`~sklearn.discriminant_analysis.LinearDiscriminantAnalysis`.
+
+    Parameters
+    ----------
+
+    num_dims : int, default=None
+
+        Number of components (< n_classes - 1) for dimensionality reduction. If None, it will be taken as n_classes - 1. Ignored if thres is provided.
+
+    thres : float
+
+        Fraction of variability to keep, from 0 to 1. Data dimension will be reduced until the lowest dimension that keeps 'thres' explained variance.
+    """
+
+    def __init__(self, num_dims=None, thres=None):
 
         self.nd_init = num_dims
         self.thres_init = thres
@@ -33,23 +46,55 @@ class LDA(DML_Algorithm):
         self.acum_eig_ = None
 
     def transformer(self):
+        """
+        Obtains the learned projection.
+
+        Returns
+        -------
+        L : (d'xd) matrix, where d' is the desired output dimension and d is the number of features.
+        """
         return self.L_
-    
+
     def metadata(self):
-        return {'num_dims':self.nd_, 'acum_eig':self.acum_eig_}
+        """
+        Obtains algorithm metadata.
 
+        Returns
+        -------
+        meta : A dictionary with the following metadata:
+            acum_eig : eigenvalue rate accumulated in the learned output respect to the total dimension.
 
-    def fit(self,X,y):
-        X, y = check_X_y(X,y)
+            num_dims : dimension of the reduced data.
+        """
+        return {'num_dims': self.nd_, 'acum_eig': self.acum_eig_}
+
+    def fit(self, X, y):
+        """
+        Fit the model from the data in X and the labels in y.
+
+        Parameters
+        ----------
+        X : array-like, shape (N x d)
+            Training vector, where N is the number of samples, and d is the number of features.
+
+        y : array-like, shape (N)
+            Labels vector, where N is the number of samples.
+
+        Returns
+        -------
+        self : object
+            Returns the instance itself.
+        """
+        X, y = check_X_y(X, y)
         self.X_ = X
         self.y_ = y
         self.n_, self.d_ = X.shape
-        
+
         self.num_dims = self.nd_init
         self.thres = self.thres_init
         self.sklda = skLDA(n_components=self.num_dims)
 
-        self.sklda.fit(X,y)
+        self.sklda.fit(X, y)
         self.explained_variance = self.sklda.explained_variance_ratio_
         self.acum_variance = np.cumsum(self.explained_variance)
         

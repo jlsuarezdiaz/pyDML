@@ -4,7 +4,6 @@
 """
 Learning with Side Information (LSI)
 
-A DML that optimizes the distance between pairs of similar data
 """
 
 from __future__ import print_function, absolute_import
@@ -19,9 +18,66 @@ from numpy.linalg import norm
 from .dml_utils import unroll, matpack, calc_outers, calc_outers_i, SDProject
 from .dml_algorithm import DML_Algorithm
 
-class LSI(DML_Algorithm):
 
-    def __init__(self,initial_metric = None, learning_rate = 'adaptive', eta0 = 0.1, max_iter = 100, max_proj_iter = 5000, itproj_err = 1e-3, err = 1e-3, supervised = False):
+class LSI(DML_Algorithm):
+    """
+    Learning with Side Information (LSI)
+
+    A distance metric learning algorithm that minimizes the sum of distances between similar data, with non similar
+    data constrained to be separated.
+
+    Parameters
+    ----------
+
+    initial_metric : 2D-Array or Matrix (d x d), or string, default=None.
+
+        If array or matrix, it must be a positive semidefinite matrix with the starting metric for gradient descent, where d is the number of features.
+        If None, euclidean distance will be used. If a string, the following values are allowed:
+
+        - 'euclidean' : the euclidean distance.
+
+        - 'scale' : a diagonal matrix that normalizes each attribute according to its range will be used.
+
+    learning_rate : string, default='adaptive'
+
+        Type of learning rate update for gradient descent. Possible values are:
+
+        - 'adaptive' : the learning rate will increase if the gradient step is succesful, else it will decrease.
+
+        - 'constant' : the learning rate will be constant during all the gradient steps.
+
+    eta0 : float, default=0.1
+
+        The initial value for learning rate.
+
+    max_iter : int, default=100
+
+        Number of iterations for gradient descent.
+
+    max_proj_iter : int, default=5000
+
+        Number of iterations for iterated projections.
+
+    itproj_err : float, default=1e-3
+
+        Convergence error criterion for iterated projections
+
+    err : float, default=1e-3
+
+        Convergence error stop criterion for gradient descent.
+
+    supervised : Boolean, default=False
+
+        If True, the algorithm will accept a labeled dataset (X,y). Else, it will accept the dataset and the similarity sets, (X,S,D).
+
+    References
+    ----------
+        Eric P Xing et al. “Distance metric learning with application to clustering with side-information”.
+        In: Advances in neural information processing systems. 2003, pages 521-528.
+
+    """
+
+    def __init__(self, initial_metric=None, learning_rate='adaptive', eta0=0.1, max_iter=100, max_proj_iter=5000, itproj_err=1e-3, err=1e-3, supervised=False):
         self.M0_ = initial_metric
         self.eta0_ = eta0
         self.learning_ = learning_rate
@@ -30,7 +86,7 @@ class LSI(DML_Algorithm):
         self.itproj_err_ = itproj_err
         self.err_ = err
         self.supv_ = supervised
-        
+
         # Metadata
         self.iterative_projections_conv_exp_ = None
         self.initial_objective_ = None
@@ -39,29 +95,67 @@ class LSI(DML_Algorithm):
         self.final_constraint_ = None
         self.projection_iterations_avg_ = None
         self.num_its_ = None
-        
+
     def metric(self):
-        return self.M_
-    
-    def metadata(self):
-        return {'initial_objective':self.initial_objective_,
-                'initial_constraint':self.initial_constraint_,
-                'final_objective':self.final_objective_,
-                'final_constraint':self.final_constraint_,
-                'iterative_projections_conv_exp':self.iterative_projections_conv_exp_,
-                'projection_iterations_avg': self.projection_iterations_avg_,
-                'num_its':self.num_its_}
-        
-    def fit(self,X,side):
         """
-            X: data
-            side: side information. A list of sets of pairs of indices. Options:
+        Obtains the learned metric.
+
+        Returns
+        -------
+        M : (dxd) positive semidefinite matrix, where d is the number of features.
+        """
+        return self.M_
+
+    def metadata(self):
+        """
+        Obtains algorithm metadata.
+
+        Returns
+        -------
+        meta : A dictionary with the following metadata:
+            - 'initial_objective' : Initial value of the objective function.
+
+            - 'initial_constraint' : Initial calue of the constraint function.
+
+            - 'final_objective' : Final value of the objective function.
+
+            - 'final_constraint' : Final value of the constraint function.
+
+            - 'iterative_projections_conv_exp' : Convergence ratio, from 0 to 1, of the iterative projections.
+
+            - 'projection_iterations_avg' : Average iterations needed in iterative projections.
+
+            - 'num_its' : Number of iterations of gradient descent.
+        """
+        return {'initial_objective': self.initial_objective_,
+                'initial_constraint': self.initial_constraint_,
+                'final_objective': self.final_objective_,
+                'final_constraint': self.final_constraint_,
+                'iterative_projections_conv_exp': self.iterative_projections_conv_exp_,
+                'projection_iterations_avg': self.projection_iterations_avg_,
+                'num_its': self.num_its_}
+
+    def fit(self, X, side):
+        """
+        Fit the model from the data in X and the side information in side
+
+        Parameters
+        ----------
+        X : array-like, shape (N x d)
+            Training vector, where N is the number of samples, and d is the number of features.
+
+        side : list of array-like, or 1D-array (N)
+            The side information, or the label set. Options:
                 - side = y, the label set (only if supervised = True)
                 - side = [S,D], where S is the set of indices of similar data and D is the set of indices of dissimilar data.
                 - side = [S], where S is the set of indices of similar data. The set D will be the complement of S.
                 Sets S and D are represented as a boolean matrix (S[i,j]==True iff (i,j) in S)
+        Returns
+        -------
+        self : object
+            Returns the instance itself.
         """
-        
+
         # Obtain similarity sets
         if self.supv_:
             X, side = check_X_y(X,side)
