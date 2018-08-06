@@ -1,0 +1,94 @@
+\hypertarget{classdml_1_1base_1_1Metric}{}\section{dml.\+base.\+Metric Class Reference}
+\label{classdml_1_1base_1_1Metric}\index{dml.\+base.\+Metric@{dml.\+base.\+Metric}}
+
+
+Inheritance diagram for dml.\+base.\+Metric\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classdml_1_1base_1_1Metric__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dml.\+base.\+Metric\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classdml_1_1base_1_1Metric__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classdml_1_1base_1_1Metric_a41a9f7544ff22d3b05e3b5451e4c16b0}{metric})\hypertarget{classdml_1_1base_1_1Metric_aca79aaafeef1b4b94081a24579f2f254}{}\label{classdml_1_1base_1_1Metric_aca79aaafeef1b4b94081a24579f2f254}
+
+\item 
+def \hyperlink{classdml_1_1base_1_1Metric_ad94ffd257c24ae5e291d301131bbd874}{fit} (self, X, y)
+\item 
+def \hyperlink{classdml_1_1base_1_1Metric_a41a9f7544ff22d3b05e3b5451e4c16b0}{metric} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries M\+\_\+}\hypertarget{classdml_1_1base_1_1Metric_a85246f8f52ee2c28c077e435c2699fe1}{}\label{classdml_1_1base_1_1Metric_a85246f8f52ee2c28c077e435c2699fe1}
+
+\item 
+{\bfseries y\+\_\+}\hypertarget{classdml_1_1base_1_1Metric_ad333d6abb88aabb0d0532cb31a56cf32}{}\label{classdml_1_1base_1_1Metric_ad333d6abb88aabb0d0532cb31a56cf32}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A DML algorithm that defines a distance given a PSD metric matrix.
+
+Parameters
+----------
+
+metric : (d x d) matrix. A positive semidefinite matrix, to define a pseudodistance in euclidean d-dimensional space.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\index{dml\+::base\+::\+Metric@{dml\+::base\+::\+Metric}!fit@{fit}}
+\index{fit@{fit}!dml\+::base\+::\+Metric@{dml\+::base\+::\+Metric}}
+\subsubsection[{\texorpdfstring{fit(self, X, y)}{fit(self, X, y)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+base.\+Metric.\+fit (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X, }
+\item[{}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1base_1_1Metric_ad94ffd257c24ae5e291d301131bbd874}{}\label{classdml_1_1base_1_1Metric_ad94ffd257c24ae5e291d301131bbd874}
+\begin{DoxyVerb}Fit the model from the data in X and the labels in y.
+
+Parameters
+----------
+X : array-like, shape (N x d)
+    Training vector, where N is the number of samples, and d is the number of features.
+
+y : array-like, shape (N)
+    Labels vector, where N is the number of samples.
+
+Returns
+-------
+self : object
+    Returns the instance itself.
+\end{DoxyVerb}
+ \index{dml\+::base\+::\+Metric@{dml\+::base\+::\+Metric}!metric@{metric}}
+\index{metric@{metric}!dml\+::base\+::\+Metric@{dml\+::base\+::\+Metric}}
+\subsubsection[{\texorpdfstring{metric(self)}{metric(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+base.\+Metric.\+metric (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1base_1_1Metric_a41a9f7544ff22d3b05e3b5451e4c16b0}{}\label{classdml_1_1base_1_1Metric_a41a9f7544ff22d3b05e3b5451e4c16b0}
+\begin{DoxyVerb}Obtains the learned metric.
+
+Returns
+-------
+M : (dxd) positive semidefinite matrix, where d is the number of features.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dml/base.\+py\end{DoxyCompactItemize}

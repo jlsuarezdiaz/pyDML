@@ -1,0 +1,95 @@
+\hypertarget{classdml_1_1base_1_1Transformer}{}\section{dml.\+base.\+Transformer Class Reference}
+\label{classdml_1_1base_1_1Transformer}\index{dml.\+base.\+Transformer@{dml.\+base.\+Transformer}}
+
+
+Inheritance diagram for dml.\+base.\+Transformer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classdml_1_1base_1_1Transformer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dml.\+base.\+Transformer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classdml_1_1base_1_1Transformer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classdml_1_1base_1_1Transformer_a141897f784dd19a70fa72f4154751881}{transformer})\hypertarget{classdml_1_1base_1_1Transformer_ac4abe61c0b5af45b0a11de4f872a6fc3}{}\label{classdml_1_1base_1_1Transformer_ac4abe61c0b5af45b0a11de4f872a6fc3}
+
+\item 
+def \hyperlink{classdml_1_1base_1_1Transformer_a13ce455fe423e55f0ffa41c47a080c55}{fit} (self, X, y)
+\item 
+def \hyperlink{classdml_1_1base_1_1Transformer_a141897f784dd19a70fa72f4154751881}{transformer} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries L\+\_\+}\hypertarget{classdml_1_1base_1_1Transformer_ae545c8d86053bddf2ed9c34308462406}{}\label{classdml_1_1base_1_1Transformer_ae545c8d86053bddf2ed9c34308462406}
+
+\item 
+{\bfseries y\+\_\+}\hypertarget{classdml_1_1base_1_1Transformer_ab3cf89b17477747577644c6ebf292569}{}\label{classdml_1_1base_1_1Transformer_ab3cf89b17477747577644c6ebf292569}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A DML algorithm that defines a distance given a linear transformation.
+
+Parameters
+----------
+
+transformer : (d' x d) matrix, representing a linear transformacion from d-dimensional euclidean space
+              to d'-dimensional euclidean space.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\index{dml\+::base\+::\+Transformer@{dml\+::base\+::\+Transformer}!fit@{fit}}
+\index{fit@{fit}!dml\+::base\+::\+Transformer@{dml\+::base\+::\+Transformer}}
+\subsubsection[{\texorpdfstring{fit(self, X, y)}{fit(self, X, y)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+base.\+Transformer.\+fit (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X, }
+\item[{}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1base_1_1Transformer_a13ce455fe423e55f0ffa41c47a080c55}{}\label{classdml_1_1base_1_1Transformer_a13ce455fe423e55f0ffa41c47a080c55}
+\begin{DoxyVerb}Fit the model from the data in X and the labels in y.
+
+Parameters
+----------
+X : array-like, shape (N x d)
+    Training vector, where N is the number of samples, and d is the number of features.
+
+y : array-like, shape (N)
+    Labels vector, where N is the number of samples.
+
+Returns
+-------
+self : object
+    Returns the instance itself.
+\end{DoxyVerb}
+ \index{dml\+::base\+::\+Transformer@{dml\+::base\+::\+Transformer}!transformer@{transformer}}
+\index{transformer@{transformer}!dml\+::base\+::\+Transformer@{dml\+::base\+::\+Transformer}}
+\subsubsection[{\texorpdfstring{transformer(self)}{transformer(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+base.\+Transformer.\+transformer (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1base_1_1Transformer_a141897f784dd19a70fa72f4154751881}{}\label{classdml_1_1base_1_1Transformer_a141897f784dd19a70fa72f4154751881}
+\begin{DoxyVerb}Obtains the learned projection.
+
+Returns
+-------
+L : (d'xd) matrix, where d' is the desired output dimension and d is the number of features.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dml/base.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,131 @@
+\hypertarget{classdml_1_1ncmc_1_1NCMC__Classifier}{}\section{dml.\+ncmc.\+N\+C\+M\+C\+\_\+\+Classifier Class Reference}
+\label{classdml_1_1ncmc_1_1NCMC__Classifier}\index{dml.\+ncmc.\+N\+C\+M\+C\+\_\+\+Classifier@{dml.\+ncmc.\+N\+C\+M\+C\+\_\+\+Classifier}}
+
+
+Inheritance diagram for dml.\+ncmc.\+N\+C\+M\+C\+\_\+\+Classifier\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classdml_1_1ncmc_1_1NCMC__Classifier__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dml.\+ncmc.\+N\+C\+M\+C\+\_\+\+Classifier\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classdml_1_1ncmc_1_1NCMC__Classifier__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, centroids\+\_\+num=3, kmeans\+\_\+kwargs)\hypertarget{classdml_1_1ncmc_1_1NCMC__Classifier_ab5bd6425900dacfc2899e6086653b64b}{}\label{classdml_1_1ncmc_1_1NCMC__Classifier_ab5bd6425900dacfc2899e6086653b64b}
+
+\item 
+def \hyperlink{classdml_1_1ncmc_1_1NCMC__Classifier_ad6afe7d5daca740d9d8542bafc6360c8}{fit} (self, X, y)
+\item 
+def \hyperlink{classdml_1_1ncmc_1_1NCMC__Classifier_af3a7507fd69eacaf0a53ce6fc0186e26}{predict} (self, X)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries centroids\+\_\+num\+\_\+}\hypertarget{classdml_1_1ncmc_1_1NCMC__Classifier_a210a5452a6e64215652a6ab0f35b1b67}{}\label{classdml_1_1ncmc_1_1NCMC__Classifier_a210a5452a6e64215652a6ab0f35b1b67}
+
+\item 
+{\bfseries kmeans\+\_\+args\+\_\+}\hypertarget{classdml_1_1ncmc_1_1NCMC__Classifier_a0f1cc3bf80a88c0120b69df89378c496}{}\label{classdml_1_1ncmc_1_1NCMC__Classifier_a0f1cc3bf80a88c0120b69df89378c496}
+
+\item 
+{\bfseries y\+\_\+}\hypertarget{classdml_1_1ncmc_1_1NCMC__Classifier_a917eb388dc06f4b844a09ef3b18bd6e6}{}\label{classdml_1_1ncmc_1_1NCMC__Classifier_a917eb388dc06f4b844a09ef3b18bd6e6}
+
+\item 
+{\bfseries le\+\_\+}\hypertarget{classdml_1_1ncmc_1_1NCMC__Classifier_a24b992cbeeb88a273ab0c929f3e4a453}{}\label{classdml_1_1ncmc_1_1NCMC__Classifier_a24b992cbeeb88a273ab0c929f3e4a453}
+
+\item 
+{\bfseries classes\+\_\+}\hypertarget{classdml_1_1ncmc_1_1NCMC__Classifier_a07590a630ae0bae7ceb795fee851c4e2}{}\label{classdml_1_1ncmc_1_1NCMC__Classifier_a07590a630ae0bae7ceb795fee851c4e2}
+
+\item 
+{\bfseries class\+\_\+map\+\_\+}\hypertarget{classdml_1_1ncmc_1_1NCMC__Classifier_ad6b75415bd91dbfe769f1f7027679520}{}\label{classdml_1_1ncmc_1_1NCMC__Classifier_ad6b75415bd91dbfe769f1f7027679520}
+
+\item 
+{\bfseries ncm\+\_\+}\hypertarget{classdml_1_1ncmc_1_1NCMC__Classifier_a87e5d19cc7240c865554f350cd10dc7c}{}\label{classdml_1_1ncmc_1_1NCMC__Classifier_a87e5d19cc7240c865554f350cd10dc7c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Nearest Class with Multiple Centroids classifier.
+
+A classifier that makes its predictions by choosing the class who has a centroid the nearest to the point.
+For each class, an arbitrary number of centroids can be set. This centroids are calculated using k-Means
+over each class sub-dataset.
+
+Parameters
+----------
+
+centroids_num : int, or list of int, default=3
+
+    If it is a list, it must have the same size as the number of classes. In this case, i-th item will be the number of
+    centroids to take in the i-th class. If it is an int, every class will have the same number of centroids.
+
+kmeans_args : dictionary
+
+    Additional keyword args for k-Means.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\index{dml\+::ncmc\+::\+N\+C\+M\+C\+\_\+\+Classifier@{dml\+::ncmc\+::\+N\+C\+M\+C\+\_\+\+Classifier}!fit@{fit}}
+\index{fit@{fit}!dml\+::ncmc\+::\+N\+C\+M\+C\+\_\+\+Classifier@{dml\+::ncmc\+::\+N\+C\+M\+C\+\_\+\+Classifier}}
+\subsubsection[{\texorpdfstring{fit(self, X, y)}{fit(self, X, y)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+ncmc.\+N\+C\+M\+C\+\_\+\+Classifier.\+fit (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X, }
+\item[{}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1ncmc_1_1NCMC__Classifier_ad6afe7d5daca740d9d8542bafc6360c8}{}\label{classdml_1_1ncmc_1_1NCMC__Classifier_ad6afe7d5daca740d9d8542bafc6360c8}
+\begin{DoxyVerb}Fit the model from the data in X and the labels in y.
+
+Parameters
+----------
+X : array-like, shape (N x d)
+    Training vector, where N is the number of samples, and d is the number of features.
+
+y : array-like, shape (N)
+    Labels vector, where N is the number of samples.
+
+Returns
+-------
+self : object
+    Returns the instance itself.
+\end{DoxyVerb}
+ \index{dml\+::ncmc\+::\+N\+C\+M\+C\+\_\+\+Classifier@{dml\+::ncmc\+::\+N\+C\+M\+C\+\_\+\+Classifier}!predict@{predict}}
+\index{predict@{predict}!dml\+::ncmc\+::\+N\+C\+M\+C\+\_\+\+Classifier@{dml\+::ncmc\+::\+N\+C\+M\+C\+\_\+\+Classifier}}
+\subsubsection[{\texorpdfstring{predict(self, X)}{predict(self, X)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+ncmc.\+N\+C\+M\+C\+\_\+\+Classifier.\+predict (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1ncmc_1_1NCMC__Classifier_af3a7507fd69eacaf0a53ce6fc0186e26}{}\label{classdml_1_1ncmc_1_1NCMC__Classifier_af3a7507fd69eacaf0a53ce6fc0186e26}
+\begin{DoxyVerb}Predicts the labels for the given data. Model needs to be already fitted.
+
+X : 2D-Array or Matrix, default=None
+
+    The dataset to be used. If None, the training set will be used. In this case, the prediction will be made
+    using Leave One Out (that is, the sample to predict will be taken away from the training set).
+
+Returns
+-------
+
+y : 1D-Array
+
+    The vector with the label predictions.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dml/ncmc.\+pyx\end{DoxyCompactItemize}

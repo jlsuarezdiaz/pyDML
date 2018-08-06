@@ -1,0 +1,158 @@
+\hypertarget{classdml_1_1kda_1_1KDA}{}\section{dml.\+kda.\+K\+DA Class Reference}
+\label{classdml_1_1kda_1_1KDA}\index{dml.\+kda.\+K\+DA@{dml.\+kda.\+K\+DA}}
+
+
+Inheritance diagram for dml.\+kda.\+K\+DA\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classdml_1_1kda_1_1KDA__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dml.\+kda.\+K\+DA\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classdml_1_1kda_1_1KDA__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, solver=\textquotesingle{}eigen\textquotesingle{}, n\+\_\+components=None, tol=1e-\/4, kernel=\char`\"{}linear\char`\"{}, gamma=\+None, degree=3, coef0=1, kernel\+\_\+params=\+None)\hypertarget{classdml_1_1kda_1_1KDA_a36fe718d7f2acf4664420bc1e370ada9}{}\label{classdml_1_1kda_1_1KDA_a36fe718d7f2acf4664420bc1e370ada9}
+
+\item 
+def \hyperlink{classdml_1_1kda_1_1KDA_aecc0bd189d2080ac3cb2248e3ded47c4}{transformer} (self)
+\item 
+def \hyperlink{classdml_1_1kda_1_1KDA_a1a22e6ac1e9833d1a6cca60c9bc832d8}{fit} (self, X, y)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries solver\+\_\+}\hypertarget{classdml_1_1kda_1_1KDA_ac314973f2e20b7aa4ed1fcbc9f6d80da}{}\label{classdml_1_1kda_1_1KDA_ac314973f2e20b7aa4ed1fcbc9f6d80da}
+
+\item 
+{\bfseries n\+\_\+components\+\_\+}\hypertarget{classdml_1_1kda_1_1KDA_a45f464ac054517ab88af2b82f58a75fe}{}\label{classdml_1_1kda_1_1KDA_a45f464ac054517ab88af2b82f58a75fe}
+
+\item 
+{\bfseries tol\+\_\+}\hypertarget{classdml_1_1kda_1_1KDA_afda7891fef268f00e5c767afde511aa8}{}\label{classdml_1_1kda_1_1KDA_afda7891fef268f00e5c767afde511aa8}
+
+\item 
+{\bfseries kernel\+\_\+}\hypertarget{classdml_1_1kda_1_1KDA_a79cdebd296f9389db1eebf4fd8831322}{}\label{classdml_1_1kda_1_1KDA_a79cdebd296f9389db1eebf4fd8831322}
+
+\item 
+{\bfseries gamma\+\_\+}\hypertarget{classdml_1_1kda_1_1KDA_aabe1af31aefce2cc04742a84640a14c2}{}\label{classdml_1_1kda_1_1KDA_aabe1af31aefce2cc04742a84640a14c2}
+
+\item 
+{\bfseries degree\+\_\+}\hypertarget{classdml_1_1kda_1_1KDA_aad0e6e4c05920afc27548c732a76655d}{}\label{classdml_1_1kda_1_1KDA_aad0e6e4c05920afc27548c732a76655d}
+
+\item 
+{\bfseries coef0\+\_\+}\hypertarget{classdml_1_1kda_1_1KDA_ad86ca60accb840611b2db09140b5d671}{}\label{classdml_1_1kda_1_1KDA_ad86ca60accb840611b2db09140b5d671}
+
+\item 
+{\bfseries kernel\+\_\+params\+\_\+}\hypertarget{classdml_1_1kda_1_1KDA_ad2d07b7dee9cdea07ad1dc0c6bc7fcd5}{}\label{classdml_1_1kda_1_1KDA_ad2d07b7dee9cdea07ad1dc0c6bc7fcd5}
+
+\item 
+{\bfseries y\+\_\+}\hypertarget{classdml_1_1kda_1_1KDA_a7004928097d9a4eebe9b2979ac563beb}{}\label{classdml_1_1kda_1_1KDA_a7004928097d9a4eebe9b2979ac563beb}
+
+\item 
+{\bfseries L\+\_\+}\hypertarget{classdml_1_1kda_1_1KDA_a8a56310c6b6918a52af4a7260e780fdd}{}\label{classdml_1_1kda_1_1KDA_a8a56310c6b6918a52af4a7260e780fdd}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Kernel Discriminant Analysis (KDA)
+
+Discriminant Analysis in high dimensionality using the kernel trick.
+
+Parameters
+----------
+
+solver : string, default='eigen'.
+
+    Solver to use, posible values:
+        - 'eigen': Eigenvalue decomposition.
+
+n_components : int, default=None.
+
+    Number of components (lower than number of classes -1) for dimensionality reduction.
+
+tol : float, default=1e-4
+
+    Singularity toleration level.
+
+kernel : "linear" | "poly" | "rbf" | "sigmoid" | "cosine" | "precomputed"
+    Kernel. Default="linear".
+
+gamma : float, default=1/n_features
+    Kernel coefficient for rbf, poly and sigmoid kernels. Ignored by other
+    kernels.
+
+degree : int, default=3
+    Degree for poly kernels. Ignored by other kernels.
+
+coef0 : float, default=1
+    Independent term in poly and sigmoid kernels.
+    Ignored by other kernels.
+
+kernel_params : mapping of string to any, default=None
+    Parameters (keyword arguments) and values for kernel passed as
+    callable object. Ignored by other kernels.
+
+References
+----------
+    Sebastian Mika et al. “Fisher discriminant analysis with kernels”. In: Neural networks for signal
+    processing IX, 1999. Proceedings of the 1999 IEEE signal processing society workshop. Ieee. 1999,
+    pages 41-48.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\index{dml\+::kda\+::\+K\+DA@{dml\+::kda\+::\+K\+DA}!fit@{fit}}
+\index{fit@{fit}!dml\+::kda\+::\+K\+DA@{dml\+::kda\+::\+K\+DA}}
+\subsubsection[{\texorpdfstring{fit(self, X, y)}{fit(self, X, y)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+kda.\+K\+D\+A.\+fit (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X, }
+\item[{}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1kda_1_1KDA_a1a22e6ac1e9833d1a6cca60c9bc832d8}{}\label{classdml_1_1kda_1_1KDA_a1a22e6ac1e9833d1a6cca60c9bc832d8}
+\begin{DoxyVerb}Fit the model from the data in X and the labels in y.
+
+Parameters
+----------
+X : array-like, shape (N x d)
+    Training vector, where N is the number of samples, and d is the number of features.
+
+y : array-like, shape (N)
+    Labels vector, where N is the number of samples.
+
+Returns
+-------
+self : object
+    Returns the instance itself.
+\end{DoxyVerb}
+ \index{dml\+::kda\+::\+K\+DA@{dml\+::kda\+::\+K\+DA}!transformer@{transformer}}
+\index{transformer@{transformer}!dml\+::kda\+::\+K\+DA@{dml\+::kda\+::\+K\+DA}}
+\subsubsection[{\texorpdfstring{transformer(self)}{transformer(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+kda.\+K\+D\+A.\+transformer (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1kda_1_1KDA_aecc0bd189d2080ac3cb2248e3ded47c4}{}\label{classdml_1_1kda_1_1KDA_aecc0bd189d2080ac3cb2248e3ded47c4}
+\begin{DoxyVerb}Obtains the learned projection.
+
+Returns
+-------
+A : (d'x N) matrix, where d' is the desired output dimension, and N is the number of samples.
+    To apply A to a new sample x, A must be multiplied by the kernel vector of dimension N
+    obtained by taking the kernels between x and each training sample.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dml/kda.\+pyx\end{DoxyCompactItemize}

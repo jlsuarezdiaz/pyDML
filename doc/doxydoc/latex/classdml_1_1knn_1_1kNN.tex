@@ -1,0 +1,315 @@
+\hypertarget{classdml_1_1knn_1_1kNN}{}\section{dml.\+knn.\+k\+NN Class Reference}
+\label{classdml_1_1knn_1_1kNN}\index{dml.\+knn.\+k\+NN@{dml.\+knn.\+k\+NN}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, n\+\_\+neighbors, dml\+\_\+algorithm)\hypertarget{classdml_1_1knn_1_1kNN_abbda5364bee7587be31e8ae0acec4751}{}\label{classdml_1_1knn_1_1kNN_abbda5364bee7587be31e8ae0acec4751}
+
+\item 
+def \hyperlink{classdml_1_1knn_1_1kNN_a1ce29c6372bba3a1c2ba949c6d0ce887}{fit} (self, X, y)
+\item 
+def \hyperlink{classdml_1_1knn_1_1kNN_a1b5f00f663698597fb9b99ae53885bd0}{predict} (self, X=None)
+\item 
+def \hyperlink{classdml_1_1knn_1_1kNN_aa5cc1e3c3c1681ec175fa65dc0e1f2c9}{predict\+\_\+orig} (self, X=None)
+\item 
+def \hyperlink{classdml_1_1knn_1_1kNN_abb377a697d13ea7d3b6cc57a4778f6ca}{predict\+\_\+proba} (self, X=None)
+\item 
+def \hyperlink{classdml_1_1knn_1_1kNN_ad54d73b25d19d09bd8ed02fc969bc613}{predict\+\_\+proba\+\_\+orig} (self, X=None)
+\item 
+def \hyperlink{classdml_1_1knn_1_1kNN_a2c7049076353475591433ca7430764ac}{score} (self, X=None, y=None)
+\item 
+def \hyperlink{classdml_1_1knn_1_1kNN_a57cee41b21103f6989eecb609423ed58}{score\+\_\+orig} (self, X=None, y=None)
+\item 
+def \hyperlink{classdml_1_1knn_1_1kNN_abf52cd58d4fc79709c7b8301ec532ed6}{loo\+\_\+prob} (self, X)
+\item 
+def \hyperlink{classdml_1_1knn_1_1kNN_a25747919b092e11e5050507eb34dd814}{loo\+\_\+pred} (self, X)
+\item 
+def \hyperlink{classdml_1_1knn_1_1kNN_aef6fd586e89eded5648d16d00c9b7a7f}{loo\+\_\+score} (self, X)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries nn\+\_\+}\hypertarget{classdml_1_1knn_1_1kNN_a98518ccd2393c1accf7cd00b5c12e64e}{}\label{classdml_1_1knn_1_1kNN_a98518ccd2393c1accf7cd00b5c12e64e}
+
+\item 
+{\bfseries dml}\hypertarget{classdml_1_1knn_1_1kNN_afae3f36666eb8599a00b669cca4661fe}{}\label{classdml_1_1knn_1_1kNN_afae3f36666eb8599a00b669cca4661fe}
+
+\item 
+{\bfseries knn}\hypertarget{classdml_1_1knn_1_1kNN_ab7f8587bd0e2a62e69e2bd7e3381237f}{}\label{classdml_1_1knn_1_1kNN_ab7f8587bd0e2a62e69e2bd7e3381237f}
+
+\item 
+{\bfseries knn\+\_\+orig}\hypertarget{classdml_1_1knn_1_1kNN_a0dc9258a999119dce46e826237aed660}{}\label{classdml_1_1knn_1_1kNN_a0dc9258a999119dce46e826237aed660}
+
+\item 
+{\bfseries X\+\_\+}\hypertarget{classdml_1_1knn_1_1kNN_a02f20eaff49e6fcf58d7ebd999e0cbf1}{}\label{classdml_1_1knn_1_1kNN_a02f20eaff49e6fcf58d7ebd999e0cbf1}
+
+\item 
+{\bfseries trX}\hypertarget{classdml_1_1knn_1_1kNN_a18a7c348e1a1e1b70c46ebe40862df66}{}\label{classdml_1_1knn_1_1kNN_a18a7c348e1a1e1b70c46ebe40862df66}
+
+\item 
+{\bfseries y\+\_\+}\hypertarget{classdml_1_1knn_1_1kNN_aa7c609ab7cd4b7dffef63778468b8220}{}\label{classdml_1_1knn_1_1kNN_aa7c609ab7cd4b7dffef63778468b8220}
+
+\item 
+{\bfseries num\+\_\+labels}\hypertarget{classdml_1_1knn_1_1kNN_aadad7d878aacd2fbb1eeef2d098a89d8}{}\label{classdml_1_1knn_1_1kNN_aadad7d878aacd2fbb1eeef2d098a89d8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}    k-Nearest Neighbors (kNN)
+    The nearest neighbors classifier adapted to be used with distance metric learning algorithms.
+
+    Parameters
+    ----------
+
+    n_neighbors : int
+
+        Number of neighbors to consider in classification.
+
+    dml_algorithm : DML_Algorithm
+
+        The distance metric learning algorithm that will provide the distance in kNN.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\index{dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}!fit@{fit}}
+\index{fit@{fit}!dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}}
+\subsubsection[{\texorpdfstring{fit(self, X, y)}{fit(self, X, y)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+knn.\+k\+N\+N.\+fit (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X, }
+\item[{}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1knn_1_1kNN_a1ce29c6372bba3a1c2ba949c6d0ce887}{}\label{classdml_1_1knn_1_1kNN_a1ce29c6372bba3a1c2ba949c6d0ce887}
+\begin{DoxyVerb}Fit the model from the data in X and the labels in y.
+
+Parameters
+----------
+X : array-like, shape (N x d)
+    Training vector, where N is the number of samples, and d is the number of features.
+
+y : array-like, shape (N)
+    Labels vector, where N is the number of samples.
+
+Returns
+-------
+self : object
+    Returns the instance itself.
+\end{DoxyVerb}
+ \index{dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}!loo\+\_\+pred@{loo\+\_\+pred}}
+\index{loo\+\_\+pred@{loo\+\_\+pred}!dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}}
+\subsubsection[{\texorpdfstring{loo\+\_\+pred(self, X)}{loo_pred(self, X)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+knn.\+k\+N\+N.\+loo\+\_\+pred (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1knn_1_1kNN_a25747919b092e11e5050507eb34dd814}{}\label{classdml_1_1knn_1_1kNN_a25747919b092e11e5050507eb34dd814}
+\begin{DoxyVerb}Obtains the predicted for the given data using them as a training and with Leave One Out.
+
+X : 2D-Array or Matrix, default=None
+
+    The dataset to be used.
+
+Returns
+-------
+
+y : 1D-Array
+
+    The vector with the label predictions.
+\end{DoxyVerb}
+ \index{dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}!loo\+\_\+prob@{loo\+\_\+prob}}
+\index{loo\+\_\+prob@{loo\+\_\+prob}!dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}}
+\subsubsection[{\texorpdfstring{loo\+\_\+prob(self, X)}{loo_prob(self, X)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+knn.\+k\+N\+N.\+loo\+\_\+prob (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1knn_1_1kNN_abf52cd58d4fc79709c7b8301ec532ed6}{}\label{classdml_1_1knn_1_1kNN_abf52cd58d4fc79709c7b8301ec532ed6}
+\begin{DoxyVerb}Predicts the probabilities for the given data using them as a training and with Leave One Out.
+
+X : 2D-Array or Matrix, default=None
+
+    The dataset to be used.
+
+Returns
+-------
+
+T : 2D-Array, shape (N x c)
+
+    A matrix with the probabilities for each class. N is the number of samples and c is the number of classes.
+    The element i, j shows the probability of sample X[i] to be in class j.
+\end{DoxyVerb}
+ \index{dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}!loo\+\_\+score@{loo\+\_\+score}}
+\index{loo\+\_\+score@{loo\+\_\+score}!dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}}
+\subsubsection[{\texorpdfstring{loo\+\_\+score(self, X)}{loo_score(self, X)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+knn.\+k\+N\+N.\+loo\+\_\+score (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1knn_1_1kNN_aef6fd586e89eded5648d16d00c9b7a7f}{}\label{classdml_1_1knn_1_1kNN_aef6fd586e89eded5648d16d00c9b7a7f}
+\begin{DoxyVerb}Obtains the score for the given data using them as a training and with Leave One Out.
+
+X : 2D-Array or Matrix, default=None
+
+    The dataset to be used.
+
+Returns
+-------
+
+score : float
+
+    The classification score at kNN. It is calculated as
+    ..math:: card(y_pred == y_real) / n_samples
+\end{DoxyVerb}
+ \index{dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}!predict@{predict}}
+\index{predict@{predict}!dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}}
+\subsubsection[{\texorpdfstring{predict(self, X=\+None)}{predict(self, X=None)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+knn.\+k\+N\+N.\+predict (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1knn_1_1kNN_a1b5f00f663698597fb9b99ae53885bd0}{}\label{classdml_1_1knn_1_1kNN_a1b5f00f663698597fb9b99ae53885bd0}
+\begin{DoxyVerb}Predicts the labels for the given data. Model needs to be already fitted.
+
+X : 2D-Array or Matrix, default=None
+
+    The dataset to be used. If None, the training set will be used. In this case, the prediction will be made
+    using Leave One Out (that is, the sample to predict will be taken away from the training set).
+
+Returns
+-------
+
+y : 1D-Array
+
+    The vector with the label predictions.
+\end{DoxyVerb}
+ \index{dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}!predict\+\_\+orig@{predict\+\_\+orig}}
+\index{predict\+\_\+orig@{predict\+\_\+orig}!dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}}
+\subsubsection[{\texorpdfstring{predict\+\_\+orig(self, X=\+None)}{predict_orig(self, X=None)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+knn.\+k\+N\+N.\+predict\+\_\+orig (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1knn_1_1kNN_aa5cc1e3c3c1681ec175fa65dc0e1f2c9}{}\label{classdml_1_1knn_1_1kNN_aa5cc1e3c3c1681ec175fa65dc0e1f2c9}
+\begin{DoxyVerb}Predicts the labels for the given data with the Euclidean distance (with no dml transformations). Model needs to be already fitted.
+
+X : 2D-Array or Matrix, default=None
+
+    The dataset to be used. If None, the training set will be used. In this case, the prediction will be made
+    using Leave One Out (that is, the sample to predict will be taken away from the training set).
+
+Returns
+-------
+
+y : 1D-Array
+
+    The vector with the label predictions.
+\end{DoxyVerb}
+ \index{dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}!predict\+\_\+proba@{predict\+\_\+proba}}
+\index{predict\+\_\+proba@{predict\+\_\+proba}!dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}}
+\subsubsection[{\texorpdfstring{predict\+\_\+proba(self, X=\+None)}{predict_proba(self, X=None)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+knn.\+k\+N\+N.\+predict\+\_\+proba (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1knn_1_1kNN_abb377a697d13ea7d3b6cc57a4778f6ca}{}\label{classdml_1_1knn_1_1kNN_abb377a697d13ea7d3b6cc57a4778f6ca}
+\begin{DoxyVerb}Predicts the probabilities for the given data. Model needs to be already fitted.
+
+X : 2D-Array or Matrix, default=None
+
+    The dataset to be used. If None, the training set will be used. In this case, the prediction will be made
+    using Leave One Out (that is, the sample to predict will be taken away from the training set).
+
+Returns
+-------
+
+T : 2D-Array, shape (N x c)
+
+    A matrix with the probabilities for each class. N is the number of samples and c is the number of classes.
+    The element i, j shows the probability of sample X[i] to be in class j.
+\end{DoxyVerb}
+ \index{dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}!predict\+\_\+proba\+\_\+orig@{predict\+\_\+proba\+\_\+orig}}
+\index{predict\+\_\+proba\+\_\+orig@{predict\+\_\+proba\+\_\+orig}!dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}}
+\subsubsection[{\texorpdfstring{predict\+\_\+proba\+\_\+orig(self, X=\+None)}{predict_proba_orig(self, X=None)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+knn.\+k\+N\+N.\+predict\+\_\+proba\+\_\+orig (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1knn_1_1kNN_ad54d73b25d19d09bd8ed02fc969bc613}{}\label{classdml_1_1knn_1_1kNN_ad54d73b25d19d09bd8ed02fc969bc613}
+\begin{DoxyVerb}Predicts the probabilities for the given data with euclidean distance (with no dml transformations). Model needs to be already fitted.
+
+X : 2D-Array or Matrix, default=None
+
+    The dataset to be used. If None, the training set will be used. In this case, the prediction will be made
+    using Leave One Out (that is, the sample to predict will be taken away from the training set).
+
+Returns
+-------
+
+T : 2D-Array, shape (N x c)
+
+    A matrix with the probabilities for each class. N is the number of samples and c is the number of classes.
+    The element i, j shows the probability of sample X[i] to be in class j.
+\end{DoxyVerb}
+ \index{dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}!score@{score}}
+\index{score@{score}!dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}}
+\subsubsection[{\texorpdfstring{score(self, X=\+None, y=\+None)}{score(self, X=None, y=None)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+knn.\+k\+N\+N.\+score (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X = {\ttfamily None}, }
+\item[{}]{y = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1knn_1_1kNN_a2c7049076353475591433ca7430764ac}{}\label{classdml_1_1knn_1_1kNN_a2c7049076353475591433ca7430764ac}
+\begin{DoxyVerb}Obtains the classification score for the given data. Model needs to be already fitted.
+
+X : 2D-Array or Matrix, default=None
+
+    The dataset to be used. If None, the training set will be used. In this case, the prediction will be made
+    using Leave One Out (that is, the sample to predict will be taken away from the training set).
+
+y : 1D-Array, default=None
+
+    The real labels for the dataset. It can be None only if X is None.
+
+Returns
+-------
+
+score : float
+
+    The classification score at kNN. It is calculated as
+    ..math:: card(y_pred == y_real) / n_samples
+\end{DoxyVerb}
+ \index{dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}!score\+\_\+orig@{score\+\_\+orig}}
+\index{score\+\_\+orig@{score\+\_\+orig}!dml\+::knn\+::k\+NN@{dml\+::knn\+::k\+NN}}
+\subsubsection[{\texorpdfstring{score\+\_\+orig(self, X=\+None, y=\+None)}{score_orig(self, X=None, y=None)}}]{\setlength{\rightskip}{0pt plus 5cm}def dml.\+knn.\+k\+N\+N.\+score\+\_\+orig (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X = {\ttfamily None}, }
+\item[{}]{y = {\ttfamily None}}
+\end{DoxyParamCaption}
+)}\hypertarget{classdml_1_1knn_1_1kNN_a57cee41b21103f6989eecb609423ed58}{}\label{classdml_1_1knn_1_1kNN_a57cee41b21103f6989eecb609423ed58}
+\begin{DoxyVerb}Obtains the classification score for the given data with euclidean distance (with no dml transformation). Model needs to be already fitted.
+
+X : 2D-Array or Matrix, default=None
+
+    The dataset to be used. If None, the training set will be used. In this case, the prediction will be made
+    using Leave One Out (that is, the sample to predict will be taken away from the training set).
+
+y : 1D-Array, default=None
+
+    The true labels for the dataset. It can be None only if X is None.
+
+Returns
+-------
+
+score : float
+
+    The classification score at kNN. It is calculated as
+    ..math:: card(y_pred == y_real) / n_samples
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dml/knn.\+py\end{DoxyCompactItemize}
