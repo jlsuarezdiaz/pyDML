@@ -90,6 +90,14 @@ class DML_Algorithm(BaseEstimator, TransformerMixin):
         return X.dot(L.T)
 
     def metadata(self):
+        """
+        Obtains the algorithm metadata. Must be implemented in subclasses.
+
+        Returns
+        -------
+
+        dict : A map from string to any.
+        """
         return {}
 
 
@@ -99,7 +107,9 @@ class KernelDML_Algorithm(DML_Algorithm):
         Distance metric learning are implemented as subclasses of KernelDML_Algorithm.
         A Kernel DML Algorithm can compute a (d' x n) transformer that maps the high dimensional data using the kernel trick.
         Kernel DML subclasses must override the transformer method, providing the matrix A that performs the kernel trick, that is
-        ..math:: Lx = A(K(x_1,x),\\dots,K(x_n,x)),
+
+        .. math:: Lx = A(K(x_1,x),\\dots,K(x_n,x)),
+
         where L is the high dimensional transformer and K is the kernel function.
     """
 

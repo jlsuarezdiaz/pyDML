@@ -573,7 +573,7 @@ def knn_plot(X, y, k=1, attrs=None, sections="mean", knn_clf=None, fitted=False,
 
     fig_kw : dict
 
-            Additional keyword args for :meth:`~Matplotlib.suplots`
+            Additional keyword args for :math:`~Matplotlib.suplots`
 
     Returns
     -------
