@@ -3,3 +3,5 @@
 build/**
 **.o
 core.**
+**.c
+**.cpp
