@@ -6,7 +6,6 @@
 Welcome to pyDML's documentation!
 =================================
 
-|License| |PyPI version|
 
 
 The need of a similarity measure is very common in many machine learning algorithms, such as nearest neighbors classification.

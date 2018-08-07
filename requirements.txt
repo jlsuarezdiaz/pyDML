@@ -6,3 +6,4 @@ scikit-learn
 matplotlib
 seaborn
 scipy
+numpydoc
