@@ -50,8 +50,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'pyDML'
-copyright = '2018, Juan Luis Suárez Díaz'
-author = 'Juan Luis Suárez Díaz'
+copyright = u'2018, Juan Luis Suárez Díaz'
+author = u'Juan Luis Suárez Díaz'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
