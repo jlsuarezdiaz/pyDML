@@ -15,3 +15,5 @@ misc/
 misc/**
 dist/
 dist/**
+pyDML.egg-info/
+pyDML.egg-info/**
