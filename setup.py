@@ -27,7 +27,7 @@ setup(
       name='pyDML', 
       
       # Version
-      version='0.0.0',
+      version='0.0.1-beta',
       
       # Description
       description='Distance Metric Learning algorithms for Python',
@@ -46,7 +46,7 @@ setup(
       
       # Classifiers
       classifiers=[
-          'Development Status :: 3 - Alpha',
+          'Development Status :: 4 - Beta',
           
           'Intended Audience :: Developers',
           'Intended Audience :: Information Technology',
@@ -74,7 +74,7 @@ setup(
       packages=find_packages(exclude=['misc','data','test','utils']),
       
       # Requeriments
-      install_requires=['numpy','pandas'],
+      install_requires=['numpy','pandas','scikit-learn','matplotlib','Cython'],
       extras_require={},
       
       # Additional data
