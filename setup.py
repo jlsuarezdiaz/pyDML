@@ -27,7 +27,7 @@ setup(
       name='pyDML', 
       
       # Version
-      version='0.0.1-beta',
+      version='0.0.1',
       
       # Description
       description='Distance Metric Learning algorithms for Python',
@@ -46,7 +46,7 @@ setup(
       
       # Classifiers
       classifiers=[
-          'Development Status :: 4 - Beta',
+          'Development Status :: 5 - Production/Stable',
           
           'Intended Audience :: Developers',
           'Intended Audience :: Information Technology',
@@ -74,19 +74,21 @@ setup(
       packages=find_packages(exclude=['misc','data','test','utils']),
       
       # Requeriments
-      install_requires=['numpy','pandas','scikit-learn','matplotlib','Cython'],
+      install_requires=['numpy','pandas','scikit-learn','matplotlib','Cython','scipy','seaborn'],
       extras_require={},
       
       # Additional data
       package_data={},
       
       # Project urls
-      project_urls={
-          'Bug Reports':  'https://github.com/jlsuarezdiaz/pyDML/issues',
-          'Funding': 'https://github.com/jlsuarezdiaz/pyDML',
-          'Say Thanks!': 'mailto:jlsuarezdiaz@correo.ugr.es',
-          'Source': 'https://github.com/jlsuarezdiaz/pyDML',
-      },
+      #project_urls={
+      #    'Bug Reports':  'https://github.com/jlsuarezdiaz/pyDML/issues',
+      #    'Funding': 'https://github.com/jlsuarezdiaz/pyDML',
+      #    'Say Thanks!': 'mailto:jlsuarezdiaz@correo.ugr.es',
+      #    'Source': 'https://github.com/jlsuarezdiaz/pyDML',
+      #},
+
+      long_description_content_type='text/markdown',
               
       ext_modules = cythonize(["dml/*.pyx"],language="c++"),
 

@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: pyDML
+Version: 0.0.1b0
+Summary: Distance Metric Learning algorithms for Python
+Home-page: https://github.com/jlsuarezdiaz/pyDML
+Author: Juan Luis Suárez Díaz
+Author-email: jlsuarezdiaz@correo.ugr.es
+License: UNKNOWN
+Description: # pyDML
+        
+        [![](https://img.shields.io/badge/language-Python-green.svg)](https://www.python.org/)
+        [![](https://img.shields.io/badge/license-GPL-orange.svg)](https://www.python.org/)
+        
+        Distance Metric Learning Algorithms Python Package
+        
+Keywords: distance metric learning classification neighbors machine optimization
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Description-Content-Type: text/markdown

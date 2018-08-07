@@ -1,8 +1,5 @@
 numpy
 pandas
-Cython
-arff
 scikit-learn
 matplotlib
-seaborn
-scipy
+Cython

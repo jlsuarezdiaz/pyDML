@@ -13,3 +13,5 @@ doc/doxydoc/
 doc/docydoc/**
 misc/
 misc/**
+dist/
+dist/**
