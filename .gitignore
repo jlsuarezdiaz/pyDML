@@ -11,3 +11,5 @@ doc/sphinx/build/**
 doc/sphinx/build/
 doc/doxydoc/
 doc/docydoc/**
+misc/
+misc/**
