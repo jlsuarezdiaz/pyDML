@@ -25,12 +25,12 @@ Every linear map defines a single metric (M = L'L), and two linear maps that def
 ### Improve distance based classifiers
 
 ![](./plots/ex_learning_nca.png)
-*Improving 1-NN classification*
+*Improving 1-NN classification.*
 
 ### Dimensionality reduction
 
 ![](./plots/ex_red_dim.png)
-*Learning a projection onto a plane of the digits dataset*
+*Learning a projection onto a plane of the digits dataset (dimension 64).*
 
 ## Documentation
 
