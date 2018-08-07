@@ -39,3 +39,18 @@ References
 
 * Lorenzo Torresani and Kuang-chih Lee. “Large margin component analysis”. In: Advances in neural
   information processing systems. 2007, pages 1385-1392.
+
+Related links
+-------------
+
+* `Scikit-Learn <http://scikit-learn.org/stable/>`_
+
+* `Scikit-Learn Nearest Neighbors <http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier>`_
+
+* `Scikit-Learn Nearest Class Mean <http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestCentroid.html#sklearn.neighbors.NearestCentroid>`_
+
+* `matplotlib <https://matplotlib.org/>`_
+
+* `numpy <http://www.numpy.org/>`_
+
+* `pandas <https://pandas.pydata.org/>`_
