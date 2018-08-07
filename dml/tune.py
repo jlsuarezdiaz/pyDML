@@ -109,9 +109,9 @@ def tune_knn(dml,X,y,n_neighbors,dml_params,tune_args,n_folds=5,n_reps=1,verbose
     Parameters
     ----------
 
-    dml : DML_Algorithm
+    dml : A DML_Algorithm subclass
 
-        The distance metric algorithm to tune.
+        The distance metric algorithm class to tune.
 
     X : array-like, shape (N x d)
 
@@ -332,9 +332,9 @@ def tune(dml,X,y,dml_params,tune_args,metrics,n_folds=5,n_reps=1,verbose=False,s
     Parameters
     ----------
 
-    dml : DML_Algorithm
+    dml : A DML_Algorithm subclass
 
-        The distance metric algorithm to tune.
+        The distance metric algorithm class to tune.
 
     X : array-like, shape (N x d)
 

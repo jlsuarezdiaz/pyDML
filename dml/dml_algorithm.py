@@ -75,12 +75,13 @@ class DML_Algorithm(BaseEstimator, TransformerMixin):
         Parameters
         ----------
         X : (N x d) matrix, optional
-            Data to transform. If not supplied, the training data will be used.
+            Data to transform. If not provided, the training data will be used.
 
         Returns
         -------
         transformed : (N x d') matrix
-            Input data transformed to the metric space by :math:`XL^{T}`
+            Input data transformed to the metric space. The learned distance can be measured using
+            the euclidean distance with the transformed data.
         """
         if X is None:
             X = self.X_

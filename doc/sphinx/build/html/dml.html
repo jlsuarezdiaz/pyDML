@@ -1,43 +1,249 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>dml package &#8212; pyDML 0.0.1 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dml package &mdash; pyDML 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="dml" href="modules.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  <div class="wy-grid-for-nav">
 
-  </head>
-  <body>
-  
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home"> pyDML
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Current Algorithms:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dml.pca.html">Principal Component Analysis (PCA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.lda.html">Linear Discriminant Analysis (LDA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.anmm.html">Average Neighborhood Margin Maximization (ANMM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.lmnn.html">Large Margin Nearest Neighbors (LMNN)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.nca.html">Neighborhood Component Analysis (NCA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.ncmml.html">Nearest Class Mean Metric Learning (NCMML)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.ncmc.html">Nearest Class with Multiple Centroids (NCMC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.itml.html">Information Theoretic Metric Learning (ITML)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.dmlmj.html">Distance Metric Learning through the Maximization of the Jeffrey Divergence (DMLMJ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.mcml.html">Maximally Collapsing Metric Learning (MCML)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.lsi.html">Learning with Side Information (LSI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.dml_eig.html">Distance Metric Learning with Eigenvalue Optimization (DML-eig)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.ldml.html">Logistic Discriminant Metric Learning (LDML)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.klmnn.html">Kernel Large Margin Nearest Neighbors (KLMNN)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.kanmm.html">Kernel Average Neighborhood Margin Maximization (KANMM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.kdmlmj.html">Kernel Distance Metric Learning through the Maximization of the Jeffrey divergence (KDMLMJ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dml.kda.html">Kernel Discriminant Analysis (KDA)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Additional functionalities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="similarity_classifiers.html">Distance metric learning extensions for some Scikit-Learn classifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot.html">Distance metric and classifier plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tune.html">Tuning parameters</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Overview</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="docindex.html">Package documentation - Indices and tables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">dml</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">dml package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.anmm">dml.anmm module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.base">dml.base module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.dml_algorithm">dml.dml_algorithm module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.dml_eig">dml.dml_eig module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.dml_plot">dml.dml_plot module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.dml_utils">dml.dml_utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.dmlmj">dml.dmlmj module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.itml">dml.itml module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.kda">dml.kda module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.knn">dml.knn module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.lda">dml.lda module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.ldml">dml.ldml module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.lmnn">dml.lmnn module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.lsi">dml.lsi module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.mcml">dml.mcml module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.multidml_knn">dml.multidml_knn module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.nca">dml.nca module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.ncmc">dml.ncmc module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.ncmml">dml.ncmml module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.pca">dml.pca module</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml.tune">dml.tune module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-dml">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyDML</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">dml</a> &raquo;</li>
+        
+      <li>dml package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/dml.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="dml-package">
 <h1>dml package<a class="headerlink" href="#dml-package" title="Permalink to this headline">¶</a></h1>
@@ -46,12 +252,12 @@
 </div>
 <div class="section" id="module-dml.anmm">
 <span id="dml-anmm-module"></span><h2>dml.anmm module<a class="headerlink" href="#module-dml.anmm" title="Permalink to this headline">¶</a></h2>
-<p>Average Neighbor Margin Maximization (ANMM)</p>
+<p>Average Neighborhood Margin Maximization (ANMM)</p>
 <dl class="class">
 <dt id="dml.anmm.ANMM">
 <em class="property">class </em><code class="descclassname">dml.anmm.</code><code class="descname">ANMM</code><a class="headerlink" href="#dml.anmm.ANMM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#dml.dml_algorithm.DML_Algorithm" title="dml.dml_algorithm.DML_Algorithm"><code class="xref py py-class docutils literal"><span class="pre">dml.dml_algorithm.DML_Algorithm</span></code></a></p>
-<p>Average Neighbor Margin Maximization (ANMM)</p>
+<p>Average Neighborhood Margin Maximization (ANMM)</p>
 <p>A DML Algorithm that obtains a transformer that maximizes the distance between the nearest friends and the nearest enemies for each example.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -727,14 +933,15 @@ DML subclasses must override one of the following methods (metric or transformer
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
 <dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">(N x d) matrix, optional</span></dt>
-<dd><p class="first last">Data to transform. If not supplied, the training data will be used.</p>
+<dd><p class="first last">Data to transform. If not provided, the training data will be used.</p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
 <dt><strong>transformed</strong> <span class="classifier-delimiter">:</span> <span class="classifier">(N x d’) matrix</span></dt>
-<dd><p class="first last">Input data transformed to the metric space by <span class="math">\(XL^{T}\)</span></p>
+<dd><p class="first last">Input data transformed to the metric space. The learned distance can be measured using
+the euclidean distance with the transformed data.</p>
 </dd>
 </dl>
 </td>
@@ -4210,8 +4417,7 @@ If None, euclidean distance will be used. If a string, the following values are 
 </div>
 <div class="section" id="module-dml.multidml_knn">
 <span id="dml-multidml-knn-module"></span><h2>dml.multidml_knn module<a class="headerlink" href="#module-dml.multidml_knn" title="Permalink to this headline">¶</a></h2>
-<p>k-Nearest Neighbors (kNN)</p>
-<p>An interface for kNN adapted to distance metric learning algorithms.</p>
+<p>Multiple-DML k-Nearest Neighbors (kNN)</p>
 <dl class="class">
 <dt id="dml.multidml_knn.MultiDML_kNN">
 <em class="property">class </em><code class="descclassname">dml.multidml_knn.</code><code class="descname">MultiDML_kNN</code><span class="sig-paren">(</span><em>n_neighbors</em>, <em>dmls=None</em>, <em>verbose=False</em>, <em>**knn_args</em><span class="sig-paren">)</span><a class="headerlink" href="#dml.multidml_knn.MultiDML_kNN" title="Permalink to this definition">¶</a></dt>
@@ -5330,8 +5536,8 @@ times and k-NN scores.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>dml</strong> <span class="classifier-delimiter">:</span> <span class="classifier">DML_Algorithm</span></dt>
-<dd><p class="first last">The distance metric algorithm to tune.</p>
+<dt><strong>dml</strong> <span class="classifier-delimiter">:</span> <span class="classifier">A DML_Algorithm subclass</span></dt>
+<dd><p class="first last">The distance metric algorithm class to tune.</p>
 </dd>
 <dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array-like, shape (N x d)</span></dt>
 <dd><p class="first last">Training vector, where N is the number of samples, and d is the number of features.</p>
@@ -5403,8 +5609,8 @@ corresponding case, containing the scores for every fold.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>dml</strong> <span class="classifier-delimiter">:</span> <span class="classifier">DML_Algorithm</span></dt>
-<dd><p class="first last">The distance metric algorithm to tune.</p>
+<dt><strong>dml</strong> <span class="classifier-delimiter">:</span> <span class="classifier">A DML_Algorithm subclass</span></dt>
+<dd><p class="first last">The distance metric algorithm class to tune.</p>
 </dd>
 <dt><strong>X</strong> <span class="classifier-delimiter">:</span> <span class="classifier">array-like, shape (N x d)</span></dt>
 <dd><p class="first last">Training vector, where N is the number of samples, and d is the number of features.</p>
@@ -5468,61 +5674,72 @@ corresponding case, containing the scores for every fold.</p>
 </div>
 <div class="section" id="module-dml">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-dml" title="Permalink to this headline">¶</a></h2>
+<p>The Distance Metric Learning module.</p>
 </div>
 </div>
 
 
+           </div>
+           
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="modules.html" class="btn btn-neutral" title="dml" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Juan Luis Suárez Díaz.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">pyDML</a></h1>
+
+    </section>
+
+  </div>
+  
 
 
+  
 
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
+  
 
+  <script type="text/javascript" src="_static/js/theme.js"></script>
 
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-<h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2018, Juan Luis Suárez Díaz.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
-      |
-      <a href="_sources/dml.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>

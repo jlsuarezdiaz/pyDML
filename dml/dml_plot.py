@@ -601,8 +601,8 @@ def knn_plot(X, y, k=1, attrs=None, sections="mean", knn_clf=None, fitted=False,
     if knn_clf is None:
         fitted = False
         knn_clf = KNeighborsClassifier(n_neighbors=k)
-        if not transform:
-            knn_clf = Pipeline([('dml', dml), ('knn', knn_clf)])
+    if not transform:
+        knn_clf = Pipeline([('dml', dml), ('knn', knn_clf)])
 
     if not fitted:
         knn_clf.fit(X, y)

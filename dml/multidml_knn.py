@@ -2,9 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
-k-Nearest Neighbors (kNN)
+Multiple-DML k-Nearest Neighbors (kNN)
 
-An interface for kNN adapted to distance metric learning algorithms.
 """
 
 from __future__ import absolute_import

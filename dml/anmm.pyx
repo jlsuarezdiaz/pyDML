@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Average Neighbor Margin Maximization (ANMM)
+Average Neighborhood Margin Maximization (ANMM)
 """
 
 from __future__ import print_function, absolute_import
@@ -19,7 +19,7 @@ from .dml_utils import pairwise_sq_distances_from_dot
 
 class ANMM(DML_Algorithm):
     """
-    Average Neighbor Margin Maximization (ANMM)
+    Average Neighborhood Margin Maximization (ANMM)
 
     A DML Algorithm that obtains a transformer that maximizes the distance between the nearest friends and the nearest enemies for each example.
 
