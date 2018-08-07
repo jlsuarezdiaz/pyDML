@@ -1,8 +1,0 @@
-Distance metric learning extensions for some Scikit-Learn classifiers
-=====================================================================
-
-One of the most important applications of distance metric learning has its focus on similarity learning. Many classifiers use a distance to predicts the labels for new data. Examples of these classifiers are the nearest neighbors classifier and the nearest class mean classifier.
-
-The package pyDML provides an extension of the `Scikit-Learn Nearest Neighbors classifier <http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier>`_ that allows to construct a k-NN classifier that also learns a distance metric using any of the algorithms provided in this package. Watch the documentation `here <dml.html#module-dml.knn>`_. There is a `multi-distance k-NN <dml.html#module-dml.multidml_knn>`_ too.
-
-It is also provided a generalization of the nearest class mean classifier. The `Nearest Class with Multiple Centroids classifier <dml.html#dml.ncmc.NCMC_Classifier>`_ computes, for each class, certain number of centroids, using the k-Means clustering algorithm. Then, for predicting new labels, the class of the nearest centroid is assigned. Here again a distance is needed to compute the nearest centroid. Learning an optimal distance is important to improve this classifier. The Nearest Class with Multiple Centroids classifier extends the functionality already provided in `Scikit-Learn Nearest Centroid classifier <http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestCentroid.html>`_.

@@ -1,8 +1,13 @@
 **.pyc
 **.so
+build/
 build/**
 **.o
 core.**
 **.c
 **.cpp
 **/.nfs*
+doc/sphinx/build/**
+doc/sphinx/build/
+doc/doxydoc/
+doc/docydoc/**
