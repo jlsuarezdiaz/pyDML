@@ -146,7 +146,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'pyDML.tex', 'pyDML Documentation',
-     'Juan Luis Suárez Díaz', 'manual'),
+     u'Juan Luis Suárez Díaz', 'manual'),
 ]
 
 
