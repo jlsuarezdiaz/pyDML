@@ -30,11 +30,11 @@ Every linear map defines a single metric (M = L'L), and two linear maps that def
 ### Dimensionality reduction
 
 ![](./plots/ex_red_dim.png)
-*Learning a projection onto a plane of the digits dataset (dimension 64).*
+*Learning a projection onto a plane for the digits dataset (dimension 64).*
 
 ## Documentation
 
-See the available algorithms, the additional functionalities and the full documentation [here]().
+See the available algorithms, the additional functionalities and the full documentation [here](https://pydml.readthedocs.io/en/latest/).
 
 ## Installation
 
