@@ -1,7 +1,7 @@
 # pyDML
 
 [![](https://img.shields.io/badge/language-Python-green.svg)](https://www.python.org/)
-[![](https://img.shields.io/badge/license-GPL-orange.svg)](https://www.python.org/)
+[![](https://img.shields.io/badge/license-GPL-orange.svg)](https://www.gnu.org/licenses/gpl.html)
 
 Distance Metric Learning Algorithms for Python
 
@@ -40,7 +40,7 @@ See the available algorithms, the additional functionalities and the full docume
 
 - PyPI latest version: `pip install pyDML`
 
-- From github: clone or download this repository and run the command `python setup.py install` on the root directory.
+- From GitHub: clone or download this repository and run the command `python setup.py install` on the root directory.
 
 
 
