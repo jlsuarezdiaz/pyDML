@@ -7,11 +7,25 @@ Welcome to pyDML's documentation!
 =================================
 
 
-
 The need of a similarity measure is very common in many machine learning algorithms, such as nearest neighbors classification.
 Usually, a standard distance, like the euclidean distance, is used to measure this similarity. The distance metric learning
 paradigm tries to learn an optimal distance from the data. This package provides the classic algorithms of supervised distance 
 metric learning, together with some of the newest proposals.
+
+How to learn a distance?
+------------------------
+
+There are two main ways to learn a distance in Distance Metric Learning:
+
+* Learning a metric matrix M, that is, a positive semidefinite matrix. In this case, the distance is measured as
+
+.. math:: 
+
+    d(x,y) = \sqrt{(x-y)^TM(x-y)}.
+
+* Learning a linear map L. This map is also represented by a matrix, not necessarily definite or squared. Here, the distance between two elements is the euclidean distance after applying the transformation.
+
+Every linear map defines a single metric (:math:`M = L^TL`), and two linear maps that define the same metric only differ in an isometry. So both approaches are equivalent.
 
 
 .. toctree::

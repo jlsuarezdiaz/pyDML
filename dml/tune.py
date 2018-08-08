@@ -205,7 +205,7 @@ def tune_knn(dml,X,y,n_neighbors,dml_params,tune_args,n_folds=5,n_reps=1,verbose
             print("*** Tuning Case ",tune_case,"...")
         
         # DML algorthm with each tune params
-        dml_alg = dml(**tuned_args,**dml_params)
+        dml_alg = dml(**tuned_args, **dml_params)
         alg = Pipeline([("DML",dml_alg),("KNN",knn)])
         
         results = cross_validate(alg,X,y,n_folds=n_folds,n_reps=n_reps,verbose=verbose,seed=seed)
