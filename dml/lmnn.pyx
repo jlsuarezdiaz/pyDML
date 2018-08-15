@@ -28,7 +28,7 @@ class LMNN(DML_Algorithm, ClassifierMixin):
 
     num_dims : int, default=None
 
-        Desired value for dimensionality reduction. Ignored if solver is 'SDP'.
+        Desired value for dimensionality reduction. Ignored if solver is 'SDP'. If NULL, all features will be kept.
 
     learning_rate : string, default='adaptive'
 

@@ -34,10 +34,10 @@ class DML_eig(DML_Algorithm):
             Smoothing parameter.
 
         tol : float, default=1e-5
-            Tolerance stop criterion (difference between two point iterations at gradient descent.)
+            Tolerance stop criterion (difference between two point iterations at gradient descent).
 
         eps : float, default=1e-10
-            Precision stop criterion (norm of gradient at gradient descent)
+            Precision stop criterion (norm of gradient at gradient descent).
 
         max_it: int, default=25
             Number of iterations at gradient descent.

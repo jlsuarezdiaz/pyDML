@@ -523,7 +523,7 @@ def knn_plot(X, y, k=1, attrs=None, sections="mean", knn_clf=None, fitted=False,
 
     grid_step : List, default=[0.1,0.1]
 
-                A list with two items, specifying the distance between the points in the grid that defines the classifier plot.classifier
+                A list with two items, specifying the distance between the points in the grid that defines the classifier plot.
                 Each created point in this way will define a point where the predict method of the classifier is evaluated.
                 It is ignored if the parameter `grid_split` is not None.
 
@@ -1181,6 +1181,12 @@ def knn_pairplots(X, y, k=1, attrs=None, xattrs=None, yattrs=None, diag="hist", 
 
             A list specifying the dataset attributes to show in Y axis. The items can be the keys, if X is a pandas dataset,
             or integer indexes with the attribute position. Ignored if attrs is specified.
+
+    diag : String : default="hist"
+
+            What to plot on the diagonal subplots. Allowed options are:
+
+            - "hist" : An histogram of the data will be plot for the attribute.
 
     sections : String, default=fitted
 

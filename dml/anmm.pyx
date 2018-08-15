@@ -26,7 +26,7 @@ class ANMM(DML_Algorithm):
     Parameters
     ----------
     num_dims : int, default=None
-        Dimension desired for the transformed data.
+        Dimension desired for the transformed data. If None, all features will be taken.
 
     n_friends : int, default=3
         Number of nearest same-class neighbors to compute homogeneus neighborhood.
