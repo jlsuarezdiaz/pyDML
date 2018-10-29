@@ -7,7 +7,7 @@ PCA computes the first :math:`d'` orthogonal directions for which the data varia
 
 The current PCA implementation is a wrapper for the `Scikit-Learn PCA implementation <http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html>`_.
 
-Watch the full PCA documentation `here <dml.html#module-dml.pca>`_.
+Watch the full PCA documentation `here <https://github.com/jlsuarezdiaz/pyDML-Stats>`_.
 
 Images
 ------

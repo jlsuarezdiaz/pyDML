@@ -80,6 +80,8 @@ Every linear map defines a single metric (:math:`M = L^TL`), and two linear maps
 
    installation
 
+   stats
+
    references
 
 

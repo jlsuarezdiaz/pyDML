@@ -36,6 +36,10 @@ Every linear map defines a single metric (M = L'L), and two linear maps that def
 
 See the available algorithms, the additional functionalities and the full documentation [here](https://pydml.readthedocs.io/en/latest/).
 
+## Stats
+
+The distance metric learning algorithms in pyDML are being evaluated in several datasets. The results of these experiments are available in the [pyDML-Stats](https://github.com/jlsuarezdiaz/pyDML-Stats) repository.
+
 ## Installation
 
 - PyPI latest version: `pip install pyDML`
