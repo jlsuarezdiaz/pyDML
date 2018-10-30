@@ -1,5 +1,6 @@
 # pyDML
 
+![](https://travis-ci.org/jlsuarezdiaz/pyDML.svg?branch=master)
 [![](https://img.shields.io/badge/language-Python-green.svg)](https://www.python.org/)
 [![](https://img.shields.io/badge/license-GPL-orange.svg)](https://www.gnu.org/licenses/gpl.html)
 
