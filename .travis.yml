@@ -4,9 +4,6 @@ python:
 
 install:
   - pip install -r requirements.txt
-
-before_install:
-  - pip install --upgrade pip
   - python setup.py install
 
 script:
