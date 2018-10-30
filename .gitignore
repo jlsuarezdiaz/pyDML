@@ -17,3 +17,5 @@ dist/
 dist/**
 pyDML.egg-info/
 pyDML.egg-info/**
+old/
+old/**

@@ -71,7 +71,7 @@ setup(
       keywords='distance metric learning classification neighbors machine optimization',
       
       # Packages
-      packages=find_packages(exclude=['misc','data','test','utils']),
+      packages=find_packages(exclude=['misc','data','test','utils','old']),
       
       # Requeriments
       install_requires=['numpy','pandas','scikit-learn','matplotlib','Cython','scipy','seaborn'],

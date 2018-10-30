@@ -40,7 +40,7 @@ class LMNN(DML_Algorithm, ClassifierMixin):
 
     eta0 : int, default=0.3
 
-        The initial value for learning rate.
+        The initial value for learning rate. If solver is 'SGD', default value may be too large. In this case it is recommended to use a learning_rate of an order of 1e-3 instead.
 
     initial_metric : 2D-Array or Matrix (d' x d), or string, default=None.
 
