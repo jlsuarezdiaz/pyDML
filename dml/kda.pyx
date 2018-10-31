@@ -125,7 +125,7 @@ class KDA(KernelDML_Algorithm):
             ndims = self.n_components_
 
         classes, class_counts = np.unique(y, return_counts=True)
-        ndims = min(d, len(classes) - 1)
+        ndims = min(ndims, len(classes) - 1)
 
         # Compute N and M matrices
         M_avg = K.sum(axis=1) / n
@@ -148,6 +148,6 @@ class KDA(KernelDML_Algorithm):
         evecs = evecs[:, np.argsort(evals)[::-1]]
         # evecs /= np.apply_along_axis(np.linalg.norm,0,evecs)
 
-        self.L_ = evecs[:, ndims].T
+        self.L_ = evecs[:, :ndims].T
 
         return self
