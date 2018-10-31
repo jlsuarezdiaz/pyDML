@@ -378,14 +378,14 @@ class TestPlot:
         y = np.concatenate([ya, yb, yc])
 
         nca = NCA()
-        rcParams['text.usetex'] = 'True'
-        rcParams['text.latex.preamble'] = r'\usepackage{amsmath}'
+        # rcParams['text.usetex'] = 'True' # Latex installed needed
+        # rcParams['text.latex.preamble'] = r'\usepackage{amsmath}'
         nca.fit(X, y)
         dml_multiplot(X, y, nrow=1, ncol=3, ks=[1, 1, 1], fitted=True, dmls=[None, nca, nca],
                       transforms=[False, False, True], cmap="gist_rainbow",
-                      subtitles=[r'$M=\begin{pmatrix}1 & 0 \\ 0 & 1 \end{pmatrix}$',
-                                 r'$M \approx \begin{pmatrix} 0 & -0.004 \\ -0.004 & 27.5 \end{pmatrix}$',
-                                 r'$L \approx \begin{pmatrix} -0.0001 & 0.073 \\ -0.0008 & 5.24 \end{pmatrix}$'],
+                      # subtitles=[r'$M=\begin{pmatrix}1 & 0 \\ 0 & 1 \end{pmatrix}$',
+                      #            r'$M \approx \begin{pmatrix} 0 & -0.004 \\ -0.004 & 27.5 \end{pmatrix}$',
+                      #            r'$L \approx \begin{pmatrix} -0.0001 & 0.073 \\ -0.0008 & 5.24 \end{pmatrix}$'],
                       figsize=(18, 6))
         self.newsave()
         plt.close()
@@ -404,14 +404,14 @@ class TestPlot:
         ax[0].set_xlim((-1.2, 1.2))
         ax[0].set_ylim((-1.2, 1.2))
         ax[0].scatter(LX[:, 0], LX[:, 1])
-        ax[0].set_title(r'$L=\begin{pmatrix}1 & 0 \\ 0 & 1 \end{pmatrix}$')
+        # ax[0].set_title(r'$L=\begin{pmatrix}1 & 0 \\ 0 & 1 \end{pmatrix}$')
 
         pca = PCA(num_dims=2)
         pca.fit(LX, y)
 
         ax[1].set_xlim((-1.2, 1.2))
         ax[1].set_ylim((-1.2, 1.2))
-        ax[1].set_title(r'$L=\begin{pmatrix}\sqrt{2}/2 & \sqrt{2}/2 \\ \sqrt{2}/2 & -\sqrt{2}/2 \end{pmatrix}$')
+        # ax[1].set_title(r'$L=\begin{pmatrix}\sqrt{2}/2 & \sqrt{2}/2 \\ \sqrt{2}/2 & -\sqrt{2}/2 \end{pmatrix}$')
         LLX = pca.transform()
         ax[1].scatter(LLX[:, 0], LLX[:, 1])
 
@@ -421,7 +421,7 @@ class TestPlot:
         LLXy = [0 for i in range(LLX2.size)]
         ax[2].set_xlim((-1.2, 1.2))
         ax[2].set_ylim((-1.2, 1.2))
-        ax[2].set_title(r'$L=\begin{pmatrix}\sqrt{2}/2 & \sqrt{2}/2\end{pmatrix}$')
+        # ax[2].set_title(r'$L=\begin{pmatrix}\sqrt{2}/2 & \sqrt{2}/2\end{pmatrix}$')
         ax[2].scatter(LLX2[:, 0], LLXy)
         self.newsave()
         plt.close()
