@@ -3,6 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+
+|Build| |Language| |License| |PyPI Package|
+
 Welcome to pyDML's documentation!
 =================================
 
@@ -86,8 +89,14 @@ Every linear map defines a single metric (:math:`M = L^TL`), and two linear maps
 
 
 
-
-
+.. |Build| image:: https://travis-ci.org/jlsuarezdiaz/pyDML.svg?branch=master
+   :target: https://travis-ci.org/jlsuarezdiaz/pyDML
+.. |Language| image:: https://img.shields.io/badge/language-Python-green.svg
+   :target: https://www.python.org/
+.. |License| image:: https://img.shields.io/badge/license-GPL-orange.svg
+   :target: https://www.gnu.org/licenses/gpl.html
+.. |PyPI Package| image:: https://badge.fury.io/py/pyDML.svg
+   :target: http://badge.fury.io/py/pyDML 
 
 
 

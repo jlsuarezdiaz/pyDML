@@ -1,8 +1,9 @@
 # pyDML
 
-![](https://travis-ci.org/jlsuarezdiaz/pyDML.svg?branch=master)
+[![](https://travis-ci.org/jlsuarezdiaz/pyDML.svg?branch=master)](https://travis-ci.org/jlsuarezdiaz/pyDML)
 [![](https://img.shields.io/badge/language-Python-green.svg)](https://www.python.org/)
 [![](https://img.shields.io/badge/license-GPL-orange.svg)](https://www.gnu.org/licenses/gpl.html)
+[![](https://badge.fury.io/py/pyDML.svg)](http://badge.fury.io/py/pyDML)
 
 Distance Metric Learning Algorithms for Python
 
