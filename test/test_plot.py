@@ -1,5 +1,5 @@
-from utils import toy_datasets, datasets
-from test_utils import digits_data, draw_vector
+import toy_datasets
+from test_utils import digits_data, draw_vector, iris_data
 
 from dml import (NCA, LDA, PCA, LMNN, ANMM, NCMML, knn_plot, dml_plot, classifier_plot,
                  classifier_pairplots, knn_pairplots, dml_pairplots, dml_multiplot, NCMC_Classifier)
@@ -139,7 +139,7 @@ class TestPlot:
 
     def test_plot11(self):
         np.random.seed(seed)
-        X, y = datasets.iris()
+        X, y = iris_data()
         iris_labels = ['Setosa' if yi == 0 else 'Versicolor' if yi == 1 else 'Virginica' for yi in y]
         X = pd.DataFrame(X, columns=['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width'])
         svmc = SVC()
@@ -171,7 +171,7 @@ class TestPlot:
 
     def test_plot13(self):
         np.random.seed(seed)
-        X, y = datasets.iris()
+        X, y = iris_data()
         X = X[:, [0, 2]]
         dml = NCMML()
         clf = NearestCentroid()
@@ -355,7 +355,11 @@ class TestPlot:
 
     def test_plot19(self):
         np.random.seed(seed)
-        X, y = datasets.digits([0, 1, 3, 4, 6, 9])
+        X, y = digits_data()
+        selected = np.where(np.isin(y, [0, 1, 3, 4, 6, 9]))[0]
+        X = X[selected, :]
+        y = y[selected]
+
         lda = LDA(num_dims=2)
 
         knn_plot(X, y, k=3, dml=lda, cmap="gist_rainbow", figsize=(12, 8))
@@ -438,7 +442,7 @@ class TestPlot:
 
     def test_plot23(self):
         np.random.seed(seed)
-        X, y = datasets.iris()
+        X, y = iris_data()
         y = ['Setosa' if yi == 0 else 'Versicolor' if yi == 1 else 'Virginica' for yi in y]
         X = pd.DataFrame(X, columns=['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width'])
         arr = ['Sepal Length', 'Sepal Width']

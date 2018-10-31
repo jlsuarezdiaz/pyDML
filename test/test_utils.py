@@ -24,6 +24,14 @@ def breast_cancer():
     return Xy_dataset(load_breast_cancer)
 
 
+def iris_data():
+    data = load_iris()     # IRIS
+    X = data['data']
+    y = data['target']
+
+    return X, y
+
+
 def digits_data():
     data = load_digits()     # DIGITS
     X = data['data']
