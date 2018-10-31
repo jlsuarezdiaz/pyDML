@@ -183,6 +183,8 @@ def classifier_plot(X, y, clf, attrs=None, sections="mean", fitted=False, f=None
     cls = np.unique(y)
     le = LabelEncoder()
     ncls = le.fit_transform(cls)
+    print(cls)
+    print(ncls)
 
     # Grid predictions
     grid = np.c_[xx.ravel(), yy.ravel()]
