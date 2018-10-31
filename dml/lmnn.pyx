@@ -12,6 +12,7 @@ from six.moves import xrange
 from sklearn.metrics import pairwise_distances
 from sklearn.utils.validation import check_X_y
 from sklearn.base import BaseEstimator, ClassifierMixin
+from scipy.spatial.distance import pdist
 
 from .dml_utils import SDProject, calc_outers, calc_outers_i, metric_sq_distance, pairwise_sq_distances_from_dot
 from .dml_algorithm import DML_Algorithm, KernelDML_Algorithm
@@ -504,7 +505,8 @@ class LMNN(DML_Algorithm, ClassifierMixin):
         return impostors
 
     def _pairwise_metric_distances(self,xi,X,M):
-        return pairwise_distances(xi.reshape(1,-1),X,metric=LMNN._distance,M=M)
+        #return pairwise_distances(xi.reshape(1,-1),X,metric=LMNN._distance,M=M)
+        return pairwise_distances(xi.reshape(1, -1), X, metric='mahalanobis', VI=M)
         #n,d = X.shape
         #xi = xi.reshape(1,-1)
         #dists = np.empty([n],dtype=float)
