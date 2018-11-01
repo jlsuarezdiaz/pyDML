@@ -183,6 +183,7 @@ def classifier_plot(X, y, clf, attrs=None, sections="mean", fitted=False, f=None
     cls = np.unique(y)
     le = LabelEncoder()
     ncls = le.fit_transform(cls)
+    print(y)
     print(cls)
     print(ncls)
 
@@ -201,6 +202,7 @@ def classifier_plot(X, y, clf, attrs=None, sections="mean", fitted=False, f=None
     else:
         section = grid
 
+    print(clf.predict(section))
     Z = le.transform(clf.predict(section))
     Z = Z.reshape(xx.shape)
 
