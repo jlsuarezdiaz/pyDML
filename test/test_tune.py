@@ -20,10 +20,8 @@ class TestTune:
             ntests *= len(tune_args[key])
 
         results, best, anmm_best, detailed = tune(ANMM, X, y, dml_params=dml_params, tune_args=tune_args,
-                                                  metrics=metrics, n_folds=n_folds, n_reps=n_reps)
+                                                  metrics=metrics, n_folds=n_folds, n_reps=n_reps, verbose=True)
 
-        print(best)
-        print(tune_args)
         assert_equal(results.shape[0], ntests)
         assert_equal(results.shape[1], len(metrics))
         assert_equal(len(best[0]), len(tune_args))
@@ -47,10 +45,8 @@ class TestTune:
             ntests *= len(tune_args[key])
 
         results, best, nca_best, detailed = tune(NCA, X, y, dml_params=dml_params, tune_args=tune_args,
-                                                 metrics=metrics, n_folds=n_folds, n_reps=n_reps)
+                                                 metrics=metrics, n_folds=n_folds, n_reps=n_reps, verbose=True)
 
-        print(best)
-        print(tune_args)
         assert_equal(results.shape[0], ntests)
         assert_equal(results.shape[1], len(metrics))
         assert_equal(len(best[0]), len(tune_args))
