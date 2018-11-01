@@ -429,6 +429,7 @@ class TestPlot:
     def test_plot22(self):
         np.random.seed(seed)
         X, y = toy_datasets.circular_toy_dataset(rads=[1, 2], samples=[200, 200], noise=[0.0, 0.0])
+        y = y.astype(str)
         yy = y.astype(str)
         yy[40:200] = '?'
         yy[220:] = '?'
