@@ -405,7 +405,7 @@ class NCMC(DML_Algorithm):
         centroids = np.empty([sum(centroids_num),d])
         class_start = np.cumsum([0]+list(centroids_num))
         for i,c in enumerate(classes):
-            print(i, centroids_num)
+            # print(i, centroids_num)
             k = centroids_num[i]
             #class_cent = np.empty([k,d])
             Xc = X[y==c]

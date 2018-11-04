@@ -39,8 +39,8 @@ class DML_Algorithm(BaseEstimator, TransformerMixin):
         else:
             if hasattr(self, 'L_'):
                 L = self.transformer()
-                self.M_ = L.T.dot(L)
-                return self.M_
+                M = L.T.dot(L)
+                return M
             else:
                 raise NameError("Metric was not defined. Algorithm was not fitted.")
 
@@ -64,7 +64,7 @@ class DML_Algorithm(BaseEstimator, TransformerMixin):
                 except:
                     L = metric_to_linear(self.metric())
                     return L
-                self.L_ = L
+                # self.L_ = L
                 return L
             else:
                 raise NameError("Transformer was not defined. Algorithm was not fitted.")
