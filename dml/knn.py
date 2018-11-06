@@ -11,7 +11,6 @@ from __future__ import absolute_import
 import numpy as np
 from sklearn import neighbors
 from sklearn.model_selection import LeaveOneOut
-from .dml_algorithm import DML_Algorithm
 
 
 class kNN:
@@ -30,14 +29,14 @@ class kNN:
 
             The distance metric learning algorithm that will provide the distance in kNN.
     """
-    def __init__(self,n_neighbors,dml_algorithm):
+
+    def __init__(self, n_neighbors, dml_algorithm):
         self.nn_ = n_neighbors
         self.dml = dml_algorithm
         self.knn = neighbors.KNeighborsClassifier(n_neighbors)
         self.knn_orig = neighbors.KNeighborsClassifier(n_neighbors)
 
-
-    def fit(self,X,y):
+    def fit(self, X, y):
         """
         Fit the model from the data in X and the labels in y.
 
@@ -56,16 +55,16 @@ class kNN:
         """
         self.X_ = X    # Training set.
         self.trX = self.dml.transform(X)   # Transformed training set.
-        self.y_ = y # Training labels
+        self.y_ = y  # Training labels
 
-        self.knn.fit(self.trX,self.y_)    # kNN with learnt metric
-        self.knn_orig.fit(self.X_,self.y_) # kNN with euclidean metric
+        self.knn.fit(self.trX, self.y_)      # kNN with learnt metric
+        self.knn_orig.fit(self.X_, self.y_)  # kNN with euclidean metric
 
-        self.num_labels=len(set(y))
+        self.num_labels = len(set(y))
 
         return self
 
-    def predict(self,X=None):
+    def predict(self, X=None):
         """
         Predicts the labels for the given data. Model needs to be already fitted.
 
@@ -230,12 +229,12 @@ class kNN:
 
         for train_index, test_index in loo.split(X):
             X_train, X_test = X[train_index], X[test_index]
-            y_train, y_test = self.y_[train_index], self.y_[test_index]
+            y_train = self.y_[train_index]
 
             knnloo = neighbors.KNeighborsClassifier(self.nn_)
-            knnloo.fit(X_train,y_train)
+            knnloo.fit(X_train, y_train)
 
-            probs[test_index,:]=knnloo.predict_proba(X_test)
+            probs[test_index, :] = knnloo.predict_proba(X_test)
 
         return probs
 
@@ -259,12 +258,12 @@ class kNN:
 
         for train_index, test_index in loo.split(X):
             X_train, X_test = X[train_index], X[test_index]
-            y_train, y_test = self.y_[train_index], self.y_[test_index]
+            y_train = self.y_[train_index]
 
             knnloo = neighbors.KNeighborsClassifier(self.nn_)
-            knnloo.fit(X_train,y_train)
+            knnloo.fit(X_train, y_train)
 
-            preds[test_index]=knnloo.predict(X_test)
+            preds[test_index] = knnloo.predict(X_test)
 
         return preds
 

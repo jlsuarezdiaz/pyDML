@@ -8,22 +8,21 @@ Created on Sat Feb  3 16:45:28 2018
 @author: jlsuarezdiaz
 """
 
-from itertools import product, combinations
+from itertools import combinations
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import matplotlib.cm as cm
-import seaborn as sns
-from mpl_toolkits.mplot3d import Axes3D
+
+from mpl_toolkits.mplot3d import Axes3D  # NOQA
 
 from sklearn.preprocessing import LabelEncoder
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.utils.validation import check_X_y
 from sklearn.pipeline import Pipeline
 
-from .dml_utils import metric_to_linear
 from .base import Metric, Transformer
 
 
@@ -1494,7 +1493,7 @@ def classifier_plot_3d(X, y, clf, attrs=None, sections="mean", fitted=False, f=N
 
     cls = np.unique(y)
     le = LabelEncoder()
-    ncls = le.fit_transform(cls)
+    le.fit_transform(cls)
 
     # Grid predictions
     grid = np.c_[xx.ravel(), yy.ravel(), zz.ravel()]
@@ -1553,9 +1552,9 @@ def classifier_plot_3d(X, y, clf, attrs=None, sections="mean", fitted=False, f=N
 
     if plot_points:  # Scatter plot
         if label_colors is None:
-            sc = ax.scatter(X[attrs[0]], X[attrs[1]], X[attrs[2]], c=le.transform(y), s=20, edgecolor='k', cmap=cmap)
+            ax.scatter(X[attrs[0]], X[attrs[1]], X[attrs[2]], c=le.transform(y), s=20, edgecolor='k', cmap=cmap)
         else:
-            sc = ax.scatter(X[attrs[0]], X[attrs[1]], X[attrs[2]], c=color_list, s=20, edgecolor='k')
+            ax.scatter(X[attrs[0]], X[attrs[1]], X[attrs[2]], c=color_list, s=20, edgecolor='k')
 
     ax.view_init(elev=elev, azim=azim)
 

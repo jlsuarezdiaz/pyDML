@@ -45,10 +45,9 @@ class PCA(DML_Algorithm):
                 self.skpca_ = skPCA(n_components=thres)  # Thres ignores num_dims
         else:
             self.skpca_ = skPCA(n_components=num_dims)
-            
+
         self.nd_ = None
         self.acum_eig_ = None
-        
 
     def transformer(self):
         """
@@ -71,9 +70,9 @@ class PCA(DML_Algorithm):
 
             acum_eig : eigenvalue rate accumulated in the learned output respect to the total dimension.
         """
-        return {'num_dims':self.nd_,'acum_eig':self.acum_eig_}
+        return {'num_dims': self.nd_, 'acum_eig': self.acum_eig_}
 
-    def fit(self,X,y=None):
+    def fit(self, X, y=None):
         """
         Fit the model from the data in X and the labels in y.
 
@@ -94,18 +93,17 @@ class PCA(DML_Algorithm):
         self.X_ = X
         self.n_, self.d_ = X.shape
 
-        self.skpca_.fit(X)   
+        self.skpca_.fit(X)
         self.explained_variance_ = self.skpca_.explained_variance_ratio_
         self.acum_variance_ = np.cumsum(self.explained_variance_)
 
-        
         self.L_ = self.skpca_.components_
         self.nd_ = self.L_.shape[0]
-        self.acum_eig_ = self.acum_variance_[self.nd_-1]
+        self.acum_eig_ = self.acum_variance_[self.nd_ - 1]
 
-        return self 
+        return self
 
-    def transform(self,X=None):
+    def transform(self, X=None):
         """Applies the kernel transformation.
 
         Parameters
@@ -121,6 +119,6 @@ class PCA(DML_Algorithm):
         if X is None:
             X = self.X_
 
-        Xcent=X-self.skpca_.mean_
+        Xcent = X - self.skpca_.mean_
 
-        return DML_Algorithm.transform(self,Xcent)
+        return DML_Algorithm.transform(self, Xcent)

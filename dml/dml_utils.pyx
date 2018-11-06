@@ -8,10 +8,7 @@ Utility functions for different DML algoritms
 from __future__ import print_function, absolute_import
 import numpy as np
 import warnings
-from collections import Counter
 from six.moves import xrange
-from sklearn.metrics import pairwise_distances
-from sklearn.utils.validation import check_X_y, check_array
 
 
 def metric_to_linear(M):
@@ -94,7 +91,7 @@ def calc_outers(X, Y=None):
     if n * m * d * e > 600000000:
         return None
     try:
-        outers = np.empty([n, m, d, d], dtype=float) # !!!!
+        outers = np.empty([n, m, d, d], dtype=float)  # !!!!
 
         for i in xrange(n):
             for j in xrange(m):

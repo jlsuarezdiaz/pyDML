@@ -12,10 +12,8 @@ from __future__ import print_function, absolute_import
 import numpy as np
 from six.moves import xrange
 from sklearn.metrics import pairwise_distances
-from sklearn.metrics.pairwise import pairwise_kernels
-from sklearn.utils.validation import check_X_y, check_array
+from sklearn.utils.validation import check_X_y
 
-from numpy.linalg import eig
 from scipy.linalg import eigh
 
 from .dml_algorithm import DML_Algorithm, KernelDML_Algorithm
@@ -115,11 +113,11 @@ class DMLMJ(DML_Algorithm):
         S, D = DMLMJ._compute_matrices(X, het_neighs, hom_neighs)
 
         # Regularization
-        I = np.eye(self.d_)
+        Id = np.eye(self.d_)
         if np.abs(np.linalg.det(S) < self.reg_tol_):
-            S = (1 - self.alpha_) * S + self.alpha_ * I
+            S = (1 - self.alpha_) * S + self.alpha_ * Id
         if np.abs(np.linalg.det(D) < self.reg_tol_):
-            D = (1 - self.alpha_) * D + self.alpha_ * I
+            D = (1 - self.alpha_) * D + self.alpha_ * Id
 
         # Eigenvalues and eigenvectors of S-1D
         self.eig_vals_, self.eig_vecs_ = eigh(D, S)
@@ -302,11 +300,11 @@ class KDMLMJ(KernelDML_Algorithm):
         U, V = DMLMJ._compute_matrices(K, het_neighs, hom_neighs)
 
         # Regularization
-        I = np.eye(self.n_)
+        Id = np.eye(self.n_)
         if np.abs(np.linalg.det(U) < self.reg_tol_):
-            U = (1 - self.alpha_) * U + self.alpha_ * I
+            U = (1 - self.alpha_) * U + self.alpha_ * Id
         if np.abs(np.linalg.det(V) < self.reg_tol_):
-            V = (1 - self.alpha_) * V + self.alpha_ * I
+            V = (1 - self.alpha_) * V + self.alpha_ * Id
 
         # Eigenvalues and eigenvectors of S-1D
         self.eig_vals_, self.eig_vecs_ = eigh(V, U)

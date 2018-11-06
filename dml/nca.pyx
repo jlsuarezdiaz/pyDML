@@ -15,17 +15,18 @@ from sklearn.utils.validation import check_X_y
 from .dml_utils import calc_outers, calc_outers_i
 from .dml_algorithm import DML_Algorithm
 
-cimport numpy as np
 from libcpp cimport bool
+
+cimport numpy as np
 
 DTYPE = np.float
 ctypedef np.float_t DTYPE_t
 
 cimport cython
+
+
 @cython.boundscheck(False)  # Deactivate bounds checking
 @cython.wraparound(False)   # Deactivate negative indexing.
-
-
 class NCA(DML_Algorithm):
     """
     Neighborhood Component Analysis (NCA)
@@ -164,37 +165,36 @@ class NCA(DML_Algorithm):
         """
         self.n_, self.d_ = X.shape
         if self.num_dims_ is not None:
-            self.nd_ = min(self.d_,self.num_dims_)
+            self.nd_ = min(self.d_, self.num_dims_)
         else:
             self.nd_ = self.d_
 
-
         self.L_ = self.L0_
         self.eta_ = self.eta0_
-        X, y = check_X_y(X,y)
+        X, y = check_X_y(X, y)
         self.X_ = X
-        self.y_ = y      
+        self.y_ = y
 
         if self.L_ is None or self.L_ == "euclidean":
-            self.L_= np.zeros([self.nd_,self.d_])
-            np.fill_diagonal(self.L_,1.0) #Euclidean distance 
+            self.L_ = np.zeros([self.nd_, self.d_])
+            np.fill_diagonal(self.L_, 1.0)  # Euclidean distance
         elif self.L_ == "scale":
-            self.L_= np.zeros([self.nd_,self.d_])
-            np.fill_diagonal(self.L_, 1./(np.maximum(X.max(axis=0 )-X.min(axis=0),1e-16))) #Scaled eculidean distance
+            self.L_ = np.zeros([self.nd_, self.d_])
+            np.fill_diagonal(self.L_, 1. / (np.maximum(X.max(axis=0) - X.min(axis=0), 1e-16)))  # Scaled eculidean distance
 
-        self.initial_softmax_ = self._compute_expected_success(self.L_,X,y)/len(y)
-        if self.method_ == "SGD": # Stochastic Gradient Descent
-            self._SGD_fit(X,y)
-            
-        elif self.method_ == "BGD": # Batch Gradient Desent
-            self._BGD_fit(X,y)
-        
-        self.final_softmax_ = self._compute_expected_success(self.L_,X,y)/len(y)
+        self.initial_softmax_ = self._compute_expected_success(self.L_, X, y) / len(y)
+        if self.method_ == "SGD":  # Stochastic Gradient Descent
+            self._SGD_fit(X, y)
+
+        elif self.method_ == "BGD":  # Batch Gradient Desent
+            self._BGD_fit(X, y)
+
+        self.final_softmax_ = self._compute_expected_success(self.L_, X, y) / len(y)
         return self
 
-    def _SGD_fit(self,X,y):
+    def _SGD_fit(self, X, y):
         # Initialize parameters
-        cdef np.ndarray[DTYPE_t,ndim=4] outers = calc_outers(X)
+        cdef np.ndarray[DTYPE_t, ndim=4] outers = calc_outers(X)
         cdef int n = self.n_
         cdef int d = self.d_
 
@@ -213,252 +213,234 @@ class NCA(DML_Algorithm):
         cdef float l_dec = self.l_dec_
         cdef float eps = self.eps_
         cdef float tol = self.tol_
-        
+
         cdef bool stop = False
         cdef bool adaptive = self.adaptive_
-        
+
         cdef int i, j, k, i_max
-        
+
         cdef np.ndarray[DTYPE_t, ndim=2] Lx,  sum_p, sum_m, s
         cdef np.ndarray[DTYPE_t, ndim=1] Lxi, softmax, dists_i
         cdef np.ndarray[long,ndim=1] rnd, yi_mask
-      
+
         cdef float c, pw, p_i, grad_norm
-       
-        
+
         while not stop:
-            #X, y, outers = self._shuffle(X,y,outers)            
+            # X, y, outers = self._shuffle(X,y,outers)
             rnd = np.random.permutation(len(y))
             for i in rnd:
-                grad = np.zeros([d,d])
+                grad = np.zeros([d, d])
                 Lx = L.dot(X.T).T
-                
+
                 # Calc p_ij (softmax)
-                
+
                 # To avoid exponential underflow we use the identity softmax(x) = softmax(x + c) for all c, and take c = max(dists)
                 Lxi = Lx[i]
-                dists_i = -np.diag((Lxi-Lx).dot((Lxi-Lx).T))
+                dists_i = -np.diag((Lxi - Lx).dot((Lxi - Lx).T))
                 dists_i[i] = -np.inf
-    
+
                 i_max = np.argmax(dists_i)
                 c = dists_i[i_max]
-                
-                softmax = np.empty([n],dtype=float)
-                
+
+                softmax = np.empty([n], dtype=float)
+
                 for j in xrange(n):
                     if j != i:
                         # To avoid precision errors, argmax is assigned directly softmax 1
-                        if j==i_max:
+                        if j == i_max:
                             softmax[j] = 1
                         else:
-                            pw = min(0,-((Lx[i]-Lx[j]).dot(Lx[i]-Lx[j]))-c)
+                            pw = min(0, -((Lx[i] - Lx[j]).dot(Lx[i] - Lx[j])) - c)
                             softmax[j] = np.exp(pw)
-                        
-                softmax[i] = 0
-                softmax/=softmax.sum()
 
-                #Calc p_i
+                softmax[i] = 0
+                softmax /= softmax.sum()
+
+                # Calc p_i
                 yi_mask = np.where(y == y[i])[0]
                 p_i = softmax[yi_mask].sum()
-                
-                #Gradient computing
-                sum_p = np.zeros([d,d])
-                sum_m = np.zeros([d,d])
-                outers_i = calc_outers_i(X,outers,i)
 
-                #sum_p = (softmax*outers_i.T).T.sum(axis=0)
-                #sum_m = -(softmax[yi_mask]*outers_i[yi_mask].T).T.sum(axis=0)
+                # Gradient computing
+                sum_p = np.zeros([d, d])
+                sum_m = np.zeros([d, d])
+                outers_i = calc_outers_i(X, outers, i)
+
+                # sum_p = (softmax*outers_i.T).T.sum(axis=0)
+                # sum_m = -(softmax[yi_mask]*outers_i[yi_mask].T).T.sum(axis=0)
                 for k in xrange(n):
-                    s = softmax[k]*outers_i[k]
+                    s = softmax[k] * outers_i[k]
                     sum_p += s
                     if(y[i] == y[k]):
                         sum_m -= s
-                
-                grad += p_i*sum_p + sum_m
-                grad = 2*L.dot(grad)
-                L+= eta*grad
-                
-            
-            succ = self._compute_expected_success(L,X,y)
-            
-            
+
+                grad += p_i * sum_p + sum_m
+                grad = 2 * L.dot(grad)
+                L += eta * grad
+
+            succ = self._compute_expected_success(L, X, y)
+
             if adaptive:
                 if succ > succ_prev:
-                    eta *= l_inc                    
+                    eta *= l_inc
                 else:
                     eta *= l_dec
                     if eta < etamin:
                         stop = True
-                
+
                 succ_prev = succ
-                    
-            
+
             grad_norm = np.max(np.abs(grad))
-            if grad_norm < eps or eta*grad_norm < tol: # Difference between two iterations is given by eta*grad
-                stop=True
+            if grad_norm < eps or eta * grad_norm < tol:  # Difference between two iterations is given by eta*grad
+                stop = True
 
-
-            num_its +=1
+            num_its += 1
             if num_its == max_it:
-                stop=True
+                stop = True
             if stop:
                 break
-            
+
         self.num_its_ = num_its
         self.eta_ = eta
         self.L_ = L
-        
-        return self
-        
-    def _BGD_fit(self,X,y):
 
+        return self
+
+    def _BGD_fit(self, X, y):
         # Initialize parameters
         outers = calc_outers(X)
-        
-        n,d  = self.n_, self.d_
+
+        n, d = self.n_, self.d_
 
         L = self.L_
 
-        
         self.num_its_ = 0
 
         grad = None
 
         succ_prev = succ = 0.0
-        
-        stop = False
-        
-        while not stop:
-            grad = np.zeros([d,d])
-            Lx = L.dot(X.T).T
-            
-            succ = 0.0 # Expected error can be computed directly in BGD
-            
-            for i,yi in enumerate(y):
 
+        stop = False
+
+        while not stop:
+            grad = np.zeros([d, d])
+            Lx = L.dot(X.T).T
+
+            succ = 0.0  # Expected error can be computed directly in BGD
+
+            for i, yi in enumerate(y):
                 # Calc p_ij (softmax)
-                
                 # To avoid exponential underflow we use the identity softmax(x) = softmax(x + c) for all c, and take c = max(dists)
                 Lxi = Lx[i]
-                dists_i = -np.diag((Lxi-Lx).dot((Lxi-Lx).T))
+                dists_i = -np.diag((Lxi - Lx).dot((Lxi - Lx).T))
                 dists_i[i] = -np.inf
                 i_max = np.argmax(dists_i)
                 c = dists_i[i_max]
-                
-                
-                softmax = np.empty([n],dtype=float)
+
+                softmax = np.empty([n], dtype=float)
                 for j in xrange(n):
                     if j != i:
                         # To avoid precision errors, argmax is assigned directly softmax 1
-                        if j==i_max:
+                        if j == i_max:
                             softmax[j] = 1
                         else:
-                            pw = min(0,-((Lx[i]-Lx[j]).dot(Lx[i]-Lx[j]))-c)
+                            pw = min(0, -((Lx[i] - Lx[j]).dot(Lx[i] - Lx[j])) - c)
                             softmax[j] = np.exp(pw)
-                        
-                softmax[i] = 0
-                softmax/=softmax.sum()
-                
 
-                #Calc p_i
+                softmax[i] = 0
+                softmax /= softmax.sum()
+
+                # Calc p_i
                 yi_mask = np.where(y == yi)
                 p_i = softmax[yi_mask].sum()
-                
-                #Gradient computing
+
+                # Gradient computing
                 sum_p = sum_m = 0.0
-                outers_i = calc_outers_i(X,outers,i)
+                outers_i = calc_outers_i(X, outers, i)
 
                 for k in xrange(n):
-                    s = softmax[k]*outers_i[k]
+                    s = softmax[k] * outers_i[k]
                     sum_p += s
                     if(yi == y[k]):
                         sum_m -= s
-                
-                grad += p_i*sum_p + sum_m
+
+                grad += p_i * sum_p + sum_m
                 succ += p_i
-                
-            
+
             succ /= len(y)
-            
-            update=True
+
+            update = True
             if self.adaptive_:
                 if succ > succ_prev:
-                    self.eta_ *= self.l_inc_                    
+                    self.eta_ *= self.l_inc_
                 else:
                     self.eta_ *= self.l_dec_
-                    update=False
+                    update = False
                     if self.eta_ < self.etamin_:
                         stop = True
-                
-                succ_prev = succ
-                
-            if update:
-                grad = 2*L.dot(grad)
-                L+= self.eta_*grad
-                grad_norm = np.max(np.abs(grad))
-                if grad_norm < self.eps_ or self.eta_*grad_norm < self.tol_: # Difference between two iterations is given by eta*grad
-                    stop=True
 
-            self.num_its_+=1
+                succ_prev = succ
+
+            if update:
+                grad = 2 * L.dot(grad)
+                L += self.eta_ * grad
+                grad_norm = np.max(np.abs(grad))
+                if grad_norm < self.eps_ or self.eta_ * grad_norm < self.tol_:  # Difference between two iterations is given by eta*grad
+                    stop = True
+
+            self.num_its_ += 1
             if self.num_its_ == self.max_it_:
-                stop=True
+                stop = True
 
         self.L_ = L
 
-      
-
         return self
 
-
-
-    def _shuffle(self,X,y,outers=None):
+    def _shuffle(self, X, y, outers=None):
         rnd = np.random.permutation(len(y))
-        X = X[rnd,:]
+        X = X[rnd, :]
         y = y[rnd]
         if outers is not None:
             for i in xrange(len(y)):
-                outers[:,i]=outers[rnd,i]
+                outers[:, i] = outers[rnd, i]
             for i in xrange(len(y)):
-                outers[i,:]=outers[i,rnd]
-            #outers = outers[rnd,:][:,rnd]
+                outers[i, :] = outers[i, rnd]
+            # outers = outers[rnd,:][:,rnd]
         else:
             outers = None
 
-        return X,y, outers
+        return X, y, outers
 
-    def _compute_expected_success(self,L, X, y):
-        cdef int n,d 
-        n,d = X.shape
+    def _compute_expected_success(self, L, X, y):
+        cdef int n, d
+        n, d = X.shape
         cdef np.ndarray Lx = L.dot(X.T).T
         cdef float success = 0.0
         cdef int i, j, i_max
-        cdef np.ndarray softmax, Lxi, dists_i,yi_mask
+        cdef np.ndarray softmax, Lxi, dists_i, yi_mask
         cdef float c, pw, p_i
         for i in range(len(y)):
-            softmax = np.empty([n],dtype=float)
-            
+            softmax = np.empty([n], dtype=float)
+
             Lxi = Lx[i]
-            dists_i = -np.diag((Lxi-Lx).dot((Lxi-Lx).T)) ## TODO improve efficiency of dists_i
+            dists_i = -np.diag((Lxi - Lx).dot((Lxi - Lx).T))  # TODO improve efficiency of dists_i
             dists_i[i] = -np.inf
-            i_max = np.argmax(dists_i)          
-            c = dists_i[i_max]          ## TODO all distances can reach -inf
+            i_max = np.argmax(dists_i)
+            c = dists_i[i_max]          # TODO all distances can reach -inf
             for j in xrange(n):
                 if j != i:
                     if j == i_max:
                         softmax[j] = 1
                     else:
-                        pw = min(0,-((Lx[i]-Lx[j]).dot(Lx[i]-Lx[j]))-c)
+                        pw = min(0, -((Lx[i] - Lx[j]).dot(Lx[i] - Lx[j])) - c)
                         softmax[j] = np.exp(pw)
             softmax[i] = 0
-            
-            softmax/=softmax.sum()
-            
 
-            #Calc p_i
+            softmax /= softmax.sum()
+
+            # Calc p_i
             yi_mask = np.where(y == y[i])[0]
             p_i = softmax[yi_mask].sum()
 
             success += p_i
 
-        return success  
-        
+        return success

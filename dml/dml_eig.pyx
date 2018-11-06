@@ -131,8 +131,8 @@ class DML_eig(DML_Algorithm):
             # Xs += calc_outers_i(X,outers,i)[j]
         vals, U = eigh(Xs)
         if np.linalg.det(Xs) < eps:
-            I = np.eye(d)
-            Xs += 1e-5 * I
+            Id = np.eye(d)
+            Xs += 1e-5 * Id
 
         vals[vals < eps] = eps
         Xs_invsqrt = inv(U.dot(np.diag(np.sqrt(vals))).dot(U.T))

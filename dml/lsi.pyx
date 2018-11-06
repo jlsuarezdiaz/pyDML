@@ -158,228 +158,216 @@ class LSI(DML_Algorithm):
 
         # Obtain similarity sets
         if self.supv_:
-            X, side = check_X_y(X,side)
+            X, side = check_X_y(X, side)
             self.y_ = side
             side = LSI.label_to_similarity_set(side)
         else:
             X = check_array(X)
-        
+
         self.X_ = X
         self.side_ = side
-            
+
         if len(side) == 1:
             S = side[0]
             D = self._compute_complement(S)
         else:
             S = side[0]
             D = side[1]
-            
+
         N, d = X.shape
-        
+
         # Init parameters
         M = self.M0_
         if M is None or M == 'euclidean':
-            M = np.zeros([d,d])
-            np.fill_diagonal(M,1.0)
+            M = np.zeros([d, d])
+            np.fill_diagonal(M, 1.0)
         elif M == 'scale':
-            M = np.zeros([d,d])
-            np.fill_diagonal(M, 1./(np.maximum(X.max(axis=0 )-X.min(axis=0),1e-16))) #Scaled eculidean distance
-        
+            M = np.zeros([d, d])
+            np.fill_diagonal(M, 1. / (np.maximum(X.max(axis=0) - X.min(axis=0), 1e-16)))  # Scaled eculidean distance
+
         outers = calc_outers(X)
-        
-        W = np.zeros([d,d])
+
+        W = np.zeros([d, d])
         for i in xrange(N):
-            outers_i = calc_outers_i(X,outers,i)
-            for j in xrange(i+1,N):
-                if S[i,j]:
-                    #d_ij = X[i,:]-X[j,:]
-                    W += 2*(outers_i[j])
-                
+            outers_i = calc_outers_i(X, outers, i)
+            for j in xrange(i + 1, N):
+                if S[i, j]:
+                    # d_ij = X[i,:]-X[j,:]
+                    W += 2 * (outers_i[j])
+
         w = unroll(W)
-        t = w.T.dot(unroll(M))*100
-        
+        t = w.T.dot(unroll(M)) * 100
+
         nw = norm(w)
-        w1 = w/nw
-        t1 = t/nw
-        
-        #Metadata
-        self.initial_objective_ = LSI.fD(X,D,M,N,d)
-        self.initial_constraint_ = LSI.fS(X,S,M,N,d)
+        w1 = w / nw
+        t1 = t / nw
+
+        # Metadata
+        self.initial_objective_ = LSI.fD(X, D, M, N, d)
+        self.initial_constraint_ = LSI.fS(X, S, M, N, d)
         self.projection_iterations_avg_ = 0
         self.iterative_projections_conv_exp_ = 0
-        
+
         num_its = 0
         max_iter = self.max_it_
         max_projit = self.max_projit_
         err = self.err_
         itproj_err = self.itproj_err_
         eta = self.eta0_
-        
+
         grad2 = LSI.fS1(X, S, M, N, d, outers)              # Similarity gradient (CONSTANT)
         grad1 = LSI.fD1(X, D, M, N, d, outers)              # Dissimilarity gradient
-        
+
         G = LSI.grad_projection(grad1, grad2, d)    # Gradient of fD1 orthogonal to fS1
-        
+
         M_last = M
         done = False
-        
+
         while not done:
-            #M_update_cycle = num_its
+            # M_update_cycle = num_its
             projection_iters = 0
             satisfy = False
-            
-            #print("g(M) = ",LSI.fD(X,D,M,N,d))
-            #print("f(M) = ",LSI.fS(X,D,M,N,d))
-            #print("t = ",t)
-            
+
             while projection_iters < max_projit and not satisfy:
-                M1 = M  ## TODO copy (?)
-                
+                M1 = M   # TODO copy (?)
+
                 # First constraint
                 x1 = unroll(M1)
                 if w.T.dot(x1) <= t:
                     M = M1
                 else:
-                    x = x1 + (t1-w1.T.dot(x1))*w1
-                    M = matpack(x,d,d)
-                    
-                #fDC1 = w.T.dot(x) After this projection, w.T.dot(X)=t
-                
-                #M2 = M ## TODO copy (?)
-                
-                # Second constraint
-                M = (M + M.T)/2.0
-                M = SDProject(M).astype(float)
-                
-                fDC2 = w.T.dot(unroll(M))
-                #M3 = M
-                
-                err2 = (fDC2-t)/t
+                    x = x1 + (t1 - w1.T.dot(x1)) * w1
+                    M = matpack(x, d, d)
 
-                projection_iters+=1
+                # fDC1 = w.T.dot(x) After this projection, w.T.dot(X)=t
+
+                # M2 = M ## TODO copy (?)
+
+                # Second constraint
+                M = (M + M.T) / 2.0
+                M = SDProject(M).astype(float)
+
+                fDC2 = w.T.dot(unroll(M))
+                # M3 = M
+
+                err2 = (fDC2 - t) / t
+
+                projection_iters += 1
                 satisfy = (err2 <= itproj_err)
-                #print("P: ",fDC2,err2,t)
-                #fs=LSI.fS(X,S,M,N,d);print(fDC2,fs,t,fDC2/fs)
-                
+
+                # fs=LSI.fS(X,S,M,N,d);print(fDC2,fs,t,fDC2/fs)
+
             self.projection_iterations_avg_ += projection_iters
-        
+
             # Gradient ascent
-            obj_previous = LSI.fD(X,D,M_last,N,d)
-            obj = LSI.fD(X,D,M,N,d)
-            #print(obj,obj_previous)
-            #print(M)
-            #print(M_last)
-            #print("SAT: ",satisfy)
+            obj_previous = LSI.fD(X, D, M_last, N, d)
+            obj = LSI.fD(X, D, M, N, d)
+
             if (obj > obj_previous or num_its == 0) and satisfy:
                 # Projection successful and improves objective function. Increase learning rate.
                 # Take gradient step
                 eta *= 1.05
                 M_last = M.copy()
-                #grad2 = fS1(X,S,M,N,d,outers) # CONSTANT
-                grad1 = LSI.fD1(X,D,M,N,d,outers)
-                G = grad1#LSI.grad_projection(grad1,grad2,d)
-                M += eta*G
-                
+                # grad2 = fS1(X,S,M,N,d,outers) # CONSTANT
+                grad1 = LSI.fD1(X, D, M, N, d, outers)
+                G = grad1  # LSI.grad_projection(grad1,grad2,d)
+                M += eta * G
+
                 self.iterative_projections_conv_exp_ += 1
-                #print("[OK]")
-                
+
             else:
                 # Projection failed or objective function not improved. Shrink learning rate and take last M
                 eta *= 0.5
-                M = M_last + eta*G
-                
-            delta = norm(eta*G,'fro')/norm(M_last,'fro')
+                M = M_last + eta * G
+
+            delta = norm(eta * G, 'fro') / norm(M_last, 'fro')
             num_its += 1
-            
+
             if num_its == max_iter or delta < err:
                 done = True
-            
-            
-                
-        self.M_ = M/t
-        
-        #Metadata
-        self.final_objective_ = LSI.fD(X,D,self.M_,N,d)
-        self.final_constraint_ = LSI.fS(X,S,self.M_,N,d)
+
+        self.M_ = M / t
+
+        # Metadata
+        self.final_objective_ = LSI.fD(X, D, self.M_, N, d)
+        self.final_constraint_ = LSI.fS(X, S, self.M_, N, d)
         self.num_its_ = num_its
         self.iterative_projections_conv_exp_ /= num_its
         self.projection_iterations_avg_ /= num_its
         return self
-    
-    
+
     def label_to_similarity_set(y):
         n = len(y)
-        S = np.empty([n,n],dtype=bool)
-        D = np.empty([n,n],dtype=bool)
+        S = np.empty([n, n], dtype=bool)
+        D = np.empty([n, n], dtype=bool)
         for i in xrange(n):
             for j in xrange(n):
                 if i != j:
-                    S[i,j] = (y[i] == y[j])
-                    D[i,j] = (y[i] != y[j])
+                    S[i, j] = (y[i] == y[j])
+                    D[i, j] = (y[i] != y[j])
                 else:
-                    S[i,j] = D[i,j] = False
-        return S,D
-    
+                    S[i, j] = D[i, j] = False
+        return S, D
+
     def fS1(X, S, M, N, d, outers):
-        f_sum = np.zeros([d,d],dtype=float)
-        
+        f_sum = np.zeros([d, d], dtype=float)
+
         for i in xrange(N):
-            outers_i = calc_outers_i(X,outers,i)
+            outers_i = calc_outers_i(X, outers, i)
             for j in xrange(N):
-                if S[i,j]:
+                if S[i, j]:
                     f_sum += outers_i[j]
-                    
+
         return f_sum
-        
+
     def fD1(X, D, M, N, d, outers):
-        g_sum = np.zeros([d,d],dtype=float)
-        #d_sum = 0.0
+        g_sum = np.zeros([d, d], dtype=float)
+        # d_sum = 0.0
         for i in xrange(N):
-            outers_i = calc_outers_i(X,outers,i)
+            outers_i = calc_outers_i(X, outers, i)
             for j in xrange(N):
-                if D[i,j]:
-                    xij = (X[i,:]-X[j,:]).reshape(1,-1)
+                if D[i, j]:
+                    xij = (X[i, :] - X[j, :]).reshape(1, -1)
                     d_ij = sqrt(xij.dot(M).dot(xij.T))
-                    #d_sum += d_ij
-                    g_sum += outers_i[j]/d_ij
-        return 0.5*g_sum
-    
+                    # d_sum += d_ij
+                    g_sum += outers_i[j] / d_ij
+        return 0.5 * g_sum
+
     def fD(X, D, M, N, d):
         g_sum = 0
         for i in xrange(N):
             for j in xrange(N):
-                if D[i,j]:
-                    xij = X[i,:]-X[j,:]
+                if D[i, j]:
+                    xij = X[i, :] - X[j, :]
                     d_ij = sqrt(xij.dot(M).dot(xij.T))
                     g_sum += d_ij
-        return g_sum   
-    
+        return g_sum
+
     def fS(X, S, M, N, d):
         f_sum = 0
         for i in xrange(N):
             for j in xrange(N):
-                if S[i,j]:
-                    xij = X[i,:]-X[j,:]
+                if S[i, j]:
+                    xij = X[i, :] - X[j, :]
                     d_ij = xij.dot(M).dot(xij.T)
                     f_sum += d_ij
-        return f_sum  
-        
+        return f_sum
+
     def grad_projection(grad1, grad2, d):
         g1 = unroll(grad1)
         g2 = unroll(grad2)
-        g2 = g2/norm(g2,2)
-        gtemp = g1 - (g2.T.dot(g1))*g2
-        gtemp = gtemp/norm(gtemp,2)
-        return matpack(gtemp,d,d)
-    
-    def _compute_complement(self,S):
-        n, m = S.shape # (n = m)
-        D = np.empty([n,m],dtype=bool)
+        g2 = g2 / norm(g2, 2)
+        gtemp = g1 - (g2.T.dot(g1)) * g2
+        gtemp = gtemp / norm(gtemp, 2)
+        return matpack(gtemp, d, d)
+
+    def _compute_complement(self, S):
+        n, m = S.shape  # (n = m)
+        D = np.empty([n, m], dtype=bool)
         for i in xrange(n):
             for j in xrange(m):
                 if i != j:
-                    D[i,j] = not S[i,j]
+                    D[i, j] = not S[i, j]
                 else:
-                    D[i,j] = False
+                    D[i, j] = False
         return D
-    

@@ -10,7 +10,6 @@ Created on Mon Mar 12 18:26:53 2018
 
 from __future__ import absolute_import
 import numpy as np
-from six.moves import xrange
 from sklearn.utils.validation import check_X_y
 
 from .dml_utils import calc_outers, calc_outers_i, SDProject
@@ -158,102 +157,97 @@ class LDML(DML_Algorithm):
         """
         self.n_, self.d_ = X.shape
         if self.num_dims_ is not None:
-            self.nd_ = min(self.d_,self.num_dims_)
+            self.nd_ = min(self.d_, self.num_dims_)
         else:
             self.nd_ = self.d_
 
         self.eta_ = self.eta0_
-        X, y = check_X_y(X,y)
+        X, y = check_X_y(X, y)
         self.X_ = X
-        self.y_ = y      
-        
-           
-        if self.method_ == "SDP": # Semidefinite Programming
-            self._SDP_fit(X,y)
-            
+        self.y_ = y
+
+        if self.method_ == "SDP":  # Semidefinite Programming
+            self._SDP_fit(X, y)
+
         return self
 
-    def _SDP_fit(self,X,y):
+    def _SDP_fit(self, X, y):
         # Initialize parameters
         outers = calc_outers(X)
-        n,d= self.n_, self.d_
+        d = self.d_
 
         M = self.initial_
         if M is None or M == "euclidean":
-            M= np.zeros([d,d])
-            np.fill_diagonal(M,1.0) # Euclidean distance 
+            M = np.zeros([d, d])
+            np.fill_diagonal(M, 1.0)  # Euclidean distance
         elif M == "scale":
-            M = np.zeros([self.nd_,self.d_])
-            np.fill_diagonal(M, 1./(np.maximum(X.max(axis=0 )-X.min(axis=0),1e-16))) # Scaled eculidean distance
+            M = np.zeros([self.nd_, self.d_])
+            np.fill_diagonal(M, 1. / (np.maximum(X.max(axis=0) - X.min(axis=0), 1e-16)))  # Scaled eculidean distance
 
         b = self.b_
         self.num_its_ = 0
 
         grad = None
 
-        
-        
         stop = False
-        lklh_prev = lklh = self.initial_error_ = LDML._compute_error(M,X,y,outers,b)
-        
+        lklh_prev = lklh = self.initial_error_ = LDML._compute_error(M, X, y, outers, b)
+
         while not stop:
-            grad = np.zeros([d,d])
-            
+            grad = np.zeros([d, d])
+
             for i, yi in enumerate(y):
-                outers_i = calc_outers_i(X,outers,i)
+                outers_i = calc_outers_i(X, outers, i)
                 for j, yj in enumerate(y):
                     outer_ij = outers_i[j]
-                    wtoij = np.inner(M.reshape(1,-1),outer_ij.reshape(1,-1))
+                    wtoij = np.inner(M.reshape(1, -1), outer_ij.reshape(1, -1))
                     z = b - wtoij
-                    pij = 1.0/(1.0 + np.exp(-z))
+                    pij = 1.0 / (1.0 + np.exp(-z))
                     yij = 1.0 if yi == yj else 0.0
-                    
-                    grad += (yij - pij)*outer_ij
-                
-                    
-                    
-            Mprev = M   
-            M = M - self.eta_*grad
-            M = SDProject(M)    
-            
-            lklh = LDML._compute_error(M,X,y,outers,b)
-            
+
+                    grad += (yij - pij) * outer_ij
+
+            Mprev = M
+            M = M - self.eta_ * grad
+            M = SDProject(M)
+
+            lklh = LDML._compute_error(M, X, y, outers, b)
+
             if self.adaptive_:
                 if lklh > lklh_prev:
-                    self.eta_ *= self.l_inc_                    
+                    self.eta_ *= self.l_inc_
                 else:
                     self.eta_ *= self.l_dec_
                     if self.eta_ < self.etamin_:
                         stop = True
-                
-                lklh_prev = lklh
-            
-            grad_norm = np.max(np.abs(grad))
-            tol_norm = np.max(np.abs(M-Mprev)) 
-            
-            if grad_norm < self.eps_ or tol_norm < self.tol_:
-                stop=True
 
-            self.num_its_+=1
+                lklh_prev = lklh
+
+            grad_norm = np.max(np.abs(grad))
+            tol_norm = np.max(np.abs(M - Mprev))
+
+            if grad_norm < self.eps_ or tol_norm < self.tol_:
+                stop = True
+
+            self.num_its_ += 1
             if self.num_its_ == self.max_it_:
-                stop=True
-            
-        self.final_error_ = LDML._compute_error(M,X,y,outers,b)
+                stop = True
+
+        self.final_error_ = LDML._compute_error(M, X, y, outers, b)
         self.M_ = M
-        
+
         return self
-    
-    def _compute_error(M,X,y,outers,b):
+
+    def _compute_error(M, X, y, outers, b):
         f_obj = 0.0
         for i, yi in enumerate(y):
-            outers_i = calc_outers_i(X,outers,i)
+            outers_i = calc_outers_i(X, outers, i)
             for j, yj in enumerate(y):
                 yij = 1 if yi == yj else 0
                 outer_ij = outers_i[j]
-                wtoij = np.inner(M.reshape(1,-1),outer_ij.reshape(1,-1))
+                wtoij = np.inner(M.reshape(1, -1), outer_ij.reshape(1, -1))
                 z = b - wtoij
-                pij = 1.0/(1.0 + np.exp(-z))
-                
-                f_obj += yij * np.log(pij) + (1-yij)*np.log(1-pij)
-                
+                pij = 1.0 / (1.0 + np.exp(-z))
+
+                f_obj += yij * np.log(pij) + (1 - yij) * np.log(1 - pij)
+
         return f_obj
