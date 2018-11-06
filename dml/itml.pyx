@@ -117,7 +117,7 @@ class ITML(DML_Algorithm):
         n, d = X.shape
         M = self.M0_
         u = self.u_
-        l = self.l
+        l = self.l_
         num_constraints = self.num_constraints_
         tol = self.tol_
         gamma = self.gamma_
