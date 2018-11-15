@@ -1,5 +1,5 @@
-Kernel Local Linear Discriminant Analysis
-=========================================
+Kernel Local Linear Discriminant Analysis (KLLDA)
+=================================================
 
 The kernelized version of `LLDA <dml.llda.html>`_.
 

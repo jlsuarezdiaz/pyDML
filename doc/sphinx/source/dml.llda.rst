@@ -1,5 +1,5 @@
-Local Linear Discriminant Analysis
-==================================
+Local Linear Discriminant Analysis (LLDA)
+=========================================
 
 A local version of `LDA <dml.lda.html>`_. This algorithm performs with the same strategy as LDA, but it makes use of an affinity matrix, that is, a sparse matrix that measures the closeness between the samples, and that defines the local structure to be learned.
 
