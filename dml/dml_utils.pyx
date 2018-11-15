@@ -9,6 +9,9 @@ from __future__ import print_function, absolute_import
 import numpy as np
 import warnings
 from six.moves import xrange
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import pairwise_distances
+from scipy.sparse import csr_matrix
 
 
 def metric_to_linear(M):
@@ -292,7 +295,7 @@ def pairwise_sq_distances_from_dot(K):
     dists : 2D-Array
 
         A matrix with the squared distances between the elements in both datasets. It verifies
-        ..math:: dists[i,j] = \\d(x_i, y_j) \\rangle
+        ..math:: dists[i,j] = d(x_i, y_j)
     """
     n, m = K.shape
     dists = np.empty([n, m])
@@ -300,3 +303,114 @@ def pairwise_sq_distances_from_dot(K):
         for j in xrange(m):
             dists[i, j] = K[i, i] + K[j, j] - 2 * K[i, j]
     return dists
+
+
+def neighbors_affinity_matrix(X, y, k):
+    """
+    Neighbors affinity matrix.
+
+    Computes a neighbors affinity matrix A for the dataset (X, y), where A[i, j] = 1 if x_j is a k-nearest neighbor of the same class
+    as x_i, and 0 otherwise.
+
+    Parameters
+    ----------
+
+    X : array-like, shape (N x d)
+            Training vector, where N is the number of samples, and d is the number of features.
+
+    y : array-like, shape (N)
+        Labels vector, where N is the number of samples.
+
+    k : int
+        The number of neighbors to consider as nearest neighbors.
+
+    Returns
+    -------
+
+    A : 2D-array
+        The affinity matrix.
+    """
+    n = X.shape[0]
+    # neigh = KNeighborsClassifier(n_neighbors=k)
+    # neigh.fit(X, y)
+    # neigh_list = neigh.kneighbors(return_distance=False)
+
+    classes = np.unique(y)
+    neigh_list = np.empty([n, k], dtype=int)
+    for c in classes:
+        inds, = np.where(y == c)
+        dists = pairwise_distances(X[inds])
+
+        np.fill_diagonal(dists, np.inf)
+        neigh_inds = np.argsort(dists)[..., :k]
+        neigh_list[inds] = inds[neigh_inds]
+
+    A = np.zeros([n, n], dtype=int)
+
+    for i in xrange(n):
+        for j in neigh_list[i]:
+            A[i, j] = 1
+
+    return A
+
+
+def local_scaling_affinity_matrix(X, y, k):
+    """
+    Local scaling affinity matrix.
+
+    Computes a local scaling affinity matrix A for the dataset (X, y), where
+    .. math::
+        A[i, j] = exp(-\\|x_i - x_j\\|^2/\\sigma_i \\sigma_j).
+    The sigma values represent the local scaling of the samples around x_i, and are given by
+    .. math::
+        \\sigma_i = \\|x_i - x_i^{(K)}\\|,
+    where :math:`x_i^{(K)}` is the K-th nearest neighbor of :math:`x_i`.
+
+    Parameters
+    ----------
+
+    X : array-like, shape (N x d)
+            Training vector, where N is the number of samples, and d is the number of features.
+
+    y : array-like, shape (N)
+        Labels vector, where N is the number of samples.
+
+    k : int
+        The value for the k-th nearest neighbor to consider in the local scaling.
+
+    Returns
+    -------
+
+    A : 2D-array
+        The affinity matrix.
+    """
+    n = X.shape[0]
+    # neigh = KNeighborsClassifier(n_neighbors=k)
+    # neigh.fit(X, y)
+    # neigh_list = neigh.kneighbors(return_distance=False)[:, k - 1]
+    A = np.zeros([n, n])
+
+    classes = np.unique(y)
+    neigh_list = np.empty([n], dtype=int)
+    for c in classes:
+        inds, = np.where(y == c)
+        dists = pairwise_distances(X[inds])
+
+        np.fill_diagonal(dists, np.inf)
+        neigh_inds = np.argsort(dists)[..., k - 1]
+        neigh_list[inds] = inds[neigh_inds]
+
+    for i in xrange(n):
+        sigma_i = np.linalg.norm(X[i, :] - X[neigh_list[i], :])
+
+        for j in xrange(i):
+            if y[i] == y[j]:
+                sigma_j = np.linalg.norm(X[j, :] - X[neigh_list[j], :])
+                x_ij = X[i, :] - X[j, :]
+                d_ij = np.inner(x_ij, x_ij)
+                if d_ij == 0 and (sigma_i == 0 or sigma_j == 0):
+                    A[i, j] = A[j, i] = 1
+                else:
+                    A[i, j] = A[j, i] = np.exp(- d_ij / (sigma_i * sigma_j))
+
+    return A

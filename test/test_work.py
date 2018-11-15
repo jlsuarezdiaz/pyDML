@@ -1,4 +1,4 @@
-from dml import Euclidean, Metric, Transformer, PCA, LDA, ANMM, LMNN, NCA, NCMML, NCMC, ITML, DMLMJ, MCML, LSI, DML_eig, LDML, KLMNN, KANMM, KDMLMJ, KDA
+from dml import Euclidean, Covariance, Metric, Transformer, PCA, LDA, ANMM, LMNN, NCA, NCMML, NCMC, ITML, DMLMJ, MCML, LSI, DML_eig, LDML, KLMNN, KANMM, KDMLMJ, KDA
 from scipy.spatial.distance import pdist
 from test_utils import iris, wine, breast_cancer
 from numpy.testing import assert_array_almost_equal, assert_equal
@@ -164,6 +164,11 @@ class TestWorking:
             euc = Euclidean()
             X, y, L, M, LX1, LX2, dl1, dl2, dm = self.working_test_basic(euc, d)
             assert_array_almost_equal(M, np.eye(X.shape[1]))
+
+    def test_Covariance(self):
+        for d in [iris, wine, breast_cancer]:
+            cov = Covariance()
+            self.working_test_basic(cov, d)
 
     def test_Metric(self):
         np.random.seed(28)
