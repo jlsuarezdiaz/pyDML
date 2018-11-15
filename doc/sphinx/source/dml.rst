@@ -100,6 +100,14 @@ dml\.ldml module
     :undoc-members:
     :show-inheritance:
 
+dml\.llda module
+----------------
+
+.. automodule:: dml.llda
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 dml\.lmnn module
 ----------------
 
