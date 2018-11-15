@@ -38,6 +38,7 @@ Every linear map defines a single metric (:math:`M = L^TL`), and two linear maps
    dml.pca
    dml.lda
    dml.anmm
+   dml.llda
 
    dml.lmnn
    dml.nca
@@ -57,6 +58,7 @@ Every linear map defines a single metric (:math:`M = L^TL`), and two linear maps
    dml.kanmm
    dml.kdmlmj
    dml.kda
+   dml.kllda
 
 
 .. toctree::

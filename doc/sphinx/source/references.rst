@@ -40,6 +40,9 @@ References
 * Lorenzo Torresani and Kuang-chih Lee. “Large margin component analysis”. In: Advances in neural
   information processing systems. 2007, pages 1385-1392.
 
+* Masashi Sugiyama “Dimensionality reduction of multimodal labeled data by local fisher discriminant analysis”.
+  In: Journal of Machine Learning Research, 2007, vol 8, May, pages 1027-1061.
+
 Related links
 -------------
 
