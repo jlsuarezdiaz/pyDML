@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Covariance distance as a distance metric learning algorithm.
 - Local Linear Discriminant Analysis (LLDA).
 - Changelog file.
+- Kernel Local Linear Discriminant Analysis (KLLDA).
 
 ### Changed
 
@@ -38,4 +39,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]: https://github.com/jlsuarezdiaz/pyDML/compare/v0.0.1...HEAD
 
 
-[comment]: <> (Valid tags are: ADDED, CHANGED, FIXED, REMOVED, DEPRECATED, SECURITY)
+<!-- (Valid tags are: ADDED, CHANGED, FIXED, REMOVED, DEPRECATED, SECURITY) -->

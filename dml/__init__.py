@@ -19,7 +19,7 @@ from .kda import KDA
 from .dml_eig import DML_eig
 from .mcml import MCML
 from .ldml import LDML
-from .llda import LLDA
+from .llda import LLDA, KLLDA
 from .multidml_knn import MultiDML_kNN
 from .dml_plot import *
 from .base import Metric, Transformer, Euclidean, Covariance
