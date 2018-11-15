@@ -1,4 +1,4 @@
-from dml import Euclidean, Covariance, Metric, Transformer, PCA, LDA, ANMM, LMNN, NCA, NCMML, NCMC, ITML, DMLMJ, MCML, LSI, DML_eig, LDML, KLMNN, KANMM, KDMLMJ, KDA
+from dml import Euclidean, Covariance, Metric, Transformer, PCA, LDA, ANMM, LLDA, LMNN, NCA, NCMML, NCMC, ITML, DMLMJ, MCML, LSI, DML_eig, LDML, KLMNN, KANMM, KDMLMJ, KDA, KLLDA
 from scipy.spatial.distance import pdist
 from test_utils import iris, wine, breast_cancer
 from numpy.testing import assert_array_almost_equal, assert_equal
@@ -95,6 +95,17 @@ class TestWorking:
         for d in [iris, wine, breast_cancer]:
             anmm = ANMM(num_dims=1)
             X, y, L, M, LX1, LX2, dl1, dl2, dm = self.working_test_basic(anmm, d)
+            assert_equal(L.shape[0], 1)
+
+    def test_LLDA(self):
+        for d in [iris, wine, breast_cancer]:
+            llda = LLDA()
+            self.working_test_basic(llda, d)
+
+    def test_LLDA_dim(self):
+        for d in [iris, wine, breast_cancer]:
+            llda = LLDA(n_components=1)
+            X, y, L, M, LX1, LX2, dl1, dl2, dm = self.working_test_basic(llda, d)
             assert_equal(L.shape[0], 1)
 
     def test_LMNN(self):
@@ -255,4 +266,11 @@ class TestWorking:
             for ker in ["linear", "poly", "rbf", "laplacian"]:
                 kda = KDA(kernel=ker, n_components=1)
                 X, y, L, LX1, LX2 = self.working_test_kernel(kda, d)
+                assert_equal(L.shape[0], 1)
+
+    def test_KLLDA(self):
+        for d in [iris, wine]:
+            for ker in ["linear", "poly", "rbf", "laplacian"]:
+                kllda = KLLDA(kernel=ker, n_components=1)
+                X, y, L, LX1, LX2 = self.working_test_kernel(kllda, d)
                 assert_equal(L.shape[0], 1)
