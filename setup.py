@@ -26,7 +26,7 @@ setup(
     name='pyDML',
 
     # Version
-    version='0.0.1',
+    version='0.1.0',
 
     # Description
     description='Distance Metric Learning algorithms for Python',
@@ -41,7 +41,7 @@ setup(
     author='Juan Luis Suárez Díaz',
 
     # Author email
-    author_email='jlsuarezdiaz@correo.ugr.es',
+    author_email='jlsuarezdiaz@ugr.es',
 
     # Classifiers
     classifiers=[
@@ -87,12 +87,15 @@ setup(
     package_data={},
 
     # Project urls
-    # project_urls={
-    #    'Bug Reports':  'https://github.com/jlsuarezdiaz/pyDML/issues',
-    #    'Funding': 'https://github.com/jlsuarezdiaz/pyDML',
-    #    'Say Thanks!': 'mailto:jlsuarezdiaz@correo.ugr.es',
-    #    'Source': 'https://github.com/jlsuarezdiaz/pyDML',
-    # },
+    project_urls={
+        'Bug Reports': 'https://github.com/jlsuarezdiaz/pyDML/issues',
+        # 'Funding': 'https://github.com/jlsuarezdiaz/pyDML',
+        'Say Thanks!': 'https://saythanks.io/to/jlsuarezdiaz',
+        # 'Contact': 'mailto:jlsuarezdiaz@ugr.es',
+        'Source': 'https://github.com/jlsuarezdiaz/pyDML',
+        'Documentation': 'https://pydml.readthedocs.io/',
+        'Software Stats': 'https://jlsuarezdiaz.github.io/software/pyDML/stats/',
+    },
 
     long_description_content_type='text/markdown',
 
