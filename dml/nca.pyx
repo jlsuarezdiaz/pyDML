@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # distutils: language=c++
+# cython: profile=True
 
 """
 Neighbourhood Component Analysis (NCA)
@@ -17,6 +18,9 @@ from .dml_algorithm import DML_Algorithm
 
 from libcpp cimport bool
 
+# from collections import defaultdict
+import time
+
 cimport numpy as np
 
 DTYPE = np.float
@@ -25,8 +29,7 @@ ctypedef np.float_t DTYPE_t
 cimport cython
 
 
-@cython.boundscheck(False)  # Deactivate bounds checking
-@cython.wraparound(False)   # Deactivate negative indexing.
+
 class NCA(DML_Algorithm):
     """
     Neighborhood Component Analysis (NCA)
@@ -192,9 +195,12 @@ class NCA(DML_Algorithm):
         self.final_softmax_ = self._compute_expected_success(self.L_, X, y) / len(y)
         return self
 
+    @cython.boundscheck(False)  # Deactivate bounds checking
+    @cython.wraparound(False)   # Deactivate negative indexing.
     def _SGD_fit(self, X, y):
         # Initialize parameters
         cdef np.ndarray[DTYPE_t, ndim=4] outers = calc_outers(X)
+
         cdef int n = self.n_
         cdef int d = self.d_
 
@@ -219,24 +225,35 @@ class NCA(DML_Algorithm):
 
         cdef int i, j, k, i_max
 
-        cdef np.ndarray[DTYPE_t, ndim=2] Lx,  sum_p, sum_m, s
-        cdef np.ndarray[DTYPE_t, ndim=1] Lxi, softmax, dists_i
+        cdef np.ndarray[DTYPE_t, ndim=2] Lx,  sum_p, sum_m, s, Ldiff
+        cdef np.ndarray[DTYPE_t, ndim=1] Lxi, softmax, dists_i, Lxij
         cdef np.ndarray[long,ndim=1] rnd, yi_mask
 
         cdef float c, pw, p_i, grad_norm
 
+        # Get class proportions and indexes
+        cdef np.ndarray classes = np.unique(y)
+        cdef class_split_inds = {}
+
+        for cc in classes:
+            class_split_inds[cc] = np.where(y == cc)[0]
+
         while not stop:
             # X, y, outers = self._shuffle(X,y,outers)
             rnd = np.random.permutation(len(y))
+
             for i in rnd:
-                grad = np.zeros([d, d])
+                # grad = np.zeros([d, d])
+
+                tt = time.time()
                 Lx = L.dot(X.T).T
 
                 # Calc p_ij (softmax)
 
                 # To avoid exponential underflow we use the identity softmax(x) = softmax(x + c) for all c, and take c = max(dists)
                 Lxi = Lx[i]
-                dists_i = -np.diag((Lxi - Lx).dot((Lxi - Lx).T))
+                Ldiff = Lxi - Lx
+                dists_i = -np.diag(Ldiff.dot(Ldiff.T))
                 dists_i[i] = -np.inf
 
                 i_max = np.argmax(dists_i)
@@ -250,34 +267,35 @@ class NCA(DML_Algorithm):
                         if j == i_max:
                             softmax[j] = 1
                         else:
-                            pw = min(0, -((Lx[i] - Lx[j]).dot(Lx[i] - Lx[j])) - c)
+                            Lxij = Lx[i] - Lx[j]
+                            pw = min(0, -(Lxij.dot(Lxij)) - c)
                             softmax[j] = np.exp(pw)
 
                 softmax[i] = 0
                 softmax /= softmax.sum()
 
                 # Calc p_i
-                yi_mask = np.where(y == y[i])[0]
-                p_i = softmax[yi_mask].sum()
+                # yi_mask = np.where(y == y[i])[0]
+                p_i = softmax[class_split_inds[y[i]]].sum()
 
                 # Gradient computing
                 sum_p = np.zeros([d, d])
                 sum_m = np.zeros([d, d])
+
                 outers_i = calc_outers_i(X, outers, i)
 
-                # sum_p = (softmax*outers_i.T).T.sum(axis=0)
-                # sum_m = -(softmax[yi_mask]*outers_i[yi_mask].T).T.sum(axis=0)
                 for k in xrange(n):
                     s = softmax[k] * outers_i[k]
                     sum_p += s
                     if(y[i] == y[k]):
                         sum_m -= s
 
-                grad += p_i * sum_p + sum_m
+                grad = p_i * sum_p + sum_m
                 grad = 2 * L.dot(grad)
                 L += eta * grad
 
-            succ = self._compute_expected_success(L, X, y)
+            succ = self._compute_expected_success(L, X, y, class_split_inds)
+            # print(succ / len(y))
 
             if adaptive:
                 if succ > succ_prev:
@@ -410,19 +428,22 @@ class NCA(DML_Algorithm):
 
         return X, y, outers
 
-    def _compute_expected_success(self, L, X, y):
+    @cython.boundscheck(False)  # Deactivate bounds checking
+    @cython.wraparound(False)   # Deactivate negative indexing.
+    def _compute_expected_success(self, L, X, y, class_split_inds=None):
         cdef int n, d
         n, d = X.shape
-        cdef np.ndarray Lx = L.dot(X.T).T
+        cdef np.ndarray Lx = L.dot(X.T).T, Ldiff
         cdef float success = 0.0
         cdef int i, j, i_max
-        cdef np.ndarray softmax, Lxi, dists_i, yi_mask
+        cdef np.ndarray softmax, Lxi, dists_i, yi_mask, Lxij
         cdef float c, pw, p_i
         for i in range(len(y)):
             softmax = np.empty([n], dtype=float)
 
             Lxi = Lx[i]
-            dists_i = -np.diag((Lxi - Lx).dot((Lxi - Lx).T))  # TODO improve efficiency of dists_i
+            Ldiff = Lxi - Lx
+            dists_i = -np.diag(Ldiff.dot(Ldiff.T))  # TODO improve efficiency of dists_i
             dists_i[i] = -np.inf
             i_max = np.argmax(dists_i)
             c = dists_i[i_max]          # TODO all distances can reach -inf
@@ -431,14 +452,15 @@ class NCA(DML_Algorithm):
                     if j == i_max:
                         softmax[j] = 1
                     else:
-                        pw = min(0, -((Lx[i] - Lx[j]).dot(Lx[i] - Lx[j])) - c)
+                        Lxij = Lx[i] - Lx[j]
+                        pw = min(0, -(Lxij.dot(Lxij)) - c)
                         softmax[j] = np.exp(pw)
             softmax[i] = 0
 
             softmax /= softmax.sum()
 
             # Calc p_i
-            yi_mask = np.where(y == y[i])[0]
+            yi_mask = np.where(y == y[i])[0] if class_split_inds is None else class_split_inds[y[i]]
             p_i = softmax[yi_mask].sum()
 
             success += p_i

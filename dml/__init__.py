@@ -24,3 +24,4 @@ from .multidml_knn import MultiDML_kNN
 from .dml_plot import *
 from .base import Metric, Transformer, Euclidean, Covariance
 from .tune import *
+# from .test import INCA, CNCA

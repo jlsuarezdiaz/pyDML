@@ -19,3 +19,4 @@ pyDML.egg-info/
 pyDML.egg-info/**
 old/
 old/**
+dml/test.pyx

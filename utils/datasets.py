@@ -161,3 +161,21 @@ def reduced_dobscv10(setname,part=10):
         partitions.append((Xtra,ytra,Xtst,ytst))
         
     return partitions, Xt.shape
+
+
+def imbalanced_cv5(setname):
+    partitions = []
+    for i in range(5):
+        k = i + 1
+        train_name = "./data/imbalanced-5-fold/" + setname + "-5-fold/" + setname + "-5-" + str(k) + "tra.dat.arff"
+        test_name = "./data/imbalanced-5-fold/" + setname + "-5-fold/" + setname + "-5-" + str(k) + "tst.dat.arff"
+
+        Xtra, ytra, _ = read_ARFF(train_name, -1)
+        Xtst, ytst, _ = read_ARFF(test_name, -1)
+
+        partitions.append((Xtra, ytra, Xtst, ytst))
+
+    n = Xtra.shape[0] + Xtst.shape[0]
+    d = Xtra.shape[1]
+
+    return partitions, (n, d)

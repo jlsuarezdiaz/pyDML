@@ -94,11 +94,14 @@ def calc_outers(X, Y=None):
     if n * m * d * e > 600000000:
         return None
     try:
-        outers = np.empty([n, m, d, d], dtype=float)  # !!!!
+        diff = X[:, None] - Y[None]
+        return np.einsum("...i,...j->...ij", diff, diff)
 
-        for i in xrange(n):
-            for j in xrange(m):
-                outers[i, j] = np.outer(X[i, :] - Y[j, :], X[i, :] - Y[j, :])
+        # outers = np.empty([n, m, d, d], dtype=float)  # !!!!
+
+        # for i in xrange(n):
+        #     for j in xrange(m):
+        #         outers[i, j] = np.outer(X[i, :] - Y[j, :], X[i, :] - Y[j, :])
 
     except:
         warnings.warn("Memory is not enough to calculate all outer products at once. "
@@ -414,3 +417,140 @@ def local_scaling_affinity_matrix(X, y, k):
                     A[i, j] = A[j, i] = np.exp(- d_ij / (sigma_i * sigma_j))
 
     return A
+
+
+def calc_regularized_outers(X, Y=None):
+    """
+    Calculates the outer products between two datasets. All outer products are calculated, so memory may be not enough.
+    To avoid memory errors the output of this function should be used in the input of :func:`~calc_outers_i`.
+
+    Parameters
+    ----------
+
+    X : Numpy array, shape (N x d)
+
+        A 2D-array, where N is the number of samples and d is the number of features.
+
+    Y : Numpy array, shape (M x d), default=None
+
+        A 2D-array, where M is the number of samples in Y and d is the number of features.
+        If None, Y is taken as X.
+
+    Returns
+    -------
+
+    outers : A 4D-array, of shape (N x M x d x d), where outers[i,j] is the outer product between X[i] and Y[j].
+             It can also be None, if memory was not enough. In this case, outers will be calculated in :func:`~calc_outers_i`.
+    """
+    n, d = X.shape
+    if Y is None:
+        Y = X
+    m, e = Y.shape
+    if n * m * d * e > 600000000:
+        return None
+    try:
+        diff = X[:, None] - Y[None]
+        return np.eye(d) + np.einsum("...i,...j->...ij", diff, diff)
+
+        # outers = np.empty([n, m, d, d], dtype=float)  # !!!!
+
+        # for i in xrange(n):
+        #     for j in xrange(m):
+        #         outers[i, j] = np.outer(X[i, :] - Y[j, :], X[i, :] - Y[j, :])
+
+    except:
+        warnings.warn("Memory is not enough to calculate all outer products at once. "
+                      "Algorithm will be slower.")
+        outers = None
+
+    return outers
+
+
+def calc_regularized_outers_i(X, reg_outers, i, Y=None):
+    """
+    Obtains a subset of outer products from the calculated in :func:`~calc_outers`.
+    If memory was enough, this function just returns a row of outer products from the calculated matrix of outer products.
+    Else, this method calculates this row.
+
+    Parameters
+    ----------
+
+    X : Numpy array, shape (N x d)
+
+        A 2D-array, where N is the number of samples and d is the number of features.
+
+    outers : Numpy array, or None
+
+        The output of the function :func:`~calc_outers`.
+
+    i : int
+
+        The row to fetch from outers, from 0 to N-1.
+
+    Y : Numpy array, shape (M x d), default=None
+
+        A 2D-array, where M is the number of samples in Y and d is the number of features.
+        If None, Y is taken as X.
+
+    Returns
+    -------
+
+    outers_i : A 3D-Array, of shape (M x d x d), where outers_i[j] is the outer product between X[i] and Y[j].
+               It can also be None, if memory was not enough. In this case, outers will be calculated in :func:`~calc_outers_ij`.
+    """
+    if reg_outers is not None:
+        return reg_outers[i, :]
+    else:
+        n, d = X.shape
+        if Y is None:
+            Y = X
+        m, e = Y.shape
+        outers_i = np.empty([n, d, d], dtype=float)
+
+        Id = np.eye(d)
+
+        for j in xrange(m):
+            outers_i[j] = np.outer(X[i, :] - Y[j, :], X[i, :] - Y[j, :]) + Id
+        return outers_i
+
+
+def calc_regularized_outers_ij(X, reg_outers_i, i, j, Y=None):
+    """
+    Obtains an outer product between two elements in datasets, from the output calculated in :func:`~calc_outers`.
+
+    Parameters
+    ----------
+
+    X : Numpy array, shape (N x d)
+
+        A 2D-array, where N is the number of samples and d is the number of features.
+
+    outers_i : Numpy array, or None
+
+        The output of the function :func:`~calc_outers_i`.
+
+    i : int
+
+        The row to fetch from outers, from 0 to N-1.
+
+    j : int
+
+        The column to fetch from outers, from 0 to M-1.
+
+    Y : Numpy array, shape (M x d), default=None
+
+        A 2D-array, where M is the number of samples in Y and d is the number of features.
+        If None, Y is taken as X.
+
+    Returns
+    -------
+
+    outers_i : A 2D-Array, of shape (d x d), with the outer product between X[i] and Y[j].
+
+    """
+    if reg_outers_i is not None:
+        return reg_outers_i[j]
+    else:
+        if Y is None:
+            Y = X
+        return np.outer(X[i, :] - Y[j, :], X[i, :] - Y[j, :]) + np.eye(X.shape[0])
