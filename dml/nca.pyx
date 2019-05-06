@@ -12,6 +12,7 @@ from __future__ import absolute_import
 import numpy as np
 from six.moves import xrange
 from sklearn.utils.validation import check_X_y
+from sklearn.metrics.pairwise import euclidean_distances
 
 from .dml_utils import calc_outers, calc_outers_i
 from .dml_algorithm import DML_Algorithm
@@ -186,6 +187,7 @@ class NCA(DML_Algorithm):
             np.fill_diagonal(self.L_, 1. / (np.maximum(X.max(axis=0) - X.min(axis=0), 1e-16)))  # Scaled eculidean distance
 
         self.initial_softmax_ = self._compute_expected_success(self.L_, X, y) / len(y)
+        print(self.initial_softmax_)
         if self.method_ == "SGD":  # Stochastic Gradient Descent
             self._SGD_fit(X, y)
 
@@ -245,7 +247,7 @@ class NCA(DML_Algorithm):
             for i in rnd:
                 # grad = np.zeros([d, d])
 
-                tt = time.time()
+                # tt = time.time()
                 Lx = L.dot(X.T).T
 
                 # Calc p_ij (softmax)
@@ -267,8 +269,7 @@ class NCA(DML_Algorithm):
                         if j == i_max:
                             softmax[j] = 1
                         else:
-                            Lxij = Lx[i] - Lx[j]
-                            pw = min(0, -(Lxij.dot(Lxij)) - c)
+                            pw = min(0, dists_i[j] - c)
                             softmax[j] = np.exp(pw)
 
                 softmax[i] = 0
@@ -295,7 +296,7 @@ class NCA(DML_Algorithm):
                 L += eta * grad
 
             succ = self._compute_expected_success(L, X, y, class_split_inds)
-            # print(succ / len(y))
+            print(succ / len(y))
 
             if adaptive:
                 if succ > succ_prev:
@@ -436,14 +437,14 @@ class NCA(DML_Algorithm):
         cdef np.ndarray Lx = L.dot(X.T).T, Ldiff
         cdef float success = 0.0
         cdef int i, j, i_max
-        cdef np.ndarray softmax, Lxi, dists_i, yi_mask, Lxij
+        cdef np.ndarray softmax, Lxi, dists, dists_i, yi_mask, Lxij
         cdef float c, pw, p_i
+        dists = euclidean_distances(Lx)
         for i in range(len(y)):
             softmax = np.empty([n], dtype=float)
-
             Lxi = Lx[i]
-            Ldiff = Lxi - Lx
-            dists_i = -np.diag(Ldiff.dot(Ldiff.T))  # TODO improve efficiency of dists_i
+            # Ldiff = Lxi - Lx
+            dists_i = -dists[i, :]  # -np.diag(Ldiff.dot(Ldiff.T))  # TODO improve efficiency of dists_i
             dists_i[i] = -np.inf
             i_max = np.argmax(dists_i)
             c = dists_i[i_max]          # TODO all distances can reach -inf
@@ -452,8 +453,7 @@ class NCA(DML_Algorithm):
                     if j == i_max:
                         softmax[j] = 1
                     else:
-                        Lxij = Lx[i] - Lx[j]
-                        pw = min(0, -(Lxij.dot(Lxij)) - c)
+                        pw = min(0, dists_i[j] - c)
                         softmax[j] = np.exp(pw)
             softmax[i] = 0
 

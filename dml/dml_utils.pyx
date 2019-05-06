@@ -510,6 +510,7 @@ def calc_regularized_outers_i(X, reg_outers, i, Y=None):
         Id = np.eye(d)
 
         for j in xrange(m):
+            print(j)
             outers_i[j] = np.outer(X[i, :] - Y[j, :], X[i, :] - Y[j, :]) + Id
         return outers_i
 
