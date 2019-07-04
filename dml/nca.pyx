@@ -20,7 +20,7 @@ from .dml_algorithm import DML_Algorithm
 from libcpp cimport bool
 
 # from collections import defaultdict
-import time
+# import time
 
 cimport numpy as np
 
@@ -187,7 +187,7 @@ class NCA(DML_Algorithm):
             np.fill_diagonal(self.L_, 1. / (np.maximum(X.max(axis=0) - X.min(axis=0), 1e-16)))  # Scaled eculidean distance
 
         self.initial_softmax_ = self._compute_expected_success(self.L_, X, y) / len(y)
-        print(self.initial_softmax_)
+        # print(self.initial_softmax_)
         if self.method_ == "SGD":  # Stochastic Gradient Descent
             self._SGD_fit(X, y)
 
@@ -296,7 +296,7 @@ class NCA(DML_Algorithm):
                 L += eta * grad
 
             succ = self._compute_expected_success(L, X, y, class_split_inds)
-            print(succ / len(y))
+            # print(succ / len(y))
 
             if adaptive:
                 if succ > succ_prev:

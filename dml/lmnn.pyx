@@ -221,6 +221,7 @@ class LMNN(DML_Algorithm, ClassifierMixin):
             if self.adaptive_ and (self.num_its_ + 1) % self.soft_comp_interval_ == 0:
                 imp_new = self._impostors(Mnew, X, y, target_neighbors)
                 err = self._compute_error(self.mu_, Mnew, X, y, target_neighbors, imp_new)
+                # print(err)
                 if err < err_prev:
                     self.eta_ *= self.l_inc_
                 else:
@@ -319,7 +320,7 @@ class LMNN(DML_Algorithm, ClassifierMixin):
             if self.adaptive_:
                 impostors = self._euc_impostors(Lx, y, target_neighbors)
                 err = self._compute_euc_error(self.mu_, Lx, y, target_neighbors, impostors)
-
+                # print(err)
                 if err < err_prev:
                     self.eta_ *= self.l_inc_
                 else:

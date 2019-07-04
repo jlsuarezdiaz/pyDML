@@ -1,0 +1,64 @@
+@relation poker-9_vs_7
+@attribute S1 integer [1, 4]
+@attribute C1 integer [1, 13]
+@attribute S2 integer [1, 4]
+@attribute C2 integer [1, 13]
+@attribute S3 integer [1, 4]
+@attribute C3 integer [1, 13]
+@attribute S4 integer [1, 4]
+@attribute C4 integer [1, 13]
+@attribute S5 integer [1, 4]
+@attribute C5 integer [1, 13]
+@attribute Class {positive, negative}
+@inputs S1, C1, S2, C2, S3, C3, S4, C4, S5, C5
+@outputs Class
+@data
+4, 7, 1, 7, 3, 7, 2, 7, 2, 12, negative
+3, 1, 1, 5, 3, 5, 4, 5, 2, 5, negative
+2, 2, 3, 9, 4, 9, 2, 9, 1, 9, negative
+1, 3, 3, 3, 2, 2, 2, 3, 4, 3, negative
+1, 2, 4, 2, 2, 2, 3, 2, 2, 3, negative
+1, 4, 3, 6, 3, 4, 4, 4, 2, 4, negative
+2, 1, 3, 1, 1, 1, 2, 4, 4, 1, negative
+1, 4, 4, 4, 2, 4, 3, 4, 2, 1, negative
+3, 10, 4, 10, 2, 5, 2, 10, 1, 10, negative
+3, 10, 2, 13, 2, 10, 1, 10, 4, 10, negative
+2, 10, 2, 11, 2, 13, 2, 1, 2, 12, positive
+1, 9, 2, 9, 3, 9, 4, 9, 4, 8, negative
+2, 13, 1, 13, 4, 13, 4, 12, 3, 13, negative
+2, 2, 1, 4, 3, 4, 2, 4, 4, 4, negative
+1, 1, 2, 1, 3, 1, 4, 1, 3, 13, negative
+4, 9, 1, 9, 3, 9, 3, 13, 2, 9, negative
+3, 9, 4, 6, 4, 9, 1, 9, 2, 9, negative
+4, 11, 3, 11, 1, 10, 2, 11, 1, 11, negative
+2, 2, 3, 2, 1, 2, 1, 12, 4, 2, negative
+1, 4, 2, 4, 3, 4, 4, 4, 2, 6, negative
+1, 3, 4, 3, 2, 3, 3, 3, 3, 2, negative
+3, 6, 2, 12, 1, 6, 4, 6, 2, 6, negative
+4, 3, 3, 3, 1, 3, 2, 3, 2, 10, negative
+4, 13, 4, 11, 2, 11, 3, 11, 1, 11, negative
+3, 3, 2, 10, 4, 10, 3, 10, 1, 10, negative
+4, 5, 2, 2, 1, 2, 4, 2, 3, 2, negative
+2, 13, 2, 1, 3, 1, 1, 1, 4, 1, negative
+2, 10, 1, 10, 4, 10, 2, 12, 3, 10, negative
+1, 13, 3, 13, 2, 13, 4, 13, 2, 6, negative
+2, 1, 1, 1, 4, 1, 3, 1, 3, 13, negative
+2, 9, 4, 10, 4, 9, 3, 9, 1, 9, negative
+4, 6, 2, 6, 3, 1, 1, 6, 3, 6, negative
+3, 8, 2, 7, 1, 7, 4, 7, 3, 7, negative
+1, 12, 4, 12, 2, 3, 2, 12, 3, 12, negative
+1, 3, 2, 8, 4, 3, 2, 3, 3, 3, negative
+3, 7, 4, 7, 2, 7, 2, 9, 1, 7, negative
+4, 5, 3, 5, 1, 5, 2, 5, 4, 12, negative
+3, 1, 2, 6, 3, 6, 1, 6, 4, 6, negative
+1, 7, 1, 13, 4, 7, 3, 7, 2, 7, negative
+2, 6, 3, 6, 4, 7, 4, 6, 1, 6, negative
+2, 11, 3, 12, 4, 11, 1, 11, 3, 11, negative
+4, 12, 4, 6, 1, 12, 3, 12, 2, 12, negative
+3, 4, 4, 4, 1, 4, 2, 4, 1, 3, negative
+1, 8, 4, 8, 2, 8, 3, 8, 2, 7, negative
+2, 3, 1, 3, 3, 8, 3, 3, 4, 3, negative
+1, 4, 3, 3, 3, 4, 4, 4, 2, 4, negative
+1, 6, 3, 6, 3, 1, 4, 6, 2, 6, negative
+1, 7, 4, 7, 2, 7, 2, 10, 3, 7, negative
+3, 12, 3, 11, 3, 13, 3, 10, 3, 1, positive

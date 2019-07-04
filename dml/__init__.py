@@ -25,6 +25,5 @@ from .dml_plot import *
 from .base import Metric, Transformer, Euclidean, Covariance
 from .tune import *
 from .cnn import CondensedNearestNeighbors, ReducedNearestNeighbors
-from .test import INCA
 from .cnca import CNCA
-
+from .imls import IMLS

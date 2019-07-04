@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Condensed and reduced nearest neighbors (CNN, RNN) undersampling algorithms.
+- Condensed Neighborhood Components Analysis (CNCA)
+
 ### Changed
 
 - Improvements in efficiency in NCA.

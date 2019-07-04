@@ -20,4 +20,3 @@ pyDML.egg-info/**
 old/
 old/**
 dml/test.pyx
-dml/cnca.pyx

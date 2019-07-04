@@ -1,0 +1,40 @@
+@relation shuttle-c2-vs-c4
+@attribute A1 integer [37, 123]
+@attribute A2 integer [-85, 1409]
+@attribute A3 integer [77, 108]
+@attribute A4 integer [-587, 10]
+@attribute A5 integer [-46, 436]
+@attribute A6 integer [-30, 6339]
+@attribute A7 integer [-18, 40]
+@attribute A8 integer [-353, 130]
+@attribute A9 integer [-356, 126]
+@attribute Class {positive, negative}
+@input A1,A2,A3,A4,A5,A6,A7,A8,A9
+@output Class
+@data
+37, -85, 77, 0, 20, 0, 40, 57, 16, positive
+103, -1, 104, -4, 72, 10, 1, 31, 30, negative
+79, 0, 83, 0, -46, -29, 4, 130, 126, negative
+80, 1, 84, 0, -36, 0, 4, 121, 116, negative
+82, 0, 86, 0, -12, -9, 3, 99, 96, negative
+85, 1, 88, 0, 0, -1, 3, 88, 86, negative
+76, -5, 80, 0, -40, 0, 4, 121, 116, negative
+76, 3, 80, 0, -40, 0, 4, 121, 118, negative
+84, 0, 88, 0, -2, -19, 3, 90, 88, negative
+83, 0, 86, 0, -4, 19, 3, 92, 88, negative
+102, 0, 103, 3, 72, 25, 1, 31, 30, negative
+102, 5, 104, 4, 70, -2, 1, 34, 32, negative
+102, 0, 103, 0, 72, 13, 1, 31, 30, negative
+79, 0, 83, 0, -40, 0, 4, 124, 120, negative
+102, 0, 103, 3, 70, -1, 1, 33, 32, negative
+102, 0, 103, 0, 70, -10, 1, 33, 32, negative
+106, 0, 107, -1, 72, 3, 1, 35, 34, negative
+82, 0, 85, 0, -6, 17, 3, 93, 90, negative
+80, 4, 84, 0, -28, 0, 4, 112, 108, negative
+85, 0, 88, 0, 2, -26, 3, 86, 82, negative
+80, 0, 85, 5, -40, 8, 5, 126, 122, negative
+80, 0, 84, 1, -28, 0, 4, 112, 108, negative
+81, 1, 86, 0, -40, 5, 4, 127, 122, negative
+79, 0, 83, 0, -30, -8, 4, 114, 110, negative
+103, 4, 104, 8, 70, 0, 1, 35, 34, negative
+82, -5, 87, 0, -40, 0, 5, 128, 124, negative

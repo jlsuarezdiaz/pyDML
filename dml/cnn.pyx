@@ -38,8 +38,9 @@ class CondensedNearestNeighbors:
                 yi_pred = knn.predict(xi.reshape(1, -1))
 
                 if yi != yi_pred:
-                    self.cnn_.add(i)
-                    additions = True
+                    if i not in self.cnn_:
+                        self.cnn_.add(i)
+                        additions = True
 
         return self
 
