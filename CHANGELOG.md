@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Condensed and reduced nearest neighbors (CNN, RNN) undersampling algorithms.
+- Iterative Metric Learning with Sample Selection (IMLS)
 - Condensed Neighborhood Components Analysis (CNCA)
 
 ### Changed

@@ -65,6 +65,40 @@ class IMLS(DML_Algorithm, BaseEstimator, ClassifierMixin):
         Iterative Metric Learning and Samples selection (IMLS)
 
         A Distance Metric Learning that learns a metric iteratively and then selects an appropiate subset of training samples for classification.
+        Also known as IML.
+
+        Parameters
+        ----------
+
+        dml: DML_Algorithm, default=LMNN()
+
+            The distance metric learning to use in the iterative learning.
+
+        cache_iterations: int, default=10
+
+            Number of iterations to cache (distances to keep in memory) for later predictions.
+
+        max_iterations : int, default=10
+
+            Maximum number of iterations to run the internal distance metric learning algorithm.
+
+        similarity_thresh : float, default=0.8
+
+            Similarity threshold to consider the neighborhood of the sample to predict stable. When the neighborhood of the sample to classify
+            is stable the iterative learning stops and the predictions are made. The neighborhood is obtained using the 'sample_selection_istances' parameter.
+
+        sample_selection_size: int, default=10
+
+            Number of samples of each class to determine the neighborhood of a sample. This neighborhood will be used for predictions, once it becomes stable by the
+            learned distance iterations or the maximum number of iterations is reached.
+
+        learner : object, default=None
+
+            A classifier. It must support the methods fit and predict. It will use only the stable neighborhood of each sample to make predictions.
+
+        References
+        ----------
+        Wang, N., Zhao, X., Jiang, Y., Gao, Y., & BNRist, K. L. I. S. S. (2018, July). Iterative Metric Learning for Imbalance Data Classification. In IJCAI (pp. 2805-2811).
     """
 
     def __init__(self, dml=LMNN(), cache_iterations=10, max_iterations=10, similarity_thresh=0.8, sample_selection_instances=10, learner=None):
@@ -86,6 +120,22 @@ class IMLS(DML_Algorithm, BaseEstimator, ClassifierMixin):
         return self.L_
 
     def fit(self, X, y):
+        """
+        Fit the model from the data in X and the labels in y.
+
+        Parameters
+        ----------
+        X : array-like, shape (N x d)
+            Training vector, where N is the number of samples, and d is the number of features.
+
+        y : array-like, shape (N)
+            Labels vector, where N is the number of samples.
+
+        Returns
+        -------
+        self : object
+            Returns the instance itself.
+        """
         cached_transforms = []
         X, y = check_X_y(X, y)
         n, d = X.shape
@@ -114,6 +164,20 @@ class IMLS(DML_Algorithm, BaseEstimator, ClassifierMixin):
         return self
 
     def predict(self, X=None):
+        """
+        Predicts the labels for the given data. Model needs to be already fitted, and a classifier must be specified in the constructor.
+
+        X : 2D-Array or Matrix, default=None
+
+            The dataset to be used.
+
+        Returns
+        -------
+
+        y : 1D-Array
+
+            The vector with the label predictions.
+        """
         if self.L_ is None:
             raise RuntimeError("The distance metric must be fitted before predicting.")
         if self.clf_ is None:
@@ -167,6 +231,20 @@ class IMLS(DML_Algorithm, BaseEstimator, ClassifierMixin):
         return ypred
 
     def predict_proba(self, X=None):
+        """
+        Predicts the probabilities of each label for the given data. Model needs to be already fitted, and a classifier must be specified in the constructor.
+
+        X : 2D-Array or Matrix, default=None
+
+            The dataset to be used.
+
+        Returns
+        -------
+
+        y : 2D-Array
+
+            The matrix with the class probabilities for each sample.
+        """
         if self.L_ is None:
             raise RuntimeError("The distance metric must be fitted before predicting.")
         if self.clf_ is None:
@@ -219,6 +297,24 @@ class IMLS(DML_Algorithm, BaseEstimator, ClassifierMixin):
         return yprob
 
     def score(self, X=None, y=None):
+        """
+        Obtains the classification score for labeled data.
+
+        X : 2D-Array or Matrix, default=None
+
+            The dataset to be used.
+
+        y : 1D-array
+
+            The dataset labels.
+
+        Returns
+        -------
+
+        s : float
+
+            The accuracy obtained with the classifier with respect to X and y.
+        """
         if y is None:
             y = self.y_
         return np.mean(self.predict(X) == y)
