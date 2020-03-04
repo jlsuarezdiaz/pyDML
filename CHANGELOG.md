@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Condensed and reduced nearest neighbors (CNN, RNN) undersampling algorithms.
 - Iterative Metric Learning with Sample Selection (IMLS)
-- Condensed Neighborhood Components Analysis (CNCA)
+- Geometric Mean Metric Learning (GMML)
 
 ### Changed
 
@@ -41,7 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Distance metric learning algorithms: PCA, LDA, ANMM, NCA, LMNN, NCMML, NCMC, ITML, DMLMJ, MCML, LSI, DML-eig, LDML, KLMNN, KANMM, KDMLMJ and KDA.
-- Interfaces por Euclidean, Metric and Transformer distances as a distance metric learning algorithm.
+- Interfaces for Euclidean, Metric and Transformer distances as a distance metric learning algorithm.
 - Distance-based classifiers, adapted to distance metric learning algorithms: kNN, NCMC_Classifier and MultiDML\_kNN.
 - Plotting framework for classifiers and distance metric learning algorithms.
 - Tune framework for parameter estimation.

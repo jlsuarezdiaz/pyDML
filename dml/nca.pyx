@@ -30,7 +30,6 @@ ctypedef np.float_t DTYPE_t
 cimport cython
 
 
-
 class NCA(DML_Algorithm):
     """
     Neighborhood Component Analysis (NCA)
