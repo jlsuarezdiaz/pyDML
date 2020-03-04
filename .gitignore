@@ -21,3 +21,5 @@ old/
 old/**
 dml/test.pyx
 dml/cnca.pyx
+.cache/
+.cache/**

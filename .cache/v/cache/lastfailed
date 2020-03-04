@@ -1,7 +1,0 @@
-{
-  "test/test_classifiers.py": true, 
-  "test/test_plot.py": true, 
-  "test/test_tune.py": true, 
-  "test/test_utils.py": true, 
-  "test/test_work.py": true
-}
