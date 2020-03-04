@@ -211,7 +211,7 @@ def tune_knn(dml, X, y, n_neighbors, dml_params, tune_args, n_folds=5, n_reps=1,
         tune_results[j, :] = results['SCORE'].loc['MEAN']
 
     tune_results = pd.DataFrame(data=tune_results, index=rownames, columns=['SCORE'])
-    best_performance = (tune_results['SCORE'].argmax(), tune_results['SCORE'].max())
+    best_performance = (tune_results['SCORE'].idmax(), tune_results['SCORE'].max())
     best_dml = dml(**(best_performance[0]), **dml_params)
 
     return tune_results, best_performance, best_dml, detailed_results
@@ -432,7 +432,7 @@ def tune(dml, X, y, dml_params, tune_args, metrics, n_folds=5, n_reps=1, verbose
         tune_results[j, :] = results.loc['MEAN']
 
     tune_results = pd.DataFrame(data=tune_results, index=rownames, columns=results.columns)
-    best_performance = (tune_results.iloc[:, 0].argmax(), tune_results.iloc[:, 0].max())
+    best_performance = (tune_results.iloc[:, 0].idmax(), tune_results.iloc[:, 0].max())
     best_dml = dml(**(best_performance[0]), **dml_params)
 
     return tune_results, best_performance, best_dml, detailed_results
