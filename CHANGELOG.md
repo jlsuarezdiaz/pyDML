@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Improvements in efficiency in NCA.
 
+### Fixed
+
+- Matrix computation in ANMM when there are not enough neighbors.
+
 ## [0.1.0] - 2018-12-01
 
 ### Added

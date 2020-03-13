@@ -41,7 +41,7 @@ class ANMM(DML_Algorithm):
         IEEE. 2007, pages 1-8.
     """
 
-    def __init__(self, num_dims=None, n_friends=3, n_enemies=1):
+    def __init__(self, num_dims=None, n_friends=3, n_enemies=1):  # TODO replace loops in fit
         self.num_dims_ = num_dims
         self.n_fr_ = n_friends
         self.n_en_ = n_enemies
@@ -137,6 +137,7 @@ class ANMM(DML_Algorithm):
     def _compute_heterogeneous_neighborhood(self, X, y):
         het_neighs = np.empty([self.n_, self.n_en_], dtype=int)
         for i, x in enumerate(X):
+            het_neighs[i, :] = i  # To avoid degenerate cases (if not enough neighbors, using the sample itself will contribute 0 to the matrix)
             mask = np.flatnonzero(y != y[i])
             enemy_dists = [(m, self.distance_matrix_[i, m]) for m in mask]
             enemy_dists = sorted(enemy_dists, key=lambda k: k[1])
@@ -150,10 +151,9 @@ class ANMM(DML_Algorithm):
     def _compute_homogeneous_neighborhood(self, X, y):
         hom_neighs = np.empty([self.n_, self.n_fr_], dtype=int)
         for i, x in enumerate(X):
+            hom_neighs[i, :] = i  # To avoid degenerate cases (if not enough neighbors, using the sample itself will contribute 0 to the matrix)
+
             cur_class = y[i]  # ## Para no contar el propio indice de forma eficiente (mejorar)
-            # y[i]+=1 ###
-            # mask = np.flatnonzero(y == cur_class)
-            # y[i]-=1 ###
             mask = np.concatenate([np.flatnonzero(y[:i] == cur_class), (i + 1) + np.flatnonzero(y[i + 1:] == cur_class)])
 
             friend_dists = [(m, self.distance_matrix_[i, m]) for m in mask]
