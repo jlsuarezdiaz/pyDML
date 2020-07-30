@@ -38,6 +38,20 @@ Every linear map defines a single metric (M = L'L), and two linear maps that def
 
 See the available algorithms, the additional functionalities and the full documentation [here](https://pydml.readthedocs.io/en/latest/).
 
+## Citation
+
+If you find this package useful in your research, please consider citing the [software](http://www.jmlr.org/papers/volume21/19-864/19-864.pdf):
+
+    @article{suarez2020pydml,
+      title={pyDML: A Python Library for Distance Metric Learning},
+      author={Su{\'a}rez, Juan Luis and Garc{\'i}a, Salvador and Herrera, Francisco},
+      journal={Journal of Machine Learning Research},
+      volume={21},
+      number={96},
+      pages={1--7},
+      year={2020}
+    }
+
 ## Stats
 
 The distance metric learning algorithms in pyDML are being evaluated in several datasets. The results of these experiments are available in the [pyDML-Stats](https://github.com/jlsuarezdiaz/pyDML-Stats) repository.
