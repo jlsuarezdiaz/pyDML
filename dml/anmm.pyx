@@ -11,7 +11,7 @@ from six.moves import xrange
 from sklearn.metrics import pairwise_distances
 from sklearn.utils.validation import check_X_y
 
-from numpy.linalg import eig
+from numpy.linalg import eig, eigh
 
 from .dml_algorithm import DML_Algorithm, KernelDML_Algorithm
 from .dml_utils import pairwise_sq_distances_from_dot
@@ -111,18 +111,12 @@ class ANMM(DML_Algorithm):
         # print(self._compute_average_margin(Id,S,C))
 
         # Eigenvalues and eigenvectors of S - C
-        self.eig_vals_, self.eig_vecs_ = eig(S - C)
-        vecs_orig = self.eig_vecs_.copy()
 
-        # Reordering
-        self.eig_pairs_ = [(np.abs(self.eig_vals_[i]), vecs_orig[:, i]) for i in xrange(self.eig_vals_.size)]
-        self.eig_pairs_ = sorted(self.eig_pairs_, key=lambda k: k[0], reverse=True)
+        self.eig_vals_, self.eig_vecs_ = eigh(S - C)
+        self.eig_vals_ = self.eig_vals_[::-1]
+        self.eig_vecs_ = self.eig_vecs_[:, ::-1]
 
-        for i, p in enumerate(self.eig_pairs_):
-            self.eig_vals_[i] = p[0]
-            self.eig_vecs_[i, :] = p[1]
-
-        self.L_ = self.eig_vecs_[:num_dims, :]
+        self.L_ = self.eig_vecs_[:, :num_dims].T
         # print(self._compute_average_margin(self.L_,S,C))
 
         self.nd_ = num_dims
@@ -273,18 +267,11 @@ class KANMM(KernelDML_Algorithm):
         # print(self._compute_average_margin(Id,S,C))
 
         # Eigenvalues and eigenvectors of S - C
-        self.eig_vals_, self.eig_vecs_ = eig(S - C)
-        vecs_orig = self.eig_vecs_.copy()
+        self.eig_vals_, self.eig_vecs_ = eigh(S - C)
+        self.eig_vals_ = self.eig_vals_[::-1]
+        self.eig_vecs_ = self.eig_vecs_[:, ::-1]
 
-        # Reordering
-        self.eig_pairs_ = [(np.abs(self.eig_vals_[i]), vecs_orig[:, i]) for i in xrange(self.eig_vals_.size)]
-        self.eig_pairs_ = sorted(self.eig_pairs_, key=lambda k: k[0], reverse=True)
-
-        for i, p in enumerate(self.eig_pairs_):
-            self.eig_vals_[i] = p[0]
-            self.eig_vecs_[i, :] = p[1]
-
-        self.L_ = self.eig_vecs_[:num_dims, :]
+        self.L_ = self.eig_vecs_[:, :num_dims].T
         # print(np.trace(self.L_.dot(S-C).dot(self.L_.T)))
 
         return self

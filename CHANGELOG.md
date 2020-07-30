@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Matrix computation in ANMM when there are not enough neighbors.
+- Replaced deprecated call to Pandas argmax functions in tune.
+- Complex projections of ANMM and KANMM due to precision errors.
 
 ## [0.1.0] - 2018-12-01
 
