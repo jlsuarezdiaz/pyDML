@@ -17,6 +17,8 @@ from sklearn.preprocessing import LabelEncoder
 from .dml_algorithm import DML_Algorithm
 from .dml_utils import calc_outers, calc_outers_i
 
+import warnings
+
 
 class NCMML(DML_Algorithm):
     """
@@ -218,31 +220,46 @@ class NCMML(DML_Algorithm):
             # X, y, outers = NCMML._shuffle(X,y,outers)
             rnd = np.random.permutation(len(y))
             for i in rnd:
-
                 Lxi = L.dot(X[i, :].T).T
                 Lmu = L.dot(centroids.T).T
 
                 mu_diff = Lxi - Lmu
                 dists_i = -0.5 * np.diag(mu_diff.dot(mu_diff.T))
-
-                if acc_softmax:
+                if acc_softmax:  # TODO Too much repetitions of same code.
                     i_max = np.argmax(dists_i)
                     cmax = dists_i[i_max]
-
-                    softmax = np.exp(dists_i - cmax)
+                    softmax_sum = 1.0
+                    if np.isinf(cmax):
+                        warnings.warn("Distance overflow encountered during softmax calculation. "
+                                      "Softwax will be treated as a Kronecker delta. "
+                                      "You may want to try lower eta0 values to avoid this behaviour.",
+                                      RuntimeWarning)
+                        softmax = np.zeros(len(dists_i))
+                        softmax[i_max] = 1.0
+                    else:
+                        softmax = np.exp(dists_i - cmax)
+                        softmax /= softmax.sum()
                 else:
                     softmax = np.exp(dists_i)
+                    softmax_sum = softmax.sum()
 
-                softmax_sum = softmax.sum()
-                if softmax_sum > 0.0:
+                if not acc_softmax and softmax_sum > 0.0:
                     softmax /= softmax_sum
-                else:
-                    print("Accurracy softmax error. Recalculating.")
+                elif not acc_softmax:
+                    print("Accuracy softmax error. Recalculating.")
                     acc_softmax = True
                     i_max = np.argmax(dists_i)
                     cmax = dists_i[i_max]
-                    softmax = np.exp(dists_i - cmax)
-                    softmax /= softmax.sum()
+                    if np.isinf(cmax):
+                        warnings.warn("Distance overflow encountered during softmax calculation. "
+                                      "Softwax will be treated as a Kronecker delta. "
+                                      "You may want to try lower eta0 values to avoid this behaviour.",
+                                      RuntimeWarning)
+                        softmax = np.zeros(len(dists_i))
+                        softmax[i_max] = 1.0
+                    else:
+                        softmax = np.exp(dists_i - cmax)
+                        softmax /= softmax.sum()
 
                 grad_sum = 0.0
                 outers_i = calc_outers_i(X, outers, i, centroids)
