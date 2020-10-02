@@ -27,6 +27,6 @@ from .tune import *
 from .cnn import CondensedNearestNeighbors, ReducedNearestNeighbors
 from .gmml import GMML
 from .odml import LODML, KODML
-from .cmmml import CMMML
+from .cmoml import CMOML
 # from .cnca import CNCA
 # from .imls import IMLS
