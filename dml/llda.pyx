@@ -13,6 +13,7 @@ from sklearn.utils.validation import check_X_y
 
 from .dml_algorithm import DML_Algorithm, KernelDML_Algorithm
 from .dml_utils import neighbors_affinity_matrix, local_scaling_affinity_matrix
+from scipy.linalg import eigh
 
 from six.moves import xrange
 import warnings
@@ -187,10 +188,9 @@ class LLDA(DML_Algorithm):
             warnings.warn("Variables are collinear.")
             S_w += self.alpha_ * np.eye(d)
 
-        evals, evecs = np.linalg.eig(np.linalg.inv(S_w).dot(S_b))
-
-        evecs = evecs[:, np.argsort(evals)[::-1]]
-        # evecs /= np.apply_along_axis(np.linalg.norm,0,evecs)
+        evals, evecs = eigh(S_b, S_w)
+        evals = evals[::-1]
+        evecs = evecs[:, ::-1]
 
         self.L_ = evecs[:, :self.nd_].T
 
@@ -228,10 +228,9 @@ class LLDA(DML_Algorithm):
             warnings.warn("Variables are collinear.")
             S_w += (self.alpha_ / 2) * np.eye(d)  # alpha / 2 to keep the results in classic
 
-        evals, evecs = np.linalg.eig(np.linalg.inv(S_w).dot(S_b))
-
-        evecs = evecs[:, np.argsort(evals)[::-1]]
-        # evecs /= np.apply_along_axis(np.linalg.norm,0,evecs)
+        evals, evecs = eigh(S_b, S_w)
+        evals = evals[::-1]
+        evecs = evecs[:, ::-1]
 
         self.L_ = evecs[:, :self.nd_].T
 
@@ -407,16 +406,14 @@ class KLLDA(KernelDML_Algorithm):
 
         Kt1n = K.T.dot(ones_n)
         S_b -= (Kt1n.dot(Kt1n.T) / n + S_w)
-
         # Regularization
         if abs(np.linalg.det(S_w)) < self.tol_:
             warnings.warn("Variables are collinear.")
             S_w += (self.alpha_ / 2) * np.eye(n)  # alpha / 2 to keep the results in classic
 
-        evals, evecs = np.linalg.eig(np.linalg.inv(S_w).dot(S_b))
-
-        evecs = evecs[:, np.argsort(evals)[::-1]]
-        # evecs /= np.apply_along_axis(np.linalg.norm,0,evecs)
+        evals, evecs = eigh(S_b, S_w)
+        evals = evals[::-1]
+        evecs = evecs[:, ::-1]
 
         self.L_ = evecs[:, :self.nd_].T
 

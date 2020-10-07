@@ -11,7 +11,7 @@ from six.moves import xrange
 from sklearn.metrics import pairwise_distances
 from sklearn.utils.validation import check_X_y
 
-from numpy.linalg import eig, eigh
+from numpy.linalg import eigh
 
 from .dml_algorithm import DML_Algorithm, KernelDML_Algorithm
 from .dml_utils import pairwise_sq_distances_from_dot
