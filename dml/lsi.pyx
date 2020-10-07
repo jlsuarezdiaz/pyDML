@@ -330,7 +330,8 @@ class LSI(DML_Algorithm):
                     xij = (X[i, :] - X[j, :]).reshape(1, -1)
                     d_ij = sqrt(xij.dot(M).dot(xij.T))
                     # d_sum += d_ij
-                    g_sum += outers_i[j] / d_ij
+                    if d_ij != 0:  # Needed to avoid division by zero if there are duplicities in D.
+                        g_sum += outers_i[j] / d_ij
         return 0.5 * g_sum
 
     def fD(X, D, M, N, d):
